@@ -5104,8 +5104,16 @@ BOOL CBasePlayer :: SwitchWeapon( CBasePlayerItem *pWeapon )
 		m_pActiveItem->UpdateItemInfo( );
 	}
 #else
-	m_pActiveItem = pWeapon;
-	pWeapon->Deploy( );
+	if (pWeapon != nullptr)
+	{
+		m_pActiveItem = pWeapon;
+		pWeapon->Deploy();
+	}
+	else if (m_pLastItem != nullptr)
+	{
+		m_pActiveItem = m_pLastItem;
+		m_pLastItem->Deploy();
+	}
 #endif
 	return TRUE;
 }
