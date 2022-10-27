@@ -1224,9 +1224,14 @@ bool CBaseMonster::PopEnemy()
 //=========================================================
 void CBaseMonster::SetActivity(Activity NewActivity)
 {
-	int iSequence;
+	const Activity oldActivity = NewActivity;
 
-	iSequence = LookupActivity(NewActivity);
+	m_Activity = NewActivity; // Go ahead and set this so it doesn't keep trying when the anim is not present
+
+	// In case someone calls this with something other than the ideal activity
+	m_IdealActivity = m_Activity;
+
+	const int iSequence = LookupActivity(NewActivity);
 
 	// Set to the desired anim, or default anim if the desired is not present
 	if (iSequence > ACTIVITY_NOT_AVAILABLE)
@@ -1234,7 +1239,7 @@ void CBaseMonster::SetActivity(Activity NewActivity)
 		if (pev->sequence != iSequence || !m_fSequenceLoops)
 		{
 			// don't reset frame between walk and run
-			if (!(m_Activity == ACT_WALK || m_Activity == ACT_RUN) || !(NewActivity == ACT_WALK || NewActivity == ACT_RUN))
+			if (!(oldActivity == ACT_WALK || oldActivity == ACT_RUN) || !(NewActivity == ACT_WALK || NewActivity == ACT_RUN))
 				pev->frame = 0;
 		}
 
@@ -1248,11 +1253,6 @@ void CBaseMonster::SetActivity(Activity NewActivity)
 		ALERT(at_debug, "%s has no sequence for act:%d\n", STRING(pev->classname), NewActivity);
 		pev->sequence = 0; // Set to the reset anim (if it's there)
 	}
-
-	m_Activity = NewActivity; // Go ahead and set this so it doesn't keep trying when the anim is not present
-
-	// In case someone calls this with something other than the ideal activity
-	m_IdealActivity = m_Activity;
 }
 
 //=========================================================
@@ -1427,7 +1427,7 @@ float CBaseMonster::OpenDoorAndWait(entvars_t* pevDoor)
 				if (!pTarget)
 					break;
 
-				if (VARS(pTarget->pev) != pcbeDoor->pev &&
+				if (pTarget->pev != pcbeDoor->pev &&
 					FClassnameIs(pTarget->pev, STRING(pcbeDoor->pev->classname)))
 				{
 					pTarget->Use(this, this, USE_ON, 0.0);
@@ -3289,15 +3289,23 @@ bool CBaseMonster::FCanActiveIdle()
 
 void CBaseMonster::PlaySentence(const char* pszSentence, float duration, float volume, float attenuation)
 {
-	if (pszSentence && IsAlive())
+	ASSERT(pszSentence != nullptr);
+
+	if (!pszSentence || !CanPlaySentence(true))
 	{
-		if (pszSentence[0] == '!')
-			EMIT_SOUND_DYN(edict(), CHAN_VOICE, pszSentence, volume, attenuation, 0, PITCH_NORM);
-		else
-			SENTENCEG_PlayRndSz(edict(), pszSentence, volume, attenuation, 0, PITCH_NORM);
+		return;
 	}
+
+	PlaySentenceCore(pszSentence, duration, volume, attenuation);
 }
 
+void CBaseMonster::PlaySentenceCore(const char* pszSentence, float duration, float volume, float attenuation)
+{
+	if (pszSentence[0] == '!')
+		EMIT_SOUND_DYN(edict(), CHAN_VOICE, pszSentence, volume, attenuation, 0, PITCH_NORM);
+	else
+		SENTENCEG_PlayRndSz(edict(), pszSentence, volume, attenuation, 0, PITCH_NORM);
+}
 
 void CBaseMonster::PlayScriptedSentence(const char* pszSentence, float duration, float volume, float attenuation, bool bConcurrent, CBaseEntity* pListener)
 {

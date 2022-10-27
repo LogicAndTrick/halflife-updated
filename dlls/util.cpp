@@ -262,8 +262,8 @@ TYPEDESCRIPTION gEntvarsDescription[] =
 		DEFINE_ENTITY_FIELD(sequence, FIELD_INTEGER),
 		DEFINE_ENTITY_FIELD(animtime, FIELD_TIME),
 		DEFINE_ENTITY_FIELD(framerate, FIELD_FLOAT),
-		DEFINE_ENTITY_FIELD(controller, FIELD_INTEGER),
-		DEFINE_ENTITY_FIELD(blending, FIELD_INTEGER),
+		DEFINE_ENTITY_ARRAY(controller, FIELD_CHARACTER, NUM_ENT_CONTROLLERS),
+		DEFINE_ENTITY_ARRAY(blending, FIELD_CHARACTER, NUM_ENT_BLENDERS),
 
 		DEFINE_ENTITY_FIELD(rendermode, FIELD_INTEGER),
 		DEFINE_ENTITY_FIELD(renderamt, FIELD_FLOAT),
@@ -323,6 +323,15 @@ TYPEDESCRIPTION gEntvarsDescription[] =
 
 #define ENTVARS_COUNT (sizeof(gEntvarsDescription) / sizeof(gEntvarsDescription[0]))
 
+edict_t* UTIL_GetEntityList()
+{
+	return g_engfuncs.pfnPEntityOfEntOffset(0);
+}
+
+CBaseEntity* UTIL_GetLocalPlayer()
+{
+	return UTIL_PlayerByIndex(1);
+}
 
 #ifdef DEBUG
 edict_t* DBG_EntOfVars(const entvars_t* pev)
@@ -440,7 +449,7 @@ void UTIL_MoveToOrigin(edict_t* pent, const Vector& vecGoal, float flDist, int i
 
 int UTIL_EntitiesInBox(CBaseEntity** pList, int listMax, const Vector& mins, const Vector& maxs, int flagMask)
 {
-	edict_t* pEdict = g_engfuncs.pfnPEntityOfEntIndex(1);
+	edict_t* pEdict = UTIL_GetEntityList();
 	CBaseEntity* pEntity;
 	int count;
 
@@ -448,6 +457,9 @@ int UTIL_EntitiesInBox(CBaseEntity** pList, int listMax, const Vector& mins, con
 
 	if (!pEdict)
 		return count;
+
+	// Ignore world.
+	++pEdict;
 
 	for (int i = 1; i < gpGlobals->maxEntities; i++, pEdict++)
 	{
@@ -482,7 +494,7 @@ int UTIL_EntitiesInBox(CBaseEntity** pList, int listMax, const Vector& mins, con
 
 int UTIL_MonstersInSphere(CBaseEntity** pList, int listMax, const Vector& center, float radius)
 {
-	edict_t* pEdict = g_engfuncs.pfnPEntityOfEntIndex(1);
+	edict_t* pEdict = UTIL_GetEntityList();
 	CBaseEntity* pEntity;
 	int count;
 	float distance, delta;
@@ -492,6 +504,9 @@ int UTIL_MonstersInSphere(CBaseEntity** pList, int listMax, const Vector& center
 
 	if (!pEdict)
 		return count;
+
+	// Ignore world.
+	++pEdict;
 
 	for (int i = 1; i < gpGlobals->maxEntities; i++, pEdict++)
 	{
@@ -2199,8 +2214,8 @@ void CSaveRestoreBuffer::BufferRewind(int size)
 extern "C" {
 unsigned _rotr(unsigned val, int shift)
 {
-	register unsigned lobit;	 /* non-zero means lo bit set */
-	register unsigned num = val; /* number to rotate */
+	unsigned lobit;	 /* non-zero means lo bit set */
+	unsigned num = val; /* number to rotate */
 
 	shift &= 0x1f; /* modulo 32 -- this will also make
 										   negative shifts work */

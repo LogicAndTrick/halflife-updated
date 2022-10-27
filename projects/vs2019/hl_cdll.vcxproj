@@ -42,17 +42,17 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(Configuration)\$(ProjectName)\</OutDir>
     <TargetName>client</TargetName>
-    <IntDir>$(Configuration)\$(ProjectName)\int\</IntDir>
+    <IntDir>$(SolutionDir)$(Configuration)\\$(ProjectName)\int\</IntDir>
     <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
+    <OutDir>$(SolutionDir)$(Configuration)\\$(ProjectName)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(Configuration)\$(ProjectName)\</OutDir>
     <TargetName>client</TargetName>
-    <IntDir>$(Configuration)\$(ProjectName)\int\</IntDir>
+    <IntDir>$(SolutionDir)$(Configuration)\\$(ProjectName)\int\</IntDir>
     <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
+    <OutDir>$(SolutionDir)$(Configuration)\\$(ProjectName)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -76,10 +76,9 @@
       </BaseAddress>
     </Link>
     <PostBuildEvent>
-      <Command>cd /D "$(ProjectDir)..\.."
-cmd /c copy-client.bat
-EXIT /B 0</Command>
-      <Message>Execute copy-client.bat</Message>
+      <Command>cmd /c $(ProjectDir)..\..\filecopy.bat "$(OutDir)" "cl_dlls" "$(TargetFileName)"
+cmd /c $(ProjectDir)..\..\filecopy.bat "$(OutDir)" "cl_dlls" "$(TargetName).pdb"</Command>
+      <Message>Installing client files</Message>
     </PostBuildEvent>
     <PostBuildEvent />
   </ItemDefinitionGroup>
@@ -109,8 +108,9 @@ EXIT /B 0</Command>
       </BaseAddress>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>cmd /c $(ProjectDir)..\..\filecopy.bat "$(OutDir)" "cl_dlls" "$(TargetFileName)"
+cmd /c $(ProjectDir)..\..\filecopy.bat "$(OutDir)" "cl_dlls" "$(TargetName).pdb"</Command>
+      <Message>Installing client files</Message>
     </PostBuildEvent>
     <PostBuildEvent />
   </ItemDefinitionGroup>
