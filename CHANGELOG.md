@@ -9,6 +9,11 @@
 * Correctly save and restore controller and blending variables [#175](https://github.com/SamVanheer/halflife-updated/issues/175) (Thanks vasiavasiavasia95)
 * Set activity before SetYawSpeed so it has the right activity [#176](https://github.com/SamVanheer/halflife-updated/issues/176) (Thanks [FreeSlave](https://github.com/FreeSlave) and vasiavasiavasia95)
 * Fixed animation code accessing invalid sequence descriptor (halflife issue [#3308](https://github.com/ValveSoftware/halflife/issues/3308)) (Thanks [FreeSlave](https://github.com/FreeSlave))
+* Fixed weapon bits being incorrectly set and checked in HasAnyWeapons [#178](https://github.com/SamVanheer/halflife-updated/issues/178) (Thanks jay!)
+* Fixed projects with spaces in paths failing to execute post build step [#179](https://github.com/SamVanheer/halflife-updated/issues/179) (Thanks Shepard)
+* Fixed NPCs not being able to speak scripted sentences while in scripted death [#180](https://github.com/SamVanheer/halflife-updated/issues/180) (Thanks λλλλλλ)
+* Removed unnecessary semicolons (Thanks Shepard)
+* Updated source file encoding to UTF-8 [#183](https://github.com/SamVanheer/halflife-updated/issues/183) (Thanks anchurcn)
 
 ## Changes in V1.0.0 Beta 013
 
