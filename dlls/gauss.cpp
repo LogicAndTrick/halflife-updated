@@ -199,22 +199,25 @@ void CGauss::SecondaryAttack()
 	}
 	else
 	{
-		// during the charging process, eat one bit of ammo every once in a while
-		if (UTIL_WeaponTimeBase() >= m_pPlayer->m_flNextAmmoBurn && m_pPlayer->m_flNextAmmoBurn != 1000)
+		if (m_pPlayer->m_rgAmmo[m_iPrimaryAmmoType] > 0)
 		{
+			// during the charging process, eat one bit of ammo every once in a while
+			if (UTIL_WeaponTimeBase() >= m_pPlayer->m_flNextAmmoBurn && m_pPlayer->m_flNextAmmoBurn != 1000)
+			{
 #ifdef CLIENT_DLL
-			if (bIsMultiplayer())
+				if (bIsMultiplayer())
 #else
-			if (g_pGameRules->IsMultiplayer())
+				if (g_pGameRules->IsMultiplayer())
 #endif
-			{
-				m_pPlayer->m_rgAmmo[m_iPrimaryAmmoType]--;
-				m_pPlayer->m_flNextAmmoBurn = UTIL_WeaponTimeBase() + 0.1;
-			}
-			else
-			{
-				m_pPlayer->m_rgAmmo[m_iPrimaryAmmoType]--;
-				m_pPlayer->m_flNextAmmoBurn = UTIL_WeaponTimeBase() + 0.3;
+				{
+					m_pPlayer->m_rgAmmo[m_iPrimaryAmmoType]--;
+					m_pPlayer->m_flNextAmmoBurn = UTIL_WeaponTimeBase() + 0.1;
+				}
+				else
+				{
+					m_pPlayer->m_rgAmmo[m_iPrimaryAmmoType]--;
+					m_pPlayer->m_flNextAmmoBurn = UTIL_WeaponTimeBase() + 0.3;
+				}
 			}
 		}
 
@@ -263,7 +266,7 @@ void CGauss::SecondaryAttack()
 			SendStopEvent(false);
 
 #ifndef CLIENT_DLL
-			m_pPlayer->TakeDamage(CWorld::Instance->pev, CWorld::Instance->pev, 50, DMG_SHOCK);
+			m_pPlayer->TakeDamage(CWorld::World->pev, CWorld::World->pev, 50, DMG_SHOCK);
 			UTIL_ScreenFade(m_pPlayer, Vector(255, 128, 0), 2, 0.5, 128, FFADE_IN);
 #endif
 			SendWeaponAnim(GAUSS_IDLE);

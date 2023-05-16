@@ -1,8 +1,29 @@
 # Half-Life Updated changelog
 
-## Changes in V1.0.0 Beta 014
+## Changges in V1.0.0 Beta 015
 
-> **Note:** This beta has not been released yet.
+> Note: this beta has not been released yet.
+
+### Bug fixes
+
+* Fixed tripmines not detonating if placed on breakable and a save game is loaded [#192](https://github.com/SamVanheer/halflife-updated/issues/192) (Thanks forklift.mdl)
+* Fixed func_friction not working properly in multiplayer (halflife issue [#1542](https://github.com/ValveSoftware/halflife/issues/1542)) (Thanks L453rh4wk)
+* Fixed spray logo using wrong decal after save game load when not using custom spray [#193](https://github.com/SamVanheer/halflife-updated/issues/193) (Thanks Ronin4862)
+* Fixed ammo pickup sound playing when picking up a weapon for the first time (bug introduced by [#153](https://github.com/SamVanheer/halflife-updated/issues/153) in Beta 12)
+* Fixed Gauss gun sometimes settting player uranium ammo to -1 (halflife issue [#3343](https://github.com/ValveSoftware/halflife/issues/3343))
+* Fixed pistol not playing empty sound when using secondary attack
+* Fixed user interface coordinates and sizes being incorrectly adjusted for resolution (halflife issue [#3344](https://github.com/ValveSoftware/halflife/issues/3344))
+* Fixed player weapons still receiving input when starting to use a func_tank (halflife issue [#3345](https://github.com/ValveSoftware/halflife/issues/3345)) (Thanks Oxofemple.)
+* Fixed alien slave beams staying forever if they exist during a level change (halflife issue [#3104](https://github.com/ValveSoftware/halflife/issues/3104))
+* Fixed cycler_wreckage storing time value in int instead of float
+* Fixed limit in world weapons (e.g. Hand Grenade) respawning at wrong time if server is near edict limit
+* Fixed shotgun starting idle animations too quickly after exhausting all ammo using primary attack [#195](https://github.com/SamVanheer/halflife-updated/issues/195) (Thanks Ronin4862)
+* Fixed RPG not playing empty sound when attempting to fire with no ammo left [#196](https://github.com/SamVanheer/halflife-updated/issues/196) (Thanks Ronin4862)
+* Fixed Human Grunts dropping weapons again if the game is saved and loaded while the grunt is dying (Thanks Oxofemple.)
+* Added missing monster state name to ReportAIState (halflife issue [#3220](https://github.com/ValveSoftware/halflife/issues/3220)) (Thanks Shepard)
+* Fixed mouse movement during map load affecting initial view angles
+
+## Changes in V1.0.0 Beta 014
 
 ### Bug fixes
 
@@ -14,6 +35,26 @@
 * Fixed NPCs not being able to speak scripted sentences while in scripted death [#180](https://github.com/SamVanheer/halflife-updated/issues/180) (Thanks λλλλλλ)
 * Removed unnecessary semicolons (Thanks Shepard)
 * Updated source file encoding to UTF-8 [#183](https://github.com/SamVanheer/halflife-updated/issues/183) (Thanks anchurcn)
+* Renamed `CWorld::Instance` to `CWorld::World` to avoid conflicting with `CBaseEntity::Instance` function name
+* Added `-flifetime-dse=1` flag to Linux Makefile to disable compiler optimization that removed entity memory zero-initialization, resulting in the game crashing when any entity touches the world  [#187](https://github.com/SamVanheer/halflife-updated/issues/187)(Thanks FreeSlave)
+* Fixed game_player_equip crashing when given a null activator [#189](https://github.com/SamVanheer/halflife-updated/issues/189)
+* Fixed Hornet gun recharging to full ammo after loading a save game [#190](https://github.com/SamVanheer/halflife-updated/issues/190)
+* Fixed explosives that impact the underside of a brush dealing damage to entities on the other side of that brush (halflife issue [#3244](https://github.com/ValveSoftware/halflife/issues/3244))
+* Fixed entities with an index greater than 2047 corrupting the client's heap if sent over the network [#191](https://github.com/SamVanheer/halflife-updated/issues/191)
+
+### New features
+
+* Save and restore game_player_equip [#188](https://github.com/SamVanheer/halflife-updated/issues/188)
+* Moved IsFacing function from barney.cpp to h_ai.cpp to help prevent linker errors when copy pasting source file
+* When using `impulse 107` to get the name of a texture the texture type (as used in `materials.txt`) will also be printed
+* Made `PM_FindTextureType` const correct
+* Added `WRITE_FLOAT` function corresponding to the client's `READ_FLOAT` function
+* Set maximum edicts to 2048 in liblist.gam [#181](https://github.com/SamVanheer/halflife-updated/issues/181)
+
+### Project changes
+
+* Added `delta.lst` to the archive again (was accidentally removed in the previous beta)
+* Added game icons to the archive
 
 ## Changes in V1.0.0 Beta 013
 
