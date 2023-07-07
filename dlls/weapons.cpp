@@ -630,6 +630,7 @@ void CBasePlayerItem::AttachToPlayer(CBasePlayer* pPlayer)
 	pev->owner = pPlayer->edict();
 	SetNextThink(0.1);
 	SetTouch(NULL);
+	SetThink(NULL); // Clear FallThink function so it can't run while attached to player.
 }
 
 //LRC

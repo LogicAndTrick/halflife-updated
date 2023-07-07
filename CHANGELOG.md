@@ -22,6 +22,14 @@
 * Fixed Human Grunts dropping weapons again if the game is saved and loaded while the grunt is dying (Thanks Oxofemple.)
 * Added missing monster state name to ReportAIState (halflife issue [#3220](https://github.com/ValveSoftware/halflife/issues/3220)) (Thanks Shepard)
 * Fixed mouse movement during map load affecting initial view angles
+* Fixed being able to break scripted_sequence by +using friendly NPCs to make them follow player [#200](https://github.com/SamVanheer/halflife-updated/issues/200) (Thanks Oxofemple. for reporting this and FreeSlave for finding the solution)
+* Fixed potential incorrect facing in scripted sequence (Thanks FreeSlave)
+* Made the Linux version link statically to the C++ runtime to help avoid problems when running mods on older systems (Thanks a1ba and FreeSlave)
+* Fixed Egon not stopping its attack animation if the attack button is held down and ammo runs out (Thanks the man)
+* Fixed scientists crashing when speaking fear dialogue when enemy has been removed
+* Disabled fall think function for weapons when the player picks it up to prevent possible double-pickup which removes the weapon and crashes the game
+* Disabled jump sounds while player is frozen (e.g. trigger_camera, trigger_playerfreeze)
+* Fixed node graph code incorrectly flagging node graphs as out of date if an outdated graph exists in a search path other than the mod directory (e.g. a graph in `halflife_updated_addon/map/graphs`)
 
 ## Changes in V1.0.0 Beta 014
 

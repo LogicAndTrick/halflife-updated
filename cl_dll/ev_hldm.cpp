@@ -20,6 +20,7 @@
 #include "cbase.h"
 #include "weapons.h"
 
+#include "com_weapons.h"
 #include "const.h"
 #include "entity_state.h"
 #include "cl_entity.h"
@@ -1424,6 +1425,12 @@ void EV_EgonStop(event_args_t* args)
 			}
 
 			pFlare = NULL;
+		}
+
+		// HACK: only reset animation if the Egon is still equipped.
+		if (g_CurrentWeaponId == WEAPON_EGON)
+		{
+			gEngfuncs.pEventAPI->EV_WeaponAnimation(EGON_IDLE1, 0);
 		}
 	}
 }
