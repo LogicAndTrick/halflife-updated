@@ -94,6 +94,7 @@ DLL_OBJS = \
 	$(HL1_SERVER_OBJ_DIR)/hornetgun.o \
 	$(HL1_SERVER_OBJ_DIR)/mp5.o \
 	$(HL1_SERVER_OBJ_DIR)/python.o \
+	$(HL1_SERVER_OBJ_DIR)/deserteagle.o \
 	$(HL1_SERVER_OBJ_DIR)/rpg.o \
 	$(HL1_SERVER_OBJ_DIR)/satchel.o \
 	$(HL1_SERVER_OBJ_DIR)/shotgun.o \

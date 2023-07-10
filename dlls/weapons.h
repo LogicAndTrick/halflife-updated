@@ -85,6 +85,7 @@ public:
 #define SNARK_WEIGHT 5
 #define SATCHEL_WEIGHT -10
 #define TRIPMINE_WEIGHT -10
+#define DESERT_EAGLE_WEIGHT 15
 
 
 // weapon clip/carry ammo capacities
@@ -119,6 +120,7 @@ public:
 #define SATCHEL_MAX_CLIP WEAPON_NOCLIP
 #define TRIPMINE_MAX_CLIP WEAPON_NOCLIP
 #define SNARK_MAX_CLIP WEAPON_NOCLIP
+#define DESERT_EAGLE_MAX_CLIP 7
 
 
 // the default amount of ammo that comes with each gun when it spawns
@@ -137,6 +139,7 @@ public:
 #define TRIPMINE_DEFAULT_GIVE 1
 #define SNARK_DEFAULT_GIVE 5
 #define HIVEHAND_DEFAULT_GIVE 8
+#define DESERT_EAGLE_DEFAULT_GIVE 7
 
 // The amount of ammo given to a player by an ammo item.
 #define AMMO_URANIUMBOX_GIVE 20
@@ -1221,4 +1224,42 @@ public:
 
 private:
 	unsigned short m_usSnarkFire;
+};
+
+class CDesertEagle : public CBasePlayerWeapon
+{
+public:
+#ifndef CLIENT_DLL
+	bool Save(CSave& save) override;
+	bool Restore(CRestore& restore) override;
+	static TYPEDESCRIPTION m_SaveData[];
+#endif
+	void Spawn() override;
+	void Precache() override;
+	int iItemSlot() override { return 2; }
+	bool GetItemInfo(ItemInfo* p) override;
+	
+	void PrimaryAttack() override;
+	void SecondaryAttack() override;
+	bool Deploy() override;
+	void Holster() override;
+	void Reload() override;
+	void WeaponIdle() override;
+	void UpdateSpot();
+	bool ShouldWeaponIdle() override { return true; };
+
+	CLaserSpot* m_pSpot;
+	int m_fSpotActive;
+
+	virtual bool UseDecrement() override
+	{
+#if defined(CLIENT_WEAPONS)
+		return true;
+#else
+		return false;
+#endif
+	}
+
+private:
+	unsigned short m_usFireDesertEagle;
 };

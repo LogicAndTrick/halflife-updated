@@ -291,6 +291,7 @@ void W_Precache()
 	// python
 	UTIL_PrecacheOtherWeapon("weapon_357");
 	UTIL_PrecacheOther("ammo_357");
+	UTIL_PrecacheOtherWeapon("weapon_eagle");
 
 	// gauss
 	UTIL_PrecacheOtherWeapon("weapon_gauss");
@@ -1441,3 +1442,9 @@ TYPEDESCRIPTION CSatchel::m_SaveData[] =
 		DEFINE_FIELD(CSatchel, m_chargeReady, FIELD_INTEGER),
 };
 IMPLEMENT_SAVERESTORE(CSatchel, CBasePlayerWeapon);
+
+TYPEDESCRIPTION CDesertEagle::m_SaveData[] =
+	{
+		DEFINE_FIELD(CDesertEagle, m_fSpotActive, FIELD_INTEGER),
+};
+IMPLEMENT_SAVERESTORE(CDesertEagle, CBasePlayerWeapon);

@@ -91,6 +91,7 @@ HLDLL_OBJS = \
 	$(HLDLL_OBJ_DIR)/plats.o \
 	$(HLDLL_OBJ_DIR)/player.o \
 	$(HLDLL_OBJ_DIR)/python.o \
+	$(HLDLL_OBJ_DIR)/deserteagle.o \
 	$(HLDLL_OBJ_DIR)/rat.o \
 	$(HLDLL_OBJ_DIR)/roach.o \
 	$(HLDLL_OBJ_DIR)/rpg.o \
