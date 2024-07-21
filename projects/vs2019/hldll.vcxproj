@@ -110,7 +110,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\common\mathlib.cpp" />
-    <ClCompile Include="..\..\dlls\aflock.cpp" />
     <ClCompile Include="..\..\dlls\agrunt.cpp" />
     <ClCompile Include="..\..\dlls\airtank.cpp" />
     <ClCompile Include="..\..\dlls\alias.cpp" />
@@ -154,6 +153,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\calc\CCalcSubVelocity.cpp" />
     <ClCompile Include="..\..\dlls\entities\calc\CCalcVelocityPath.cpp" />
     <ClCompile Include="..\..\dlls\entities\calc\CCalcVelocityPolar.cpp" />
+    <ClCompile Include="..\..\dlls\entities\CBaseMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\CBaseTrigger.cpp" />
     <ClCompile Include="..\..\dlls\entities\CBMortar.cpp" />
     <ClCompile Include="..\..\dlls\entities\CCorpse.cpp" />
@@ -516,6 +516,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\calc\CCalcSubVelocity.h" />
     <ClInclude Include="..\..\dlls\entities\calc\CCalcVelocityPath.h" />
     <ClInclude Include="..\..\dlls\entities\calc\CCalcVelocityPolar.h" />
+    <ClInclude Include="..\..\dlls\entities\CBaseMonster.h" />
     <ClInclude Include="..\..\dlls\entities\CBaseTrigger.h" />
     <ClInclude Include="..\..\dlls\entities\CBMortar.h" />
     <ClInclude Include="..\..\dlls\entities\CCorpse.h" />
