@@ -117,7 +117,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\alias.cpp" />
     <ClCompile Include="..\..\dlls\animating.cpp" />
     <ClCompile Include="..\..\dlls\animation.cpp" />
-    <ClCompile Include="..\..\dlls\apache.cpp" />
     <ClCompile Include="..\..\dlls\barnacle.cpp" />
     <ClCompile Include="..\..\dlls\barney.cpp" />
     <ClCompile Include="..\..\dlls\bigmomma.cpp" />
