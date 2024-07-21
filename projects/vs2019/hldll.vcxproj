@@ -120,7 +120,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\cbase.cpp" />
     <ClCompile Include="..\..\dlls\client.cpp" />
     <ClCompile Include="..\..\dlls\combat.cpp" />
-    <ClCompile Include="..\..\dlls\controller.cpp" />
     <ClCompile Include="..\..\dlls\crossbow.cpp" />
     <ClCompile Include="..\..\dlls\crowbar.cpp" />
     <ClCompile Include="..\..\dlls\debugger.cpp" />
@@ -274,9 +273,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CBigMomma.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBloater.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBullsquid.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CCineBarney.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CCinePanther.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CCineScientist.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CDeadBarney.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CDeadGenericMonster.cpp" />
@@ -381,7 +377,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\gman.cpp" />
     <ClCompile Include="..\..\dlls\h_ai.cpp" />
     <ClCompile Include="..\..\dlls\h_battery.cpp" />
-    <ClCompile Include="..\..\dlls\h_cine.cpp" />
     <ClCompile Include="..\..\dlls\h_cycler.cpp" />
     <ClCompile Include="..\..\dlls\h_export.cpp" />
     <ClCompile Include="..\..\dlls\handgrenade.cpp" />
@@ -639,9 +634,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CBigMomma.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBloater.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBullsquid.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CCineBarney.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CCinePanther.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CCineScientist.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CController.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CDeadBarney.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CDeadGenericMonster.h" />

@@ -281,9 +281,6 @@
     <ClCompile Include="..\..\dlls\combat.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\controller.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\crossbow.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -743,15 +740,6 @@
     <ClCompile Include="..\..\dlls\entities\monster\CBullsquid.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CCineBarney.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CCinePanther.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CCineScientist.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
@@ -1062,9 +1050,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\h_battery.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\h_cine.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\h_cycler.cpp">
@@ -1832,15 +1817,6 @@
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CBullsquid.h">
-      <Filter>Header Files\dlls\entities\monster</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\monster\CCineBarney.h">
-      <Filter>Header Files\dlls\entities\monster</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\monster\CCinePanther.h">
-      <Filter>Header Files\dlls\entities\monster</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\monster\CCineScientist.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CController.h">
