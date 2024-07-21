@@ -263,9 +263,6 @@
     <ClCompile Include="..\..\dlls\alias.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\animating.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\animation.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -370,6 +367,9 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\calc\CCalcVelocityPolar.cpp">
       <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CBaseAnimating.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CBaseMonster.cpp">
       <Filter>Source Files\dlls\entities</Filter>
@@ -1458,6 +1458,9 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\calc\CCalcVelocityPolar.h">
       <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CBaseAnimating.h">
+      <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CBaseMonster.h">
       <Filter>Header Files\dlls\entities</Filter>
