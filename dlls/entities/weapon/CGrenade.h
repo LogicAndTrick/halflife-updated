@@ -15,21 +15,5 @@
 
 #pragma once
 
-#include "entities/weapon/CGrenade.h"
-
-class CAirtank : public CGrenade
-{
-	void Spawn() override;
-	void Precache() override;
-	void EXPORT TankThink();
-	void EXPORT TankTouch(CBaseEntity* pOther);
-	int BloodColor() override { return DONT_BLEED; }
-	void Killed(entvars_t* pevAttacker, int iGib) override;
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	bool m_state;
-};
+#include "entities/CBaseMonster.h"
+#include "weapons.h"

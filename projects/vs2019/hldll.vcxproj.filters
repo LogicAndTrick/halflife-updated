@@ -260,9 +260,6 @@
     <ClCompile Include="..\..\common\mathlib.cpp">
       <Filter>Source Files\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\airtank.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\alias.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -999,6 +996,9 @@
       <Filter>Source Files\dlls\entities\watcher</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\weapon\CDebugger.cpp">
+      <Filter>Source Files\dlls\entities\weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\weapon\CGrenade.cpp">
       <Filter>Source Files\dlls\entities\weapon</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\world\CWorldItem.cpp">
@@ -2084,6 +2084,9 @@
       <Filter>Header Files\dlls\entities\watcher</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\weapon\CDebugger.h">
+      <Filter>Header Files\dlls\entities\weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\weapon\CGrenade.h">
       <Filter>Header Files\dlls\entities\weapon</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\world\CWorldItem.h">
