@@ -117,7 +117,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\alias.cpp" />
     <ClCompile Include="..\..\dlls\animating.cpp" />
     <ClCompile Include="..\..\dlls\animation.cpp" />
-    <ClCompile Include="..\..\dlls\barney.cpp" />
     <ClCompile Include="..\..\dlls\bigmomma.cpp" />
     <ClCompile Include="..\..\dlls\bloater.cpp" />
     <ClCompile Include="..\..\dlls\bmodels.cpp" />
@@ -171,6 +170,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CSquadMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\CSquidSpit.cpp" />
     <ClCompile Include="..\..\dlls\entities\CStateWatcher.cpp" />
+    <ClCompile Include="..\..\dlls\entities\CTalkMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerProbe.cpp" />
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerSprite.cpp" />
     <ClCompile Include="..\..\dlls\entities\cycler\CWeaponCycler.cpp" />
@@ -534,6 +534,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CSquadMonster.h" />
     <ClInclude Include="..\..\dlls\entities\CSquidSpit.h" />
     <ClInclude Include="..\..\dlls\entities\CStateWatcher.h" />
+    <ClInclude Include="..\..\dlls\entities\CTalkMonster.h" />
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerProbe.h" />
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerSprite.h" />
     <ClInclude Include="..\..\dlls\entities\cycler\CWeaponCycler.h" />

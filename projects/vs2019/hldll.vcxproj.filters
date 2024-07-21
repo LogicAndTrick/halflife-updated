@@ -272,9 +272,6 @@
     <ClCompile Include="..\..\dlls\animation.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\barney.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\bigmomma.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -432,6 +429,9 @@
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CStateWatcher.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CTalkMonster.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerProbe.cpp">
@@ -1517,6 +1517,9 @@
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CStateWatcher.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CTalkMonster.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerProbe.h">
