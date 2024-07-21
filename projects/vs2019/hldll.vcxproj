@@ -274,8 +274,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CBloater.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBullsquid.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CDeadBarney.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CDeadGenericMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CDeadHGrunt.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CDeadScientist.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyer.cpp" />
@@ -371,7 +369,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\gamerules.cpp" />
     <ClCompile Include="..\..\dlls\gargantua.cpp" />
     <ClCompile Include="..\..\dlls\gauss.cpp" />
-    <ClCompile Include="..\..\dlls\genericmonster.cpp" />
     <ClCompile Include="..\..\dlls\ggrenade.cpp" />
     <ClCompile Include="..\..\dlls\glock.cpp" />
     <ClCompile Include="..\..\dlls\gman.cpp" />
@@ -635,8 +632,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CBloater.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBullsquid.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CController.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CDeadBarney.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CDeadGenericMonster.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CDeadHGrunt.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CDeadScientist.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyer.h" />

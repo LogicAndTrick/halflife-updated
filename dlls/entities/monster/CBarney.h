@@ -77,3 +77,15 @@ public:
 
 	CUSTOM_SCHEDULES;
 };
+
+class CDeadBarney : public CBaseMonster
+{
+public:
+	void Spawn() override;
+	int Classify() override { return CLASS_PLAYER_ALLY; }
+
+	bool KeyValue(KeyValueData* pkvd) override;
+
+	int m_iPose; // which sequence to display	-- temporary, don't need to save
+	static const char* m_szPoses[3];
+};

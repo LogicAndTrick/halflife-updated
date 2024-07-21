@@ -786,16 +786,10 @@ MONSTERSTATE CBarney::GetIdealState()
 	return CTalkMonster::GetIdealState();
 }
 
-
-
 void CBarney::DeclineFollowing()
 {
 	PlaySentence(m_szGrp[TLK_DECLINE], 2, VOL_NORM, ATTN_NORM); // LRC
 }
-
-
-
-
 
 //=========================================================
 // DEAD BARNEY PROP
@@ -807,17 +801,6 @@ void CBarney::DeclineFollowing()
 // the m_iFirstPose properly!
 //
 //=========================================================
-class CDeadBarney : public CBaseMonster
-{
-public:
-	void Spawn() override;
-	int Classify() override { return CLASS_PLAYER_ALLY; }
-
-	bool KeyValue(KeyValueData* pkvd) override;
-
-	int m_iPose; // which sequence to display	-- temporary, don't need to save
-	static const char* m_szPoses[3];
-};
 
 const char* CDeadBarney::m_szPoses[] = {"lying_on_back", "lying_on_side", "lying_on_stomach"};
 
