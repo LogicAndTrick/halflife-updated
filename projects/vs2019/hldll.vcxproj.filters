@@ -18,6 +18,111 @@
     <Filter Include="Header Files\dlls">
       <UniqueIdentifier>{e3b69fef-bfa6-4270-8280-f2b25793ac4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\entities\ambient">
+      <UniqueIdentifier>{eebc4416-9784-4170-a5da-4ed2e07f7d67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\ammo">
+      <UniqueIdentifier>{258fd788-9ed8-4943-984d-6190939bed8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\button">
+      <UniqueIdentifier>{6357a8cb-297d-41d3-9514-4206edc5b4c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\calc">
+      <UniqueIdentifier>{5090721e-6742-45f9-a7e4-58fe7d110c75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities">
+      <UniqueIdentifier>{a90484a4-d273-45c7-bca7-0f8322d5b029}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\cine">
+      <UniqueIdentifier>{fd468639-0dda-4e97-a8ca-ba77ba432436}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\controller">
+      <UniqueIdentifier>{b66f9032-fc45-4199-9113-7ebd5aecf50e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\crossbow">
+      <UniqueIdentifier>{14c82ca7-cffc-4945-bafa-f68172671d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\cycler">
+      <UniqueIdentifier>{045f9cc7-b8a4-4fe5-b903-03cda043fa47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\env">
+      <UniqueIdentifier>{7e20f65e-d28f-41e5-a30a-5a1506b2e658}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\func">
+      <UniqueIdentifier>{7a1b7e66-278d-42dd-bd26-4a514c4560cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\game">
+      <UniqueIdentifier>{100406f5-f346-4bfd-8d0b-eb7d1f82c1e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\garg">
+      <UniqueIdentifier>{4f16b664-fd6a-49ce-8bed-a207cab98ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\hvr">
+      <UniqueIdentifier>{97ee7549-19a9-4351-b289-7fdc8a5f6dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\info">
+      <UniqueIdentifier>{8d1093ab-b366-4b32-8203-ddc51162be43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\inout">
+      <UniqueIdentifier>{3cc43e3d-575e-42cc-98ee-b5beacb6c718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\item">
+      <UniqueIdentifier>{f5818904-c0cb-458d-b5ed-2ba894562aa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\light">
+      <UniqueIdentifier>{5c534868-8f23-44e5-9f5f-ccd310b403dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\locus">
+      <UniqueIdentifier>{43389d43-dace-4a08-88fe-6ae6ae374cfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\momentary">
+      <UniqueIdentifier>{1193187e-dcf3-4658-bd90-5c4fe83b2aa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\monster">
+      <UniqueIdentifier>{ca646b8e-98d9-4d2c-9dbd-cc94d0a2a326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\motion">
+      <UniqueIdentifier>{167f8c43-e216-4c6d-8104-1c5ff44f4f01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\multi">
+      <UniqueIdentifier>{08360301-1a08-46c5-85b8-fe3966a2ef6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\nihilanth">
+      <UniqueIdentifier>{07b78e77-07ce-42f8-9bef-9390c768b0b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\path">
+      <UniqueIdentifier>{f84a6eac-793a-4061-9e41-e2aec6038c94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\scripted">
+      <UniqueIdentifier>{4826a3fc-a2fc-4f27-a778-b74d5cedcf26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\spark">
+      <UniqueIdentifier>{994dcbfc-a238-4cbc-9328-8bd82ff1a716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\streak">
+      <UniqueIdentifier>{e13beae6-92cc-491f-a767-e193b3af6b07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\target">
+      <UniqueIdentifier>{7d6926c2-6c1b-4c5b-9901-f1239f7259d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\test">
+      <UniqueIdentifier>{7afb2081-50b7-40a9-98a2-afd67c2b6cde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\trigger">
+      <UniqueIdentifier>{d8726501-4381-497c-af8f-6f9a2437adab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\watcher">
+      <UniqueIdentifier>{7d8ce8c6-a247-4a6a-b2e4-27a18a58d487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\weapon">
+      <UniqueIdentifier>{a2ab4143-8228-46e1-86b1-19bc6dc3e115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\world">
+      <UniqueIdentifier>{8a7f4ca8-bf0c-4618-8dab-cacad9edcb57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\xen">
+      <UniqueIdentifier>{52b6eec0-e156-4fb6-8aac-7fbced72ea62}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\engine">
       <UniqueIdentifier>{b85e935a-5cc8-482d-b85f-6cdaa3452ccb}</UniqueIdentifier>
     </Filter>
@@ -35,6 +140,111 @@
     </Filter>
     <Filter Include="Source Files\dlls">
       <UniqueIdentifier>{a59f65b1-455f-459d-bc2a-75775255cd5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\ambient">
+      <UniqueIdentifier>{220f514d-832d-40bc-a9da-e57b1b20e43c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\ammo">
+      <UniqueIdentifier>{c9a0696a-631a-4032-832a-684d335f55ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\button">
+      <UniqueIdentifier>{b03ed158-c0e3-46ea-8e32-3dbc5e4e93c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\calc">
+      <UniqueIdentifier>{4cb4ddb7-76c7-426d-b8e0-1928da56245b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities">
+      <UniqueIdentifier>{536f6da2-f7bc-4f92-843b-82b762cd6583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\cine">
+      <UniqueIdentifier>{fa08b937-7ef2-446a-b751-98b2daec8513}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\controller">
+      <UniqueIdentifier>{c99add6b-ab59-4196-951d-8b23c5370538}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\crossbow">
+      <UniqueIdentifier>{64ebce72-3d9b-4f53-a732-e7c01321ac79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\cycler">
+      <UniqueIdentifier>{a6bba849-7466-4ed7-be66-6fabb9464be4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\env">
+      <UniqueIdentifier>{5f74be19-320f-401c-bf3d-b7122799ed1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\func">
+      <UniqueIdentifier>{c2fb4dca-c3ee-49fc-9c3b-30674088b489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\game">
+      <UniqueIdentifier>{3614d01f-ad67-4515-b3b0-eee3d7e88a0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\garg">
+      <UniqueIdentifier>{0f90c94e-6627-4ee0-aa16-f6b31f30f127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\hvr">
+      <UniqueIdentifier>{c2f2936f-c8d9-453b-8d24-ee300b972238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\info">
+      <UniqueIdentifier>{daeebe42-265b-445c-8945-9f680c9d7211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\inout">
+      <UniqueIdentifier>{9c32a650-f9e1-4c34-b654-dc65f0eb60db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\item">
+      <UniqueIdentifier>{40b51fc2-b53e-4a0f-a1de-9d5f77931605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\light">
+      <UniqueIdentifier>{c708b7a5-2ac8-4ddb-894c-90f3c58619dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\locus">
+      <UniqueIdentifier>{386362a9-a5eb-481d-ab85-03e32818ed01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\momentary">
+      <UniqueIdentifier>{062a67e7-708e-4704-b4d4-79f21bf3cc42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\monster">
+      <UniqueIdentifier>{a94bfa4f-9779-496d-9fdf-2246dde36f89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\motion">
+      <UniqueIdentifier>{0c14114c-902d-4667-a118-215d3e7cdbe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\multi">
+      <UniqueIdentifier>{9451eaa9-321e-4795-b6be-9484a8c0bb0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\nihilanth">
+      <UniqueIdentifier>{ec335ba3-ff76-4cba-9919-ed0b1a4ad484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\path">
+      <UniqueIdentifier>{6c2fcc1e-7892-4179-b53d-4161caa45bce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\scripted">
+      <UniqueIdentifier>{908fe6d6-1804-49ba-bc8c-0924bb3c79c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\spark">
+      <UniqueIdentifier>{97cc76ec-39fb-43f7-9151-d943eac70be9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\streak">
+      <UniqueIdentifier>{3a32a5ce-82ff-4e93-82db-0704fd0eec10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\target">
+      <UniqueIdentifier>{9247c997-1abf-4cce-ac8f-ad66f0a2d162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\test">
+      <UniqueIdentifier>{b9438463-dd02-49d6-80ac-a9f60aae5e32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\trigger">
+      <UniqueIdentifier>{d227792e-cce1-4798-9765-ec83e1b9c87c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\watcher">
+      <UniqueIdentifier>{a9ba9abc-517b-42ce-a9b9-4bacc4a83b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\weapon">
+      <UniqueIdentifier>{6b03430d-d78e-4424-934d-c27e80bb95ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\world">
+      <UniqueIdentifier>{020a6459-f1ba-4455-ba4b-b6b0f424beeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\xen">
+      <UniqueIdentifier>{a55abbd4-7e2f-4027-8716-6bdf168d5a0f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\game_shared">
       <UniqueIdentifier>{9cd951c6-53c4-4c79-826f-13ac1af8a8b6}</UniqueIdentifier>
@@ -124,6 +334,711 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\egon.cpp">
       <Filter>Source Files\dlls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\ambient\CAmbientGeneric.cpp">
+      <Filter>Source Files\dlls\entities\ambient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\ambient\CTargetFMODAudio.cpp">
+      <Filter>Source Files\dlls\entities\ambient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\ammo\CCrossbowAmmo.cpp">
+      <Filter>Source Files\dlls\entities\ammo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\ammo\CEgonAmmo.cpp">
+      <Filter>Source Files\dlls\entities\ammo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\ammo\CGaussAmmo.cpp">
+      <Filter>Source Files\dlls\entities\ammo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\ammo\CGlockAmmo.cpp">
+      <Filter>Source Files\dlls\entities\ammo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\ammo\CRpgAmmo.cpp">
+      <Filter>Source Files\dlls\entities\ammo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\ammo\CShotgunAmmo.cpp">
+      <Filter>Source Files\dlls\entities\ammo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\button\CButtonTarget.cpp">
+      <Filter>Source Files\dlls\entities\button</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcAngles.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcFallback.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcFromCVar.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcNumFromEnt.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcNumFromNum.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcNumFromVec.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcPosition.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcSubVelocity.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcVelocityPath.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\calc\CCalcVelocityPolar.cpp">
+      <Filter>Source Files\dlls\entities\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CBaseTrigger.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CBMortar.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CCorpse.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CDecal.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CFireAndDie.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CGibShooter.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\cine\CCineBlood.cpp">
+      <Filter>Source Files\dlls\entities\cine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CLightFader.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CMonsterMaker.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\controller\CControllerHeadBall.cpp">
+      <Filter>Source Files\dlls\entities\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\controller\CControllerZapBall.cpp">
+      <Filter>Source Files\dlls\entities\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\crossbow\CCrossbowBolt.cpp">
+      <Filter>Source Files\dlls\entities\crossbow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CSquidSpit.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CStateWatcher.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\cycler\CCyclerProbe.cpp">
+      <Filter>Source Files\dlls\entities\cycler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\cycler\CCyclerSprite.cpp">
+      <Filter>Source Files\dlls\entities\cycler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\cycler\CWeaponCycler.cpp">
+      <Filter>Source Files\dlls\entities\cycler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\cycler\CWreckage.cpp">
+      <Filter>Source Files\dlls\entities\cycler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CBlood.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CBubbling.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvBeamTrail.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvBeverage.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvCustomize.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvDecal.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvDLight.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvELight.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvExplosion.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvFog.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvFootsteps.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvFunnel.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvGlobal.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvMirror.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvModel.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvQuakeFx.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvRain.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvShockwave.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvShooter.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvSky.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvSound.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvSpark.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvState.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CEnvWarpBall.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CFade.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CGlow.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CLightning.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CMessage.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CParticle.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CRenderFxManager.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CShake.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CSmoker.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFrictionModifier.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncConveyor.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncIllusionary.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncMonsterClip.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncMortarField.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncPlat.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncPlatRot.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncRotating.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncShine.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTankControls.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTankGun.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTankLaser.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTankMortar.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTankRocket.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTrackAuto.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTrackChange.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTrain.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTrainControls.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncWall.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncWallToggle.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CGunTarget.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CLadder.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CPendulum.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CPushable.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CRecharge.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CRotButton.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CRotDoor.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CWallHealth.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGameCounter.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGameCounterSet.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGameEnd.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGamePlayerEquip.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGamePlayerHurt.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGamePlayerTeam.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGamePlayerZone.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGameScore.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGameTeamMaster.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGameTeamSet.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\game\CGameText.cpp">
+      <Filter>Source Files\dlls\entities\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\garg\CStomp.cpp">
+      <Filter>Source Files\dlls\entities\garg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\hvr\CApacheHVR.cpp">
+      <Filter>Source Files\dlls\entities\hvr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\info\CBaseDMStart.cpp">
+      <Filter>Source Files\dlls\entities\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\info\CInfoAlias.cpp">
+      <Filter>Source Files\dlls\entities\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\info\CInfoBM.cpp">
+      <Filter>Source Files\dlls\entities\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\info\CInfoMoveWith.cpp">
+      <Filter>Source Files\dlls\entities\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\info\CInfoTarget.cpp">
+      <Filter>Source Files\dlls\entities\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\info\CNullEntity.cpp">
+      <Filter>Source Files\dlls\entities\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\inout\CInOutRegister.cpp">
+      <Filter>Source Files\dlls\entities\inout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CAirtank.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CHealthKit.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemBattery.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemLongJump.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemSecurity.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemSoda.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemSuit.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\light\CEnvLight.cpp">
+      <Filter>Source Files\dlls\entities\light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\light\CLight.cpp">
+      <Filter>Source Files\dlls\entities\light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\light\CLightDynamic.cpp">
+      <Filter>Source Files\dlls\entities\light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\locus\CLocusAlias.cpp">
+      <Filter>Source Files\dlls\entities\locus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\locus\CLocusBeam.cpp">
+      <Filter>Source Files\dlls\entities\locus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\locus\CLocusVariable.cpp">
+      <Filter>Source Files\dlls\entities\locus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\momentary\CMomentaryDoor.cpp">
+      <Filter>Source Files\dlls\entities\momentary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\momentary\CMomentaryRotButton.cpp">
+      <Filter>Source Files\dlls\entities\momentary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CAGrunt.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CApache.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBabyCrab.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBarnacle.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBarney.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBigMomma.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBloater.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBullsquid.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CCineBarney.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CCinePanther.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CCineScientist.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CController.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CDeadBarney.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CDeadGenericMonster.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CDeadHGrunt.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CDeadScientist.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyer.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CFurniture.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CGargantua.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CGenericMonster.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CGMan.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CHAssassin.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CHeadCrab.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CHGrunt.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CHGruntRepel.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CHoundeye.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CIchthyosaur.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CISlave.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CLeech.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CMiniTurret.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CMonsterTarget.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CMortar.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CNihilanth.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\COsprey.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CRat.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CRoach.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CSatchelCharge.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CScientist.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CSentry.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CSittingScientist.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CSqueakGrenade.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CTentacle.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CTentacleMaw.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CTripmineGrenade.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CTurret.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CZombie.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\motion\CMotionManager.cpp">
+      <Filter>Source Files\dlls\entities\motion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\multi\CMultiManager.cpp">
+      <Filter>Source Files\dlls\entities\multi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\nihilanth\CNihilanthHVR.cpp">
+      <Filter>Source Files\dlls\entities\nihilanth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp">
+      <Filter>Source Files\dlls\entities\path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\scripted\CScriptedSentence.cpp">
+      <Filter>Source Files\dlls\entities\scripted</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\scripted\CTankSequence.cpp">
+      <Filter>Source Files\dlls\entities\scripted</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\scripted\CTrainSequence.cpp">
+      <Filter>Source Files\dlls\entities\scripted</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\spark\CShower.cpp">
+      <Filter>Source Files\dlls\entities\spark</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\streak\CSpiral.cpp">
+      <Filter>Source Files\dlls\entities\streak</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\target\CTargetCDAudio.cpp">
+      <Filter>Source Files\dlls\entities\target</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\test\CTestEffect.cpp">
+      <Filter>Source Files\dlls\entities\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CAutoTrigger.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CChangeLevel.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerBounce.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerCamera.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerCDAudio.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerChangeAlias.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerChangeCVar.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerChangeTarget.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerChangeValue.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerCommand.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerCounter.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerEndSection.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerGravity.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerHevCharge.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerHurt.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerInOut.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerLightstyle.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerMonsterJump.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerMotion.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerMultiple.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerOnce.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerOnSight.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerPush.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerRelay.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerRotTest.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerSave.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerSetPatrol.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerSound.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerTeleport.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerVolume.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\watcher\CWatcherCount.cpp">
+      <Filter>Source Files\dlls\entities\watcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\watcher\CWatcherRatio.cpp">
+      <Filter>Source Files\dlls\entities\watcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\weapon\CDebugger.cpp">
+      <Filter>Source Files\dlls\entities\weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\world\CWorldItem.cpp">
+      <Filter>Source Files\dlls\entities\world</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\xen\CXenHair.cpp">
+      <Filter>Source Files\dlls\entities\xen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\xen\CXenHull.cpp">
+      <Filter>Source Files\dlls\entities\xen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\xen\CXenPLight.cpp">
+      <Filter>Source Files\dlls\entities\xen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeLarge.cpp">
+      <Filter>Source Files\dlls\entities\xen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeMed.cpp">
+      <Filter>Source Files\dlls\entities\xen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeSmall.cpp">
+      <Filter>Source Files\dlls\entities\xen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\xen\CXenTree.cpp">
+      <Filter>Source Files\dlls\entities\xen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp">
+      <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\explode.cpp">
       <Filter>Source Files\dlls</Filter>
@@ -501,6 +1416,711 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\enginecallback.h">
       <Filter>Header Files\dlls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\ambient\CAmbientGeneric.h">
+      <Filter>Header Files\dlls\entities\ambient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\ambient\CTargetFMODAudio.h">
+      <Filter>Header Files\dlls\entities\ambient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\ammo\CCrossbowAmmo.h">
+      <Filter>Header Files\dlls\entities\ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\ammo\CEgonAmmo.h">
+      <Filter>Header Files\dlls\entities\ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\ammo\CGaussAmmo.h">
+      <Filter>Header Files\dlls\entities\ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\ammo\CGlockAmmo.h">
+      <Filter>Header Files\dlls\entities\ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\ammo\CRpgAmmo.h">
+      <Filter>Header Files\dlls\entities\ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\ammo\CShotgunAmmo.h">
+      <Filter>Header Files\dlls\entities\ammo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\button\CButtonTarget.h">
+      <Filter>Header Files\dlls\entities\button</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcAngles.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcFallback.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcFromCVar.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcNumFromEnt.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcNumFromNum.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcNumFromVec.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcPosition.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcSubVelocity.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcVelocityPath.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\calc\CCalcVelocityPolar.h">
+      <Filter>Header Files\dlls\entities\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CBaseTrigger.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CBMortar.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CCorpse.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CDecal.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CFireAndDie.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CGenericCycler.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CGibShooter.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\cine\CCineBlood.h">
+      <Filter>Header Files\dlls\entities\cine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CLightFader.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CMonsterMaker.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\controller\CControllerHeadBall.h">
+      <Filter>Header Files\dlls\entities\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\controller\CControllerZapBall.h">
+      <Filter>Header Files\dlls\entities\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\crossbow\CCrossbowBolt.h">
+      <Filter>Header Files\dlls\entities\crossbow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CSpeaker.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CSquidSpit.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CStateWatcher.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\cycler\CCyclerProbe.h">
+      <Filter>Header Files\dlls\entities\cycler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\cycler\CCyclerSprite.h">
+      <Filter>Header Files\dlls\entities\cycler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\cycler\CWeaponCycler.h">
+      <Filter>Header Files\dlls\entities\cycler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\cycler\CWreckage.h">
+      <Filter>Header Files\dlls\entities\cycler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CBlood.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CBubbling.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvBeamTrail.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvBeverage.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvCustomize.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvDecal.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvDLight.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvELight.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvExplosion.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvFog.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvFootsteps.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvFunnel.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvGlobal.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvMirror.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvModel.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvQuakeFx.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvRain.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvShockwave.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvShooter.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvSky.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvSound.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvSpark.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvState.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CEnvWarpBall.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CFade.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CGlow.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CLightning.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CMessage.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CParticle.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CRenderFxManager.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CShake.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CSmoker.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFrictionModifier.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncConveyor.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncIllusionary.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncMonsterClip.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncMortarField.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncPlat.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncPlatRot.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncRotating.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncShine.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTankControls.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTankGun.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTankLaser.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTankMortar.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTankRocket.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTrackAuto.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTrackChange.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTrain.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTrainControls.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncWall.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncWallToggle.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CGunTarget.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CLadder.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CPendulum.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CPushable.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CRecharge.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CRotButton.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CRotDoor.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CWallHealth.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGameCounter.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGameCounterSet.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGameEnd.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGamePlayerEquip.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGamePlayerHurt.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGamePlayerTeam.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGamePlayerZone.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGameScore.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGameTeamMaster.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGameTeamSet.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\game\CGameText.h">
+      <Filter>Header Files\dlls\entities\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\garg\CStomp.h">
+      <Filter>Header Files\dlls\entities\garg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\hvr\CApacheHVR.h">
+      <Filter>Header Files\dlls\entities\hvr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\info\CBaseDMStart.h">
+      <Filter>Header Files\dlls\entities\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\info\CInfoAlias.h">
+      <Filter>Header Files\dlls\entities\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\info\CInfoBM.h">
+      <Filter>Header Files\dlls\entities\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\info\CInfoMoveWith.h">
+      <Filter>Header Files\dlls\entities\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\info\CInfoTarget.h">
+      <Filter>Header Files\dlls\entities\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\info\CNullEntity.h">
+      <Filter>Header Files\dlls\entities\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\inout\CInOutRegister.h">
+      <Filter>Header Files\dlls\entities\inout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CAirtank.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CHealthKit.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemBattery.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemLongJump.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemSecurity.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemSoda.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemSuit.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\light\CEnvLight.h">
+      <Filter>Header Files\dlls\entities\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\light\CLight.h">
+      <Filter>Header Files\dlls\entities\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\light\CLightDynamic.h">
+      <Filter>Header Files\dlls\entities\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\locus\CLocusAlias.h">
+      <Filter>Header Files\dlls\entities\locus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\locus\CLocusBeam.h">
+      <Filter>Header Files\dlls\entities\locus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\locus\CLocusVariable.h">
+      <Filter>Header Files\dlls\entities\locus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\momentary\CMomentaryDoor.h">
+      <Filter>Header Files\dlls\entities\momentary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\momentary\CMomentaryRotButton.h">
+      <Filter>Header Files\dlls\entities\momentary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CAGrunt.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CApache.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CBabyCrab.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CBarnacle.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CBarney.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CBigMomma.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CBloater.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CBullsquid.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CCineBarney.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CCinePanther.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CCineScientist.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CController.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CDeadBarney.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CDeadGenericMonster.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CDeadHGrunt.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CDeadScientist.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyer.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CFurniture.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CGargantua.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CGenericMonster.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CGMan.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CHAssassin.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CHeadCrab.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CHGrunt.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CHGruntRepel.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CHoundeye.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CIchthyosaur.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CISlave.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CLeech.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CMiniTurret.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CMonsterTarget.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CMortar.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CNihilanth.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\COsprey.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CRat.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CRoach.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CSatchelCharge.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CScientist.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CSentry.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CSittingScientist.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CSqueakGrenade.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CTentacle.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CTentacleMaw.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CTripmineGrenade.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CTurret.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CZombie.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\motion\CMotionManager.h">
+      <Filter>Header Files\dlls\entities\motion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\multi\CMultiManager.h">
+      <Filter>Header Files\dlls\entities\multi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\nihilanth\CNihilanthHVR.h">
+      <Filter>Header Files\dlls\entities\nihilanth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h">
+      <Filter>Header Files\dlls\entities\path</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\scripted\CScriptedSentence.h">
+      <Filter>Header Files\dlls\entities\scripted</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\scripted\CTankSequence.h">
+      <Filter>Header Files\dlls\entities\scripted</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\scripted\CTrainSequence.h">
+      <Filter>Header Files\dlls\entities\scripted</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\spark\CShower.h">
+      <Filter>Header Files\dlls\entities\spark</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\streak\CSpiral.h">
+      <Filter>Header Files\dlls\entities\streak</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\target\CTargetCDAudio.h">
+      <Filter>Header Files\dlls\entities\target</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\test\CTestEffect.h">
+      <Filter>Header Files\dlls\entities\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CAutoTrigger.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CChangeLevel.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerBounce.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerCamera.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerCDAudio.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerChangeAlias.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerChangeCVar.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerChangeTarget.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerChangeValue.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerCommand.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerCounter.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerEndSection.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerGravity.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerHevCharge.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerHurt.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerInOut.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerLightstyle.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerMonsterJump.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerMotion.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerMultiple.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerOnce.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerOnSight.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerPush.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerRelay.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerRotTest.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerSave.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerSetPatrol.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerSound.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerTeleport.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerVolume.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\watcher\CWatcherCount.h">
+      <Filter>Header Files\dlls\entities\watcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\watcher\CWatcherRatio.h">
+      <Filter>Header Files\dlls\entities\watcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\weapon\CDebugger.h">
+      <Filter>Header Files\dlls\entities\weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\world\CWorldItem.h">
+      <Filter>Header Files\dlls\entities\world</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\xen\CXenHair.h">
+      <Filter>Header Files\dlls\entities\xen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\xen\CXenHull.h">
+      <Filter>Header Files\dlls\entities\xen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\xen\CXenPLight.h">
+      <Filter>Header Files\dlls\entities\xen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeLarge.h">
+      <Filter>Header Files\dlls\entities\xen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeMed.h">
+      <Filter>Header Files\dlls\entities\xen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeSmall.h">
+      <Filter>Header Files\dlls\entities\xen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\xen\CXenTree.h">
+      <Filter>Header Files\dlls\entities\xen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\xen\CXenTreeTrigger.h">
+      <Filter>Header Files\dlls\entities\xen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\explode.h">
       <Filter>Header Files\dlls</Filter>
