@@ -1094,9 +1094,6 @@
     <ClCompile Include="..\..\dlls\hassassin.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\headcrab.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\healthkit.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
