@@ -269,9 +269,6 @@
     <ClCompile Include="..\..\dlls\bmodels.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\bullsquid.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\buttons.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
