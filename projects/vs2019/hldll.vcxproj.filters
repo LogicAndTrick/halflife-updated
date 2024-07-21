@@ -260,9 +260,6 @@
     <ClCompile Include="..\..\common\mathlib.cpp">
       <Filter>Source Files\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\agrunt.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\airtank.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -432,6 +429,9 @@
       <Filter>Source Files\dlls\entities\crossbow</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CSquadMonster.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CSquidSpit.cpp">
@@ -1517,6 +1517,9 @@
       <Filter>Header Files\dlls\entities\crossbow</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CSquadMonster.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CSquidSpit.h">
