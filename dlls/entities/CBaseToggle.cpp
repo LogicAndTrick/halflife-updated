@@ -13,20 +13,4 @@
  *
  ****/
 
-#pragma once
-
-#include "entities/weapon/CGrenade.h"
-
-/**
- * the "LaBuznik" mortar device 
- */
-class CMortar : public CGrenade
-{
-public:
-	void Spawn() override;
-	void Precache() override;
-
-	void EXPORT MortarExplode();
-
-	int m_spriteTexture;
-};
+#include "CBaseEntity.h"

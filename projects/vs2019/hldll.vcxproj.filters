@@ -362,6 +362,9 @@
     <ClCompile Include="..\..\dlls\entities\CBaseMonster.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CBaseToggle.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CBaseTrigger.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
@@ -1070,9 +1073,6 @@
     <ClCompile Include="..\..\dlls\monsterstate.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\mortar.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\movewith.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1400,6 +1400,9 @@
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CBaseMonster.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CBaseToggle.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CBaseTrigger.h">
