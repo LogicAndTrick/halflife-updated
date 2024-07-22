@@ -1088,9 +1088,6 @@
     <ClCompile Include="..\..\dlls\observer.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\osprey.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\pathcorner.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
