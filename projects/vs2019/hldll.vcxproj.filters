@@ -749,9 +749,6 @@
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CDeadScientist.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyer.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
@@ -819,9 +816,6 @@
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CSentry.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CSittingScientist.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CSqueakGrenade.cpp">
@@ -1110,9 +1104,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\schedule.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\scientist.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\scripted.cpp">
@@ -1780,9 +1771,6 @@
     <ClInclude Include="..\..\dlls\entities\monster\CController.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\monster\CDeadScientist.h">
-      <Filter>Header Files\dlls\entities\monster</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyer.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
@@ -1850,9 +1838,6 @@
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CSentry.h">
-      <Filter>Header Files\dlls\entities\monster</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\monster\CSittingScientist.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CSqueakGrenade.h">

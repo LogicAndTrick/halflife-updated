@@ -278,7 +278,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CBloater.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBullsquid.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CDeadScientist.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyer.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFurniture.cpp" />
@@ -302,7 +301,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CSatchelCharge.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CScientist.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CSentry.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CSittingScientist.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CSqueakGrenade.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CTentacle.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CTentacleMaw.cpp" />
@@ -399,7 +397,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\rpg.cpp" />
     <ClCompile Include="..\..\dlls\satchel.cpp" />
     <ClCompile Include="..\..\dlls\schedule.cpp" />
-    <ClCompile Include="..\..\dlls\scientist.cpp" />
     <ClCompile Include="..\..\dlls\scripted.cpp" />
     <ClCompile Include="..\..\dlls\shotgun.cpp" />
     <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp" />
@@ -623,7 +620,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CBloater.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBullsquid.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CController.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CDeadScientist.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyer.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFurniture.h" />
@@ -647,7 +643,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CSatchelCharge.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CScientist.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CSentry.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CSittingScientist.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CSqueakGrenade.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CTentacle.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CTentacleMaw.h" />
