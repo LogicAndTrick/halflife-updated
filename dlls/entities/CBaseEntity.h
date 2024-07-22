@@ -15,19 +15,6 @@
 
 #pragma once
 
-#include "entities/CBaseEntity.h"
-
-#define SF_MONSTERTARGET_OFF 1
-
-// LRC - an entity for monsters to shoot at.
-class CMonsterTarget : public CBaseEntity
-{
-public:
-	void Spawn() override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	int Classify() override { return pev->frags; };
-	STATE GetState() override
-	{
-		return pev->health ? STATE_ON : STATE_OFF;
-	};
-};
+#include "extdll.h"
+#include "util.h"
+#include "cbase.h"
