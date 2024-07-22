@@ -303,7 +303,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CSentry.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CSqueakGrenade.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CTentacle.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CTentacleMaw.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CTripmineGrenade.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CTurret.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CZombie.cpp" />
@@ -410,7 +409,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\talkmonster.cpp" />
     <ClCompile Include="..\..\dlls\teamplay_gamerules.cpp" />
     <ClCompile Include="..\..\dlls\tempmonster.cpp" />
-    <ClCompile Include="..\..\dlls\tentacle.cpp" />
     <ClCompile Include="..\..\dlls\triggers.cpp" />
     <ClCompile Include="..\..\dlls\tripmine.cpp" />
     <ClCompile Include="..\..\dlls\UserMessages.cpp" />
@@ -645,7 +643,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CSentry.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CSqueakGrenade.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CTentacle.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CTentacleMaw.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CTripmineGrenade.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CTurret.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CZombie.h" />

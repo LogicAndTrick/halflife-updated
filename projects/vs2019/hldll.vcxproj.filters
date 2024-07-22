@@ -824,9 +824,6 @@
     <ClCompile Include="..\..\dlls\entities\monster\CTentacle.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CTentacleMaw.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CTripmineGrenade.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
@@ -1143,9 +1140,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\tempmonster.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\tentacle.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\triggers.cpp">
@@ -1844,9 +1838,6 @@
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CTentacle.h">
-      <Filter>Header Files\dlls\entities\monster</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\monster\CTentacleMaw.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CTripmineGrenade.h">
