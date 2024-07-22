@@ -15,18 +15,14 @@
 
 #pragma once
 
-#include "CBaseTrigger.h"
+#include "entities/CBaseDelay.h"
 
-class CTriggerMultiple : public CBaseTrigger
+// Fires a target after level transition and then dies
+class CFireAndDie : public CBaseDelay
 {
 public:
 	void Spawn() override;
-	void Precache() override
-	{
-		if (!FStringNull(pev->noise))
-			PRECACHE_SOUND((char*)STRING(pev->noise));
-	}
-	void EXPORT MultiTouch(CBaseEntity* pOther);
-	void EXPORT MultiWaitOver();
-	void ActivateMultiTrigger(CBaseEntity* pActivator);
+	void Precache() override;
+	void Think() override;
+	int ObjectCaps() override { return CBaseDelay::ObjectCaps() | FCAP_FORCE_TRANSITION; } // Always go across transitions
 };

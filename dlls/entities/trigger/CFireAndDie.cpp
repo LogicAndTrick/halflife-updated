@@ -13,20 +13,24 @@
  *
  ****/
 
-#pragma once
+#include "CFireAndDie.h"
 
-#include "CBaseTrigger.h"
+LINK_ENTITY_TO_CLASS(fireanddie, CFireAndDie);
 
-class CTriggerMultiple : public CBaseTrigger
+void CFireAndDie::Spawn()
 {
-public:
-	void Spawn() override;
-	void Precache() override
-	{
-		if (!FStringNull(pev->noise))
-			PRECACHE_SOUND((char*)STRING(pev->noise));
-	}
-	void EXPORT MultiTouch(CBaseEntity* pOther);
-	void EXPORT MultiWaitOver();
-	void ActivateMultiTrigger(CBaseEntity* pActivator);
-};
+	pev->classname = MAKE_STRING("fireanddie");
+	// Don't call Precache() - it should be called on restore
+}
+
+void CFireAndDie::Precache()
+{
+	// This gets called on restore
+	SetNextThink(m_flDelay);
+}
+
+void CFireAndDie::Think()
+{
+	SUB_UseTargets(this, USE_TOGGLE, 0);
+	UTIL_Remove(this);
+}

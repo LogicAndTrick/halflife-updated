@@ -15,18 +15,4 @@
 
 #pragma once
 
-#include "CBaseTrigger.h"
-
-class CTriggerMultiple : public CBaseTrigger
-{
-public:
-	void Spawn() override;
-	void Precache() override
-	{
-		if (!FStringNull(pev->noise))
-			PRECACHE_SOUND((char*)STRING(pev->noise));
-	}
-	void EXPORT MultiTouch(CBaseEntity* pOther);
-	void EXPORT MultiWaitOver();
-	void ActivateMultiTrigger(CBaseEntity* pActivator);
-};
+#include "entities/CBaseEntity.h"

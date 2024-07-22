@@ -13,3 +13,7 @@
 *
 ****/
 
+#pragma once
+
+#include "CBaseTrigger.h"
+

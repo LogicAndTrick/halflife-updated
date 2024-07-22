@@ -356,6 +356,9 @@
     <ClCompile Include="..\..\dlls\entities\CBaseAnimating.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CBaseDelay.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CBaseEntity.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
@@ -365,16 +368,10 @@
     <ClCompile Include="..\..\dlls\entities\CBaseToggle.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CBaseTrigger.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CCorpse.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CFireAndDie.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CFlyingMonster.cpp">
@@ -401,6 +398,9 @@
     <ClCompile Include="..\..\dlls\entities\controller\CControllerZapBall.cpp">
       <Filter>Source Files\dlls\entities\controller</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\crossbow\CCrossbowBolt.cpp">
       <Filter>Source Files\dlls\entities\crossbow</Filter>
     </ClCompile>
@@ -411,9 +411,6 @@
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CSquidSpit.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CStateWatcher.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CTalkMonster.cpp">
@@ -866,7 +863,13 @@
     <ClCompile Include="..\..\dlls\entities\trigger\CAutoTrigger.cpp">
       <Filter>Source Files\dlls\entities\trigger</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CBaseTrigger.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\trigger\CChangeLevel.cpp">
+      <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\trigger\CFireAndDie.cpp">
       <Filter>Source Files\dlls\entities\trigger</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\trigger\CTriggerBounce.cpp">
@@ -935,9 +938,6 @@
     <ClCompile Include="..\..\dlls\entities\trigger\CTriggerRelay.cpp">
       <Filter>Source Files\dlls\entities\trigger</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\trigger\CTriggerRotTest.cpp">
-      <Filter>Source Files\dlls\entities\trigger</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\trigger\CTriggerSave.cpp">
       <Filter>Source Files\dlls\entities\trigger</Filter>
     </ClCompile>
@@ -952,6 +952,9 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\trigger\CTriggerVolume.cpp">
       <Filter>Source Files\dlls\entities\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\watcher\CStateWatcher.cpp">
+      <Filter>Source Files\dlls\entities\watcher</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\watcher\CWatcherCount.cpp">
       <Filter>Source Files\dlls\entities\watcher</Filter>
@@ -1140,9 +1143,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\tempmonster.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\triggers.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\tripmine.cpp">
@@ -1369,6 +1369,9 @@
     <ClInclude Include="..\..\dlls\entities\CBaseAnimating.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CBaseDelay.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CBaseEntity.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
@@ -1378,16 +1381,10 @@
     <ClInclude Include="..\..\dlls\entities\CBaseToggle.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CBaseTrigger.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CCorpse.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CDecal.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CFireAndDie.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CFlyingMonster.h">
@@ -1414,6 +1411,9 @@
     <ClInclude Include="..\..\dlls\entities\controller\CControllerZapBall.h">
       <Filter>Header Files\dlls\entities\controller</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CPointEntity.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\crossbow\CCrossbowBolt.h">
       <Filter>Header Files\dlls\entities\crossbow</Filter>
     </ClInclude>
@@ -1424,9 +1424,6 @@
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CSquidSpit.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CStateWatcher.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CTalkMonster.h">
@@ -1879,7 +1876,13 @@
     <ClInclude Include="..\..\dlls\entities\trigger\CAutoTrigger.h">
       <Filter>Header Files\dlls\entities\trigger</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CBaseTrigger.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\trigger\CChangeLevel.h">
+      <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\trigger\CFireAndDie.h">
       <Filter>Header Files\dlls\entities\trigger</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\trigger\CTriggerBounce.h">
@@ -1948,9 +1951,6 @@
     <ClInclude Include="..\..\dlls\entities\trigger\CTriggerRelay.h">
       <Filter>Header Files\dlls\entities\trigger</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\trigger\CTriggerRotTest.h">
-      <Filter>Header Files\dlls\entities\trigger</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\trigger\CTriggerSave.h">
       <Filter>Header Files\dlls\entities\trigger</Filter>
     </ClInclude>
@@ -1965,6 +1965,9 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\trigger\CTriggerVolume.h">
       <Filter>Header Files\dlls\entities\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\watcher\CStateWatcher.h">
+      <Filter>Header Files\dlls\entities\watcher</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\watcher\CWatcherCount.h">
       <Filter>Header Files\dlls\entities\watcher</Filter>

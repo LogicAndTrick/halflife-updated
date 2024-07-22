@@ -15,18 +15,17 @@
 
 #pragma once
 
-#include "CBaseTrigger.h"
+#include "entities/CBaseToggle.h"
 
-class CTriggerMultiple : public CBaseTrigger
+// trigger_x entities
+class CBaseTrigger : public CBaseToggle
 {
 public:
-	void Spawn() override;
-	void Precache() override
-	{
-		if (!FStringNull(pev->noise))
-			PRECACHE_SOUND((char*)STRING(pev->noise));
-	}
-	void EXPORT MultiTouch(CBaseEntity* pOther);
-	void EXPORT MultiWaitOver();
-	void ActivateMultiTrigger(CBaseEntity* pActivator);
+	// LRC - this was very bloated. I moved lots of methods into the
+	//  subclasses where they belonged.
+	void InitTrigger();
+	void EXPORT ToggleUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
+	bool CanTouch(entvars_t* pevToucher);
+
+	int ObjectCaps() override { return CBaseToggle::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
 };
