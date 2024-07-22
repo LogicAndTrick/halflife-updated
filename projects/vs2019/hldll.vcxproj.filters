@@ -377,6 +377,9 @@
     <ClCompile Include="..\..\dlls\entities\CFireAndDie.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CFlyingMonster.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
@@ -1052,12 +1055,6 @@
     <ClCompile Include="..\..\dlls\houndeye.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\ichthyosaur.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\islave.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\items.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1427,6 +1424,9 @@
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CFireAndDie.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CFlyingMonster.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CGenericCycler.h">

@@ -152,6 +152,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CCorpse.cpp" />
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp" />
     <ClCompile Include="..\..\dlls\entities\CFireAndDie.cpp" />
+    <ClCompile Include="..\..\dlls\entities\CFlyingMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp" />
     <ClCompile Include="..\..\dlls\entities\CGibShooter.cpp" />
     <ClCompile Include="..\..\dlls\entities\cine\CCineBlood.cpp" />
@@ -377,8 +378,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\hornet.cpp" />
     <ClCompile Include="..\..\dlls\hornetgun.cpp" />
     <ClCompile Include="..\..\dlls\houndeye.cpp" />
-    <ClCompile Include="..\..\dlls\ichthyosaur.cpp" />
-    <ClCompile Include="..\..\dlls\islave.cpp" />
     <ClCompile Include="..\..\dlls\items.cpp" />
     <ClCompile Include="..\..\dlls\leech.cpp" />
     <ClCompile Include="..\..\dlls\lights.cpp" />
@@ -504,6 +503,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CCorpse.h" />
     <ClInclude Include="..\..\dlls\entities\CDecal.h" />
     <ClInclude Include="..\..\dlls\entities\CFireAndDie.h" />
+    <ClInclude Include="..\..\dlls\entities\CFlyingMonster.h" />
     <ClInclude Include="..\..\dlls\entities\CGenericCycler.h" />
     <ClInclude Include="..\..\dlls\entities\CGibShooter.h" />
     <ClInclude Include="..\..\dlls\entities\cine\CCineBlood.h" />
