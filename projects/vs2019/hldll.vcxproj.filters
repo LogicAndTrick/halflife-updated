@@ -1166,9 +1166,6 @@
     <ClCompile Include="..\..\dlls\xen.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\zombie.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\game_shared\filesystem_utils.cpp">
       <Filter>Source Files\game_shared</Filter>
     </ClCompile>
