@@ -737,6 +737,9 @@
     <ClCompile Include="..\..\dlls\entities\monster\CBarney.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseTurret.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CBigMomma.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
@@ -1182,9 +1185,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\tripmine.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\turret.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\UserMessages.cpp">
@@ -1784,6 +1784,9 @@
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CBarney.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CBaseTurret.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CBigMomma.h">
