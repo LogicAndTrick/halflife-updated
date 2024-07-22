@@ -310,7 +310,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CZombie.cpp" />
     <ClCompile Include="..\..\dlls\entities\motion\CMotionManager.cpp" />
     <ClCompile Include="..\..\dlls\entities\multi\CMultiManager.cpp" />
-    <ClCompile Include="..\..\dlls\entities\nihilanth\CNihilanthHVR.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CScriptedSentence.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CTankSequence.cpp" />
@@ -390,7 +389,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\movewith.cpp" />
     <ClCompile Include="..\..\dlls\mp5.cpp" />
     <ClCompile Include="..\..\dlls\multiplay_gamerules.cpp" />
-    <ClCompile Include="..\..\dlls\nihilanth.cpp" />
     <ClCompile Include="..\..\dlls\nodes.cpp" />
     <ClCompile Include="..\..\dlls\observer.cpp" />
     <ClCompile Include="..\..\dlls\osprey.cpp" />
@@ -660,7 +658,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CZombie.h" />
     <ClInclude Include="..\..\dlls\entities\motion\CMotionManager.h" />
     <ClInclude Include="..\..\dlls\entities\multi\CMultiManager.h" />
-    <ClInclude Include="..\..\dlls\entities\nihilanth\CNihilanthHVR.h" />
     <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CScriptedSentence.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CTankSequence.h" />

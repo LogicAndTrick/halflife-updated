@@ -87,9 +87,6 @@
     <Filter Include="Header Files\dlls\entities\multi">
       <UniqueIdentifier>{08360301-1a08-46c5-85b8-fe3966a2ef6b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dlls\entities\nihilanth">
-      <UniqueIdentifier>{07b78e77-07ce-42f8-9bef-9390c768b0b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\dlls\entities\path">
       <UniqueIdentifier>{f84a6eac-793a-4061-9e41-e2aec6038c94}</UniqueIdentifier>
     </Filter>
@@ -209,9 +206,6 @@
     </Filter>
     <Filter Include="Source Files\dlls\entities\multi">
       <UniqueIdentifier>{9451eaa9-321e-4795-b6be-9484a8c0bb0a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dlls\entities\nihilanth">
-      <UniqueIdentifier>{ec335ba3-ff76-4cba-9919-ed0b1a4ad484}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\path">
       <UniqueIdentifier>{6c2fcc1e-7892-4179-b53d-4161caa45bce}</UniqueIdentifier>
@@ -851,9 +845,6 @@
     <ClCompile Include="..\..\dlls\entities\multi\CMultiManager.cpp">
       <Filter>Source Files\dlls\entities\multi</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\nihilanth\CNihilanthHVR.cpp">
-      <Filter>Source Files\dlls\entities\nihilanth</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp">
       <Filter>Source Files\dlls\entities\path</Filter>
     </ClCompile>
@@ -1089,9 +1080,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\multiplay_gamerules.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\nihilanth.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\nodes.cpp">
@@ -1896,9 +1884,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\multi\CMultiManager.h">
       <Filter>Header Files\dlls\entities\multi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\nihilanth\CNihilanthHVR.h">
-      <Filter>Header Files\dlls\entities\nihilanth</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h">
       <Filter>Header Files\dlls\entities\path</Filter>
