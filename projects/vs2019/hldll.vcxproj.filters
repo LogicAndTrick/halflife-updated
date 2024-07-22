@@ -1106,9 +1106,6 @@
     <ClCompile Include="..\..\dlls\python.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\rat.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\rpg.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
