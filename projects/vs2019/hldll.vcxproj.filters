@@ -1061,9 +1061,6 @@
     <ClCompile Include="..\..\dlls\items.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\leech.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\lights.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
