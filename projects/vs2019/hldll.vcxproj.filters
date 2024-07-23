@@ -33,9 +33,6 @@
     <Filter Include="Header Files\dlls\entities">
       <UniqueIdentifier>{a90484a4-d273-45c7-bca7-0f8322d5b029}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dlls\entities\cine">
-      <UniqueIdentifier>{fd468639-0dda-4e97-a8ca-ba77ba432436}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\dlls\entities\controller">
       <UniqueIdentifier>{b66f9032-fc45-4199-9113-7ebd5aecf50e}</UniqueIdentifier>
     </Filter>
@@ -152,9 +149,6 @@
     </Filter>
     <Filter Include="Source Files\dlls\entities">
       <UniqueIdentifier>{536f6da2-f7bc-4f92-843b-82b762cd6583}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dlls\entities\cine">
-      <UniqueIdentifier>{fa08b937-7ef2-446a-b751-98b2daec8513}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\controller">
       <UniqueIdentifier>{c99add6b-ab59-4196-951d-8b23c5370538}</UniqueIdentifier>
@@ -284,9 +278,6 @@
     <ClCompile Include="..\..\dlls\defaultai.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\doors.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\effects.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -379,9 +370,6 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CGibShooter.cpp">
       <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\cine\CCineBlood.cpp">
-      <Filter>Source Files\dlls\entities\cine</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CLightFader.cpp">
       <Filter>Source Files\dlls\entities</Filter>
@@ -1303,9 +1291,6 @@
     <ClInclude Include="..\..\dlls\defaultai.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\doors.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\effects.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
@@ -1398,9 +1383,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CGibShooter.h">
       <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\cine\CCineBlood.h">
-      <Filter>Header Files\dlls\entities\cine</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CLightFader.h">
       <Filter>Header Files\dlls\entities</Filter>

@@ -23,7 +23,7 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
-#include "doors.h"
+#include "entities/func/CBaseDoor.h"
 #include "movewith.h"
 
 #define SF_BRUSH_ACCDCC 16		 // brush should accelerate and decelerate when toggled

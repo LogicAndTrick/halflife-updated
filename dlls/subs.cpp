@@ -28,7 +28,7 @@
 #include "cbase.h"
 #include "saverestore.h"
 #include "nodes.h"
-#include "doors.h"
+#include "entities/func/CBaseDoor.h"
 #include "movewith.h"
 #include "player.h"
 #include "locus.h"

@@ -123,7 +123,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\crowbar.cpp" />
     <ClCompile Include="..\..\dlls\debugger.cpp" />
     <ClCompile Include="..\..\dlls\defaultai.cpp" />
-    <ClCompile Include="..\..\dlls\doors.cpp" />
     <ClCompile Include="..\..\dlls\effects.cpp" />
     <ClCompile Include="..\..\dlls\egon.cpp" />
     <ClCompile Include="..\..\dlls\entities\ambient\CAmbientGeneric.cpp" />
@@ -155,7 +154,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CFlyingMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp" />
     <ClCompile Include="..\..\dlls\entities\CGibShooter.cpp" />
-    <ClCompile Include="..\..\dlls\entities\cine\CCineBlood.cpp" />
     <ClCompile Include="..\..\dlls\entities\CLightFader.cpp" />
     <ClCompile Include="..\..\dlls\entities\CMonsterMaker.cpp" />
     <ClCompile Include="..\..\dlls\entities\controller\CControllerHeadBall.cpp" />
@@ -464,7 +462,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\client.h" />
     <ClInclude Include="..\..\dlls\decals.h" />
     <ClInclude Include="..\..\dlls\defaultai.h" />
-    <ClInclude Include="..\..\dlls\doors.h" />
     <ClInclude Include="..\..\dlls\effects.h" />
     <ClInclude Include="..\..\dlls\enginecallback.h" />
     <ClInclude Include="..\..\dlls\entities\ambient\CAmbientGeneric.h" />
@@ -496,7 +493,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CFlyingMonster.h" />
     <ClInclude Include="..\..\dlls\entities\CGenericCycler.h" />
     <ClInclude Include="..\..\dlls\entities\CGibShooter.h" />
-    <ClInclude Include="..\..\dlls\entities\cine\CCineBlood.h" />
     <ClInclude Include="..\..\dlls\entities\CLightFader.h" />
     <ClInclude Include="..\..\dlls\entities\CMonsterMaker.h" />
     <ClInclude Include="..\..\dlls\entities\controller\CControllerHeadBall.h" />

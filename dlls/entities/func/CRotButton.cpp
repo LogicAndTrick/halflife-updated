@@ -14,7 +14,7 @@
  ****/
 
 #include "CRotButton.h"
-#include "doors.h"
+#include "entities/func/CBaseDoor.h"
 
 LINK_ENTITY_TO_CLASS(func_rot_button, CRotButton);
 
