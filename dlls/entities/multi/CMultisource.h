@@ -15,33 +15,33 @@
 
 #pragma once
 
-#include "entities/CPointEntity.h"
+#include "entities/CBaseEntity.h"
 
-#define SF_ENVSTATE_START_ON 1
-#define SF_ENVSTATE_DEBUG 2
+#define MAX_MULTI_TARGETS 16 // maximum number of targets a single multi_manager entity may be assigned.
+#define MS_MAX_TARGETS 32
 
-//==================================================
-// LRC- a simple entity, just maintains a state
-//==================================================
-class CEnvState : public CPointEntity
+#define SF_MULTI_FIREONCLOSE 1
+#define SF_MULTI_INIT 2
+
+//===========================
+// LRC- the evil multisource...
+//===========================
+class CMultiSource : public CPointEntity
 {
 public:
 	void Spawn() override;
-	void Think() override;
 	bool KeyValue(KeyValueData* pkvd) override;
 	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-
-	bool IsLockedByMaster() { return !UTIL_IsMasterTriggered(m_sMaster, NULL); };
-
+	STATE GetState() override;
+	void EXPORT Register();
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
 
-	STATE GetState() override { return m_iState; }
-
 	static TYPEDESCRIPTION m_SaveData[];
 
-	STATE m_iState;
-	float m_fTurnOnTime;
-	float m_fTurnOffTime;
-	int m_sMaster;
+	EHANDLE m_rgEntities[MS_MAX_TARGETS];
+	int m_rgTriggered[MS_MAX_TARGETS];
+
+	int m_iTotal;
+	string_t m_globalstate;
 };

@@ -116,7 +116,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\alias.cpp" />
     <ClCompile Include="..\..\dlls\animation.cpp" />
     <ClCompile Include="..\..\dlls\bmodels.cpp" />
-    <ClCompile Include="..\..\dlls\buttons.cpp" />
     <ClCompile Include="..\..\dlls\cbase.cpp" />
     <ClCompile Include="..\..\dlls\client.cpp" />
     <ClCompile Include="..\..\dlls\combat.cpp" />
@@ -203,6 +202,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\env\CRenderFxManager.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CShake.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CSmoker.cpp" />
+    <ClCompile Include="..\..\dlls\entities\func\CBaseButton.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFrictionModifier.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncConveyor.cpp" />
@@ -307,6 +307,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CZombie.cpp" />
     <ClCompile Include="..\..\dlls\entities\motion\CMotionManager.cpp" />
     <ClCompile Include="..\..\dlls\entities\multi\CMultiManager.cpp" />
+    <ClCompile Include="..\..\dlls\entities\multi\CMultisource.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CScriptedSentence.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CTankSequence.cpp" />
@@ -542,6 +543,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\env\CRenderFxManager.h" />
     <ClInclude Include="..\..\dlls\entities\env\CShake.h" />
     <ClInclude Include="..\..\dlls\entities\env\CSmoker.h" />
+    <ClInclude Include="..\..\dlls\entities\func\CBaseButton.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFrictionModifier.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncConveyor.h" />
@@ -646,6 +648,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CZombie.h" />
     <ClInclude Include="..\..\dlls\entities\motion\CMotionManager.h" />
     <ClInclude Include="..\..\dlls\entities\multi\CMultiManager.h" />
+    <ClInclude Include="..\..\dlls\entities\multi\CMultisource.h" />
     <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CScriptedSentence.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CTankSequence.h" />

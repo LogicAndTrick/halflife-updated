@@ -581,34 +581,6 @@ typedef struct locksounds // sounds that doors and buttons make when locked/unlo
 void PlayLockSounds(entvars_t* pev, locksound_t* pls, bool flocked, bool fbutton);
 
 //
-// MultiSouce
-//
-
-#define MAX_MULTI_TARGETS 16 // maximum number of targets a single multi_manager entity may be assigned.
-#define MS_MAX_TARGETS 32
-
-class CMultiSource : public CPointEntity
-{
-public:
-	void Spawn() override;
-	bool KeyValue(KeyValueData* pkvd) override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	STATE GetState() override;
-	void EXPORT Register();
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	EHANDLE m_rgEntities[MS_MAX_TARGETS];
-	int m_rgTriggered[MS_MAX_TARGETS];
-
-	int m_iTotal;
-	string_t m_globalstate;
-};
-
-
-//
 // generic Delay entity.
 //
 class CBaseDelay : public CBaseEntity
@@ -930,6 +902,9 @@ public:
 
 	CBaseMutableAlias* m_pNextAlias;
 };
+
+#define MAX_MULTI_TARGETS 16 // maximum number of targets a single multi_manager entity may be assigned.
+#define MS_MAX_TARGETS 32
 
 class CInfoGroup : public CPointEntity
 {

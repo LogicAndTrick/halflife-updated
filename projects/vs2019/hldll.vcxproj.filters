@@ -263,9 +263,6 @@
     <ClCompile Include="..\..\dlls\bmodels.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\buttons.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\cbase.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -523,6 +520,9 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\env\CSmoker.cpp">
       <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CBaseButton.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp">
       <Filter>Source Files\dlls\entities\func</Filter>
@@ -834,6 +834,9 @@
       <Filter>Source Files\dlls\entities\motion</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\multi\CMultiManager.cpp">
+      <Filter>Source Files\dlls\entities\multi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\multi\CMultisource.cpp">
       <Filter>Source Files\dlls\entities\multi</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp">
@@ -1537,6 +1540,9 @@
     <ClInclude Include="..\..\dlls\entities\env\CSmoker.h">
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CBaseButton.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h">
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
@@ -1847,6 +1853,9 @@
       <Filter>Header Files\dlls\entities\motion</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\multi\CMultiManager.h">
+      <Filter>Header Files\dlls\entities\multi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\multi\CMultisource.h">
       <Filter>Header Files\dlls\entities\multi</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h">
