@@ -13,3 +13,12 @@
 *
 ****/
 
+#pragma once
+
+#include "entities/CPointEntity.h"
+
+class CCalcNumFromNum : public CPointEntity
+{
+public:
+	bool CalcNumber(CBaseEntity* pLocus, float* OUTresult) override;
+};
