@@ -137,6 +137,8 @@ bool CHud::Redraw(float flTime, bool intermission)
 	// if no redrawing is necessary
 	// return 0;
 
+	m_iHudNumbersYOffset = IsHL25() ? m_iFontHeight * 0.2 : 0;
+
 	// draw all registered HUD elements
 	if (0 != m_pCvarDraw->value)
 	{

@@ -29,6 +29,7 @@
 #include "common_types.h"
 #include "cl_dll.h"
 #include "ammo.h"
+#include "cvardef.h"
 
 #define DHN_DRAWZERO 1
 #define DHN_2DIGITS 2
@@ -505,8 +506,11 @@ public:
 	int m_iFOV;
 	bool m_Teamplay;
 	int m_iRes;
+	int m_iMaxRes;
+	int m_iHudNumbersYOffset;
 	cvar_t* m_pCvarStealMouse;
 	cvar_t* m_pCvarDraw;
+	cvar_t* m_pAllowHD;
 
 	int m_iFontHeight;
 	int DrawHudNumber(int x, int y, int iFlags, int iNumber, int r, int g, int b);
@@ -551,6 +555,12 @@ public:
 	Rect& GetSpriteRect(int index)
 	{
 		return m_rgrcRects[index];
+	}
+
+	inline bool IsHL25(void)
+	{
+		// only use hd sprites if our max res is above 640 and the hud hd cvar is set
+		return m_iMaxRes > 640 && m_pAllowHD->value;
 	}
 
 

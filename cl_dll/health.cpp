@@ -218,7 +218,7 @@ bool CHudHealth::Draw(float flTime)
 		//Reserve space for 3 digits by default, but allow it to expand
 		x += gHUD.GetHudNumberWidth(m_iHealth, 3, DHN_DRAWZERO);
 
-		gHUD.DrawHudNumberReverse(x, y, m_iHealth, DHN_DRAWZERO, r, g, b);
+		gHUD.DrawHudNumberReverse(x, y + gHUD.m_iHudNumbersYOffset, m_iHealth, DHN_DRAWZERO, r, g, b);
 
 		//x = gHUD.DrawHudNumber(x, y, DHN_3DIGITS | DHN_DRAWZERO, m_iHealth, r, g, b);
 
@@ -227,7 +227,7 @@ bool CHudHealth::Draw(float flTime)
 		int iHeight = gHUD.m_iFontHeight;
 		int iWidth = HealthWidth / 10;
 		UnpackRGB(r, g, b, RGB_YELLOWISH);
-		FillRGBA(x, y, iWidth, iHeight, r, g, b, a);
+		FillRGBA(x, y + gHUD.m_iHudNumbersYOffset, iWidth, iHeight, r, g, b, a);
 	}
 
 	DrawDamage(flTime);

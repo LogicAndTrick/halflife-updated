@@ -71,12 +71,9 @@ bool WeaponsResource::HasAmmo(WEAPON* p)
 
 void WeaponsResource::LoadWeaponSprites(WEAPON* pWeapon)
 {
-	int i, iRes;
+	int i;
 
-	if (ScreenWidth < 640)
-		iRes = 320;
-	else
-		iRes = 640;
+	const auto iRes = GetSpriteRes(ScreenWidth, ScreenHeight);
 
 	char sz[256];
 
@@ -318,21 +315,20 @@ bool CHudAmmo::VidInit()
 	giBucketWidth = gHUD.GetSpriteRect(m_HUD_bucket0).right - gHUD.GetSpriteRect(m_HUD_bucket0).left;
 	giBucketHeight = gHUD.GetSpriteRect(m_HUD_bucket0).bottom - gHUD.GetSpriteRect(m_HUD_bucket0).top;
 
-	gHR.iHistoryGap = V_max(gHR.iHistoryGap, gHUD.GetSpriteRect(m_HUD_bucket0).bottom - gHUD.GetSpriteRect(m_HUD_bucket0).top);
+	gHR.iHistoryGap = gHUD.GetSpriteRect(m_HUD_bucket0).bottom - gHUD.GetSpriteRect(m_HUD_bucket0).top;
 
 	// If we've already loaded weapons, let's get new sprites
 	gWR.LoadAllWeaponSprites();
 
-	if (ScreenWidth >= 640)
-	{
-		giABWidth = 20;
-		giABHeight = 4;
-	}
-	else
-	{
-		giABWidth = 10;
-		giABHeight = 2;
-	}
+    const int res = GetSpriteRes(ScreenWidth, ScreenHeight);
+	int factor;
+	if (res >= 2560) factor = 4;
+	else if (res >= 1280) factor = 3;
+	else if (res >= 640) factor = 2;
+	else factor = 1;
+
+	giABWidth = 10 * factor;
+	giABHeight = 2 * factor;
 
 	return true;
 }
@@ -869,6 +865,7 @@ bool CHudAmmo::Draw(float flTime)
 
 	// Does this weapon have a clip?
 	y = ScreenHeight - gHUD.m_iFontHeight - gHUD.m_iFontHeight / 2;
+	y += gHUD.m_iHudNumbersYOffset;
 
 	// Does weapon have any ammo at all?
 	if (m_pWeapon->iAmmoType > 0)

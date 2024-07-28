@@ -180,3 +180,24 @@ inline void UnpackRGB(int& r, int& g, int& b, unsigned long ulRGB)
 }
 
 HSPRITE LoadSprite(const char* pszName);
+
+// hl25 hud sprite support, thanks to a1ba
+inline int GetSpriteRes(int width, int height)
+{
+	int i;
+
+	if (gHUD.m_pAllowHD->value)
+	{
+		if (width < 640) i = 320;
+		else if (width < 1280 || height <= 720) i = 640;
+		else if (width <= 2560 || height <= 1600) i = 1280;
+		else i = 2560;
+	}
+	else
+	{
+		if (width < 640) i = 320;
+		else i = 640;
+	}
+
+	return V_min(i, gHUD.m_iMaxRes);
+}
