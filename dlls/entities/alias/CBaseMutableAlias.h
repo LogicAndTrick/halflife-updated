@@ -15,21 +15,20 @@
 
 #pragma once
 
-#include "entities/alias/CBaseMutableAlias.h"
+#include "entities/CPointEntity.h"
 
-// Entity variable
-class CLocusAlias : public CBaseMutableAlias
+class CBaseMutableAlias : public CPointEntity
 {
 public:
-	void PostSpawn() override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	CBaseEntity* FollowAlias(CBaseEntity* pFrom) override;
-	void FlushChanges() override;
+	bool IsMutableAlias() override { return true; }
+	virtual CBaseEntity* FollowAlias(CBaseEntity* pFrom) { return NULL; };
+	virtual void ChangeValue(int iszValue) { ALERT(at_error, "%s entities cannot change value!", STRING(pev->classname)); }
+	virtual void ChangeValue(CBaseEntity* pValue) { ChangeValue(pValue->pev->targetname); }
+	virtual void FlushChanges(){};
 
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
 	static TYPEDESCRIPTION m_SaveData[];
 
-	EHANDLE m_hValue;
-	EHANDLE m_hChangeTo;
+	CBaseMutableAlias* m_pNextAlias;
 };

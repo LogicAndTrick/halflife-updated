@@ -886,63 +886,8 @@ extern bool g_startSuit;
 
 extern bool g_allowGJump; //AJH SP Gaussjump
 
-//LRC- moved here from alias.cpp so that util functions can use these defs.
-class CBaseMutableAlias : public CPointEntity
-{
-public:
-	bool IsMutableAlias() override { return true; }
-	virtual CBaseEntity* FollowAlias(CBaseEntity* pFrom) { return NULL; };
-	virtual void ChangeValue(int iszValue) { ALERT(at_error, "%s entities cannot change value!", STRING(pev->classname)); }
-	virtual void ChangeValue(CBaseEntity* pValue) { ChangeValue(pValue->pev->targetname); }
-	virtual void FlushChanges(){};
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	static TYPEDESCRIPTION m_SaveData[];
-
-	CBaseMutableAlias* m_pNextAlias;
-};
-
 #define MAX_MULTI_TARGETS 16 // maximum number of targets a single multi_manager entity may be assigned.
 #define MS_MAX_TARGETS 32
-
-class CInfoGroup : public CPointEntity
-{
-public:
-	bool KeyValue(KeyValueData* pkvd) override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	int GetMember(const char* szMemberName);
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	int m_cMembers;
-	int m_iszMemberName[MAX_MULTI_TARGETS];
-	int m_iszMemberValue[MAX_MULTI_TARGETS];
-	int m_iszDefaultMember;
-};
-
-class CMultiAlias : public CBaseMutableAlias
-{
-public:
-	bool KeyValue(KeyValueData* pkvd) override;
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	CBaseEntity* FollowAlias(CBaseEntity* pFrom) override;
-
-	int m_cTargets;
-	int m_iszTargets[MAX_MULTI_TARGETS];
-	int m_iTotalValue;
-	int m_iValues[MAX_MULTI_TARGETS];
-	int m_iMode;
-};
-
 
 // this moved here from world.cpp, to allow classes to be derived from it
 //=======================

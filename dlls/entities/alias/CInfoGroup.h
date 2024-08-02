@@ -15,21 +15,31 @@
 
 #pragma once
 
-#include "entities/alias/CBaseMutableAlias.h"
+#include "entities/CPointEntity.h"
 
-// Entity variable
-class CLocusAlias : public CBaseMutableAlias
+#define SF_GROUP_DEBUG 2
+
+/*********************
+ * Worldcraft entity: info_group
+ *
+ * targetname- name
+ * target-     alias entity to affect
+ * other values are handled in a multi_manager-like way.
+ **********************/
+class CInfoGroup : public CPointEntity
 {
 public:
-	void PostSpawn() override;
+	bool KeyValue(KeyValueData* pkvd) override;
 	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	CBaseEntity* FollowAlias(CBaseEntity* pFrom) override;
-	void FlushChanges() override;
+	int GetMember(const char* szMemberName);
 
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
+
 	static TYPEDESCRIPTION m_SaveData[];
 
-	EHANDLE m_hValue;
-	EHANDLE m_hChangeTo;
+	int m_cMembers;
+	int m_iszMemberName[MAX_MULTI_TARGETS];
+	int m_iszMemberValue[MAX_MULTI_TARGETS];
+	int m_iszDefaultMember;
 };

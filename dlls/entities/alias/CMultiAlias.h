@@ -15,21 +15,29 @@
 
 #pragma once
 
-#include "entities/alias/CBaseMutableAlias.h"
+#include "CBaseMutableAlias.h"
 
-// Entity variable
-class CLocusAlias : public CBaseMutableAlias
+/*********************
+ * Worldcraft entity: multi_alias
+ *
+ * targetname- name
+ * other values are handled in a multi_manager-like way.
+ **********************/
+class CMultiAlias : public CBaseMutableAlias
 {
 public:
-	void PostSpawn() override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	CBaseEntity* FollowAlias(CBaseEntity* pFrom) override;
-	void FlushChanges() override;
+	bool KeyValue(KeyValueData* pkvd) override;
 
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
+
 	static TYPEDESCRIPTION m_SaveData[];
 
-	EHANDLE m_hValue;
-	EHANDLE m_hChangeTo;
+	CBaseEntity* FollowAlias(CBaseEntity* pFrom) override;
+
+	int m_cTargets;
+	int m_iszTargets[MAX_MULTI_TARGETS];
+	int m_iTotalValue;
+	int m_iValues[MAX_MULTI_TARGETS];
+	int m_iMode;
 };

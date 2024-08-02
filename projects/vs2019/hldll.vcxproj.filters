@@ -18,6 +18,9 @@
     <Filter Include="Header Files\dlls">
       <UniqueIdentifier>{e3b69fef-bfa6-4270-8280-f2b25793ac4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\entities\alias">
+      <UniqueIdentifier>{c51ed368-2cf6-42ef-9c9c-da28f2090456}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\dlls\entities\ambient">
       <UniqueIdentifier>{eebc4416-9784-4170-a5da-4ed2e07f7d67}</UniqueIdentifier>
     </Filter>
@@ -33,9 +36,6 @@
     <Filter Include="Header Files\dlls\entities">
       <UniqueIdentifier>{a90484a4-d273-45c7-bca7-0f8322d5b029}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dlls\entities\controller">
-      <UniqueIdentifier>{b66f9032-fc45-4199-9113-7ebd5aecf50e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\dlls\entities\crossbow">
       <UniqueIdentifier>{14c82ca7-cffc-4945-bafa-f68172671d89}</UniqueIdentifier>
     </Filter>
@@ -50,12 +50,6 @@
     </Filter>
     <Filter Include="Header Files\dlls\entities\game">
       <UniqueIdentifier>{100406f5-f346-4bfd-8d0b-eb7d1f82c1e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\dlls\entities\garg">
-      <UniqueIdentifier>{4f16b664-fd6a-49ce-8bed-a207cab98ec6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\dlls\entities\hvr">
-      <UniqueIdentifier>{97ee7549-19a9-4351-b289-7fdc8a5f6dc6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\dlls\entities\info">
       <UniqueIdentifier>{8d1093ab-b366-4b32-8203-ddc51162be43}</UniqueIdentifier>
@@ -92,9 +86,6 @@
     </Filter>
     <Filter Include="Header Files\dlls\entities\spark">
       <UniqueIdentifier>{994dcbfc-a238-4cbc-9328-8bd82ff1a716}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\dlls\entities\streak">
-      <UniqueIdentifier>{e13beae6-92cc-491f-a767-e193b3af6b07}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\dlls\entities\target">
       <UniqueIdentifier>{7d6926c2-6c1b-4c5b-9901-f1239f7259d1}</UniqueIdentifier>
@@ -135,6 +126,9 @@
     <Filter Include="Source Files\dlls">
       <UniqueIdentifier>{a59f65b1-455f-459d-bc2a-75775255cd5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\dlls\entities\alias">
+      <UniqueIdentifier>{1b6de3b1-e618-4d59-b8b4-c9a3d52a2cc8}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\dlls\entities\ambient">
       <UniqueIdentifier>{220f514d-832d-40bc-a9da-e57b1b20e43c}</UniqueIdentifier>
     </Filter>
@@ -150,9 +144,6 @@
     <Filter Include="Source Files\dlls\entities">
       <UniqueIdentifier>{536f6da2-f7bc-4f92-843b-82b762cd6583}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\dlls\entities\controller">
-      <UniqueIdentifier>{c99add6b-ab59-4196-951d-8b23c5370538}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\dlls\entities\crossbow">
       <UniqueIdentifier>{64ebce72-3d9b-4f53-a732-e7c01321ac79}</UniqueIdentifier>
     </Filter>
@@ -167,12 +158,6 @@
     </Filter>
     <Filter Include="Source Files\dlls\entities\game">
       <UniqueIdentifier>{3614d01f-ad67-4515-b3b0-eee3d7e88a0c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dlls\entities\garg">
-      <UniqueIdentifier>{0f90c94e-6627-4ee0-aa16-f6b31f30f127}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dlls\entities\hvr">
-      <UniqueIdentifier>{c2f2936f-c8d9-453b-8d24-ee300b972238}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\info">
       <UniqueIdentifier>{daeebe42-265b-445c-8945-9f680c9d7211}</UniqueIdentifier>
@@ -210,9 +195,6 @@
     <Filter Include="Source Files\dlls\entities\spark">
       <UniqueIdentifier>{97cc76ec-39fb-43f7-9151-d943eac70be9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\dlls\entities\streak">
-      <UniqueIdentifier>{3a32a5ce-82ff-4e93-82db-0704fd0eec10}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\dlls\entities\target">
       <UniqueIdentifier>{9247c997-1abf-4cce-ac8f-ad66f0a2d162}</UniqueIdentifier>
     </Filter>
@@ -248,9 +230,6 @@
     <ClCompile Include="..\..\common\mathlib.cpp">
       <Filter>Source Files\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\alias.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\animation.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -283,6 +262,18 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\egon.cpp">
       <Filter>Source Files\dlls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\alias\CBaseMutableAlias.cpp">
+      <Filter>Source Files\dlls\entities\alias</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\alias\CInfoAlias.cpp">
+      <Filter>Source Files\dlls\entities\alias</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\alias\CInfoGroup.cpp">
+      <Filter>Source Files\dlls\entities\alias</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\alias\CMultiAlias.cpp">
+      <Filter>Source Files\dlls\entities\alias</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\ambient\CAmbientGeneric.cpp">
       <Filter>Source Files\dlls\entities\ambient</Filter>
@@ -376,12 +367,6 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CMonsterMaker.cpp">
       <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\controller\CControllerHeadBall.cpp">
-      <Filter>Source Files\dlls\entities\controller</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\controller\CControllerZapBall.cpp">
-      <Filter>Source Files\dlls\entities\controller</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp">
       <Filter>Source Files\dlls\entities</Filter>
@@ -632,16 +617,7 @@
     <ClCompile Include="..\..\dlls\entities\game\CGameText.cpp">
       <Filter>Source Files\dlls\entities\game</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\garg\CStomp.cpp">
-      <Filter>Source Files\dlls\entities\garg</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\hvr\CApacheHVR.cpp">
-      <Filter>Source Files\dlls\entities\hvr</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\info\CBaseDMStart.cpp">
-      <Filter>Source Files\dlls\entities\info</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\info\CInfoAlias.cpp">
       <Filter>Source Files\dlls\entities\info</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\info\CInfoBM.cpp">
@@ -841,9 +817,6 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\spark\CShower.cpp">
       <Filter>Source Files\dlls\entities\spark</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\streak\CSpiral.cpp">
-      <Filter>Source Files\dlls\entities\streak</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\target\CTargetCDAudio.cpp">
       <Filter>Source Files\dlls\entities\target</Filter>
@@ -1297,6 +1270,18 @@
     <ClInclude Include="..\..\dlls\enginecallback.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\alias\CBaseMutableAlias.h">
+      <Filter>Header Files\dlls\entities\alias</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\alias\CInfoAlias.h">
+      <Filter>Header Files\dlls\entities\alias</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\alias\CInfoGroup.h">
+      <Filter>Header Files\dlls\entities\alias</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\alias\CMultiAlias.h">
+      <Filter>Header Files\dlls\entities\alias</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\ambient\CAmbientGeneric.h">
       <Filter>Header Files\dlls\entities\ambient</Filter>
     </ClInclude>
@@ -1389,12 +1374,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CMonsterMaker.h">
       <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\controller\CControllerHeadBall.h">
-      <Filter>Header Files\dlls\entities\controller</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\controller\CControllerZapBall.h">
-      <Filter>Header Files\dlls\entities\controller</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h">
       <Filter>Header Files\dlls\entities</Filter>
@@ -1645,16 +1624,7 @@
     <ClInclude Include="..\..\dlls\entities\game\CGameText.h">
       <Filter>Header Files\dlls\entities\game</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\garg\CStomp.h">
-      <Filter>Header Files\dlls\entities\garg</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\hvr\CApacheHVR.h">
-      <Filter>Header Files\dlls\entities\hvr</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\info\CBaseDMStart.h">
-      <Filter>Header Files\dlls\entities\info</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\info\CInfoAlias.h">
       <Filter>Header Files\dlls\entities\info</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\info\CInfoBM.h">
@@ -1854,9 +1824,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\spark\CShower.h">
       <Filter>Header Files\dlls\entities\spark</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\streak\CSpiral.h">
-      <Filter>Header Files\dlls\entities\streak</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\target\CTargetCDAudio.h">
       <Filter>Header Files\dlls\entities\target</Filter>

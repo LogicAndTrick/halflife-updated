@@ -33,6 +33,8 @@
 #include "UserMessages.h"
 #include "movewith.h"
 #include "locus.h"
+#include "entities/alias/CBaseMutableAlias.h"
+#include "entities/alias/CInfoGroup.h"
 
 float UTIL_WeaponTimeBase()
 {

@@ -13,23 +13,11 @@
  *
  ****/
 
-#pragma once
+#include "CBaseMutableAlias.h"
 
-#include "entities/alias/CBaseMutableAlias.h"
-
-// Entity variable
-class CLocusAlias : public CBaseMutableAlias
-{
-public:
-	void PostSpawn() override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	CBaseEntity* FollowAlias(CBaseEntity* pFrom) override;
-	void FlushChanges() override;
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	static TYPEDESCRIPTION m_SaveData[];
-
-	EHANDLE m_hValue;
-	EHANDLE m_hChangeTo;
+TYPEDESCRIPTION CBaseMutableAlias::m_SaveData[] =
+	{
+		DEFINE_FIELD(CBaseMutableAlias, m_pNextAlias, FIELD_CLASSPTR),
 };
+
+IMPLEMENT_SAVERESTORE(CBaseMutableAlias, CPointEntity);

@@ -113,7 +113,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\common\mathlib.cpp" />
-    <ClCompile Include="..\..\dlls\alias.cpp" />
     <ClCompile Include="..\..\dlls\animation.cpp" />
     <ClCompile Include="..\..\dlls\bmodels.cpp" />
     <ClCompile Include="..\..\dlls\cbase.cpp" />
@@ -125,6 +124,10 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\defaultai.cpp" />
     <ClCompile Include="..\..\dlls\effects.cpp" />
     <ClCompile Include="..\..\dlls\egon.cpp" />
+    <ClCompile Include="..\..\dlls\entities\alias\CBaseMutableAlias.cpp" />
+    <ClCompile Include="..\..\dlls\entities\alias\CInfoAlias.cpp" />
+    <ClCompile Include="..\..\dlls\entities\alias\CInfoGroup.cpp" />
+    <ClCompile Include="..\..\dlls\entities\alias\CMultiAlias.cpp" />
     <ClCompile Include="..\..\dlls\entities\ambient\CAmbientGeneric.cpp" />
     <ClCompile Include="..\..\dlls\entities\ambient\CTargetFMODAudio.cpp" />
     <ClCompile Include="..\..\dlls\entities\ammo\CCrossbowAmmo.cpp" />
@@ -156,8 +159,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CGibShooter.cpp" />
     <ClCompile Include="..\..\dlls\entities\CLightFader.cpp" />
     <ClCompile Include="..\..\dlls\entities\CMonsterMaker.cpp" />
-    <ClCompile Include="..\..\dlls\entities\controller\CControllerHeadBall.cpp" />
-    <ClCompile Include="..\..\dlls\entities\controller\CControllerZapBall.cpp" />
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\crossbow\CCrossbowBolt.cpp" />
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp" />
@@ -241,10 +242,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\game\CGameTeamMaster.cpp" />
     <ClCompile Include="..\..\dlls\entities\game\CGameTeamSet.cpp" />
     <ClCompile Include="..\..\dlls\entities\game\CGameText.cpp" />
-    <ClCompile Include="..\..\dlls\entities\garg\CStomp.cpp" />
-    <ClCompile Include="..\..\dlls\entities\hvr\CApacheHVR.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CBaseDMStart.cpp" />
-    <ClCompile Include="..\..\dlls\entities\info\CInfoAlias.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CInfoBM.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CInfoMoveWith.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CInfoTarget.cpp" />
@@ -311,7 +309,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\scripted\CTankSequence.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CTrainSequence.cpp" />
     <ClCompile Include="..\..\dlls\entities\spark\CShower.cpp" />
-    <ClCompile Include="..\..\dlls\entities\streak\CSpiral.cpp" />
     <ClCompile Include="..\..\dlls\entities\target\CTargetCDAudio.cpp" />
     <ClCompile Include="..\..\dlls\entities\test\CTestEffect.cpp" />
     <ClCompile Include="..\..\dlls\entities\trigger\CAutoTrigger.cpp" />
@@ -464,6 +461,10 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\defaultai.h" />
     <ClInclude Include="..\..\dlls\effects.h" />
     <ClInclude Include="..\..\dlls\enginecallback.h" />
+    <ClInclude Include="..\..\dlls\entities\alias\CBaseMutableAlias.h" />
+    <ClInclude Include="..\..\dlls\entities\alias\CInfoAlias.h" />
+    <ClInclude Include="..\..\dlls\entities\alias\CInfoGroup.h" />
+    <ClInclude Include="..\..\dlls\entities\alias\CMultiAlias.h" />
     <ClInclude Include="..\..\dlls\entities\ambient\CAmbientGeneric.h" />
     <ClInclude Include="..\..\dlls\entities\ambient\CTargetFMODAudio.h" />
     <ClInclude Include="..\..\dlls\entities\ammo\CCrossbowAmmo.h" />
@@ -495,8 +496,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CGibShooter.h" />
     <ClInclude Include="..\..\dlls\entities\CLightFader.h" />
     <ClInclude Include="..\..\dlls\entities\CMonsterMaker.h" />
-    <ClInclude Include="..\..\dlls\entities\controller\CControllerHeadBall.h" />
-    <ClInclude Include="..\..\dlls\entities\controller\CControllerZapBall.h" />
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h" />
     <ClInclude Include="..\..\dlls\entities\crossbow\CCrossbowBolt.h" />
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h" />
@@ -580,10 +579,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\game\CGameTeamMaster.h" />
     <ClInclude Include="..\..\dlls\entities\game\CGameTeamSet.h" />
     <ClInclude Include="..\..\dlls\entities\game\CGameText.h" />
-    <ClInclude Include="..\..\dlls\entities\garg\CStomp.h" />
-    <ClInclude Include="..\..\dlls\entities\hvr\CApacheHVR.h" />
     <ClInclude Include="..\..\dlls\entities\info\CBaseDMStart.h" />
-    <ClInclude Include="..\..\dlls\entities\info\CInfoAlias.h" />
     <ClInclude Include="..\..\dlls\entities\info\CInfoBM.h" />
     <ClInclude Include="..\..\dlls\entities\info\CInfoMoveWith.h" />
     <ClInclude Include="..\..\dlls\entities\info\CInfoTarget.h" />
@@ -650,7 +646,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\scripted\CTankSequence.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CTrainSequence.h" />
     <ClInclude Include="..\..\dlls\entities\spark\CShower.h" />
-    <ClInclude Include="..\..\dlls\entities\streak\CSpiral.h" />
     <ClInclude Include="..\..\dlls\entities\target\CTargetCDAudio.h" />
     <ClInclude Include="..\..\dlls\entities\test\CTestEffect.h" />
     <ClInclude Include="..\..\dlls\entities\trigger\CAutoTrigger.h" />
