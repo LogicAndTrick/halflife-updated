@@ -122,7 +122,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\crowbar.cpp" />
     <ClCompile Include="..\..\dlls\debugger.cpp" />
     <ClCompile Include="..\..\dlls\defaultai.cpp" />
-    <ClCompile Include="..\..\dlls\effects.cpp" />
     <ClCompile Include="..\..\dlls\egon.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CBaseMutableAlias.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CInfoAlias.cpp" />
@@ -156,7 +155,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp" />
     <ClCompile Include="..\..\dlls\entities\CFlyingMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp" />
-    <ClCompile Include="..\..\dlls\entities\CGibShooter.cpp" />
     <ClCompile Include="..\..\dlls\entities\CLightFader.cpp" />
     <ClCompile Include="..\..\dlls\entities\CMonsterMaker.cpp" />
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp" />
@@ -169,6 +167,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerSprite.cpp" />
     <ClCompile Include="..\..\dlls\entities\cycler\CWeaponCycler.cpp" />
     <ClCompile Include="..\..\dlls\entities\cycler\CWreckage.cpp" />
+    <ClCompile Include="..\..\dlls\entities\env\CBeam.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CBlood.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CBubbling.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CEnvBeamTrail.cpp" />
@@ -194,13 +193,18 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\env\CEnvState.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CEnvWarpBall.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CFade.cpp" />
+    <ClCompile Include="..\..\dlls\entities\env\CGibShooter.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CGlow.cpp" />
+    <ClCompile Include="..\..\dlls\entities\env\CLaser.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CLightning.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CMessage.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CParticle.cpp" />
+    <ClCompile Include="..\..\dlls\entities\env\CRainModify.cpp" />
+    <ClCompile Include="..\..\dlls\entities\env\CRainSettings.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CRenderFxManager.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CShake.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CSmoker.cpp" />
+    <ClCompile Include="..\..\dlls\entities\env\CSprite.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseButton.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFrictionModifier.cpp" />
@@ -310,7 +314,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\scripted\CTrainSequence.cpp" />
     <ClCompile Include="..\..\dlls\entities\spark\CShower.cpp" />
     <ClCompile Include="..\..\dlls\entities\target\CTargetCDAudio.cpp" />
-    <ClCompile Include="..\..\dlls\entities\test\CTestEffect.cpp" />
     <ClCompile Include="..\..\dlls\entities\trigger\CAutoTrigger.cpp" />
     <ClCompile Include="..\..\dlls\entities\trigger\CBaseTrigger.cpp" />
     <ClCompile Include="..\..\dlls\entities\trigger\CChangeLevel.cpp" />
@@ -459,7 +462,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\client.h" />
     <ClInclude Include="..\..\dlls\decals.h" />
     <ClInclude Include="..\..\dlls\defaultai.h" />
-    <ClInclude Include="..\..\dlls\effects.h" />
     <ClInclude Include="..\..\dlls\enginecallback.h" />
     <ClInclude Include="..\..\dlls\entities\alias\CBaseMutableAlias.h" />
     <ClInclude Include="..\..\dlls\entities\alias\CInfoAlias.h" />
@@ -493,7 +495,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CDecal.h" />
     <ClInclude Include="..\..\dlls\entities\CFlyingMonster.h" />
     <ClInclude Include="..\..\dlls\entities\CGenericCycler.h" />
-    <ClInclude Include="..\..\dlls\entities\CGibShooter.h" />
     <ClInclude Include="..\..\dlls\entities\CLightFader.h" />
     <ClInclude Include="..\..\dlls\entities\CMonsterMaker.h" />
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h" />
@@ -506,6 +507,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerSprite.h" />
     <ClInclude Include="..\..\dlls\entities\cycler\CWeaponCycler.h" />
     <ClInclude Include="..\..\dlls\entities\cycler\CWreckage.h" />
+    <ClInclude Include="..\..\dlls\entities\env\CBeam.h" />
     <ClInclude Include="..\..\dlls\entities\env\CBlood.h" />
     <ClInclude Include="..\..\dlls\entities\env\CBubbling.h" />
     <ClInclude Include="..\..\dlls\entities\env\CEnvBeamTrail.h" />
@@ -531,13 +533,18 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\env\CEnvState.h" />
     <ClInclude Include="..\..\dlls\entities\env\CEnvWarpBall.h" />
     <ClInclude Include="..\..\dlls\entities\env\CFade.h" />
+    <ClInclude Include="..\..\dlls\entities\env\CGibShooter.h" />
     <ClInclude Include="..\..\dlls\entities\env\CGlow.h" />
+    <ClInclude Include="..\..\dlls\entities\env\CLaser.h" />
     <ClInclude Include="..\..\dlls\entities\env\CLightning.h" />
     <ClInclude Include="..\..\dlls\entities\env\CMessage.h" />
     <ClInclude Include="..\..\dlls\entities\env\CParticle.h" />
+    <ClInclude Include="..\..\dlls\entities\env\CRainModify.h" />
+    <ClInclude Include="..\..\dlls\entities\env\CRainSettings.h" />
     <ClInclude Include="..\..\dlls\entities\env\CRenderFxManager.h" />
     <ClInclude Include="..\..\dlls\entities\env\CShake.h" />
     <ClInclude Include="..\..\dlls\entities\env\CSmoker.h" />
+    <ClInclude Include="..\..\dlls\entities\env\CSprite.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseButton.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFrictionModifier.h" />
@@ -647,7 +654,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\scripted\CTrainSequence.h" />
     <ClInclude Include="..\..\dlls\entities\spark\CShower.h" />
     <ClInclude Include="..\..\dlls\entities\target\CTargetCDAudio.h" />
-    <ClInclude Include="..\..\dlls\entities\test\CTestEffect.h" />
     <ClInclude Include="..\..\dlls\entities\trigger\CAutoTrigger.h" />
     <ClInclude Include="..\..\dlls\entities\trigger\CBaseTrigger.h" />
     <ClInclude Include="..\..\dlls\entities\trigger\CChangeLevel.h" />

@@ -19,7 +19,6 @@
 #include "player.h"
 #include "monsters.h"
 #include "weapons.h"
-#include "effects.h"
 #include "customentity.h"
 #include "gamerules.h"
 #include "UserMessages.h"

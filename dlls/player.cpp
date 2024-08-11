@@ -41,7 +41,6 @@
 #include "decals.h"
 #include "gamerules.h"
 #include "game.h"
-#include "effects.h"  //LRC
 #include "movewith.h" //LRC
 #include "items.h"	  //AJH Inventory system
 #include "locus.h"	  //LRC 1.8
@@ -49,6 +48,8 @@
 #include "hltv.h"
 #include "UserMessages.h"
 #include "client.h"
+#include "entities/env/CRainModify.h"
+#include "entities/env/CRainSettings.h"
 
 // #define DUCKFIX
 

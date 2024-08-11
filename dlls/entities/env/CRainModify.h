@@ -15,32 +15,23 @@
 
 #pragma once
 
-#include "CGibShooter.h"
-#include "CSprite.h"
+#include "entities/CBaseEntity.h"
 
-
-class CEnvShooter : public CGibShooter
-{
-	void Precache() override;
-	bool KeyValue(KeyValueData* pkvd) override;
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	void Spawn() override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	CBaseEntity* CreateGib(Vector vecPos, Vector vecVel) override;
-
-	int m_iszTouch;
-	int m_iszTouchOther;
-	int m_iPhysics;
-	float m_fFriction;
-	Vector m_vecSize;
-};
-
-// Shooter particle
-class CShot : public CSprite
+class CRainModify : public CBaseEntity
 {
 public:
-	void Touch(CBaseEntity* pOther) override;
+	void Spawn() override;
+	bool KeyValue(KeyValueData* pkvd) override;
+	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
+
+	int ObjectCaps() override { return (CBaseEntity ::ObjectCaps() & ~FCAP_ACROSS_TRANSITION); }
+
+	bool Save(CSave& save) override;
+	bool Restore(CRestore& restore) override;
+	static TYPEDESCRIPTION m_SaveData[];
+
+	int Rain_Drips;
+	float Rain_windX, Rain_windY;
+	float Rain_randX, Rain_randY;
+	float fadeTime;
 };

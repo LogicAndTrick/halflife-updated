@@ -16,7 +16,7 @@
 #pragma once
 
 #include "entities/CBaseMonster.h"
-#include "effects.h"
+#include "entities/env/CSprite.h"
 
 extern Vector VecBModelOrigin(entvars_t* pevBModel);
 

@@ -15,32 +15,41 @@
 
 #pragma once
 
-#include "CGibShooter.h"
+#include "CBeam.h"
 #include "CSprite.h"
 
+// LRC - smoother lasers
+#define SF_LASER_INTERPOLATE 0x0400
 
-class CEnvShooter : public CGibShooter
-{
-	void Precache() override;
-	bool KeyValue(KeyValueData* pkvd) override;
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	void Spawn() override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	CBaseEntity* CreateGib(Vector vecPos, Vector vecVel) override;
-
-	int m_iszTouch;
-	int m_iszTouchOther;
-	int m_iPhysics;
-	float m_fFriction;
-	Vector m_vecSize;
-};
-
-// Shooter particle
-class CShot : public CSprite
+class CLaser : public CBeam
 {
 public:
-	void Touch(CBaseEntity* pOther) override;
+	void Spawn() override;
+	void PostSpawn() override;
+	void Precache() override;
+	bool KeyValue(KeyValueData* pkvd) override;
+
+	void TurnOn();
+	void TurnOff();
+	STATE GetState() override { return (pev->effects & EF_NODRAW) ? STATE_OFF : STATE_ON; };
+
+	void FireAtPoint(Vector startpos, TraceResult& point);
+
+	void EXPORT StrikeThink();
+	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
+	bool Save(CSave& save) override;
+	bool Restore(CRestore& restore) override;
+	static TYPEDESCRIPTION m_SaveData[];
+
+	EHANDLE m_hActivator; // AJH allow *locus start/end positions
+
+	CSprite* m_pStartSprite;
+	CSprite* m_pEndSprite;
+	int m_iszStartSpriteName;
+	int m_iszEndSpriteName;
+	Vector m_firePosition;
+	int m_iProjection;
+	int m_iStoppedBy;
+	int m_iszStartPosition;
+	int m_iTowardsMode;
 };

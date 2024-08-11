@@ -16,7 +16,7 @@
 #pragma once
 
 #include "entities/CTalkMonster.h"
-#include "effects.h"
+#include "entities/env/CBeam.h"
 
 // For holograms, make them not solid so the player can walk through them
 // LRC- this seems to interfere with SF_MONSTER_CLIP

@@ -15,13 +15,13 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
-#include "effects.h"
 #include "weapons.h"
 #include "explode.h"
 #include "monsters.h"
 #include "movewith.h"
 
 #include "player.h"
+#include "entities/env/CLaser.h"
 
 
 #define SF_TANK_ACTIVE 0x0001

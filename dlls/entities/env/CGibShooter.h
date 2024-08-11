@@ -15,32 +15,37 @@
 
 #pragma once
 
-#include "CGibShooter.h"
-#include "CSprite.h"
+#include "entities/CBaseDelay.h"
 
+#define SF_GIBSHOOTER_REPEATABLE 1 // allows a gibshooter to be refired
+#define SF_GIBSHOOTER_DEBUG 4	   // LRC
 
-class CEnvShooter : public CGibShooter
-{
-	void Precache() override;
-	bool KeyValue(KeyValueData* pkvd) override;
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	void Spawn() override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	CBaseEntity* CreateGib(Vector vecPos, Vector vecVel) override;
-
-	int m_iszTouch;
-	int m_iszTouchOther;
-	int m_iPhysics;
-	float m_fFriction;
-	Vector m_vecSize;
-};
-
-// Shooter particle
-class CShot : public CSprite
+class CGibShooter : public CBaseDelay
 {
 public:
-	void Touch(CBaseEntity* pOther) override;
+	void Spawn() override;
+	void Precache() override;
+	bool KeyValue(KeyValueData* pkvd) override;
+	void EXPORT ShootThink();
+	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
+
+	virtual CBaseEntity* CreateGib(Vector vecPos, Vector vecVel);
+
+	bool Save(CSave& save) override;
+	bool Restore(CRestore& restore) override;
+	static TYPEDESCRIPTION m_SaveData[];
+
+	int m_iGibs;
+	int m_iGibCapacity;
+	int m_iGibMaterial;
+	int m_iGibModelIndex;
+	//	float m_flGibVelocity;
+	float m_flVariance;
+	float m_flGibLife;
+	int m_iszTargetname;
+	int m_iszPosition;
+	int m_iszVelocity;
+	int m_iszVelFactor;
+	int m_iszSpawnTarget;
+	int m_iBloodColor;
 };

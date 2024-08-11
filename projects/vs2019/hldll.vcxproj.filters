@@ -90,9 +90,6 @@
     <Filter Include="Header Files\dlls\entities\target">
       <UniqueIdentifier>{7d6926c2-6c1b-4c5b-9901-f1239f7259d1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dlls\entities\test">
-      <UniqueIdentifier>{7afb2081-50b7-40a9-98a2-afd67c2b6cde}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\dlls\entities\trigger">
       <UniqueIdentifier>{d8726501-4381-497c-af8f-6f9a2437adab}</UniqueIdentifier>
     </Filter>
@@ -198,9 +195,6 @@
     <Filter Include="Source Files\dlls\entities\target">
       <UniqueIdentifier>{9247c997-1abf-4cce-ac8f-ad66f0a2d162}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\dlls\entities\test">
-      <UniqueIdentifier>{b9438463-dd02-49d6-80ac-a9f60aae5e32}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\dlls\entities\trigger">
       <UniqueIdentifier>{d227792e-cce1-4798-9765-ec83e1b9c87c}</UniqueIdentifier>
     </Filter>
@@ -255,9 +249,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\defaultai.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\effects.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\egon.cpp">
@@ -359,9 +350,6 @@
     <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CGibShooter.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CLightFader.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
@@ -397,6 +385,9 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\cycler\CWreckage.cpp">
       <Filter>Source Files\dlls\entities\cycler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CBeam.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\env\CBlood.cpp">
       <Filter>Source Files\dlls\entities\env</Filter>
@@ -473,7 +464,13 @@
     <ClCompile Include="..\..\dlls\entities\env\CFade.cpp">
       <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CGibShooter.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\env\CGlow.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CLaser.cpp">
       <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\env\CLightning.cpp">
@@ -485,6 +482,12 @@
     <ClCompile Include="..\..\dlls\entities\env\CParticle.cpp">
       <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CRainModify.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CRainSettings.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\env\CRenderFxManager.cpp">
       <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
@@ -492,6 +495,9 @@
       <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\env\CSmoker.cpp">
+      <Filter>Source Files\dlls\entities\env</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\env\CSprite.cpp">
       <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\func\CBaseButton.cpp">
@@ -820,9 +826,6 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\target\CTargetCDAudio.cpp">
       <Filter>Source Files\dlls\entities\target</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\test\CTestEffect.cpp">
-      <Filter>Source Files\dlls\entities\test</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\trigger\CAutoTrigger.cpp">
       <Filter>Source Files\dlls\entities\trigger</Filter>
@@ -1264,9 +1267,6 @@
     <ClInclude Include="..\..\dlls\defaultai.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\effects.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\enginecallback.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
@@ -1366,9 +1366,6 @@
     <ClInclude Include="..\..\dlls\entities\CGenericCycler.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CGibShooter.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CLightFader.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
@@ -1404,6 +1401,9 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\cycler\CWreckage.h">
       <Filter>Header Files\dlls\entities\cycler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CBeam.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\env\CBlood.h">
       <Filter>Header Files\dlls\entities\env</Filter>
@@ -1480,7 +1480,13 @@
     <ClInclude Include="..\..\dlls\entities\env\CFade.h">
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CGibShooter.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\env\CGlow.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CLaser.h">
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\env\CLightning.h">
@@ -1492,6 +1498,12 @@
     <ClInclude Include="..\..\dlls\entities\env\CParticle.h">
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CRainModify.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CRainSettings.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\env\CRenderFxManager.h">
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
@@ -1499,6 +1511,9 @@
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\env\CSmoker.h">
+      <Filter>Header Files\dlls\entities\env</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\env\CSprite.h">
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\func\CBaseButton.h">
@@ -1827,9 +1842,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\target\CTargetCDAudio.h">
       <Filter>Header Files\dlls\entities\target</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\test\CTestEffect.h">
-      <Filter>Header Files\dlls\entities\test</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\trigger\CAutoTrigger.h">
       <Filter>Header Files\dlls\entities\trigger</Filter>

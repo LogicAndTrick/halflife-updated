@@ -16,7 +16,6 @@
 #pragma once
 
 #include "entities/CSquadMonster.h"
-#include "effects.h"
 #include "monsters.h"
 
 //=========================================================

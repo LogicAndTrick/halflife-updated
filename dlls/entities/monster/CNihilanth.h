@@ -16,7 +16,7 @@
 #pragma once
 
 #include "entities/CBaseMonster.h"
-#include "effects.h"
+#include "entities/env/CSprite.h"
 
 #define N_SCALE 15
 #define N_SPHERES 20

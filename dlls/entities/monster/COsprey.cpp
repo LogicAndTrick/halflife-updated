@@ -16,7 +16,6 @@
 #include "COsprey.h"
 #include "weapons.h"
 #include "soundent.h"
-#include "effects.h"
 #include "customentity.h"
 
 LINK_ENTITY_TO_CLASS(monster_osprey, COsprey);

@@ -16,8 +16,9 @@
 #pragma once
 
 #include "entities/CBaseMonster.h"
-#include "effects.h"
 #include "monsters.h"
+#include "entities/env/CBeam.h"
+#include "entities/env/CSprite.h"
 
 //=========================================================
 // Gargantua Monster

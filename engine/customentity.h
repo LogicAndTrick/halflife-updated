@@ -29,8 +29,3 @@ enum
 	BEAM_ENTS,
 	BEAM_HOSE,
 };
-
-#define BEAM_FSINE 0x10
-#define BEAM_FSOLID 0x20
-#define BEAM_FSHADEIN 0x40
-#define BEAM_FSHADEOUT 0x80

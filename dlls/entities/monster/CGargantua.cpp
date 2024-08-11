@@ -17,7 +17,6 @@
 #include "schedule.h"
 #include "customentity.h"
 #include "weapons.h"
-#include "effects.h"
 #include "soundent.h"
 #include "decals.h"
 #include "explode.h"

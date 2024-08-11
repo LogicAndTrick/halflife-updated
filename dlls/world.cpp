@@ -28,12 +28,12 @@
 #include "client.h"
 #include "decals.h"
 #include "skill.h"
-#include "effects.h"
 #include "player.h"
 #include "weapons.h"
 #include "gamerules.h"
 #include "teamplay_gamerules.h"
 #include "movewith.h" //LRC
+#include "entities/env/CMessage.h"
 
 CGlobalState gGlobalState;
 

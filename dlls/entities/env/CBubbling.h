@@ -13,3 +13,31 @@
 *
 ****/
 
+#pragma once
+
+#include "entities/CBaseEntity.h"
+
+#define SF_BUBBLES_STARTOFF 0x0001
+
+class CBubbling : public CBaseEntity
+{
+public:
+	void Spawn() override;
+	void Precache() override;
+	bool KeyValue(KeyValueData* pkvd) override;
+
+	void EXPORT FizzThink();
+	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
+
+	bool Save(CSave& save) override;
+	bool Restore(CRestore& restore) override;
+	int ObjectCaps() override { return CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+	static TYPEDESCRIPTION m_SaveData[];
+
+	int m_density;
+	int m_frequency;
+	int m_bubbleModel;
+	bool m_state;
+
+	STATE GetState() override { return m_state ? STATE_ON : STATE_OFF; };
+};

@@ -16,7 +16,6 @@
 #pragma once
 
 #include "entities/CBaseMonster.h"
-#include "effects.h"
 #include "weapons.h"
 
 #define SF_WAITFORTRIGGER (0x04 | 0x40) // UNDONE: Fix!

@@ -16,8 +16,8 @@
 #pragma once
 
 #include "entities/CFlyingMonster.h"
-#include "effects.h"
 #include "monsters.h"
+#include "entities/env/CBeam.h"
 
 #define SEARCH_RETRY 16
 

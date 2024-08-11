@@ -15,7 +15,6 @@
 
 #include "CTripmineGrenade.h"
 #include "monsters.h"
-#include "effects.h"
 
 LINK_ENTITY_TO_CLASS(monster_tripmine, CTripmineGrenade);
 

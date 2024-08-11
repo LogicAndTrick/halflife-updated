@@ -15,8 +15,9 @@
 
 #pragma once
 
-#include "effects.h"
 #include "weaponinfo.h"
+#include "entities/env/CBeam.h"
+#include "entities/env/CSprite.h"
 
 class CBasePlayer;
 class CBasePlayerWeapon;
