@@ -968,9 +968,6 @@
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\explode.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\flyingmonster.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1983,9 +1980,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\xen\CXenTreeTrigger.h">
       <Filter>Header Files\dlls\entities\xen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\explode.h">
-      <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\extdll.h">
       <Filter>Header Files\dlls</Filter>

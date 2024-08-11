@@ -361,7 +361,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\xen\CXenSporeSmall.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTree.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp" />
-    <ClCompile Include="..\..\dlls\explode.cpp" />
     <ClCompile Include="..\..\dlls\flyingmonster.cpp" />
     <ClCompile Include="..\..\dlls\game.cpp" />
     <ClCompile Include="..\..\dlls\gamerules.cpp" />
@@ -701,7 +700,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\xen\CXenSporeSmall.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenTree.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenTreeTrigger.h" />
-    <ClInclude Include="..\..\dlls\explode.h" />
     <ClInclude Include="..\..\dlls\extdll.h" />
     <ClInclude Include="..\..\dlls\flyingmonster.h" />
     <ClInclude Include="..\..\dlls\game.h" />

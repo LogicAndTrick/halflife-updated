@@ -15,13 +15,12 @@
 
 #include "CGargantua.h"
 #include "schedule.h"
-#include "customentity.h"
 #include "weapons.h"
 #include "soundent.h"
 #include "decals.h"
-#include "explode.h"
 #include "entities/func/CBreakable.h"
 #include "scripted.h"
+#include "entities/env/CEnvExplosion.h"
 
 int gStompSprite = 0, gGargGibModel = 0;
 
