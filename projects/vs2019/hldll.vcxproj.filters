@@ -506,6 +506,9 @@
     <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp">
       <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CBreakable.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\func\CFrictionModifier.cpp">
       <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
@@ -966,9 +969,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\flyingmonster.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\func_break.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\func_tank.cpp">
@@ -1522,6 +1522,9 @@
     <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h">
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CBreakable.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\func\CFrictionModifier.h">
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
@@ -1985,9 +1988,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\flyingmonster.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\func_break.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\game.h">

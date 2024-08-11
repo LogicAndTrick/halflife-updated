@@ -207,6 +207,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\env\CSprite.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseButton.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp" />
+    <ClCompile Include="..\..\dlls\entities\func\CBreakable.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFrictionModifier.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncConveyor.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncIllusionary.cpp" />
@@ -361,7 +362,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp" />
     <ClCompile Include="..\..\dlls\explode.cpp" />
     <ClCompile Include="..\..\dlls\flyingmonster.cpp" />
-    <ClCompile Include="..\..\dlls\func_break.cpp" />
     <ClCompile Include="..\..\dlls\func_tank.cpp" />
     <ClCompile Include="..\..\dlls\game.cpp" />
     <ClCompile Include="..\..\dlls\gamerules.cpp" />
@@ -547,6 +547,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\env\CSprite.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseButton.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h" />
+    <ClInclude Include="..\..\dlls\entities\func\CBreakable.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFrictionModifier.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncConveyor.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncIllusionary.h" />
@@ -702,7 +703,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\explode.h" />
     <ClInclude Include="..\..\dlls\extdll.h" />
     <ClInclude Include="..\..\dlls\flyingmonster.h" />
-    <ClInclude Include="..\..\dlls\func_break.h" />
     <ClInclude Include="..\..\dlls\game.h" />
     <ClInclude Include="..\..\dlls\gamerules.h" />
     <ClInclude Include="..\..\dlls\hornet.h" />

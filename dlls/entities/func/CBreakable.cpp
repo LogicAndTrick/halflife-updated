@@ -1,34 +1,50 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-/*
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-===== bmodels.cpp ========================================================
-
-  spawn, think, and use functions for entities that use brush models
-
-*/
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "saverestore.h"
-#include "func_break.h"
+#include "CBreakable.h"
 #include "decals.h"
 #include "explode.h"
+#include "monsters.h"
 
-// =================== FUNC_Breakable ==============================================
+LINK_ENTITY_TO_CLASS(func_breakable, CBreakable);
+
+TYPEDESCRIPTION CBreakable::m_SaveData[] =
+	{
+		DEFINE_FIELD(CBreakable, m_Material, FIELD_INTEGER),
+		DEFINE_FIELD(CBreakable, m_Explosion, FIELD_INTEGER),
+
+		// Don't need to save/restore these because we precache after restore
+		//	DEFINE_FIELD( CBreakable, m_idShard, FIELD_INTEGER ),
+
+		DEFINE_FIELD(CBreakable, m_angle, FIELD_FLOAT),
+		DEFINE_FIELD(CBreakable, m_iszGibModel, FIELD_STRING),
+		DEFINE_FIELD(CBreakable, m_iszSpawnObject, FIELD_STRING),
+
+		// Explosion magnitude is stored in pev->impulse
+
+		// LRC- time until respawn
+		DEFINE_FIELD(CBreakable, m_iRespawnTime, FIELD_INTEGER),
+		// LRC- health to set on respawn
+		DEFINE_FIELD(CBreakable, m_iInitialHealth, FIELD_INTEGER),
+		DEFINE_FIELD(CBreakable, m_iInitialRenderAmt, FIELD_INTEGER),
+		DEFINE_FIELD(CBreakable, m_iInitialRenderMode, FIELD_INTEGER),
+		DEFINE_FIELD(CBreakable, m_iszWhenHit, FIELD_STRING),
+		DEFINE_FIELD(CBreakable, m_pHitProxy, FIELD_CLASSPTR),
+};
+
+IMPLEMENT_SAVERESTORE(CBreakable, CBaseDelay);
 
 // Just add more items to the bottom of this array and they will automagically be supported
 // This is done instead of just a classname in the FGD so we can control which entities can
@@ -123,12 +139,12 @@ bool CBreakable::KeyValue(KeyValueData* pkvd)
 	}
 	else if (FStrEq(pkvd->szKeyName, "lip"))
 		return true;
-	else if (FStrEq(pkvd->szKeyName, "respawn")) //LRC
+	else if (FStrEq(pkvd->szKeyName, "respawn")) // LRC
 	{
 		m_iRespawnTime = atoi(pkvd->szValue);
 		return true;
 	}
-	else if (FStrEq(pkvd->szKeyName, "whenhit")) //LRC
+	else if (FStrEq(pkvd->szKeyName, "whenhit")) // LRC
 	{
 		m_iszWhenHit = ALLOC_STRING(pkvd->szValue);
 		return true;
@@ -141,37 +157,6 @@ bool CBreakable::KeyValue(KeyValueData* pkvd)
 	return CBaseDelay::KeyValue(pkvd);
 }
 
-
-//
-// func_breakable - bmodel that breaks into pieces after taking damage
-//
-LINK_ENTITY_TO_CLASS(func_breakable, CBreakable);
-TYPEDESCRIPTION CBreakable::m_SaveData[] =
-	{
-		DEFINE_FIELD(CBreakable, m_Material, FIELD_INTEGER),
-		DEFINE_FIELD(CBreakable, m_Explosion, FIELD_INTEGER),
-
-		// Don't need to save/restore these because we precache after restore
-		//	DEFINE_FIELD( CBreakable, m_idShard, FIELD_INTEGER ),
-
-		DEFINE_FIELD(CBreakable, m_angle, FIELD_FLOAT),
-		DEFINE_FIELD(CBreakable, m_iszGibModel, FIELD_STRING),
-		DEFINE_FIELD(CBreakable, m_iszSpawnObject, FIELD_STRING),
-
-		// Explosion magnitude is stored in pev->impulse
-
-		//LRC- time until respawn
-		DEFINE_FIELD(CBreakable, m_iRespawnTime, FIELD_INTEGER),
-		//LRC- health to set on respawn
-		DEFINE_FIELD(CBreakable, m_iInitialHealth, FIELD_INTEGER),
-		DEFINE_FIELD(CBreakable, m_iInitialRenderAmt, FIELD_INTEGER),
-		DEFINE_FIELD(CBreakable, m_iInitialRenderMode, FIELD_INTEGER),
-		DEFINE_FIELD(CBreakable, m_iszWhenHit, FIELD_STRING),
-		DEFINE_FIELD(CBreakable, m_pHitProxy, FIELD_CLASSPTR),
-};
-
-IMPLEMENT_SAVERESTORE(CBreakable, CBaseEntity);
-
 void CBreakable::Spawn()
 {
 	Precache();
@@ -181,13 +166,13 @@ void CBreakable::Spawn()
 	else
 		pev->takedamage = DAMAGE_YES;
 
-	if (m_iClass) //LRC - might these additions cause problems?
+	if (m_iClass) // LRC - might these additions cause problems?
 	{
 		pev->flags |= FL_MONSTER;
 		pev->view_ofs = (pev->maxs + pev->mins) / 2;
 	}
 
-	if (m_iszWhenHit) //LRC - locus trigger
+	if (m_iszWhenHit) // LRC - locus trigger
 	{
 		m_pHitProxy = GetClassPtr((CPointEntity*)NULL);
 	}
@@ -207,7 +192,7 @@ void CBreakable::Spawn()
 		pev->playerclass = 1;
 	}
 
-	SET_MODEL(ENT(pev), STRING(pev->model)); //set size and link into world.
+	SET_MODEL(ENT(pev), STRING(pev->model)); // set size and link into world.
 
 	SetTouch(&CBreakable::BreakTouch);
 	SetUse(&CBreakable::BreakUse);
@@ -267,7 +252,6 @@ const char* CBreakable::pSoundsConcrete[] =
 		"debris/concrete2.wav",
 		"debris/concrete3.wav",
 };
-
 
 const char* CBreakable::pSoundsGlass[] =
 	{
@@ -343,14 +327,13 @@ void CBreakable::MaterialSoundRandom(edict_t* pEdict, Materials soundMaterial, f
 		EMIT_SOUND(pEdict, CHAN_BODY, pSoundList[RANDOM_LONG(0, soundCount - 1)], volume, 1.0);
 }
 
-
 void CBreakable::Precache()
 {
 	const char* pGibName;
 
 	switch (m_Material)
 	{
-	default: //Wood is default, needs to match constant used in KeyValue
+	default: // Wood is default, needs to match constant used in KeyValue
 	case matWood:
 		pGibName = "models/woodgibs.mdl";
 
@@ -408,7 +391,7 @@ void CBreakable::Precache()
 		pGibName = STRING(m_iszGibModel);
 
 	m_idShard = PRECACHE_MODEL((char*)pGibName);
-	//ALERT(at_debug,"Breakable: Shard is %d\n",m_idShard);
+	// ALERT(at_debug,"Breakable: Shard is %d\n",m_idShard);
 
 	// Precache the spawn item's data
 	if (!FStringNull(m_iszSpawnObject))
@@ -423,7 +406,6 @@ bool CBreakable::CalcNumber(CBaseEntity* plocus, float* OUTresult)
 	*OUTresult = pev->health / m_iInitialHealth;
 	return true;
 }
-
 
 void CBreakable::DamageSound()
 {
@@ -457,7 +439,7 @@ void CBreakable::DamageSound()
 		i = 3;
 		break;
 
-	default: //Wood is default, needs to match constant used in KeyValue
+	default: // Wood is default, needs to match constant used in KeyValue
 	case matWood:
 		rgpsz[0] = "debris/wood1.wav";
 		rgpsz[1] = "debris/wood2.wav";
@@ -543,7 +525,6 @@ void CBreakable::BreakTouch(CBaseEntity* pOther)
 	}
 }
 
-
 //
 // Smash the our breakable object
 //
@@ -564,7 +545,7 @@ void CBreakable::BreakUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYP
 	}
 }
 
-//LRC
+// LRC
 void CBreakable::RespawnUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
 {
 	// OFF means someone wants it to break, but this one's broken already.
@@ -583,7 +564,7 @@ void CBreakable::RespawnUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_T
 	SetNextThink(0.1);
 }
 
-//LRC
+// LRC
 void CBreakable::RespawnThink()
 {
 	//	ALERT(at_debug,"RespawnThink: ");
@@ -612,14 +593,14 @@ void CBreakable::RespawnThink()
 		}
 		//		ALERT(at_debug,"Respawn OK\n");
 		/*	if (FStrEq("func_pushable",STRING(pev->classname))){	//AJH Fix for respawnable breakable pushables
-			pev->solid = SOLID_BBOX;							//For some reason this code must be executed outside of 
+			pev->solid = SOLID_BBOX;							//For some reason this code must be executed outside of
 			pev->origin.z+=1;									//the RespawnThink function. Uses DoRespawn()
 			UTIL_SetOrigin(this,pev->origin);
 		}else{
 		pev->solid = SOLID_BSP;
 		}
 		*/
-		DoRespawn(); //AJH Fix for respawnable breakable pushables (BY HAWK777)
+		DoRespawn(); // AJH Fix for respawnable breakable pushables (BY HAWK777)
 		SetUse(&CBreakable::BreakUse);
 		pev->effects &= ~EF_NODRAW;
 		pev->health = m_iInitialHealth;
@@ -632,7 +613,7 @@ void CBreakable::RespawnThink()
 	}
 }
 
-void CBreakable::DoRespawn(void) //AJH Fix for respawnable breakable pushables (BY HAWK777)
+void CBreakable::DoRespawn(void) // AJH Fix for respawnable breakable pushables (BY HAWK777)
 {
 	pev->solid = SOLID_BSP;
 }
@@ -663,7 +644,7 @@ void CBreakable::TraceAttack(entvars_t* pevAttacker, float flDamage, Vector vecD
 		{
 			UTIL_Sparks(ptr->vecEndPos);
 
-			float flVolume = RANDOM_FLOAT(0.7, 1.0); //random volume range
+			float flVolume = RANDOM_FLOAT(0.7, 1.0); // random volume range
 			switch (RANDOM_LONG(0, 1))
 			{
 			case 0:
@@ -682,26 +663,26 @@ void CBreakable::TraceAttack(entvars_t* pevAttacker, float flDamage, Vector vecD
 		}
 	}
 
-	//LRC
+	// LRC
 	if (m_iszWhenHit)
 	{
 		if (m_pHitProxy == NULL)
-		{ //AJH may need to reset this as it's null after save/load
+		{ // AJH may need to reset this as it's null after save/load
 			m_pHitProxy = GetClassPtr((CPointEntity*)NULL);
 		}
 
 		m_pHitProxy->pev->origin = ptr->vecEndPos;
 		if (pev->spawnflags & SF_BREAKABLE_INVERT)
-		{ //AJH
+		{ // AJH
 			vecDir.y = -vecDir.y;
-			//vecDir.z=-vecDir.z;
+			// vecDir.z=-vecDir.z;
 			vecDir.x = -vecDir.x;
-			//ALERT(at_debug,"INVERTING Breakables 'hit' vector (x&y components only) \n");
+			// ALERT(at_debug,"INVERTING Breakables 'hit' vector (x&y components only) \n");
 		}
 		m_pHitProxy->pev->velocity = vecDir;
-		m_pHitProxy->pev->angles = UTIL_VecToAngles(vecDir); //AJH
+		m_pHitProxy->pev->angles = UTIL_VecToAngles(vecDir); // AJH
 
-		//ALERT(at_debug,"Func_breakable fires %s \n",STRING(m_iszWhenHit));
+		// ALERT(at_debug,"Func_breakable fires %s \n",STRING(m_iszWhenHit));
 		FireTargets(STRING(m_iszWhenHit), m_pHitProxy, this, USE_TOGGLE, 0);
 	}
 
@@ -768,7 +749,6 @@ bool CBreakable::TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, flo
 
 	return true;
 }
-
 
 void CBreakable::Die()
 {
@@ -906,7 +886,7 @@ void CBreakable::Die()
 	WRITE_BYTE(10);
 
 	// Model
-	WRITE_SHORT(m_idShard); //model id#
+	WRITE_SHORT(m_idShard); // model id#
 
 	// # of shards
 	WRITE_BYTE(0); // let client decide
@@ -974,7 +954,7 @@ void CBreakable::Die()
 	{
 		//		ALERT(at_debug,"No respawn\n");
 
-		//tidy up
+		// tidy up
 		if (m_pHitProxy)
 		{
 			m_pHitProxy->SetThink(&CPointEntity::SUB_Remove);
@@ -996,13 +976,10 @@ void CBreakable::Die()
 	}
 }
 
-
-
 bool CBreakable::IsBreakable()
 {
 	return m_Material != matUnbreakableGlass;
 }
-
 
 int CBreakable::DamageDecal(int bitsDamageType)
 {
@@ -1013,272 +990,4 @@ int CBreakable::DamageDecal(int bitsDamageType)
 		return DECAL_BPROOF1;
 
 	return CBaseEntity::DamageDecal(bitsDamageType);
-}
-
-
-class CPushable : public CBreakable
-{
-public:
-	void Spawn() override;
-	void Precache() override;
-	void Touch(CBaseEntity* pOther) override;
-	void Move(CBaseEntity* pMover, bool push);
-	bool KeyValue(KeyValueData* pkvd) override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	void DoRespawn() override; //AJH Fix for respawnable breakable pushables (BY HAWK777)
-	void EXPORT StopSound();
-	//	virtual void	SetActivator( CBaseEntity *pActivator ) { m_pPusher = pActivator; }
-
-	int ObjectCaps() override { return (CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION) | FCAP_CONTINUOUS_USE; }
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	inline float MaxSpeed() { return m_maxSpeed; }
-
-	// breakables use an overridden takedamage
-	bool TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	static const char* m_soundNames[3];
-	int m_lastSound; // no need to save/restore, just keeps the same sound from playing twice in a row
-	float m_maxSpeed;
-	float m_soundTime;
-};
-
-TYPEDESCRIPTION CPushable::m_SaveData[] =
-	{
-		DEFINE_FIELD(CPushable, m_maxSpeed, FIELD_FLOAT),
-		DEFINE_FIELD(CPushable, m_soundTime, FIELD_TIME),
-};
-
-IMPLEMENT_SAVERESTORE(CPushable, CBreakable);
-
-LINK_ENTITY_TO_CLASS(func_pushable, CPushable);
-
-const char* CPushable::m_soundNames[3] = {"debris/pushbox1.wav", "debris/pushbox2.wav", "debris/pushbox3.wav"};
-
-
-void CPushable::Spawn()
-{
-	Vector vecMins = pev->mins;
-	Vector vecMaxs = pev->maxs;
-
-	if ((pev->spawnflags & SF_PUSH_BREAKABLE) != 0)
-		CBreakable::Spawn();
-	else
-		Precache();
-
-	pev->movetype = MOVETYPE_PUSHSTEP;
-	pev->solid = SOLID_BBOX;
-	SET_MODEL(ENT(pev), STRING(pev->model));
-
-	//	UTIL_SetSize( pev, vecMins, vecMaxs );
-
-	if (pev->friction > 399)
-		pev->friction = 399;
-
-	m_maxSpeed = 400 - pev->friction;
-	SetBits(pev->flags, FL_FLOAT);
-	pev->friction = 0;
-
-	pev->origin.z += 1; // Pick up off of the floor
-	UTIL_SetOrigin(this, pev->origin);
-
-	// Multiply by area of the box's cross-section (assume 1000 units^3 standard volume)
-	pev->skin = (pev->skin * (pev->maxs.x - pev->mins.x) * (pev->maxs.y - pev->mins.y)) * 0.0005;
-	m_soundTime = 0;
-}
-
-
-void CPushable::Precache()
-{
-	for (int i = 0; i < 3; i++)
-		PRECACHE_SOUND(m_soundNames[i]);
-
-	if ((pev->spawnflags & SF_PUSH_BREAKABLE) != 0)
-		CBreakable::Precache();
-}
-
-
-bool CPushable::KeyValue(KeyValueData* pkvd)
-{
-	if (FStrEq(pkvd->szKeyName, "size"))
-	{
-		int bbox = atoi(pkvd->szValue);
-
-		switch (bbox)
-		{
-		case 0: // Point
-			UTIL_SetSize(pev, Vector(-8, -8, -8), Vector(8, 8, 8));
-			break;
-
-		case 2: // Big Hull!?!?	!!!BUGBUG Figure out what this hull really is
-			UTIL_SetSize(pev, VEC_DUCK_HULL_MIN * 2, VEC_DUCK_HULL_MAX * 2);
-			break;
-
-		case 3: // Player duck
-			UTIL_SetSize(pev, VEC_DUCK_HULL_MIN, VEC_DUCK_HULL_MAX);
-			break;
-
-		default:
-		case 1: // Player
-			UTIL_SetSize(pev, VEC_HULL_MIN, VEC_HULL_MAX);
-			break;
-		}
-
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "buoyancy"))
-	{
-		pev->skin = atof(pkvd->szValue);
-		return true;
-	}
-
-	return CBreakable::KeyValue(pkvd);
-}
-
-
-// Pull the func_pushable
-void CPushable::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
-{
-	if (!pActivator || !pActivator->IsPlayer())
-	{
-		if ((pev->spawnflags & SF_PUSH_BREAKABLE) != 0)
-			this->CBreakable::Use(pActivator, pCaller, useType, value);
-		return;
-	}
-
-	if (pev->spawnflags & SF_PUSH_NOPULL)
-		return; //LRC: a non-pullable pushable.
-
-	if (pActivator->pev->velocity != g_vecZero)
-		Move(pActivator, false);
-}
-
-
-void CPushable::Touch(CBaseEntity* pOther)
-{
-	if (FClassnameIs(pOther->pev, "worldspawn"))
-		return;
-
-	Move(pOther, true);
-}
-
-
-void CPushable::Move(CBaseEntity* pOther, bool push)
-{
-	entvars_t* pevToucher = pOther->pev;
-	bool playerTouch = false;
-
-	// Is entity standing on this pushable ?
-	if (FBitSet(pevToucher->flags, FL_ONGROUND) && pevToucher->groundentity && VARS(pevToucher->groundentity) == pev)
-	{
-		// Only push if floating
-		if (pev->waterlevel > 0 && pev->watertype > CONTENT_FLYFIELD)
-			pev->velocity.z += pevToucher->velocity.z * 0.1;
-
-		return;
-	}
-
-
-	if (pOther->IsPlayer())
-	{
-		if (push && (pevToucher->button & (IN_FORWARD | IN_USE)) == 0) // Don't push unless the player is pushing forward and NOT use (pull)
-			return;
-		playerTouch = true;
-	}
-
-	float factor;
-
-	if (playerTouch)
-	{
-		if ((pevToucher->flags & FL_ONGROUND) == 0) // Don't push away from jumping/falling players unless in water
-		{
-			if (pev->waterlevel < 1 || pev->watertype <= CONTENT_FLYFIELD)
-				return;
-			else
-				factor = 0.1;
-		}
-		else
-			factor = 1;
-	}
-	else
-		factor = 0.25;
-
-	if (!push)
-		factor = factor * 0.5;
-
-	Vector oldVelocity = pev->velocity; //LRC 1.8
-	pev->velocity.x += pevToucher->velocity.x * factor;
-	pev->velocity.y += pevToucher->velocity.y * factor;
-
-	float length = sqrt(pev->velocity.x * pev->velocity.x + pev->velocity.y * pev->velocity.y);
-	if (push && (length > MaxSpeed()))
-	{
-		pev->velocity.x = (pev->velocity.x * MaxSpeed() / length);
-		pev->velocity.y = (pev->velocity.y * MaxSpeed() / length);
-	}
-
-	if (playerTouch)
-	{
-		//LRC 1.8
-		if (pev->spawnflags & SF_PUSH_NOSUPERPUSH)
-		{
-			// don't accelerate the pushable to be faster than the person pushing it
-			float playerSpeed = pevToucher->velocity.Length2D();
-			Vector playerPushDir = pevToucher->velocity / playerSpeed;
-			playerPushDir.z = 0;
-			float newdot = DotProduct(playerPushDir, pev->velocity); // how fast we're going with respect to the playerPushDir
-			float olddot = DotProduct(playerPushDir, oldVelocity);	 // how fast we used to be going
-			if (/*olddot <= playerSpeed+0.1f &&*/ newdot > playerSpeed)
-			{
-				// if it wasn't going too fast before, and now it is, adjust to the pusher's actual velocity
-				pev->velocity.x -= playerPushDir.x * newdot;
-				pev->velocity.y -= playerPushDir.y * newdot;
-				pev->velocity.x += pevToucher->velocity.x;
-				pev->velocity.y += pevToucher->velocity.y;
-			}
-		}
-
-		pevToucher->velocity.x = pev->velocity.x;
-		pevToucher->velocity.y = pev->velocity.y;
-		if ((gpGlobals->time - m_soundTime) > 0.7)
-		{
-			m_soundTime = gpGlobals->time;
-			if (length > 0 && FBitSet(pev->flags, FL_ONGROUND))
-			{
-				m_lastSound = RANDOM_LONG(0, 2);
-				EMIT_SOUND(ENT(pev), CHAN_WEAPON, m_soundNames[m_lastSound], 0.5, ATTN_NORM);
-				//			SetThink( StopSound );
-				//			SetNextThink( 0.1 );
-			}
-			else
-				STOP_SOUND(ENT(pev), CHAN_WEAPON, m_soundNames[m_lastSound]);
-		}
-	}
-}
-
-#if 0
-void CPushable::StopSound()
-{
-	Vector dist = pev->oldorigin - pev->origin;
-	if ( dist.Length() <= 0 )
-		STOP_SOUND( ENT(pev), CHAN_WEAPON, m_soundNames[m_lastSound] );
-}
-#endif
-
-bool CPushable::TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType)
-{
-	if ((pev->spawnflags & SF_PUSH_BREAKABLE) != 0)
-		return CBreakable::TakeDamage(pevInflictor, pevAttacker, flDamage, bitsDamageType);
-
-	return true;
-}
-
-void CPushable::DoRespawn(void)
-{ //AJH Fix for respawnable breakable pushables (BY HAWK777)
-	pev->solid = SOLID_BBOX;
-	pev->origin.z += 1;
-	UTIL_SetOrigin(this, pev->origin);
 }

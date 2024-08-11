@@ -14,7 +14,7 @@
  ****/
 
 #include "CEnvShooter.h"
-#include "func_break.h"
+#include "entities/func/CBreakable.h"
 #include "locus.h"
 #include "monsters.h"
 

@@ -20,7 +20,7 @@
 #include "soundent.h"
 #include "decals.h"
 #include "explode.h"
-#include "func_break.h"
+#include "entities/func/CBreakable.h"
 #include "scripted.h"
 
 int gStompSprite = 0, gGargGibModel = 0;

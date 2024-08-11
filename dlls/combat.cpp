@@ -28,7 +28,7 @@
 #include "decals.h"
 #include "animation.h"
 #include "weapons.h"
-#include "func_break.h"
+#include "entities/func/CBreakable.h"
 #include "studio.h"
 
 extern Vector VecBModelOrigin(entvars_t* pevBModel);

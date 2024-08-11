@@ -1,25 +1,28 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
 #pragma once
+
+#include "entities/CBaseDelay.h"
 
 typedef enum
 {
 	expRandom,
 	expDirected
 } Explosions;
+
 typedef enum
 {
 	matGlass = 0,
@@ -38,6 +41,7 @@ typedef enum
 #define NUM_SHARDS 6 // this many shards spawned when breakable objects break;
 #define SF_BREAKABLE_INVERT 16
 
+// func_breakable - bmodel that breaks into pieces after taking damage
 class CBreakable : public CBaseDelay
 {
 public:
@@ -45,14 +49,14 @@ public:
 	void Spawn() override;
 	void Precache() override;
 	bool KeyValue(KeyValueData* pkvd) override;
-	bool CalcNumber(CBaseEntity *pLocus, float* OUTresult) override;
+	bool CalcNumber(CBaseEntity* pLocus, float* OUTresult) override;
 	void EXPORT BreakTouch(CBaseEntity* pOther);
 	void EXPORT BreakUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
 	void EXPORT RespawnUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
 	void EXPORT RespawnThink();
 	void EXPORT RespawnFadeThink();
 	void DamageSound();
-	virtual void DoRespawn(); //AJH Fix for respawnable breakable pushables
+	virtual void DoRespawn(); // AJH Fix for respawnable breakable pushables
 	int Classify() override { return m_iClass; }
 
 	// breakables use an overridden takedamage
@@ -95,12 +99,12 @@ public:
 	float m_angle;
 	int m_iszGibModel;
 	int m_iszSpawnObject;
-	//LRC
+	// LRC
 	int m_iRespawnTime;
 	int m_iInitialHealth;
 	int m_iInitialRenderAmt;
 	int m_iInitialRenderMode;
-	int m_iClass;	  //so that monsters will attack it
+	int m_iClass;	  // so that monsters will attack it
 	int m_iszWhenHit; // locus trigger
 	CPointEntity* m_pHitProxy;
 };
