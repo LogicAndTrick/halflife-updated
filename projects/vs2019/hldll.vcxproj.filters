@@ -536,6 +536,9 @@
     <ClCompile Include="..\..\dlls\entities\func\CFuncShine.cpp">
       <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTank.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\func\CFuncTankControls.cpp">
       <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
@@ -969,9 +972,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\flyingmonster.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\func_tank.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\game.cpp">
@@ -1550,6 +1550,9 @@
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\func\CFuncShine.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTank.h">
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\func\CFuncTankControls.h">

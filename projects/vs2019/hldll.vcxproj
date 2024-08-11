@@ -217,6 +217,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\func\CFuncPlatRot.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncRotating.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncShine.cpp" />
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTank.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncTankControls.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncTankGun.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncTankLaser.cpp" />
@@ -362,7 +363,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp" />
     <ClCompile Include="..\..\dlls\explode.cpp" />
     <ClCompile Include="..\..\dlls\flyingmonster.cpp" />
-    <ClCompile Include="..\..\dlls\func_tank.cpp" />
     <ClCompile Include="..\..\dlls\game.cpp" />
     <ClCompile Include="..\..\dlls\gamerules.cpp" />
     <ClCompile Include="..\..\dlls\gauss.cpp" />
@@ -557,6 +557,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\func\CFuncPlatRot.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncRotating.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncShine.h" />
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTank.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncTankControls.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncTankGun.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncTankLaser.h" />
