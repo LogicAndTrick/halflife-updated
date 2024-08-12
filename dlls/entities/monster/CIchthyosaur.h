@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CFlyingMonster.h"
+#include "CFlyingMonster.h"
 #include "monsters.h"
 #include "entities/env/CBeam.h"
 

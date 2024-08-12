@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CTalkMonster.h"
+#include "CTalkMonster.h"
 
 //=========================================================
 // Monster's Anim Events Go Here

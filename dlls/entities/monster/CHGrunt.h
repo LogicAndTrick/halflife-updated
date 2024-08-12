@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CSquadMonster.h"
+#include "CSquadMonster.h"
 
 
 //=========================================================

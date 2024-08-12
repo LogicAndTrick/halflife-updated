@@ -1,26 +1,20 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   This source code contains proprietary and confidential information of
-*   Valve LLC and its suppliers.  Access to this code is restricted to
-*   persons who have executed a written SDK license with Valve.  Any access,
-*   use or distribution of this code by or to any unlicensed person is illegal.
-*
-****/
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "schedule.h"
-#include "flyingmonster.h"
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#define FLYING_AE_FLAP (8)
-#define FLYING_AE_FLAPSOUND (9)
+#include "CFlyingMonster.h"
+#include "monsters.h"
 
 int CFlyingMonster::CheckLocalMove(const Vector& vecStart, const Vector& vecEnd, CBaseEntity* pTarget, float* pflDist)
 {
@@ -54,12 +48,10 @@ int CFlyingMonster::CheckLocalMove(const Vector& vecStart, const Vector& vecEnd,
 	return LOCALMOVE_VALID;
 }
 
-
 bool CFlyingMonster::FTriangulate(const Vector& vecStart, const Vector& vecEnd, float flDist, CBaseEntity* pTargetEnt, Vector* pApex)
 {
 	return CBaseMonster::FTriangulate(vecStart, vecEnd, flDist, pTargetEnt, pApex);
 }
-
 
 Activity CFlyingMonster::GetStoppedActivity()
 {
@@ -68,7 +60,6 @@ Activity CFlyingMonster::GetStoppedActivity()
 
 	return ACT_HOVER;
 }
-
 
 void CFlyingMonster::Stop()
 {
@@ -82,7 +73,6 @@ void CFlyingMonster::Stop()
 	pev->angles.x = 0;
 	m_vecTravel = g_vecZero;
 }
-
 
 float CFlyingMonster::ChangeYaw(int speed)
 {
@@ -118,7 +108,6 @@ float CFlyingMonster::ChangeYaw(int speed)
 	return CBaseMonster::ChangeYaw(speed);
 }
 
-
 void CFlyingMonster::Killed(entvars_t* pevAttacker, int iGib)
 {
 	pev->movetype = MOVETYPE_STEP;
@@ -127,7 +116,6 @@ void CFlyingMonster::Killed(entvars_t* pevAttacker, int iGib)
 	pev->angles.x = 0;
 	CBaseMonster::Killed(pevAttacker, iGib);
 }
-
 
 void CFlyingMonster::HandleAnimEvent(MonsterEvent_t* pEvent)
 {
@@ -148,14 +136,12 @@ void CFlyingMonster::HandleAnimEvent(MonsterEvent_t* pEvent)
 	}
 }
 
-
 void CFlyingMonster::Move(float flInterval)
 {
 	if (pev->movetype == MOVETYPE_FLY)
 		m_flGroundSpeed = m_flightSpeed;
 	CBaseMonster::Move(flInterval);
 }
-
 
 bool CFlyingMonster::ShouldAdvanceRoute(float flWaypointDist)
 {
@@ -168,7 +154,6 @@ bool CFlyingMonster::ShouldAdvanceRoute(float flWaypointDist)
 
 	return false;
 }
-
 
 void CFlyingMonster::MoveExecute(CBaseEntity* pTargetEnt, const Vector& vecDir, float flInterval)
 {
@@ -209,7 +194,6 @@ void CFlyingMonster::MoveExecute(CBaseEntity* pTargetEnt, const Vector& vecDir, 
 	else
 		CBaseMonster::MoveExecute(pTargetEnt, vecDir, flInterval);
 }
-
 
 float CFlyingMonster::CeilingZ(const Vector& position)
 {

@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CTalkMonster.h"
+#include "CTalkMonster.h"
 
 #define NUM_SCIENTIST_HEADS 4 // four heads available for scientist model
 

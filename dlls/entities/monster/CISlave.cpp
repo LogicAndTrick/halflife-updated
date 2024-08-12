@@ -15,7 +15,6 @@
 
 #include "CISlave.h"
 #include "monsters.h"
-#include "squadmonster.h"
 #include "schedule.h"
 #include "weapons.h"
 #include "soundent.h"

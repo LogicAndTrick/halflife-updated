@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities\CSquadMonster.h"
+#include "CSquadMonster.h"
 
 /**
  * monster-specific schedule types
@@ -94,7 +94,6 @@ public:
 	void StopTalking();
 	bool ShouldSpeak();
 	void Killed(entvars_t* pevAttacker, int iGib) override;
-
 
 	CUSTOM_SCHEDULES;
 

@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CTalkMonster.h"
+#include "entities/monster/CTalkMonster.h"
 #include "entities/env/CBeam.h"
 
 // For holograms, make them not solid so the player can walk through them

@@ -18,7 +18,6 @@
 #include "schedule.h"
 #include "animation.h"
 #include "nodes.h"
-#include "squadmonster.h"
 #include "soundent.h"
 #include "game.h"
 

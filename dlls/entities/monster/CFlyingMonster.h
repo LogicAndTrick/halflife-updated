@@ -1,21 +1,26 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   This source code contains proprietary and confidential information of
-*   Valve LLC and its suppliers.  Access to this code is restricted to
-*   persons who have executed a written SDK license with Valve.  Any access,
-*   use or distribution of this code by or to any unlicensed person is illegal.
-*
-****/
-// Base class for flying monsters.  This overrides the movement test & execution code from CBaseMonster
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
 #pragma once
 
+#include "entities/CBaseMonster.h"
+
+#define FLYING_AE_FLAP (8)
+#define FLYING_AE_FLAPSOUND (9)
+
+// Base class for flying monsters.  This overrides the movement test & execution code from CBaseMonster
 class CFlyingMonster : public CBaseMonster
 {
 public:

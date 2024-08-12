@@ -18,4 +18,8 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
+#include "monsters.h"
+#include "scripted.h"
+#include "soundent.h"
+#include "weapons.h"
 #include "basemonster.h"

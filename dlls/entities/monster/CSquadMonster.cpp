@@ -1,27 +1,19 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   This source code contains proprietary and confidential information of
-*   Valve LLC and its suppliers.  Access to this code is restricted to
-*   persons who have executed a written SDK license with Valve.  Any access,
-*   use or distribution of this code by or to any unlicensed person is illegal.
-*
-****/
-//=========================================================
-// Squadmonster  functions
-//=========================================================
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "animation.h"
-#include "saverestore.h"
-#include "squadmonster.h"
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
+
+#include "CSquadMonster.h"
 #include "plane.h"
 
 //=========================================================
@@ -42,7 +34,6 @@ TYPEDESCRIPTION CSquadMonster::m_SaveData[] =
 };
 
 IMPLEMENT_SAVERESTORE(CSquadMonster, CBaseMonster);
-
 
 //=========================================================
 // OccupySlot - if any slots of the passed slots are
@@ -135,7 +126,6 @@ void CSquadMonster::Killed(entvars_t* pevAttacker, int iGib)
 
 // These functions are still awaiting conversion to CSquadMonster
 
-
 //=========================================================
 //
 // SquadRemove(), remove pRemove from my squad.
@@ -203,7 +193,6 @@ bool CSquadMonster::SquadAdd(CSquadMonster* pAdd)
 	return false;
 	// should complain here
 }
-
 
 //=========================================================
 //
@@ -274,7 +263,6 @@ void CSquadMonster::SquadMakeEnemy(CBaseEntity* pEnemy)
 	}
 }
 
-
 //=========================================================
 //
 // SquadCount(), return the number of members of this squad
@@ -296,7 +284,6 @@ int CSquadMonster::SquadCount()
 
 	return squadCount;
 }
-
 
 //=========================================================
 //
@@ -444,7 +431,7 @@ void CSquadMonster::StartMonster()
 
 bool CSquadMonster::NoFriendlyFire()
 {
-	return NoFriendlyFire(false); //default: don't like the player
+	return NoFriendlyFire(false); // default: don't like the player
 }
 
 //=========================================================
@@ -482,7 +469,7 @@ bool CSquadMonster::NoFriendlyFire(bool playerAlly)
 		return false;
 	}
 
-	//UTIL_MakeVectors ( pev->angles );
+	// UTIL_MakeVectors ( pev->angles );
 
 	vecLeftSide = pev->origin - (gpGlobals->v_right * (pev->size.x * 1.5));
 	vecRightSide = pev->origin + (gpGlobals->v_right * (pev->size.x * 1.5));
@@ -620,7 +607,6 @@ bool CSquadMonster::SquadMemberInRange(const Vector& vecLocation, float flDist)
 	}
 	return false;
 }
-
 
 extern Schedule_t slChaseEnemyFailed[];
 

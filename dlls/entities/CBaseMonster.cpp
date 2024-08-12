@@ -13,3 +13,4 @@
 *
 ****/
 
+#include "CBaseMonster.h"

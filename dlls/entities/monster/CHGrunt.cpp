@@ -17,11 +17,9 @@
 #include "monsters.h"
 #include "schedule.h"
 #include "animation.h"
-#include "squadmonster.h"
+#include "CTalkMonster.h"
 #include "weapons.h"
-#include "talkmonster.h"
 #include "soundent.h"
-#include "customentity.h"
 #include "scripted.h" //LRC
 #include "entities/env/CBeam.h"
 #include "entities/weapon/CGrenade.h"

@@ -326,31 +326,16 @@
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CFlyingMonster.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CLightFader.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CMonsterMaker.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CSquadMonster.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CSquidSpit.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CTalkMonster.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerProbe.cpp">
@@ -707,6 +692,9 @@
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CFlyingMonster.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CFurniture.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
@@ -743,6 +731,9 @@
     <ClCompile Include="..\..\dlls\entities\monster\CMiniTurret.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CMonsterMaker.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CMonsterTarget.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
@@ -770,7 +761,16 @@
     <ClCompile Include="..\..\dlls\entities\monster\CSentry.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CSquadMonster.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CSqueakGrenade.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CSquidSpit.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CTalkMonster.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CTentacle.cpp">
@@ -1010,9 +1010,6 @@
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\flyingmonster.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\game.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1103,13 +1100,7 @@
     <ClCompile Include="..\..\dlls\spectator.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\squadmonster.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\subs.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\talkmonster.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\teamplay_gamerules.cpp">
@@ -1363,31 +1354,16 @@
     <ClInclude Include="..\..\dlls\entities\CDecal.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CFlyingMonster.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CGenericCycler.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CLightFader.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CMonsterMaker.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CSquadMonster.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CSquidSpit.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CTalkMonster.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerProbe.h">
@@ -1744,6 +1720,9 @@
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CFlyingMonster.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CFurniture.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
@@ -1780,6 +1759,9 @@
     <ClInclude Include="..\..\dlls\entities\monster\CMiniTurret.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CMonsterMaker.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CMonsterTarget.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
@@ -1807,7 +1789,16 @@
     <ClInclude Include="..\..\dlls\entities\monster\CSentry.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CSquadMonster.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CSqueakGrenade.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CSquidSpit.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CTalkMonster.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CTentacle.h">
@@ -2050,9 +2041,6 @@
     <ClInclude Include="..\..\dlls\extdll.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\flyingmonster.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\game.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
@@ -2111,12 +2099,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\squad.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\squadmonster.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\talkmonster.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\teamplay_gamerules.h">

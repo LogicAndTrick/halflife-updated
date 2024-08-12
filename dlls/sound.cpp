@@ -20,13 +20,11 @@
 #include "util.h"
 #include "cbase.h"
 #include "weapons.h"
-#include "player.h"
-#include "talkmonster.h"
 #include "gamerules.h"
 #include "pm_defs.h"
 #include "pm_materials.h"
 #include "pm_shared.h"
-#include "locus.h"
+#include "entities/monster/CTalkMonster.h"
 
 static char* memfgets(byte* pMemFile, int fileSize, int& filePos, char* pBuffer, int bufferSize);
 
