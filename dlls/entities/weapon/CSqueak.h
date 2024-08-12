@@ -17,18 +17,39 @@
 
 #include "CBasePlayerWeapon.h"
 
-class CDebugger : public CBasePlayerWeapon
+enum squeak_e
+{
+	SQUEAK_IDLE1 = 0,
+	SQUEAK_FIDGETFIT,
+	SQUEAK_FIDGETNIP,
+	SQUEAK_DOWN,
+	SQUEAK_UP,
+	SQUEAK_THROW
+};
+
+class CSqueak : public CBasePlayerWeapon
 {
 public:
-	void Spawn(void);
-	void Precache(void);
-	bool GetItemInfo(ItemInfo* p);
-	void EXPORT Commands(bool type);
-	void PrimaryAttack(void);
-	void SecondaryAttack(void);
-	bool Deploy(void);
-	void Holster();
-	//	void WeaponIdle( void );
-	void UpdateInfo(void);
-	int command;
+	void Spawn() override;
+	void Precache() override;
+	bool GetItemInfo(ItemInfo* p) override;
+
+	void PrimaryAttack() override;
+	void SecondaryAttack() override;
+	bool Deploy() override;
+	void Holster() override;
+	void WeaponIdle() override;
+	bool m_fJustThrown;
+
+	bool UseDecrement() override
+	{
+#if defined(CLIENT_WEAPONS)
+		return true;
+#else
+		return false;
+#endif
+	}
+
+private:
+	unsigned short m_usSnarkFire;
 };

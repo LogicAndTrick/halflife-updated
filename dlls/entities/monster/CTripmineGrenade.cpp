@@ -14,7 +14,9 @@
  ****/
 
 #include "CTripmineGrenade.h"
+#include "entities/weapon/CTripmine.h"
 #include "monsters.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(monster_tripmine, CTripmineGrenade);
 

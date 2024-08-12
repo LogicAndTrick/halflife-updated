@@ -1,36 +1,34 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
-#include "player.h"
-#include "hornet.h"
+#include "CHgun.h"
 #include "gamerules.h"
-#include "UserMessages.h"
-
-enum firemode_e
-{
-	FIREMODE_TRACK = 0,
-	FIREMODE_FAST
-};
-
+#include "hornet.h"
+#include "player.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_hornetgun, CHgun);
+
+#ifndef CLIENT_DLL
+TYPEDESCRIPTION CHgun::m_SaveData[] =
+	{
+		DEFINE_FIELD(CHgun, m_flRechargeTime, FIELD_TIME),
+};
+
+IMPLEMENT_SAVERESTORE(CHgun, CBasePlayerWeapon);
+#endif
 
 bool CHgun::IsUseable()
 {
@@ -48,7 +46,6 @@ void CHgun::Spawn()
 
 	FallInit(); // get ready to fall down.
 }
-
 
 void CHgun::Precache()
 {
@@ -91,7 +88,6 @@ bool CHgun::GetItemInfo(ItemInfo* p)
 	return true;
 }
 
-
 bool CHgun::Deploy()
 {
 	return DefaultDeploy("models/v_hgun.mdl", "models/p_hgun.mdl", HGUN_UP, "hive");
@@ -108,7 +104,6 @@ void CHgun::Holster()
 		m_pPlayer->m_rgAmmo[PrimaryAmmoIndex()] = 1;
 	}
 }
-
 
 void CHgun::PrimaryAttack()
 {
@@ -158,8 +153,6 @@ void CHgun::PrimaryAttack()
 	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
 }
 
-
-
 void CHgun::SecondaryAttack()
 {
 	Reload();
@@ -169,7 +162,7 @@ void CHgun::SecondaryAttack()
 		return;
 	}
 
-	//Wouldn't be a bad idea to completely predict these, since they fly so fast...
+	// Wouldn't be a bad idea to completely predict these, since they fly so fast...
 #ifndef CLIENT_DLL
 	CBaseEntity* pHornet;
 	Vector vecSrc;
@@ -242,7 +235,6 @@ void CHgun::SecondaryAttack()
 	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
 }
 
-
 void CHgun::Reload()
 {
 #ifndef CLIENT_DLL
@@ -258,7 +250,6 @@ void CHgun::Reload()
 	m_pPlayer->TabulateAmmo();
 #endif
 }
-
 
 void CHgun::WeaponIdle()
 {

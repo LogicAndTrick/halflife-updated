@@ -24,6 +24,8 @@
 #include "skill.h"
 #include "items.h"
 #include "UserMessages.h"
+#include "entities/weapon/CBasePlayerAmmo.h"
+#include "entities/weapon/CBasePlayerItem.h"
 
 //=========================================================
 //=========================================================

@@ -27,6 +27,8 @@
 #include "animation.h"
 #include "weapons.h"
 #include "player.h"
+#include "entities/weapon/CBasePlayerItem.h"
+#include "entities/weapon/CBasePlayerWeapon.h"
 
 class CCycler : public CBaseMonster
 {

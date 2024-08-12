@@ -879,8 +879,6 @@ env_sound_data
 push_trigger_data
 */
 
-#define TRACER_FREQ 4 // Tracers fire every 4 bullets
-
 //LRC- much as I hate to add new globals, I can't see how to read data from the World entity.
 extern bool g_startSuit;
 

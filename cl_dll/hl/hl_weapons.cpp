@@ -29,6 +29,20 @@
 #include "cl_dll.h"
 #include "../com_weapons.h"
 #include "../demo.h"
+#include "entities/weapon/CCrossbow.h"
+#include "entities/weapon/CCrowbar.h"
+#include "entities/weapon/CEgon.h"
+#include "entities/weapon/CGauss.h"
+#include "entities/weapon/CGlock.h"
+#include "entities/weapon/CHandGrenade.h"
+#include "entities/weapon/CHgun.h"
+#include "entities/weapon/CMP5.h"
+#include "entities/weapon/CPython.h"
+#include "entities/weapon/CRpg.h"
+#include "entities/weapon/CSatchel.h"
+#include "entities/weapon/CShotgun.h"
+#include "entities/weapon/CSqueak.h"
+#include "entities/weapon/CTripmine.h"
 
 extern int g_iUser1;
 

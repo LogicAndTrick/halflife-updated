@@ -15,20 +15,15 @@
 
 #pragma once
 
-#include "CBasePlayerWeapon.h"
+#include "CBasePlayerItem.h"
 
-class CDebugger : public CBasePlayerWeapon
+class CBasePlayerAmmo : public CBasePlayerItem // AJH
 {
 public:
-	void Spawn(void);
-	void Precache(void);
-	bool GetItemInfo(ItemInfo* p);
-	void EXPORT Commands(bool type);
-	void PrimaryAttack(void);
-	void SecondaryAttack(void);
-	bool Deploy(void);
-	void Holster();
-	//	void WeaponIdle( void );
-	void UpdateInfo(void);
-	int command;
+	void Spawn() override;
+	void EXPORT DefaultTouch(CBaseEntity* pOther); // default weapon touch
+	virtual bool AddAmmo(CBaseEntity* pOther) { return true; }
+
+	CBaseEntity* Respawn() override;
+	void EXPORT Materialize();
 };

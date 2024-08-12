@@ -18,6 +18,7 @@
 #include "entities/CBaseEntity.h"
 #include "CFuncTankControls.h"
 #include "weapons.h"
+#include "entities/weapon/CLaserSpot.h"
 
 enum TANKBULLET
 {

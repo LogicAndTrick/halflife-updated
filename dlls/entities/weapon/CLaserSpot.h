@@ -15,20 +15,19 @@
 
 #pragma once
 
-#include "CBasePlayerWeapon.h"
+#include "entities/CBaseEntity.h"
 
-class CDebugger : public CBasePlayerWeapon
+class CLaserSpot : public CBaseEntity
 {
+	void Spawn() override;
+	void Precache() override;
+
+	int ObjectCaps() override { return FCAP_DONT_SAVE; }
+
 public:
-	void Spawn(void);
-	void Precache(void);
-	bool GetItemInfo(ItemInfo* p);
-	void EXPORT Commands(bool type);
-	void PrimaryAttack(void);
-	void SecondaryAttack(void);
-	bool Deploy(void);
-	void Holster();
-	//	void WeaponIdle( void );
-	void UpdateInfo(void);
-	int command;
+	void Suspend(float flSuspendTime);
+	void EXPORT Revive();
+
+	static CLaserSpot* CreateSpot();
+	static CLaserSpot* CreateSpot(const char* spritename);
 };

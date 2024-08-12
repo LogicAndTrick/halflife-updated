@@ -23,6 +23,8 @@
 #include "soundent.h"
 #include "customentity.h"
 #include "scripted.h" //LRC
+#include "entities/env/CBeam.h"
+#include "entities/weapon/CGrenade.h"
 
 
 int g_fGruntQuestion; // true if an idle grunt asked a question. Cleared when someone answers.

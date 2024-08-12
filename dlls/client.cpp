@@ -49,6 +49,9 @@
 #include "UserMessages.h"
 #include "movewith.h"
 #include "items.h"
+#include "entities/weapon/CBasePlayerItem.h"
+#include "entities/weapon/CBasePlayerWeapon.h"
+#include "entities/weapon/CRpg.h"
 
 DLL_GLOBAL unsigned int g_ulFrameCount;
 

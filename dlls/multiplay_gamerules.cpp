@@ -29,6 +29,8 @@
 #include "hltv.h"
 #include "UserMessages.h"
 #include "entities/monster/CSatchelCharge.h"
+#include "entities/weapon/CBasePlayerAmmo.h"
+#include "entities/weapon/CBasePlayerItem.h"
 
 #define ITEM_RESPAWN_TIME 30
 #define WEAPON_RESPAWN_TIME 20

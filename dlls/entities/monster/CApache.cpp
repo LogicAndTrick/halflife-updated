@@ -15,6 +15,7 @@
 
 #include "CApache.h"
 #include "skill.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(monster_apache, CApache);
 

@@ -16,6 +16,7 @@
 #pragma once
 
 #include "entities/CSquadMonster.h"
+#include "entities/env/CBeam.h"
 
 //=========================================================
 // Monster's Anim Events Go Here

@@ -1,23 +1,22 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "weapons.h"
-#include "player.h"
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
+
+#include "CTripmine.h"
 #include "gamerules.h"
+#include "player.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_tripmine, CTripmine);
 
@@ -36,7 +35,7 @@ void CTripmine::Spawn()
 
 	m_iDefaultAmmo = TRIPMINE_DEFAULT_GIVE;
 
-	//HACK: force the body to the first person view by default so it doesn't show up as a huge tripmine for a second.
+	// HACK: force the body to the first person view by default so it doesn't show up as a huge tripmine for a second.
 #ifdef CLIENT_DLL
 	pev->body = 0;
 #endif
@@ -158,7 +157,7 @@ void CTripmine::PrimaryAttack()
 
 void CTripmine::WeaponIdle()
 {
-	//If we're here then we're in a player's inventory, and need to use this body
+	// If we're here then we're in a player's inventory, and need to use this body
 	pev->body = 0;
 
 	if (m_flTimeWeaponIdle > UTIL_WeaponTimeBase())

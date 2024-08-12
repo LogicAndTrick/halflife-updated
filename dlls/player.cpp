@@ -50,6 +50,8 @@
 #include "client.h"
 #include "entities/env/CRainModify.h"
 #include "entities/env/CRainSettings.h"
+#include "entities/weapon/CBasePlayerWeapon.h"
+#include "entities/weapon/CWeaponBox.h"
 
 // #define DUCKFIX
 

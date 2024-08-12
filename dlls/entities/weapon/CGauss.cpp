@@ -1,30 +1,41 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
-#include "player.h"
-#include "soundent.h"
-#include "shake.h"
+#include "CGauss.h"
+#include "CBasePlayerAmmo.h"
 #include "gamerules.h"
-#include "UserMessages.h"
+#include "player.h"
+#include "shake.h"
+#include "skill.h"
+#include "soundent.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_gauss, CGauss);
+
+#ifndef CLIENT_DLL
+TYPEDESCRIPTION CGauss::m_SaveData[] =
+	{
+		DEFINE_FIELD(CGauss, m_fInAttack, FIELD_INTEGER),
+		//	DEFINE_FIELD( CGauss, m_flStartCharge, FIELD_TIME ),
+		//	DEFINE_FIELD( CGauss, m_flPlayAftershock, FIELD_TIME ),
+		//	DEFINE_FIELD( CGauss, m_flNextAmmoBurn, FIELD_TIME ),
+		DEFINE_FIELD(CGauss, m_fPrimaryFire, FIELD_BOOLEAN),
+};
+
+IMPLEMENT_SAVERESTORE(CGauss, CBasePlayerWeapon);
+#endif
 
 float CGauss::GetFullChargeTime()
 {
@@ -148,7 +159,7 @@ void CGauss::SecondaryAttack()
 		if (m_fInAttack != 0)
 		{
 			EMIT_SOUND_DYN(ENT(m_pPlayer->pev), CHAN_WEAPON, "weapons/electro4.wav", 1.0, ATTN_NORM, 0, 80 + RANDOM_LONG(0, 0x3f));
-			//Have to send to the host as well because the client will predict the frame with m_fInAttack == 0
+			// Have to send to the host as well because the client will predict the frame with m_fInAttack == 0
 			SendStopEvent(true);
 			SendWeaponAnim(GAUSS_IDLE);
 			m_fInAttack = 0;
@@ -312,7 +323,7 @@ void CGauss::StartFire()
 
 	if (m_fInAttack != 3)
 	{
-		//ALERT ( at_console, "Time:%f Damage:%f\n", gpGlobals->time - m_pPlayer->m_flStartCharge, flDamage );
+		// ALERT ( at_console, "Time:%f Damage:%f\n", gpGlobals->time - m_pPlayer->m_flStartCharge, flDamage );
 
 #ifndef CLIENT_DLL
 		float flZVel = m_pPlayer->pev->velocity.z;
@@ -322,7 +333,7 @@ void CGauss::StartFire()
 			m_pPlayer->pev->velocity = m_pPlayer->pev->velocity - gpGlobals->v_forward * flDamage * 5;
 		}
 
-		if (!g_pGameRules->IsMultiplayer() && !g_allowGJump) //AJH allow SP gauss jumpflag
+		if (!g_pGameRules->IsMultiplayer() && !g_allowGJump) // AJH allow SP gauss jumpflag
 
 		{
 			// in deathmatch, gauss can pop you up into the air. Not in single play.
@@ -366,8 +377,8 @@ void CGauss::Fire(Vector vecOrigSrc, Vector vecDir, float flDamage)
 	SendStopEvent(false);
 
 
-	/*ALERT( at_console, "%f %f %f\n%f %f %f\n", 
-		vecSrc.x, vecSrc.y, vecSrc.z, 
+	/*ALERT( at_console, "%f %f %f\n%f %f %f\n",
+		vecSrc.x, vecSrc.y, vecSrc.z,
 		vecDest.x, vecDest.y, vecDest.z );*/
 
 
@@ -464,7 +475,7 @@ void CGauss::Fire(Vector vecOrigSrc, Vector vecDir, float flDamage)
 							nTotal += 21;
 
 							// exit blast damage
-							//m_pPlayer->RadiusDamage( beam_tr.vecEndPos + vecDir * 8, pev, m_pPlayer->pev, flDamage, CLASS_NONE, DMG_BLAST );
+							// m_pPlayer->RadiusDamage( beam_tr.vecEndPos + vecDir * 8, pev, m_pPlayer->pev, flDamage, CLASS_NONE, DMG_BLAST );
 							float damage_radius;
 
 
@@ -488,13 +499,13 @@ void CGauss::Fire(Vector vecOrigSrc, Vector vecDir, float flDamage)
 					}
 					else
 					{
-						//ALERT( at_console, "blocked %f\n", n );
+						// ALERT( at_console, "blocked %f\n", n );
 						flDamage = 0;
 					}
 				}
 				else
 				{
-					//ALERT( at_console, "blocked solid\n" );
+					// ALERT( at_console, "blocked solid\n" );
 
 					flDamage = 0;
 				}
@@ -587,7 +598,9 @@ void CGauss::SendStopEvent(bool sendToHost)
 	PLAYBACK_EVENT_FULL(flags, m_pPlayer->edict(), m_usGaussFire, 0.01, m_pPlayer->pev->origin, m_pPlayer->pev->angles, 0.0, 0.0, 0, 0, 0, 1);
 }
 
-
+// ----------------
+// ----------------
+// ----------------
 
 class CGaussAmmo : public CBasePlayerAmmo
 {

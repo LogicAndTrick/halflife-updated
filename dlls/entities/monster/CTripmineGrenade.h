@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include "entities/env/CBeam.h"
 #include "entities/weapon/CGrenade.h"
 
 #define TRIPMINE_PRIMARY_VOLUME 450

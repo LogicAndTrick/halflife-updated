@@ -1,29 +1,23 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
-#include "player.h"
+#include "CCrowbar.h"
 #include "gamerules.h"
-
-
-#define CROWBAR_BODYHIT_VOLUME 128
-#define CROWBAR_WALLHIT_VOLUME 512
+#include "player.h"
+#include "skill.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_crowbar, CCrowbar);
 
@@ -36,7 +30,6 @@ void CCrowbar::Spawn()
 
 	FallInit(); // get ready to fall down.
 }
-
 
 void CCrowbar::Precache()
 {
@@ -68,8 +61,6 @@ bool CCrowbar::GetItemInfo(ItemInfo* p)
 	return true;
 }
 
-
-
 bool CCrowbar::Deploy()
 {
 	return DefaultDeploy("models/v_crowbar.mdl", "models/p_crowbar.mdl", CROWBAR_DRAW, "crowbar");
@@ -80,7 +71,6 @@ void CCrowbar::Holster()
 	m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 0.5;
 	SendWeaponAnim(CROWBAR_HOLSTER);
 }
-
 
 void FindHullIntersection(const Vector& vecSrc, TraceResult& tr, const Vector& mins, const Vector& maxs, edict_t* pEntity)
 {
@@ -126,7 +116,6 @@ void FindHullIntersection(const Vector& vecSrc, TraceResult& tr, const Vector& m
 	}
 }
 
-
 void CCrowbar::PrimaryAttack()
 {
 	if (!Swing(true))
@@ -136,18 +125,15 @@ void CCrowbar::PrimaryAttack()
 	}
 }
 
-
 void CCrowbar::Smack()
 {
 	DecalGunshot(&m_trHit, BULLET_PLAYER_CROWBAR);
 }
 
-
 void CCrowbar::SwingAgain()
 {
 	Swing(false);
 }
-
 
 bool CCrowbar::Swing(bool fFirst)
 {

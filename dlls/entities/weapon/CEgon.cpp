@@ -1,37 +1,42 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "player.h"
-#include "monsters.h"
-#include "weapons.h"
-#include "customentity.h"
+#include "CEgon.h"
+#include "CBasePlayerAmmo.h"
 #include "gamerules.h"
-#include "UserMessages.h"
-
-#ifdef CLIENT_DLL
-#include "hud.h"
-#include "com_weapons.h"
-#endif
-
-#define EGON_SWITCH_NARROW_TIME 0.75 // Time it takes to switch fire modes
-#define EGON_SWITCH_WIDE_TIME 1.5
+#include "player.h"
+#include "skill.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_egon, CEgon);
+
+#ifndef CLIENT_DLL
+TYPEDESCRIPTION CEgon::m_SaveData[] =
+	{
+		//	DEFINE_FIELD( CEgon, m_pBeam, FIELD_CLASSPTR ),
+		//	DEFINE_FIELD( CEgon, m_pNoise, FIELD_CLASSPTR ),
+		//	DEFINE_FIELD( CEgon, m_pSprite, FIELD_CLASSPTR ),
+		DEFINE_FIELD(CEgon, m_shootTime, FIELD_TIME),
+		DEFINE_FIELD(CEgon, m_fireState, FIELD_INTEGER),
+		DEFINE_FIELD(CEgon, m_fireMode, FIELD_INTEGER),
+		DEFINE_FIELD(CEgon, m_shakeTime, FIELD_TIME),
+		DEFINE_FIELD(CEgon, m_flAmmoUseTime, FIELD_TIME),
+};
+
+IMPLEMENT_SAVERESTORE(CEgon, CBasePlayerWeapon);
+#endif
 
 void CEgon::Spawn()
 {
@@ -43,7 +48,6 @@ void CEgon::Spawn()
 
 	FallInit(); // get ready to fall down.
 }
-
 
 void CEgon::Precache()
 {
@@ -66,7 +70,6 @@ void CEgon::Precache()
 	m_usEgonFire = PRECACHE_EVENT(1, "events/egon_fire.sc");
 	m_usEgonStop = PRECACHE_EVENT(1, "events/egon_stop.sc");
 }
-
 
 bool CEgon::Deploy()
 {
@@ -99,9 +102,6 @@ bool CEgon::GetItemInfo(ItemInfo* p)
 
 	return true;
 }
-
-#define EGON_PULSE_INTERVAL 0.1
-#define EGON_DISCHARGE_INTERVAL 0.1
 
 float CEgon::GetPulseInterval()
 {
@@ -243,8 +243,6 @@ void CEgon::Fire(const Vector& vecOrigSrc, const Vector& vecDir)
 			m_pSprite->pev->effects |= EF_NODRAW;
 		}
 	}
-
-
 #endif
 
 	float timedist;
@@ -312,7 +310,7 @@ void CEgon::Fire(const Vector& vecOrigSrc, const Vector& vecDir)
 
 			if (g_pGameRules->IsMultiplayer())
 			{
-				//multiplayer uses 5 ammo/second
+				// multiplayer uses 5 ammo/second
 				if (gpGlobals->time >= m_flAmmoUseTime)
 				{
 					UseAmmo(1);
@@ -349,7 +347,6 @@ void CEgon::Fire(const Vector& vecOrigSrc, const Vector& vecDir)
 
 	UpdateEffect(tmpSrc, tr.vecEndPos, timedist);
 }
-
 
 void CEgon::UpdateEffect(const Vector& startPoint, const Vector& endPoint, float timeBlend)
 {
@@ -426,10 +423,8 @@ void CEgon::CreateEffect()
 #endif
 }
 
-
 void CEgon::DestroyEffect()
 {
-
 #ifndef CLIENT_DLL
 	if (m_pBeam)
 	{
@@ -451,8 +446,6 @@ void CEgon::DestroyEffect()
 	}
 #endif
 }
-
-
 
 void CEgon::WeaponIdle()
 {
@@ -488,13 +481,11 @@ void CEgon::WeaponIdle()
 	m_deployed = true;
 }
 
-
-
 void CEgon::EndAttack()
 {
 	bool bMakeNoise = false;
 
-	if (m_fireState != FIRE_OFF) //Checking the button just in case!.
+	if (m_fireState != FIRE_OFF) // Checking the button just in case!.
 		bMakeNoise = true;
 
 	PLAYBACK_EVENT_FULL(FEV_GLOBAL | FEV_RELIABLE, m_pPlayer->edict(), m_usEgonStop, 0, m_pPlayer->pev->origin, m_pPlayer->pev->angles, 0.0, 0.0,
@@ -509,7 +500,9 @@ void CEgon::EndAttack()
 	DestroyEffect();
 }
 
-
+// --------------------
+// --------------------
+// --------------------
 
 class CEgonAmmo : public CBasePlayerAmmo
 {
@@ -534,4 +527,5 @@ class CEgonAmmo : public CBasePlayerAmmo
 		return false;
 	}
 };
+
 LINK_ENTITY_TO_CLASS(ammo_egonclip, CEgonAmmo);

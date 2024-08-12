@@ -1,31 +1,28 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
+#include "CMP5.h"
+#include "CBasePlayerAmmo.h"
+#include "CGrenade.h"
+#include "gamerules.h"
 #include "player.h"
 #include "soundent.h"
-#include "gamerules.h"
-#include "UserMessages.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_mp5, CMP5);
 LINK_ENTITY_TO_CLASS(weapon_9mmAR, CMP5);
-
 
 //=========================================================
 //=========================================================
@@ -40,7 +37,6 @@ void CMP5::Spawn()
 
 	FallInit(); // get ready to fall down.
 }
-
 
 void CMP5::Precache()
 {
@@ -275,7 +271,9 @@ void CMP5::WeaponIdle()
 	m_flTimeWeaponIdle = UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15); // how long till we do this again.
 }
 
-
+// ------------------------
+// ------------------------
+// ------------------------
 
 class CMP5AmmoClip : public CBasePlayerAmmo
 {
@@ -300,10 +298,13 @@ class CMP5AmmoClip : public CBasePlayerAmmo
 		return bResult;
 	}
 };
+
 LINK_ENTITY_TO_CLASS(ammo_mp5clip, CMP5AmmoClip);
 LINK_ENTITY_TO_CLASS(ammo_9mmAR, CMP5AmmoClip);
 
-
+// ------------------------
+// ------------------------
+// ------------------------
 
 class CMP5Chainammo : public CBasePlayerAmmo
 {
@@ -328,8 +329,12 @@ class CMP5Chainammo : public CBasePlayerAmmo
 		return bResult;
 	}
 };
+
 LINK_ENTITY_TO_CLASS(ammo_9mmbox, CMP5Chainammo);
 
+// ------------------------
+// ------------------------
+// ------------------------
 
 class CMP5AmmoGrenade : public CBasePlayerAmmo
 {
@@ -355,5 +360,6 @@ class CMP5AmmoGrenade : public CBasePlayerAmmo
 		return bResult;
 	}
 };
+
 LINK_ENTITY_TO_CLASS(ammo_mp5grenades, CMP5AmmoGrenade);
 LINK_ENTITY_TO_CLASS(ammo_ARgrenades, CMP5AmmoGrenade);

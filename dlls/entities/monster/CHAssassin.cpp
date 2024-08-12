@@ -19,6 +19,7 @@
 #include "soundent.h"
 #include "scripted.h"
 #include "game.h"
+#include "entities/weapon/CGrenade.h"
 
 LINK_ENTITY_TO_CLASS(monster_human_assassin, CHAssassin);
 

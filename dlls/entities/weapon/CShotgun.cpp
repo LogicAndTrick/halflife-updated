@@ -1,32 +1,38 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
-#include "player.h"
+#include "CShotgun.h"
+#include "CBasePlayerAmmo.h"
 #include "gamerules.h"
-#include "UserMessages.h"
-
-// special deathmatch shotgun spreads
-#define VECTOR_CONE_DM_SHOTGUN Vector(0.08716, 0.04362, 0.00)		// 10 degrees by 5 degrees
-#define VECTOR_CONE_DM_DOUBLESHOTGUN Vector(0.17365, 0.04362, 0.00) // 20 degrees by 5 degrees
+#include "player.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_shotgun, CShotgun);
+
+#ifndef CLIENT_DLL
+TYPEDESCRIPTION CShotgun::m_SaveData[] =
+	{
+		DEFINE_FIELD(CShotgun, m_flNextReload, FIELD_TIME),
+		DEFINE_FIELD(CShotgun, m_fInSpecialReload, FIELD_INTEGER),
+		DEFINE_FIELD(CShotgun, m_flNextReload, FIELD_TIME),
+		// DEFINE_FIELD( CShotgun, m_iShell, FIELD_INTEGER ),
+		DEFINE_FIELD(CShotgun, m_flPumpTime, FIELD_TIME),
+};
+
+IMPLEMENT_SAVERESTORE(CShotgun, CBasePlayerWeapon);
+#endif
 
 void CShotgun::Spawn()
 {
@@ -50,8 +56,8 @@ void CShotgun::Precache()
 
 	PRECACHE_SOUND("items/9mmclip1.wav");
 
-	PRECACHE_SOUND("weapons/dbarrel1.wav"); //shotgun
-	PRECACHE_SOUND("weapons/sbarrel1.wav"); //shotgun
+	PRECACHE_SOUND("weapons/dbarrel1.wav"); // shotgun
+	PRECACHE_SOUND("weapons/sbarrel1.wav"); // shotgun
 
 	PRECACHE_SOUND("weapons/reload1.wav"); // shotgun reload
 	PRECACHE_SOUND("weapons/reload3.wav"); // shotgun reload
@@ -170,7 +176,7 @@ void CShotgun::PrimaryAttack()
 		// HEV suit - indicate out of ammo condition
 		m_pPlayer->SetSuitUpdate("!HEV_AMO0", false, 0);
 
-	//if (m_iClip != 0)
+	// if (m_iClip != 0)
 	m_flPumpTime = gpGlobals->time + 0.5;
 
 	m_flNextPrimaryAttack = GetNextAttackDelay(0.75);
@@ -259,7 +265,7 @@ void CShotgun::SecondaryAttack()
 		// HEV suit - indicate out of ammo condition
 		m_pPlayer->SetSuitUpdate("!HEV_AMO0", false, 0);
 
-	//if (m_iClip != 0)
+	// if (m_iClip != 0)
 	m_flPumpTime = gpGlobals->time + 0.95;
 
 	m_flNextPrimaryAttack = GetNextAttackDelay(1.5);
@@ -326,7 +332,7 @@ void CShotgun::WeaponIdle()
 
 	m_pPlayer->GetAutoaimVector(AUTOAIM_5DEGREES);
 
-	//Moved to ItemPostFrame
+	// Moved to ItemPostFrame
 	/*
 	if ( m_flPumpTime && m_flPumpTime < gpGlobals->time )
 	{
@@ -395,6 +401,9 @@ void CShotgun::ItemPostFrame()
 	CBasePlayerWeapon::ItemPostFrame();
 }
 
+// ----------------------
+// ----------------------
+// ----------------------
 
 class CShotgunAmmo : public CBasePlayerAmmo
 {
@@ -419,4 +428,5 @@ class CShotgunAmmo : public CBasePlayerAmmo
 		return false;
 	}
 };
+
 LINK_ENTITY_TO_CLASS(ammo_buckshot, CShotgunAmmo);

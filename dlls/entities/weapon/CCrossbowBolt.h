@@ -15,20 +15,27 @@
 
 #pragma once
 
-#include "CBasePlayerWeapon.h"
+#include "entities/CBaseEntity.h"
 
-class CDebugger : public CBasePlayerWeapon
+#define BOLT_AIR_VELOCITY 2000
+#define BOLT_WATER_VELOCITY 1000
+
+// UNDONE: Save/restore this?  Don't forget to set classname and LINK_ENTITY_TO_CLASS()
+//
+// OVERLOADS SOME ENTVARS:
+//
+// speed - the ideal magnitude of my velocity
+class CCrossbowBolt : public CBaseEntity
 {
+	void Spawn() override;
+	void Precache() override;
+	int Classify() override;
+	void EXPORT BubbleThink();
+	void EXPORT BoltTouch(CBaseEntity* pOther);
+	void EXPORT ExplodeThink();
+
+	int m_iTrail;
+
 public:
-	void Spawn(void);
-	void Precache(void);
-	bool GetItemInfo(ItemInfo* p);
-	void EXPORT Commands(bool type);
-	void PrimaryAttack(void);
-	void SecondaryAttack(void);
-	bool Deploy(void);
-	void Holster();
-	//	void WeaponIdle( void );
-	void UpdateInfo(void);
-	int command;
+	static CCrossbowBolt* BoltCreate();
 };

@@ -1,28 +1,33 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "entities/monster/CSatchelCharge.h"
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
+#include "CSatchel.h"
 #include "player.h"
 #include "gamerules.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_satchel, CSatchel);
+
+#ifndef CLIENT_DLL
+TYPEDESCRIPTION CSatchel::m_SaveData[] =
+	{
+		DEFINE_FIELD(CSatchel, m_chargeReady, FIELD_INTEGER),
+};
+
+IMPLEMENT_SAVERESTORE(CSatchel, CBasePlayerWeapon);
+#endif
 
 //=========================================================
 // CALLED THROUGH the newly-touched weapon's instance. The existing player weapon is pOriginal
@@ -137,7 +142,7 @@ bool CSatchel::CanDeploy()
 bool CSatchel::Deploy()
 {
 	m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 1.0;
-	//m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat( m_pPlayer->random_seed, 10, 15 );
+	// m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat( m_pPlayer->random_seed, 10, 15 );
 
 	bool result;
 
@@ -176,8 +181,6 @@ void CSatchel::Holster()
 		SetNextThink(0.1);
 	}
 }
-
-
 
 void CSatchel::PrimaryAttack()
 {
@@ -223,7 +226,6 @@ void CSatchel::PrimaryAttack()
 	}
 }
 
-
 void CSatchel::SecondaryAttack()
 {
 	if (m_chargeReady != 2)
@@ -231,7 +233,6 @@ void CSatchel::SecondaryAttack()
 		Throw();
 	}
 }
-
 
 void CSatchel::Throw()
 {
@@ -265,7 +266,6 @@ void CSatchel::Throw()
 		m_flNextSecondaryAttack = UTIL_WeaponTimeBase() + 0.5;
 	}
 }
-
 
 void CSatchel::WeaponIdle()
 {

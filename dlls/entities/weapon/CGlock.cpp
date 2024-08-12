@@ -1,25 +1,22 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
+#include "CGlock.h"
+#include "CBasePlayerAmmo.h"
 #include "player.h"
-#include "UserMessages.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_glock, CGlock);
 LINK_ENTITY_TO_CLASS(weapon_9mmhandgun, CGlock);
@@ -42,7 +39,6 @@ void CGlock::Holster()
 	SendWeaponAnim(GLOCK_HOLSTER);
 }
 
-
 void CGlock::Precache()
 {
 	PRECACHE_MODEL("models/v_9mmhandgun.mdl");
@@ -54,9 +50,9 @@ void CGlock::Precache()
 	PRECACHE_SOUND("items/9mmclip1.wav");
 	PRECACHE_SOUND("items/9mmclip2.wav");
 
-	PRECACHE_SOUND("weapons/pl_gun1.wav"); //silenced handgun
-	PRECACHE_SOUND("weapons/pl_gun2.wav"); //silenced handgun
-	PRECACHE_SOUND("weapons/pl_gun3.wav"); //handgun
+	PRECACHE_SOUND("weapons/pl_gun1.wav"); // silenced handgun
+	PRECACHE_SOUND("weapons/pl_gun2.wav"); // silenced handgun
+	PRECACHE_SOUND("weapons/pl_gun3.wav"); // handgun
 
 	m_usFireGlock1 = PRECACHE_EVENT(1, "events/glock1.sc");
 	m_usFireGlock2 = PRECACHE_EVENT(1, "events/glock2.sc");
@@ -99,7 +95,7 @@ void CGlock::GlockFire(float flSpread, float flCycleTime, bool fUseAutoAim)
 {
 	if (m_iClip <= 0)
 	{
-		//if (m_fFireOnEmpty)
+		// if (m_fFireOnEmpty)
 		{
 			PlayEmptySound();
 			m_flNextPrimaryAttack = m_flNextSecondaryAttack = GetNextAttackDelay(0.2);
@@ -177,7 +173,6 @@ void CGlock::GlockFire(float flSpread, float flCycleTime, bool fUseAutoAim)
 	m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
 }
 
-
 void CGlock::Reload()
 {
 	if (m_pPlayer->ammo_9mm <= 0)
@@ -195,8 +190,6 @@ void CGlock::Reload()
 		m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
 	}
 }
-
-
 
 void CGlock::WeaponIdle()
 {
@@ -232,12 +225,9 @@ void CGlock::WeaponIdle()
 	}
 }
 
-
-
-
-
-
-
+// ------------------
+// ------------------
+// ------------------
 
 class CGlockAmmo : public CBasePlayerAmmo
 {
@@ -262,5 +252,6 @@ class CGlockAmmo : public CBasePlayerAmmo
 		return false;
 	}
 };
+
 LINK_ENTITY_TO_CLASS(ammo_glockclip, CGlockAmmo);
 LINK_ENTITY_TO_CLASS(ammo_9mmclip, CGlockAmmo);

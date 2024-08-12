@@ -1,26 +1,23 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "weapons.h"
-#include "monsters.h"
-#include "player.h"
+#include "CPython.h"
+#include "CBasePlayerAmmo.h"
 #include "gamerules.h"
-#include "UserMessages.h"
+#include "player.h"
+#include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_python, CPython);
 LINK_ENTITY_TO_CLASS(weapon_357, CPython);
@@ -53,7 +50,6 @@ void CPython::Spawn()
 
 	FallInit(); // get ready to fall down.
 }
-
 
 void CPython::Precache()
 {
@@ -90,7 +86,6 @@ bool CPython::Deploy()
 
 	return DefaultDeploy("models/v_357.mdl", "models/p_357.mdl", PYTHON_DRAW, "python", pev->body);
 }
-
 
 void CPython::Holster()
 {
@@ -201,7 +196,6 @@ void CPython::PrimaryAttack()
 	m_flTimeWeaponIdle = UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10, 15);
 }
 
-
 void CPython::Reload()
 {
 	if (m_pPlayer->ammo_357 <= 0)
@@ -221,7 +215,6 @@ void CPython::Reload()
 
 	DefaultReload(6, PYTHON_RELOAD, 2.0, bUseScope ? 1 : 0);
 }
-
 
 void CPython::WeaponIdle()
 {
@@ -265,6 +258,9 @@ void CPython::WeaponIdle()
 	SendWeaponAnim(iAnim, bUseScope ? 1 : 0);
 }
 
+// ---------------------
+// ---------------------
+// ---------------------
 
 class CPythonAmmo : public CBasePlayerAmmo
 {
@@ -289,4 +285,5 @@ class CPythonAmmo : public CBasePlayerAmmo
 		return false;
 	}
 };
+
 LINK_ENTITY_TO_CLASS(ammo_357, CPythonAmmo);
