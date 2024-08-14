@@ -24,9 +24,6 @@
     <Filter Include="Header Files\dlls\entities\ambient">
       <UniqueIdentifier>{eebc4416-9784-4170-a5da-4ed2e07f7d67}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dlls\entities\ammo">
-      <UniqueIdentifier>{258fd788-9ed8-4943-984d-6190939bed8b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\dlls\entities\button">
       <UniqueIdentifier>{6357a8cb-297d-41d3-9514-4206edc5b4c7}</UniqueIdentifier>
     </Filter>
@@ -122,9 +119,6 @@
     </Filter>
     <Filter Include="Source Files\dlls\entities\ambient">
       <UniqueIdentifier>{220f514d-832d-40bc-a9da-e57b1b20e43c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dlls\entities\ammo">
-      <UniqueIdentifier>{c9a0696a-631a-4032-832a-684d335f55ba}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\button">
       <UniqueIdentifier>{b03ed158-c0e3-46ea-8e32-3dbc5e4e93c1}</UniqueIdentifier>
@@ -247,24 +241,6 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\ambient\CTargetFMODAudio.cpp">
       <Filter>Source Files\dlls\entities\ambient</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\ammo\CCrossbowAmmo.cpp">
-      <Filter>Source Files\dlls\entities\ammo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\ammo\CEgonAmmo.cpp">
-      <Filter>Source Files\dlls\entities\ammo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\ammo\CGaussAmmo.cpp">
-      <Filter>Source Files\dlls\entities\ammo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\ammo\CGlockAmmo.cpp">
-      <Filter>Source Files\dlls\entities\ammo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\ammo\CRpgAmmo.cpp">
-      <Filter>Source Files\dlls\entities\ammo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\ammo\CShotgunAmmo.cpp">
-      <Filter>Source Files\dlls\entities\ammo</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\button\CButtonTarget.cpp">
       <Filter>Source Files\dlls\entities\button</Filter>
@@ -1293,24 +1269,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\ambient\CTargetFMODAudio.h">
       <Filter>Header Files\dlls\entities\ambient</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\ammo\CCrossbowAmmo.h">
-      <Filter>Header Files\dlls\entities\ammo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\ammo\CEgonAmmo.h">
-      <Filter>Header Files\dlls\entities\ammo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\ammo\CGaussAmmo.h">
-      <Filter>Header Files\dlls\entities\ammo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\ammo\CGlockAmmo.h">
-      <Filter>Header Files\dlls\entities\ammo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\ammo\CRpgAmmo.h">
-      <Filter>Header Files\dlls\entities\ammo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\ammo\CShotgunAmmo.h">
-      <Filter>Header Files\dlls\entities\ammo</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\button\CButtonTarget.h">
       <Filter>Header Files\dlls\entities\button</Filter>
