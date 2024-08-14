@@ -1052,9 +1052,6 @@
     <ClCompile Include="..\..\dlls\player.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\schedule.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\scripted.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
