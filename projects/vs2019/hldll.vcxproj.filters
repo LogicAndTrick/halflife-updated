@@ -1058,9 +1058,6 @@
     <ClCompile Include="..\..\dlls\locus.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\monstermaker.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\monsters.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
