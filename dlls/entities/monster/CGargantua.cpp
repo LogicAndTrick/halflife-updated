@@ -20,6 +20,7 @@
 #include "decals.h"
 #include "entities/func/CBreakable.h"
 #include "scripted.h"
+#include "entities/CGib.h"
 #include "entities/env/CEnvExplosion.h"
 
 int gStompSprite = 0, gGargGibModel = 0;

@@ -46,6 +46,7 @@
 #include "hltv.h"
 #include "UserMessages.h"
 #include "client.h"
+#include "entities/CGib.h"
 #include "entities/env/CRainModify.h"
 #include "entities/env/CRainSettings.h"
 #include "entities/func/CFuncTrackTrain.h"

@@ -15,8 +15,8 @@
 
 #include "CEnvShooter.h"
 #include "entities/func/CBreakable.h"
+#include "entities/CGib.h"
 #include "locus.h"
-#include "monsters.h"
 
 LINK_ENTITY_TO_CLASS(env_shooter, CEnvShooter);
 

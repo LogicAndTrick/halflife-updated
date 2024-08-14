@@ -14,8 +14,8 @@
  ****/
 
 #include "CGibShooter.h"
+#include "entities/CGib.h"
 #include "locus.h"
-#include "monsters.h"
 
 LINK_ENTITY_TO_CLASS(gibshooter, CGibShooter);
 

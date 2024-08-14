@@ -212,9 +212,6 @@
     <ClCompile Include="..\..\dlls\client.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\combat.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\defaultai.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -288,6 +285,9 @@
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CGib.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp">
@@ -1304,6 +1304,9 @@
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CDecal.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CGib.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h">

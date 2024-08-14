@@ -117,7 +117,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\bmodels.cpp" />
     <ClCompile Include="..\..\dlls\cbase.cpp" />
     <ClCompile Include="..\..\dlls\client.cpp" />
-    <ClCompile Include="..\..\dlls\combat.cpp" />
     <ClCompile Include="..\..\dlls\defaultai.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CBaseMutableAlias.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CInfoAlias.cpp" />
@@ -143,6 +142,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CBaseToggle.cpp" />
     <ClCompile Include="..\..\dlls\entities\CCorpse.cpp" />
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp" />
+    <ClCompile Include="..\..\dlls\entities\CGib.cpp" />
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp" />
     <ClCompile Include="..\..\dlls\entities\CWorld.cpp" />
@@ -483,6 +483,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CBaseToggle.h" />
     <ClInclude Include="..\..\dlls\entities\CCorpse.h" />
     <ClInclude Include="..\..\dlls\entities\CDecal.h" />
+    <ClInclude Include="..\..\dlls\entities\CGib.h" />
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h" />
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h" />
     <ClInclude Include="..\..\dlls\entities\CWorld.h" />
