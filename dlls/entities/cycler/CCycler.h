@@ -15,24 +15,25 @@
 
 #pragma once
 
-#include "entities/CBaseEntity.h"
+#include "entities/CBaseMonster.h"
 
-class CCyclerSprite : public CBaseEntity
+class CCycler : public CBaseMonster
 {
 public:
-	void Spawn() override;
-	void Think() override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
+	void GenericCyclerSpawn(const char* szModel, Vector vecMin, Vector vecMax);
 	int ObjectCaps() override { return (CBaseEntity::ObjectCaps() | FCAP_IMPULSE_USE); }
 	bool TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType) override;
-	void Animate(float frames);
+	void Spawn() override;
+	void Think() override;
+	// void Pain( float flDamage );
+	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
+
+	// Don't treat as a live target
+	bool IsAlive() override { return false; }
 
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
 	static TYPEDESCRIPTION m_SaveData[];
 
-	inline bool ShouldAnimate() { return m_animate && m_maxFrame > 1.0; }
 	bool m_animate;
-	float m_lastTime;
-	float m_maxFrame;
 };

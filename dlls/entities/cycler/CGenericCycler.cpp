@@ -13,12 +13,11 @@
  *
  ****/
 
-#include "CCyclerProbe.h"
+#include "CGenericCycler.h"
 
-LINK_ENTITY_TO_CLASS(cycler_prdroid, CCyclerProbe);
+LINK_ENTITY_TO_CLASS(cycler, CGenericCycler);
 
-void CCyclerProbe::Spawn()
+void CGenericCycler::Spawn()
 {
-	pev->origin = pev->origin + Vector(0, 0, 16);
-	GenericCyclerSpawn("models/prdroid.mdl", Vector(-16, -16, -16), Vector(16, 16, 16));
+	GenericCyclerSpawn(STRING(pev->model), Vector(-16, -16, 0), Vector(16, 16, 72));
 }

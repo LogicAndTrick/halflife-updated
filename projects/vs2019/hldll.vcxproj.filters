@@ -338,10 +338,16 @@
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\cycler\CCycler.cpp">
+      <Filter>Source Files\dlls\entities\cycler</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerProbe.cpp">
       <Filter>Source Files\dlls\entities\cycler</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerSprite.cpp">
+      <Filter>Source Files\dlls\entities\cycler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\cycler\CGenericCycler.cpp">
       <Filter>Source Files\dlls\entities\cycler</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\cycler\CWeaponCycler.cpp">
@@ -1040,9 +1046,6 @@
     <ClCompile Include="..\..\dlls\h_ai.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\h_cycler.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\h_export.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1381,10 +1384,16 @@
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\cycler\CCycler.h">
+      <Filter>Header Files\dlls\entities\cycler</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerProbe.h">
       <Filter>Header Files\dlls\entities\cycler</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerSprite.h">
+      <Filter>Header Files\dlls\entities\cycler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\cycler\CGenericCycler.h">
       <Filter>Header Files\dlls\entities\cycler</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\cycler\CWeaponCycler.h">

@@ -13,12 +13,15 @@
  *
  ****/
 
-#include "CCyclerProbe.h"
+#pragma once
 
-LINK_ENTITY_TO_CLASS(cycler_prdroid, CCyclerProbe);
+#include "CCycler.h"
 
-void CCyclerProbe::Spawn()
+//
+// we should get rid of all the other cyclers and replace them with this.
+//
+class CGenericCycler : public CCycler
 {
-	pev->origin = pev->origin + Vector(0, 0, 16);
-	GenericCyclerSpawn("models/prdroid.mdl", Vector(-16, -16, -16), Vector(16, 16, 16));
-}
+public:
+	void Spawn() override;
+};
