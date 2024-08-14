@@ -23,6 +23,22 @@
 #define SF_CORNER_FIREONCE 0x004
 #define SF_CORNER_AVELOCITY 0x800000
 
+// LRC - values in 'armortype'
+#define PATHSPEED_SET 0
+#define PATHSPEED_ACCEL 1
+#define PATHSPEED_TIME 2
+#define PATHSPEED_SET_MASTER 3
+
+// LRC - values in 'frags'
+#define PATHTURN_SET 0
+#define PATHTURN_SET_MASTER 1
+#define PATHTURN_RESET 2
+
+// LRC - values in 'armorvalue'
+#define PATHMATCH_NO 0
+#define PATHMATCH_YES 1
+#define PATHMATCH_TRACK 2
+
 class CPathCorner : public CPointEntity
 {
 public:

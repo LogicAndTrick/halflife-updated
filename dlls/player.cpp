@@ -32,7 +32,6 @@
 
 #include "cbase.h"
 #include "player.h"
-#include "trains.h"
 #include "nodes.h"
 #include "weapons.h"
 #include "soundent.h"
@@ -49,6 +48,7 @@
 #include "client.h"
 #include "entities/env/CRainModify.h"
 #include "entities/env/CRainSettings.h"
+#include "entities/func/CFuncTrackTrain.h"
 #include "entities/item/CItem.h"
 #include "entities/item/CItemCamera.h"
 #include "entities/weapon/CBasePlayerWeapon.h"

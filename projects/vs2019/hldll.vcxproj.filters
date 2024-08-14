@@ -464,6 +464,9 @@
     <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp">
       <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CBasePlatTrain.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\func\CBreakable.cpp">
       <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
@@ -516,6 +519,9 @@
       <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\func\CFuncTrackChange.cpp">
+      <Filter>Source Files\dlls\entities\func</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTrackTrain.cpp">
       <Filter>Source Files\dlls\entities\func</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\func\CFuncTrain.cpp">
@@ -1082,9 +1088,6 @@
     <ClCompile Include="..\..\dlls\plane.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\plats.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\player.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1507,6 +1510,9 @@
     <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h">
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CBasePlatTrain.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\func\CBreakable.h">
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
@@ -1559,6 +1565,9 @@
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\func\CFuncTrackChange.h">
+      <Filter>Header Files\dlls\entities\func</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTrackTrain.h">
       <Filter>Header Files\dlls\entities\func</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\func\CFuncTrain.h">
@@ -2138,9 +2147,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\teamplay_gamerules.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\trains.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\UserMessages.h">

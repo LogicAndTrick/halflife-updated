@@ -1,50 +1,39 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
 #pragma once
+
+#include "entities/CBaseEntity.h"
+#include "entities/path/CPathTrack.h"
 
 // Tracktrain spawn flags
 #define SF_TRACKTRAIN_NOPITCH 0x0001
 #define SF_TRACKTRAIN_NOCONTROL 0x0002
 #define SF_TRACKTRAIN_FORWARDONLY 0x0004
 #define SF_TRACKTRAIN_PASSABLE 0x0008
-#define SF_TRACKTRAIN_NOYAW 0x0010		  //LRC
-#define SF_TRACKTRAIN_AVELOCITY 0x800000  //LRC - avelocity has been set manually, don't turn.
-#define SF_TRACKTRAIN_AVEL_GEARS 0x400000 //LRC - avelocity should be scaled up/down when the train changes gear.
+#define SF_TRACKTRAIN_NOYAW 0x0010		  // LRC
+#define SF_TRACKTRAIN_AVELOCITY 0x800000  // LRC - avelocity has been set manually, don't turn.
+#define SF_TRACKTRAIN_AVEL_GEARS 0x400000 // LRC - avelocity should be scaled up/down when the train changes gear.
 
-
-//LRC - values in 'armortype'
-#define PATHSPEED_SET 0
-#define PATHSPEED_ACCEL 1
-#define PATHSPEED_TIME 2
-#define PATHSPEED_SET_MASTER 3
-
-//LRC - values in 'frags'
-#define PATHTURN_SET 0
-#define PATHTURN_SET_MASTER 1
-#define PATHTURN_RESET 2
-
-//LRC - values in 'armorvalue'
-#define PATHMATCH_NO 0
-#define PATHMATCH_YES 1
-#define PATHMATCH_TRACK 2
-
-#include "entities/path/CPathTrack.h"
+#define TRAIN_STARTPITCH 60
+#define TRAIN_MAXPITCH 200
+#define TRAIN_MAXSPEED 1000 // approx max speed for sound pitch calculation
 
 class CTrainSequence;
 
+// Track Train
 class CFuncTrackTrain : public CBaseEntity
 {
 public:
@@ -55,12 +44,12 @@ public:
 	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
 	bool KeyValue(KeyValueData* pkvd) override;
 
-	//LRC
+	// LRC
 	void StartSequence(CTrainSequence* pSequence);
 	void StopSequence();
 	CTrainSequence* m_pSequence;
 
-	void DesiredAction() override; //LRC - used to be called Next!
+	void DesiredAction() override; // LRC - used to be called Next!
 
 	//	void EXPORT Next();
 	void EXPORT PostponeNext();
@@ -103,10 +92,10 @@ public:
 	float m_flVolume;
 	float m_flBank;
 	float m_oldSpeed;
-	Vector m_vecMasterAvel; //LRC - masterAvel is to avelocity as m_speed is to speed.
+	Vector m_vecMasterAvel; // LRC - masterAvel is to avelocity as m_speed is to speed.
 	Vector m_vecBaseAvel;	// LRC - the underlying avelocity, superceded by normal turning behaviour where applicable
 
-	EHANDLE m_hActivator; //AJH (give frags to this entity)
+	EHANDLE m_hActivator; // AJH (give frags to this entity)
 
 private:
 	unsigned short m_usAdjustPitch;

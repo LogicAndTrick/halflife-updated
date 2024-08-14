@@ -15,24 +15,28 @@
 
 #pragma once
 
-#include "CFuncPlat.h"
+#include "entities/CBaseToggle.h"
 
-class CFuncPlatRot : public CFuncPlat
+#define noiseMovement noise
+#define noiseStopMoving noise1
+
+#define SF_PLAT_TOGGLE 0x0001
+
+class CBasePlatTrain : public CBaseToggle
 {
 public:
-	void Spawn() override;
-	void SetupRotation();
+	int ObjectCaps() override { return CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
 	bool KeyValue(KeyValueData* pkvd) override;
+	void Precache() override;
 
-	void GoUp() override;
-	void GoDown() override;
-	void HitTop() override;
-	void HitBottom() override;
+	// This is done to fix spawn flag collisions between this class and a derived class
+	virtual bool IsTogglePlat() { return (pev->spawnflags & SF_PLAT_TOGGLE) != 0; }
 
-	void RotMove(Vector& destAngle, float time);
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
 	static TYPEDESCRIPTION m_SaveData[];
 
-	Vector m_end, m_start;
+	byte m_bMoveSnd; // sound a plat makes while moving
+	byte m_bStopSnd; // sound a plat makes when it stops
+	float m_volume;	 // Sound volume
 };

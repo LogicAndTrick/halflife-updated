@@ -197,6 +197,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\env\CSprite.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseButton.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp" />
+    <ClCompile Include="..\..\dlls\entities\func\CBasePlatTrain.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBreakable.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFrictionModifier.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncConveyor.cpp" />
@@ -215,6 +216,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\func\CFuncTankRocket.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncTrackAuto.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncTrackChange.cpp" />
+    <ClCompile Include="..\..\dlls\entities\func\CFuncTrackTrain.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncTrain.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncTrainControls.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CFuncWall.cpp" />
@@ -403,7 +405,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\nodes.cpp" />
     <ClCompile Include="..\..\dlls\observer.cpp" />
     <ClCompile Include="..\..\dlls\plane.cpp" />
-    <ClCompile Include="..\..\dlls\plats.cpp" />
     <ClCompile Include="..\..\dlls\player.cpp" />
     <ClCompile Include="..\..\dlls\schedule.cpp" />
     <ClCompile Include="..\..\dlls\scripted.cpp" />
@@ -546,6 +547,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\env\CSprite.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseButton.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h" />
+    <ClInclude Include="..\..\dlls\entities\func\CBasePlatTrain.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBreakable.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFrictionModifier.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncConveyor.h" />
@@ -564,6 +566,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\func\CFuncTankRocket.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncTrackAuto.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncTrackChange.h" />
+    <ClInclude Include="..\..\dlls\entities\func\CFuncTrackTrain.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncTrain.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncTrainControls.h" />
     <ClInclude Include="..\..\dlls\entities\func\CFuncWall.h" />
@@ -757,7 +760,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\spectator.h" />
     <ClInclude Include="..\..\dlls\squad.h" />
     <ClInclude Include="..\..\dlls\teamplay_gamerules.h" />
-    <ClInclude Include="..\..\dlls\trains.h" />
     <ClInclude Include="..\..\dlls\UserMessages.h" />
     <ClInclude Include="..\..\dlls\util.h" />
     <ClInclude Include="..\..\dlls\vector.h" />
