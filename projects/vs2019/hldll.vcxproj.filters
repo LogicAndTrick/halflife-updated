@@ -320,9 +320,6 @@
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CLightFader.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
@@ -657,6 +654,9 @@
       <Filter>Source Files\dlls\entities\light</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\light\CLightDynamic.cpp">
+      <Filter>Source Files\dlls\entities\light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\light\CLightFader.cpp">
       <Filter>Source Files\dlls\entities\light</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\locus\CLocusAlias.cpp">
@@ -1360,9 +1360,6 @@
     <ClInclude Include="..\..\dlls\entities\CDecal.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CLightFader.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
@@ -1697,6 +1694,9 @@
       <Filter>Header Files\dlls\entities\light</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\light\CLightDynamic.h">
+      <Filter>Header Files\dlls\entities\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\light\CLightFader.h">
       <Filter>Header Files\dlls\entities\light</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\locus\CLocusAlias.h">

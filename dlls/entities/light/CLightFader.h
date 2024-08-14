@@ -16,19 +16,24 @@
 #pragma once
 
 #include "entities/CPointEntity.h"
+#include "CLight.h"
 
-// LRC- the CTriggerLightstyle entity - changes the style of a light temporarily.
-class CTriggerLightstyle : public CPointEntity
+class CLightFader : public CPointEntity
 {
 public:
-	bool KeyValue(KeyValueData* pkvd) override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
+	void EXPORT FadeThink();
+	void EXPORT WaitThink();
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
+
 	static TYPEDESCRIPTION m_SaveData[];
 
-private:
+	CLight* m_pLight;
+	char m_cFrom;
+	char m_cTo;
+	char m_szCurStyle[2];
+	float m_fEndTime;
 	int m_iszPattern;
-	int m_iFade;
+	float m_fStep;
 	int m_iWait;
 };
