@@ -15,8 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseEntity.h"
-#include "entities/trigger/CTriggerMotion.h"
+#include "entities/CPointEntity.h"
 
 #define MT_AFFECT_X 1
 #define MT_AFFECT_Y 2

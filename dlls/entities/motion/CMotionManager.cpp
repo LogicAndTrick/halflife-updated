@@ -14,6 +14,7 @@
  ****/
 
 #include "CMotionManager.h"
+#include "entities/trigger/CTriggerMotion.h"
 #include "locus.h"
 #include "movewith.h"
 

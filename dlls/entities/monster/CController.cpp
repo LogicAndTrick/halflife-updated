@@ -15,6 +15,8 @@
 
 #include "CController.h"
 
+#include "scripted.h"
+
 LINK_ENTITY_TO_CLASS(monster_alien_controller, CController);
 
 TYPEDESCRIPTION CController::m_SaveData[] =

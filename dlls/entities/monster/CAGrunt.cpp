@@ -15,6 +15,8 @@
 
 #include "CAGrunt.h"
 
+#include "scripted.h"
+
 int iAgruntMuzzleFlash;
 
 LINK_ENTITY_TO_CLASS(monster_alien_grunt, CAGrunt);

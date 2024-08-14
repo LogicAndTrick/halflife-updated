@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseEntity.h"
+#include "entities/CPointEntity.h"
 
 #define SF_MOTION_DEBUG 1
 #define SF_MOTION_SWAPXY 2 // MJB Swap X and Y values

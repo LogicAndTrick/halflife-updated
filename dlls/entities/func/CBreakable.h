@@ -17,6 +17,8 @@
 
 #include "entities/CBaseDelay.h"
 
+class CPointEntity;
+
 typedef enum
 {
 	expRandom,

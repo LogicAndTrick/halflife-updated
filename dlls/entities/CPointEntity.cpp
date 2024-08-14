@@ -14,3 +14,12 @@
  ****/
 
 #include "CPointEntity.h"
+
+LINK_ENTITY_TO_CLASS(info_player_start, CPointEntity);
+LINK_ENTITY_TO_CLASS(info_landmark, CPointEntity);
+LINK_ENTITY_TO_CLASS(info_teleport_destination, CPointEntity);
+
+void CPointEntity::Spawn()
+{
+	pev->solid = SOLID_NOT;
+}

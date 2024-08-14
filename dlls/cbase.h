@@ -177,16 +177,16 @@ public:
 	CBaseEntity* m_pLink;	 // used for temporary link-list operations.
 
 	CBaseEntity* m_pMoveWith;		 // LRC- the entity I move with.
-	int m_MoveWith;					 //LRC- Name of that entity
-	CBaseEntity* m_pChildMoveWith;	 //LRC- one of the entities that's moving with me.
-	CBaseEntity* m_pSiblingMoveWith; //LRC- another entity that's Moving With the same ent as me. (linked list.)
+	int m_MoveWith;					 // LRC- Name of that entity
+	CBaseEntity* m_pChildMoveWith;	 // LRC- one of the entities that's moving with me.
+	CBaseEntity* m_pSiblingMoveWith; // LRC- another entity that's Moving With the same ent as me. (linked list.)
 	Vector m_vecMoveWithOffset;		 // LRC- Position I should be in relative to m_pMoveWith->pev->origin.
 	Vector m_vecRotWithOffset;		 // LRC- Angles I should be facing relative to m_pMoveWith->pev->angles.
 	CBaseEntity* m_pAssistLink;		 // LRC- link to the next entity which needs to be Assisted before physics are applied.
 	Vector m_vecPostAssistVel;		 // LRC
 	Vector m_vecPostAssistAVel;		 // LRC
 	float m_fNextThink;				 // LRC - for SetNextThink and SetPhysThink. Marks the time when a think will be performed - not necessarily the same as pev->nextthink!
-	float m_fPevNextThink;			 // LRC - always set equal to pev->nextthink, so that we can tell when the latter gets changed by the @#$^Â¬! engine.
+	float m_fPevNextThink;			 // LRC - always set equal to pev->nextthink, so that we can tell when the latter gets changed by the @#$^¬! engine.
 	int m_iLFlags;					 // LRC- a new set of flags. (pev->spawnflags and pev->flags are full...)
 	virtual void DesiredAction(){};	 // LRC - for postponing stuff until PostThink time, not as a think.
 	int m_iStyle;					 // LRC - almost anything can have a lightstyle these days...
@@ -195,14 +195,14 @@ public:
 	bool m_activated;		 // LRC- moved here from func_train. Signifies that an entity has already been
 							 // activated. (and hence doesn't need reactivating.)
 
-	//AJH Entities can now have custom names and kill techniques for deathnotices
-	//E.g instead of "Player1 killed Player2 with train" you can have "Player1 decapitated Player2 with a large table saw!)
-	string_t killname;	 //AJH custom 'deathnotice' name
-	string_t killmethod; //AJH custom kill techniques
+	// AJH Entities can now have custom names and kill techniques for deathnotices
+	// E.g instead of "Player1 killed Player2 with train" you can have "Player1 decapitated Player2 with a large table saw!)
+	string_t killname;	 // AJH custom 'deathnotice' name
+	string_t killmethod; // AJH custom kill techniques
 
 
-	//LRC - decent mechanisms for setting think times!
-	// this should have been done a long time ago, but MoveWith finally forced me.
+	// LRC - decent mechanisms for setting think times!
+	//  this should have been done a long time ago, but MoveWith finally forced me.
 	virtual void SetNextThink(float delay) { SetNextThink(delay, false); }
 	virtual void SetNextThink(float delay, bool correctSpeed);
 	virtual void AbsoluteNextThink(float time) { AbsoluteNextThink(time, false); }
@@ -223,14 +223,14 @@ public:
 	// to follow it.
 	//	void				SetChildrenThink( float delay );
 
-	//LRC use this instead of "SetThink( NULL )" or "pev->nextthink = -1".
+	// LRC use this instead of "SetThink( NULL )" or "pev->nextthink = -1".
 	void DontThink();
-	//LRC similar, but called by the parent when a think needs to be aborted.
+	// LRC similar, but called by the parent when a think needs to be aborted.
 	//	void	DontMWThink();
 
 	virtual void ThinkCorrection();
 
-	//LRC - loci
+	// LRC - loci
 	virtual bool CalcPosition(CBaseEntity* pLocus, Vector* OUTresult)
 	{
 		*OUTresult = pev->origin;
@@ -252,13 +252,13 @@ public:
 		return true;
 	}
 
-	//LRC 1.8 - FollowAlias is now available to all; the special alias class is only for mutable ones.
+	// LRC 1.8 - FollowAlias is now available to all; the special alias class is only for mutable ones.
 	virtual bool IsMutableAlias() { return false; }
 	virtual CBaseEntity* FollowAlias(CBaseEntity* pFrom) { return NULL; }
 
 	/**
-	*	@brief Entity flags sent to the client in ::AddToFullPack
-	*/
+	 *	@brief Entity flags sent to the client in ::AddToFullPack
+	 */
 	byte m_EFlags = 0;
 
 	virtual ~CBaseEntity() {}
@@ -268,7 +268,7 @@ public:
 	virtual void Precache() { return; }
 	virtual bool KeyValue(KeyValueData* pkvd)
 	{
-		//LRC - MoveWith for all!
+		// LRC - MoveWith for all!
 		if (FStrEq(pkvd->szKeyName, "movewith"))
 		{
 			m_MoveWith = ALLOC_STRING(pkvd->szValue);
@@ -279,12 +279,12 @@ public:
 			m_iLFlags = atoi(pkvd->szValue);
 			return true;
 		}
-		else if (FStrEq(pkvd->szKeyName, "killname")) //AJH Custom 'kill' names for entities
+		else if (FStrEq(pkvd->szKeyName, "killname")) // AJH Custom 'kill' names for entities
 		{
 			killname = ALLOC_STRING(pkvd->szValue);
 			return true;
 		}
-		else if (FStrEq(pkvd->szKeyName, "killmethod")) //AJH Custom 'kill' techniques for entities
+		else if (FStrEq(pkvd->szKeyName, "killmethod")) // AJH Custom 'kill' techniques for entities
 		{
 			killmethod = ALLOC_STRING(pkvd->szValue);
 			return true;
@@ -299,12 +299,12 @@ public:
 	}
 	virtual bool Save(CSave& save);
 	virtual bool Restore(CRestore& restore);
-	//LRC - if I MoveWith something, then only cross transitions if the MoveWith entity does too.
+	// LRC - if I MoveWith something, then only cross transitions if the MoveWith entity does too.
 	virtual int ObjectCaps() { return m_pMoveWith ? m_pMoveWith->ObjectCaps() & FCAP_ACROSS_TRANSITION : FCAP_ACROSS_TRANSITION; }
-	virtual void Activate();	//LRC
-	void InitMoveWith();		//LRC - called by Activate() to set up moveWith values
-	virtual void PostSpawn() {} //LRC - called by Activate() to handle entity-specific initialisation.
-								// (mostly setting positions, for MoveWith support)
+	virtual void Activate();	// LRC
+	void InitMoveWith();		// LRC - called by Activate() to set up moveWith values
+	virtual void PostSpawn() {} // LRC - called by Activate() to handle entity-specific initialisation.
+								//  (mostly setting positions, for MoveWith support)
 
 	// Setup the object->object collision box (pev->mins / pev->maxs is the object->world collision box)
 	virtual void SetObjectCollisionBox();
@@ -330,7 +330,7 @@ public:
 	virtual void Killed(entvars_t* pevAttacker, int iGib);
 	virtual int BloodColor() { return DONT_BLEED; }
 	virtual void TraceBleed(float flDamage, Vector vecDir, TraceResult* ptr, int bitsDamageType);
-	//LRC- superceded by GetState ( pActivator ).
+	// LRC- superceded by GetState ( pActivator ).
 	//	virtual bool    IsTriggered( CBaseEntity *pActivator ) {return true;}
 	virtual CBaseMonster* MyMonsterPointer() { return NULL; }
 	virtual CSquadMonster* MySquadMonsterPointer() { return NULL; }
@@ -392,13 +392,13 @@ public:
 
 	void* operator new(size_t stAllocateBlock)
 	{
-		//Allocate zero-initialized memory.
+		// Allocate zero-initialized memory.
 		auto memory = ::operator new(stAllocateBlock);
 		std::memset(memory, 0, stAllocateBlock);
 		return memory;
 	}
 
-	//Don't call delete on entities directly, tell the engine to delete it instead.
+	// Don't call delete on entities directly, tell the engine to delete it instead.
 	void operator delete(void* pMem)
 	{
 		::operator delete(pMem);
@@ -416,7 +416,7 @@ public:
 		this->Use(this, this, USE_TOGGLE, 0);
 	}
 	bool ShouldToggle(USE_TYPE useType, bool currentState);
-	bool ShouldToggle(USE_TYPE useType); //LRC this version uses GetState()
+	bool ShouldToggle(USE_TYPE useType); // LRC this version uses GetState()
 	void FireBullets(unsigned int cShots, Vector vecSrc, Vector vecDirShooting, Vector vecSpread, float flDistance, int iBulletType, int iTracerFreq = 4, int iDamage = 0, entvars_t* pevAttacker = NULL);
 	Vector FireBulletsPlayer(unsigned int cShots, Vector vecSrc, Vector vecDirShooting, Vector vecSpread, float flDistance, int iBulletType, int iTracerFreq = 4, int iDamage = 0, entvars_t* pevAttacker = NULL, int shared_rand = 0);
 
@@ -509,7 +509,7 @@ public:
 	virtual bool FVisible(CBaseEntity* pEntity);
 	virtual bool FVisible(const Vector& vecOrigin);
 
-	//We use this variables to store each ammo count.
+	// We use this variables to store each ammo count.
 	int ammo_9mm;
 	int ammo_357;
 	int ammo_bolts;
@@ -518,7 +518,7 @@ public:
 	int ammo_uranium;
 	int ammo_hornets;
 	int ammo_argrens;
-	//Special stuff for grenades and satchels.
+	// Special stuff for grenades and satchels.
 	float m_flStartThrow;
 	float m_flReleaseThrow;
 	int m_chargeReady;
@@ -527,8 +527,9 @@ public:
 	int m_fireState;
 };
 
-//LRC- moved here from player.cpp. I'd put it in util.h with its friends, but it needs CBaseEntity to be declared.
+// LRC- moved here from player.cpp. I'd put it in util.h with its friends, but it needs CBaseEntity to be declared.
 inline bool FNullEnt(CBaseEntity* ent) { return (ent == NULL) || FNullEnt(ent->edict()); }
+
 
 
 // Ugly technique to override base member functions
@@ -552,15 +553,6 @@ inline bool FNullEnt(CBaseEntity* ent) { return (ent == NULL) || FNullEnt(ent->e
 #endif
 
 
-class CPointEntity : public CBaseEntity
-{
-public:
-	void Spawn() override;
-	int ObjectCaps() override { return CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
-
-private:
-};
-
 
 typedef struct locksounds // sounds that doors and buttons make when locked/unlocked
 {
@@ -580,146 +572,6 @@ typedef struct locksounds // sounds that doors and buttons make when locked/unlo
 
 void PlayLockSounds(entvars_t* pev, locksound_t* pls, bool flocked, bool fbutton);
 
-//
-// generic Delay entity.
-//
-class CBaseDelay : public CBaseEntity
-{
-public:
-	float m_flDelay;
-	int m_iszKillTarget;
-	EHANDLE m_hActivator; //LRC - moved here from CBaseToggle
-
-	bool KeyValue(KeyValueData* pkvd) override;
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-	// common member functions
-	void SUB_UseTargets(CBaseEntity* pActivator, USE_TYPE useType, float value);
-	void EXPORT DelayThink();
-};
-
-
-class CBaseAnimating : public CBaseDelay
-{
-public:
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	// Basic Monster Animation functions
-	float StudioFrameAdvance(float flInterval = 0.0); // accumulate animation frame time from last time called until now
-	int GetSequenceFlags();
-	int LookupActivity(int activity);
-	int LookupActivityHeaviest(int activity);
-	int LookupSequence(const char* label);
-	void ResetSequenceInfo();
-	void DispatchAnimEvents(float flFutureInterval = 0.1); // Handle events that have happend since last time called up until X seconds into the future
-	virtual void HandleAnimEvent(MonsterEvent_t* pEvent) {}
-	float SetBoneController(int iController, float flValue);
-	void InitBoneControllers();
-	float SetBlending(int iBlender, float flValue);
-	void GetBonePosition(int iBone, Vector& origin, Vector& angles);
-	void GetAutomovement(Vector& origin, Vector& angles, float flInterval = 0.1);
-	int FindTransition(int iEndingSequence, int iGoalSequence, int* piDir);
-	void GetAttachment(int iAttachment, Vector& origin, Vector& angles);
-	void SetBodygroup(int iGroup, int iValue);
-	int GetBodygroup(int iGroup);
-
-	//LRC
-	int GetBoneCount();
-	void SetBones(float (*data)[3], int datasize);
-
-	bool ExtractBbox(int sequence, float* mins, float* maxs);
-	void SetSequenceBox();
-
-	// animation needs
-	float m_flFrameRate;	  // computed FPS for current sequence
-	float m_flGroundSpeed;	  // computed linear movement rate for current sequence
-	float m_flLastEventCheck; // last time the event list was checked
-	bool m_fSequenceFinished; // flag set when StudioAdvanceFrame moves across a frame boundry
-	bool m_fSequenceLoops;	  // true if the sequence loops
-};
-
-
-//
-// generic Toggle entity.
-//
-#define SF_ITEM_USE_ONLY 256 //  ITEM_USE_ONLY = BUTTON_USE_ONLY = DOOR_USE_ONLY!!!
-
-class CBaseToggle : public CBaseAnimating
-{
-public:
-	bool KeyValue(KeyValueData* pkvd) override;
-
-	TOGGLE_STATE m_toggle_state;
-	float m_flActivateFinished; //like attack_finished, but for doors
-	float m_flMoveDistance;		// how far a door should slide or rotate
-	float m_flWait;
-	float m_flLip;
-	float m_flTWidth;  // for plats
-	float m_flTLength; // for plats
-
-	Vector m_vecPosition1;
-	Vector m_vecPosition2;
-	Vector m_vecAngle1;
-	Vector m_vecAngle2;
-
-	int m_cTriggersLeft; // trigger_counter only, # of activations remaining
-	float m_flHeight;
-	void (CBaseToggle::*m_pfnCallWhenMoveDone)();
-	Vector m_vecFinalDest;
-	float m_flLinearMoveSpeed;	// LRC- allows a LinearMove to be delayed until a think.
-	float m_flAngularMoveSpeed; // LRC
-
-	float m_flLinearAccel; //AJH - For acceleration, used in subs.cpp
-	float m_flLinearDecel; //AJH
-	float m_flCurrentTime; //AJH
-	float m_flAccelTime;   //AJH
-	float m_flDecelTime;   //AJH
-	bool m_bDecelerate;	   //AJH
-
-	Vector m_vecFinalAngle;
-
-	int m_bitsDamageInflict; // DMG_ damage type that the door or tigger does
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-	int GetToggleState() override { return m_toggle_state; }
-
-	// LRC- overridden because toggling entities have general rules governing their states.
-	STATE GetState() override;
-
-	float GetDelay() override { return m_flWait; }
-
-	// common member functions
-	void LinearMove(Vector vecInput, float flSpeed);
-	void LinearMove(Vector vecInput, float flSpeed, float flAccel, float flDecel); //AJH-Accelerated linear movement
-	void EXPORT LinearMoveNow();												   //LRC- think function that lets us guarantee a LinearMove gets done as a think.
-	void EXPORT LinearMoveDone();
-	void EXPORT LinearMoveDoneNow(); //LRC
-									 //	void EXPORT LinearMoveFinalDone();
-	void AngularMove(Vector vecDestAngle, float flSpeed);
-	void EXPORT AngularMoveNow(); //LRC- think function that lets us guarantee an AngularMove gets done as a think.
-	void EXPORT AngularMoveDone();
-	void EXPORT AngularMoveDoneNow();
-	bool IsLockedByMaster();
-
-	static float AxisValue(int flags, const Vector& angles);
-	static void AxisDir(entvars_t* pev);
-	static float AxisDelta(int flags, const Vector& angle1, const Vector& angle2);
-
-	string_t m_sMaster; // If this button has a master switch, this is the targetname.
-						// A master switch must be of the multisource type. If all
-						// of the switches in the multisource have been triggered, then
-						// the button will be allowed to operate. Otherwise, it will be
-						// deactivated.
-};
 #define SetMoveDone(a) m_pfnCallWhenMoveDone = static_cast<void (CBaseToggle::*)()>(a)
 
 
@@ -760,65 +612,8 @@ class CBaseMonster;
 class CCineMonster;
 class CSound;
 
-#include "basemonster.h"
-
 
 const char* ButtonSound(int sound); // get string of button sound number
-
-
-//
-// Generic Button
-//
-class CBaseButton : public CBaseToggle
-{
-public:
-	void Spawn() override;
-	void PostSpawn() override; //LRC
-	void Precache() override;
-	void RotSpawn();
-	bool KeyValue(KeyValueData* pkvd) override;
-
-	void ButtonActivate();
-	void SparkSoundCache();
-
-	void EXPORT ButtonShot();
-	void EXPORT ButtonTouch(CBaseEntity* pOther);
-	void EXPORT ButtonSpark();
-	void EXPORT TriggerAndWait();
-	void EXPORT ButtonReturn();
-	void EXPORT ButtonBackHome();
-	void EXPORT ButtonUse_IgnorePlayer(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
-	void EXPORT ButtonUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
-	bool TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType) override;
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	enum BUTTON_CODE
-	{
-		BUTTON_NOTHING,
-		BUTTON_ACTIVATE,
-		BUTTON_RETURN
-	};
-	BUTTON_CODE ButtonResponseToTouch();
-
-	static TYPEDESCRIPTION m_SaveData[];
-	int ObjectCaps() override;
-
-	bool m_fStayPushed; // button stays pushed in until touched again?
-	bool m_fRotating;	// a rotating button?  default is a sliding button.
-
-	string_t m_strChangeTarget; // if this field is not null, this is an index into the engine string array.
-								// when this button is touched, it's target entity's TARGET field will be set
-								// to the button's ChangeTarget. This allows you to make a func_train switch paths, etc.
-
-	locksound_t m_ls; // door lock sounds
-
-	byte m_bLockedSound; // ordinals from entity selection
-	byte m_bLockedSentence;
-	byte m_bUnlockedSound;
-	byte m_bUnlockedSentence;
-	int m_sounds;
-};
 
 //
 // Weapons

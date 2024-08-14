@@ -12,3 +12,7 @@
  *   without written permission from Valve LLC.
  *
  ****/
+
+#pragma once
+
+#include "CBaseEntity.h"

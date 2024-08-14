@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseEntity.h"
+#include "entities/CBaseToggle.h"
 
 #define SF_SWATCHER_SENDTOGGLE 0x1
 #define SF_SWATCHER_DONTSEND_ON 0x2

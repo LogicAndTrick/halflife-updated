@@ -33,6 +33,7 @@
 #include "gamerules.h"
 #include "teamplay_gamerules.h"
 #include "movewith.h" //LRC
+#include "entities/CWorld.h"
 #include "entities/env/CMessage.h"
 
 CGlobalState gGlobalState;

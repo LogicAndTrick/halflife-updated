@@ -23,6 +23,7 @@
 #include "defaultai.h"
 #include "soundent.h"
 #include "scripted.h"
+#include "entities/CBaseMonster.h"
 
 //=========================================================
 // Fail

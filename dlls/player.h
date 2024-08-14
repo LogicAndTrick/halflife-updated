@@ -16,6 +16,7 @@
 #pragma once
 
 #include "pm_materials.h"
+#include "entities/CBaseMonster.h"
 
 
 #define PLAYER_FATAL_FALL_SPEED 1024															  // approx 60 feet

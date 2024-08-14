@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseEntity.h"
+#include "entities/CPointEntity.h"
 
 //
 // Render parameters trigger

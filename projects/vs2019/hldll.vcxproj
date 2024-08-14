@@ -30,7 +30,8 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings"></ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -54,7 +55,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;QUIVER;VOXEL;QUAKE2;VALVE_DLL;CLIENT_WEAPONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -81,7 +83,8 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -142,6 +145,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp" />
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp" />
+    <ClCompile Include="..\..\dlls\entities\CWorld.cpp" />
     <ClCompile Include="..\..\dlls\entities\cycler\CCycler.cpp" />
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerProbe.cpp" />
     <ClCompile Include="..\..\dlls\entities\cycler\CCyclerSprite.cpp" />
@@ -184,7 +188,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\env\CRainSettings.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CRenderFxManager.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CShake.cpp" />
-    <ClCompile Include="..\..\dlls\entities\env\CSmoker.cpp" />
     <ClCompile Include="..\..\dlls\entities\env\CSprite.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseButton.cpp" />
     <ClCompile Include="..\..\dlls\entities\func\CBaseDoor.cpp" />
@@ -235,11 +238,9 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\game\CRuleEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\game\CRulePointEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CBaseDMStart.cpp" />
-    <ClCompile Include="..\..\dlls\entities\info\CInfoBM.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CInfoMoveWith.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CInfoTarget.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CNullEntity.cpp" />
-    <ClCompile Include="..\..\dlls\entities\inout\CInOutRegister.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CAirtank.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CHealthKit.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CItem.cpp" />
@@ -301,7 +302,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CSentry.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CSquadMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CSqueakGrenade.cpp" />
-    <ClCompile Include="..\..\dlls\entities\monster\CSquidSpit.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CTalkMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CTentacle.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CTripmineGrenade.cpp" />
@@ -453,7 +453,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\activity.h" />
     <ClInclude Include="..\..\dlls\activitymap.h" />
     <ClInclude Include="..\..\dlls\animation.h" />
-    <ClInclude Include="..\..\dlls\basemonster.h" />
     <ClInclude Include="..\..\dlls\cbase.h" />
     <ClInclude Include="..\..\dlls\cdll_dll.h" />
     <ClInclude Include="..\..\dlls\client.h" />
@@ -486,6 +485,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CDecal.h" />
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h" />
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h" />
+    <ClInclude Include="..\..\dlls\entities\CWorld.h" />
     <ClInclude Include="..\..\dlls\entities\cycler\CCycler.h" />
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerProbe.h" />
     <ClInclude Include="..\..\dlls\entities\cycler\CCyclerSprite.h" />
@@ -528,7 +528,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\env\CRainSettings.h" />
     <ClInclude Include="..\..\dlls\entities\env\CRenderFxManager.h" />
     <ClInclude Include="..\..\dlls\entities\env\CShake.h" />
-    <ClInclude Include="..\..\dlls\entities\env\CSmoker.h" />
     <ClInclude Include="..\..\dlls\entities\env\CSprite.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseButton.h" />
     <ClInclude Include="..\..\dlls\entities\func\CBaseDoor.h" />
@@ -579,11 +578,9 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\game\CRuleEntity.h" />
     <ClInclude Include="..\..\dlls\entities\game\CRulePointEntity.h" />
     <ClInclude Include="..\..\dlls\entities\info\CBaseDMStart.h" />
-    <ClInclude Include="..\..\dlls\entities\info\CInfoBM.h" />
     <ClInclude Include="..\..\dlls\entities\info\CInfoMoveWith.h" />
     <ClInclude Include="..\..\dlls\entities\info\CInfoTarget.h" />
     <ClInclude Include="..\..\dlls\entities\info\CNullEntity.h" />
-    <ClInclude Include="..\..\dlls\entities\inout\CInOutRegister.h" />
     <ClInclude Include="..\..\dlls\entities\item\CAirtank.h" />
     <ClInclude Include="..\..\dlls\entities\item\CHealthKit.h" />
     <ClInclude Include="..\..\dlls\entities\item\CItem.h" />
@@ -645,7 +642,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CSentry.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CSquadMonster.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CSqueakGrenade.h" />
-    <ClInclude Include="..\..\dlls\entities\monster\CSquidSpit.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CTalkMonster.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CTentacle.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CTripmineGrenade.h" />
@@ -767,5 +763,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\public\interface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets"></ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>

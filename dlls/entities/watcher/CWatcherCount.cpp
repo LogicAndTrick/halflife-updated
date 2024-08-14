@@ -15,13 +15,14 @@
 
 #include "CWatcherCount.h"
 
+LINK_ENTITY_TO_CLASS(watcher_count, CWatcherCount);
+
 TYPEDESCRIPTION CWatcherCount::m_SaveData[] =
 	{
 		DEFINE_FIELD(CWatcherCount, m_iMode, FIELD_INTEGER),
 };
 
 IMPLEMENT_SAVERESTORE(CWatcherCount, CBaseToggle);
-LINK_ENTITY_TO_CLASS(watcher_count, CWatcherCount);
 
 bool CWatcherCount::KeyValue(KeyValueData* pkvd)
 {

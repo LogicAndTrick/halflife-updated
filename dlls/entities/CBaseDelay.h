@@ -16,3 +16,23 @@
 #pragma once
 
 #include "entities/CBaseEntity.h"
+
+//
+// generic Delay entity.
+//
+class CBaseDelay : public CBaseEntity
+{
+public:
+	float m_flDelay;
+	int m_iszKillTarget;
+	EHANDLE m_hActivator; // LRC - moved here from CBaseToggle
+
+	bool KeyValue(KeyValueData* pkvd) override;
+	bool Save(CSave& save) override;
+	bool Restore(CRestore& restore) override;
+
+	static TYPEDESCRIPTION m_SaveData[];
+	// common member functions
+	void SUB_UseTargets(CBaseEntity* pActivator, USE_TYPE useType, float value);
+	void EXPORT DelayThink();
+};

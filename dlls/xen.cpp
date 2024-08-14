@@ -16,6 +16,7 @@
 #include "util.h"
 #include "cbase.h"
 #include "animation.h"
+#include "entities/CBaseAnimating.h"
 #include "entities/env/CSprite.h"
 
 

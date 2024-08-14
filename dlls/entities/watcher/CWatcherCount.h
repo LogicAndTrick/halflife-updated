@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseEntity.h"
+#include "entities/CBaseToggle.h"
 #include "CStateWatcher.h"
 
 #define SF_WRCOUNT_FIRESTART 0x0001

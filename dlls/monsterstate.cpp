@@ -24,6 +24,7 @@
 #include "animation.h"
 #include "saverestore.h"
 #include "soundent.h"
+#include "entities/CBaseMonster.h"
 
 //=========================================================
 // SetState

@@ -30,6 +30,7 @@
 #include "weapons.h"
 #include "entities/func/CBreakable.h"
 #include "studio.h"
+#include "entities/CBaseMonster.h"
 
 extern Vector VecBModelOrigin(entvars_t* pevBModel);
 

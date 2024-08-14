@@ -48,9 +48,6 @@
     <Filter Include="Header Files\dlls\entities\info">
       <UniqueIdentifier>{8d1093ab-b366-4b32-8203-ddc51162be43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dlls\entities\inout">
-      <UniqueIdentifier>{3cc43e3d-575e-42cc-98ee-b5beacb6c718}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\dlls\entities\item">
       <UniqueIdentifier>{f5818904-c0cb-458d-b5ed-2ba894562aa8}</UniqueIdentifier>
     </Filter>
@@ -143,9 +140,6 @@
     </Filter>
     <Filter Include="Source Files\dlls\entities\info">
       <UniqueIdentifier>{daeebe42-265b-445c-8945-9f680c9d7211}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dlls\entities\inout">
-      <UniqueIdentifier>{9c32a650-f9e1-4c34-b654-dc65f0eb60db}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\item">
       <UniqueIdentifier>{40b51fc2-b53e-4a0f-a1de-9d5f77931605}</UniqueIdentifier>
@@ -302,6 +296,9 @@
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\CWorld.cpp">
+      <Filter>Source Files\dlls\entities</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\cycler\CCycler.cpp">
       <Filter>Source Files\dlls\entities\cycler</Filter>
     </ClCompile>
@@ -426,9 +423,6 @@
       <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\env\CShake.cpp">
-      <Filter>Source Files\dlls\entities\env</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\env\CSmoker.cpp">
       <Filter>Source Files\dlls\entities\env</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\env\CSprite.cpp">
@@ -581,9 +575,6 @@
     <ClCompile Include="..\..\dlls\entities\info\CBaseDMStart.cpp">
       <Filter>Source Files\dlls\entities\info</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\info\CInfoBM.cpp">
-      <Filter>Source Files\dlls\entities\info</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\info\CInfoMoveWith.cpp">
       <Filter>Source Files\dlls\entities\info</Filter>
     </ClCompile>
@@ -592,9 +583,6 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\info\CNullEntity.cpp">
       <Filter>Source Files\dlls\entities\info</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\inout\CInOutRegister.cpp">
-      <Filter>Source Files\dlls\entities\inout</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\item\CAirtank.cpp">
       <Filter>Source Files\dlls\entities\item</Filter>
@@ -777,9 +765,6 @@
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CSqueakGrenade.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CSquidSpit.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CTalkMonster.cpp">
@@ -1231,9 +1216,6 @@
     <ClInclude Include="..\..\dlls\animation.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\basemonster.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\cbase.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
@@ -1328,6 +1310,9 @@
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h">
+      <Filter>Header Files\dlls\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\CWorld.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\cycler\CCycler.h">
@@ -1454,9 +1439,6 @@
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\env\CShake.h">
-      <Filter>Header Files\dlls\entities\env</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\env\CSmoker.h">
       <Filter>Header Files\dlls\entities\env</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\env\CSprite.h">
@@ -1609,9 +1591,6 @@
     <ClInclude Include="..\..\dlls\entities\info\CBaseDMStart.h">
       <Filter>Header Files\dlls\entities\info</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\info\CInfoBM.h">
-      <Filter>Header Files\dlls\entities\info</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\info\CInfoMoveWith.h">
       <Filter>Header Files\dlls\entities\info</Filter>
     </ClInclude>
@@ -1620,9 +1599,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\info\CNullEntity.h">
       <Filter>Header Files\dlls\entities\info</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\inout\CInOutRegister.h">
-      <Filter>Header Files\dlls\entities\inout</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\item\CAirtank.h">
       <Filter>Header Files\dlls\entities\item</Filter>
@@ -1805,9 +1781,6 @@
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CSqueakGrenade.h">
-      <Filter>Header Files\dlls\entities\monster</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\monster\CSquidSpit.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CTalkMonster.h">

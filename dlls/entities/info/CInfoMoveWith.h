@@ -13,3 +13,21 @@
 *
 ****/
 
+#pragma once
+
+#include "entities/CBaseEntity.h"
+
+#define SF_IMW_INACTIVE 1
+#define SF_IMW_BLOCKABLE 2
+
+// LRC - info_movewith, the first entity I've made which
+//       truly doesn't fit ANY preexisting category.
+class CInfoMoveWith : public CBaseEntity
+{
+public:
+	void Spawn() override;
+	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
+	int ObjectCaps() override { return CBaseEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+
+	STATE GetState() override { return (pev->spawnflags & SF_IMW_INACTIVE) ? STATE_OFF : STATE_ON; }
+};

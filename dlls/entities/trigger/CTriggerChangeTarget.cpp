@@ -15,6 +15,8 @@
 
 #include "CTriggerChangeTarget.h"
 
+#include "entities/CBaseMonster.h"
+
 LINK_ENTITY_TO_CLASS(trigger_changetarget, CTriggerChangeTarget);
 
 TYPEDESCRIPTION CTriggerChangeTarget::m_SaveData[] =

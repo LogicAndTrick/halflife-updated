@@ -56,7 +56,7 @@ public:
 
 	int ObjectCaps() override
 	{
-		if (pev->spawnflags & SF_ITEM_USE_ONLY)
+		if (pev->spawnflags & SF_DOOR_USE_ONLY)
 		{
 			return (CBaseToggle::ObjectCaps() & ~FCAP_ACROSS_TRANSITION) | FCAP_IMPULSE_USE |
 				   (m_iDirectUse ? FCAP_ONLYDIRECT_USE : 0);

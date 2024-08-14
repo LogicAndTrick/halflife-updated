@@ -15,6 +15,8 @@
 
 #include "CTriggerSetPatrol.h"
 
+#include "entities/CBaseMonster.h"
+
 LINK_ENTITY_TO_CLASS(trigger_startpatrol, CTriggerSetPatrol);
 
 TYPEDESCRIPTION CTriggerSetPatrol::m_SaveData[] =

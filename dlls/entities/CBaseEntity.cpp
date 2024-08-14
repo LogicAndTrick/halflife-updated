@@ -17,6 +17,7 @@
 #include "decals.h"
 #include "monsters.h"
 #include "movewith.h"
+#include "nodes.h"
 
 TYPEDESCRIPTION CBaseEntity::m_SaveData[] =
 	{
@@ -522,4 +523,142 @@ CBaseEntity* CBaseEntity::Create(const char* szName, const Vector& vecOrigin, co
 	pEntity->pev->angles = vecAngles;
 	DispatchSpawn(pEntity->edict());
 	return pEntity;
+}
+
+/*
+void CBaseDelay::SUB_UseTargetsEntMethod()
+{
+	SUB_UseTargets(pev);
+}
+*/
+
+// This updates global tables that need to know about entities being removed
+void CBaseEntity::UpdateOnRemove()
+{
+	int i;
+	CBaseEntity* pTemp;
+
+	if (!g_pWorld)
+	{
+		ALERT(at_debug, "UpdateOnRemove has no AssistList!\n");
+		return;
+	}
+
+	// LRC - remove this from the AssistList.
+	for (pTemp = g_pWorld; pTemp->m_pAssistLink != NULL; pTemp = pTemp->m_pAssistLink)
+	{
+		if (this == pTemp->m_pAssistLink)
+		{
+			//			ALERT(at_console,"REMOVE: %s removed from the Assist List.\n", STRING(pev->classname));
+			pTemp->m_pAssistLink = this->m_pAssistLink;
+			this->m_pAssistLink = NULL;
+			break;
+		}
+	}
+
+	// LRC
+	if (m_pMoveWith)
+	{
+		// if I'm moving with another entity, take me out of the list. (otherwise things crash!)
+		pTemp = m_pMoveWith->m_pChildMoveWith;
+		if (pTemp == this)
+		{
+			m_pMoveWith->m_pChildMoveWith = this->m_pSiblingMoveWith;
+		}
+		else
+		{
+			while (pTemp->m_pSiblingMoveWith)
+			{
+				if (pTemp->m_pSiblingMoveWith == this)
+				{
+					pTemp->m_pSiblingMoveWith = this->m_pSiblingMoveWith;
+					break;
+				}
+				pTemp = pTemp->m_pSiblingMoveWith;
+			}
+		}
+		//		ALERT(at_console,"REMOVE: %s removed from the %s ChildMoveWith list.\n", STRING(pev->classname), STRING(m_pMoveWith->pev->targetname));
+	}
+
+	// LRC - do the same thing if another entity is moving with _me_.
+	if (m_pChildMoveWith)
+	{
+		CBaseEntity* pCur = m_pChildMoveWith;
+		CBaseEntity* pNext;
+		while (pCur != NULL)
+		{
+			pNext = pCur->m_pSiblingMoveWith;
+			// bring children to a stop
+			UTIL_SetMoveWithVelocity(pCur, g_vecZero, 100);
+			UTIL_SetMoveWithAvelocity(pCur, g_vecZero, 100);
+			pCur->m_pMoveWith = NULL;
+			pCur->m_pSiblingMoveWith = NULL;
+			pCur = pNext;
+		}
+	}
+
+	if (FBitSet(pev->flags, FL_GRAPHED))
+	{
+		// this entity was a LinkEnt in the world node graph, so we must remove it from
+		// the graph since we are removing it from the world.
+		for (i = 0; i < WorldGraph.m_cLinks; i++)
+		{
+			if (WorldGraph.m_pLinkPool[i].m_pLinkEnt == pev)
+			{
+				// if this link has a link ent which is the same ent that is removing itself, remove it!
+				WorldGraph.m_pLinkPool[i].m_pLinkEnt = NULL;
+			}
+		}
+	}
+	if (!FStringNull(pev->globalname))
+		gGlobalState.EntitySetState(pev->globalname, GLOBAL_DEAD);
+}
+
+// Convenient way to delay removing oneself
+void CBaseEntity::SUB_Remove()
+{
+	UpdateOnRemove();
+	if (pev->health > 0)
+	{
+		// this situation can screw up monsters who can't tell their entity pointers are invalid.
+		pev->health = 0;
+		ALERT(at_aiconsole, "SUB_Remove called on entity with health > 0\n");
+	}
+
+	REMOVE_ENTITY(ENT(pev));
+}
+
+// Convenient way to explicitly do nothing (passed to functions that require a method)
+void CBaseEntity::SUB_DoNothing()
+{
+	//	if (pev->ltime)
+	//		ALERT(at_console, "Doing Nothing %f\n", pev->ltime);
+	//	else
+	//		ALERT(at_console, "Doing Nothing %f\n", gpGlobals->time);
+}
+
+/*
+==============================
+SUB_UseTargets
+
+If self.delay is set, a DelayedUse entity will be created that will actually
+do the SUB_UseTargets after that many seconds have passed.
+
+Removes all entities with a targetname that match self.killtarget,
+and removes them, so some events can remove other triggers.
+
+Search for (string)targetname in all entities that
+match (string)self.target and call their .use function (if they have one)
+
+==============================
+*/
+void CBaseEntity::SUB_UseTargets(CBaseEntity* pActivator, USE_TYPE useType, float value)
+{
+	//
+	// fire targets
+	//
+	if (!FStringNull(pev->target))
+	{
+		FireTargets(STRING(pev->target), pActivator, this, useType, value);
+	}
 }

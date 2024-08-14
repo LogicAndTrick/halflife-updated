@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "CBaseTrigger.h"
+#include "entities/CPointEntity.h"
 
 class CTriggerVolume : public CPointEntity // Derive from point entity so this doesn't move across levels
 {

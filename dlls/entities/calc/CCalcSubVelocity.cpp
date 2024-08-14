@@ -14,6 +14,7 @@
  ****/
 
 #include "CCalcSubVelocity.h"
+#include "entities/CBaseAnimating.h"
 #include "locus.h"
 
 LINK_ENTITY_TO_CLASS(calc_subvelocity, CCalcSubVelocity);

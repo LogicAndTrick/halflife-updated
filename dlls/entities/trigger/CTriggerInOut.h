@@ -16,6 +16,7 @@
 #pragma once
 
 #include "CBaseTrigger.h"
+#include "entities/CPointEntity.h"
 
 //===========================================================
 // LRC - trigger_inout, a trigger which fires _only_ when

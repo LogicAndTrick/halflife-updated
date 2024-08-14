@@ -15,6 +15,8 @@
 
 #include "CTriggerOnSight.h"
 
+#include "entities/CBaseMonster.h"
+
 LINK_ENTITY_TO_CLASS(trigger_onsight, CTriggerOnSight);
 
 void CTriggerOnSight::Spawn()

@@ -15,6 +15,8 @@
 
 #include "CTriggerInOut.h"
 
+LINK_ENTITY_TO_CLASS(inout_register, CInOutRegister);
+
 TYPEDESCRIPTION CInOutRegister::m_SaveData[] =
 	{
 		DEFINE_FIELD(CInOutRegister, m_pField, FIELD_CLASSPTR),
@@ -23,7 +25,6 @@ TYPEDESCRIPTION CInOutRegister::m_SaveData[] =
 };
 
 IMPLEMENT_SAVERESTORE(CInOutRegister, CPointEntity);
-LINK_ENTITY_TO_CLASS(inout_register, CInOutRegister);
 
 bool CInOutRegister::IsRegistered(CBaseEntity* pValue)
 {
