@@ -318,6 +318,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\multi\CMultiManager.cpp" />
     <ClCompile Include="..\..\dlls\entities\multi\CMultisource.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp" />
+    <ClCompile Include="..\..\dlls\entities\path\CPathTrack.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CScriptedSentence.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CTankSequence.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CTrainSequence.cpp" />
@@ -401,7 +402,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\multiplay_gamerules.cpp" />
     <ClCompile Include="..\..\dlls\nodes.cpp" />
     <ClCompile Include="..\..\dlls\observer.cpp" />
-    <ClCompile Include="..\..\dlls\pathcorner.cpp" />
     <ClCompile Include="..\..\dlls\plane.cpp" />
     <ClCompile Include="..\..\dlls\plats.cpp" />
     <ClCompile Include="..\..\dlls\player.cpp" />
@@ -667,6 +667,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\multi\CMultiManager.h" />
     <ClInclude Include="..\..\dlls\entities\multi\CMultisource.h" />
     <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h" />
+    <ClInclude Include="..\..\dlls\entities\path\CPathTrack.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CScriptedSentence.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CTankSequence.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CTrainSequence.h" />

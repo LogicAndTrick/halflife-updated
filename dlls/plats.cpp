@@ -26,6 +26,7 @@
 #include "trains.h"
 #include "saverestore.h"
 #include "movewith.h"
+#include "entities/path/CPathCorner.h"
 
 static void PlatSpawnInsideTrigger(entvars_t* pevPlatform);
 

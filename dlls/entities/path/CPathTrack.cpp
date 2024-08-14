@@ -1,131 +1,21 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-//
-// ========================== PATH_CORNER ===========================
-//
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "trains.h"
-#include "saverestore.h"
+#include "CPathTrack.h"
 
-class CPathCorner : public CPointEntity
-{
-public:
-	void Spawn() override;
-	bool KeyValue(KeyValueData* pkvd) override;
-	float GetDelay() override { return m_flWait; }
-	//	void Touch( CBaseEntity *pOther ) override;
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-
-	static TYPEDESCRIPTION m_SaveData[];
-
-private:
-	float m_flWait;
-};
-
-LINK_ENTITY_TO_CLASS(path_corner, CPathCorner);
-
-// Global Savedata for Delay
-TYPEDESCRIPTION CPathCorner::m_SaveData[] =
-	{
-		DEFINE_FIELD(CPathCorner, m_flWait, FIELD_FLOAT),
-};
-
-IMPLEMENT_SAVERESTORE(CPathCorner, CPointEntity);
-
-//
-// Cache user-entity-field values until spawn is called.
-//
-bool CPathCorner::KeyValue(KeyValueData* pkvd)
-{
-	if (FStrEq(pkvd->szKeyName, "wait"))
-	{
-		m_flWait = atof(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "turnspeed")) //LRC
-	{
-		if (pkvd->szValue[0]) // if the field is blank, don't set the spawnflag.
-		{
-			pev->spawnflags |= SF_CORNER_AVELOCITY;
-			UTIL_StringToVector((float*)pev->avelocity, pkvd->szValue);
-		}
-		return true;
-	}
-
-	return CPointEntity::KeyValue(pkvd);
-}
-
-
-void CPathCorner::Spawn()
-{
-	ASSERTSZ(!FStringNull(pev->targetname), "path_corner without a targetname");
-}
-
-#if 0
-void CPathCorner::Touch( CBaseEntity *pOther )
-{
-	entvars_t*		pevToucher = pOther->pev;
-		
-	if ( FBitSet ( pevToucher->flags, FL_MONSTER ) )
-	{// monsters don't navigate path corners based on touch anymore
-		return;
-	}
-
-	// If OTHER isn't explicitly looking for this path_corner, bail out
-	if ( pOther->m_pGoalEnt != this )
-	{
-		return;
-	}
-
-	// If OTHER has an enemy, this touch is incidental, ignore
-	if ( !FNullEnt(pevToucher->enemy) )
-	{
-		return;		// fighting, not following a path
-	}
-	
-	// UNDONE: support non-zero flWait
-	/*
-	if (m_flWait != 0)
-		ALERT(at_warning, "Non-zero path-cornder waits NYI");
-	*/
-
-	// Find the next "stop" on the path, make it the goal of the "toucher".
-	if (FStringNull(pev->target))
-	{
-		ALERT(at_warning, "PathCornerTouch: no next stop specified");
-	}
-	
-	pOther->m_pGoalEnt = UTIL_FindEntityByTargetname ( NULL, STRING(pev->target) );
-
-	// If "next spot" was not found (does not exist - level design error)
-	if ( !pOther->m_pGoalEnt )
-	{
-		ALERT(at_debug, "PathCornerTouch--%s couldn't find next stop in path: %s", STRING(pev->classname), STRING(pev->target));
-		return;
-	}
-
-	// Turn towards the next stop in the path.
-	pevToucher->ideal_yaw = UTIL_VecToYaw ( pOther->m_pGoalEnt->pev->origin - pevToucher->origin );
-}
-#endif
-
-
+LINK_ENTITY_TO_CLASS(path_track, CPathTrack);
 
 TYPEDESCRIPTION CPathTrack::m_SaveData[] =
 	{
@@ -137,7 +27,6 @@ TYPEDESCRIPTION CPathTrack::m_SaveData[] =
 };
 
 IMPLEMENT_SAVERESTORE(CPathTrack, CBaseEntity);
-LINK_ENTITY_TO_CLASS(path_track, CPathTrack);
 
 //
 // Cache user-entity-field values until spawn is called.
@@ -149,7 +38,7 @@ bool CPathTrack::KeyValue(KeyValueData* pkvd)
 		m_altName = ALLOC_STRING(pkvd->szValue);
 		return true;
 	}
-	else if (FStrEq(pkvd->szKeyName, "turnspeed")) //LRC
+	else if (FStrEq(pkvd->szKeyName, "turnspeed")) // LRC
 	{
 		if (pkvd->szValue[0]) // if the field is blank, don't set the spawnflag.
 		{
@@ -192,7 +81,6 @@ void CPathTrack::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE use
 	}
 }
 
-
 void CPathTrack::Link()
 {
 	CBaseEntity* pTarget;
@@ -221,7 +109,6 @@ void CPathTrack::Link()
 	}
 }
 
-
 void CPathTrack::Spawn()
 {
 	pev->solid = SOLID_TRIGGER;
@@ -235,7 +122,6 @@ void CPathTrack::Spawn()
 	SetNextThink(0.5);
 #endif
 }
-
 
 void CPathTrack::Activate()
 {
@@ -256,7 +142,6 @@ CPathTrack* CPathTrack::ValidPath(CPathTrack* ppath, bool testFlag)
 	return ppath;
 }
 
-
 void CPathTrack::Project(CPathTrack* pstart, CPathTrack* pend, Vector* origin, float dist)
 {
 	if (pstart && pend)
@@ -275,8 +160,6 @@ CPathTrack* CPathTrack::GetNext()
 	return m_pnext;
 }
 
-
-
 CPathTrack* CPathTrack::GetPrevious()
 {
 	if (m_paltpath && FBitSet(pev->spawnflags, SF_PATH_ALTERNATE) && FBitSet(pev->spawnflags, SF_PATH_ALTREVERSE))
@@ -285,15 +168,12 @@ CPathTrack* CPathTrack::GetPrevious()
 	return m_pprevious;
 }
 
-
-
 void CPathTrack::SetPrevious(CPathTrack* pprev)
 {
 	// Only set previous if this isn't my alternate path
 	if (pprev && !FStrEq(STRING(pprev->pev->targetname), STRING(m_altName)))
 		m_pprevious = pprev;
 }
-
 
 // Assumes this is ALWAYS enabled
 CPathTrack* CPathTrack::LookAhead(Vector* origin, float dist, bool move)
@@ -377,7 +257,6 @@ CPathTrack* CPathTrack::LookAhead(Vector* origin, float dist, bool move)
 	return pcurrent;
 }
 
-
 // Assumes this is ALWAYS enabled
 CPathTrack* CPathTrack::Nearest(Vector origin)
 {
@@ -416,14 +295,12 @@ CPathTrack* CPathTrack::Nearest(Vector origin)
 	return pnearest;
 }
 
-
 CPathTrack* CPathTrack::Instance(edict_t* pent)
 {
 	if (FClassnameIs(pent, "path_track"))
 		return (CPathTrack*)GET_PRIVATE(pent);
 	return NULL;
 }
-
 
 // DEBUGGING CODE
 #if PATH_SPARKLE_DEBUG
