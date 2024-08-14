@@ -13,19 +13,11 @@
  *
  ****/
 
-#include "CGameCounterSet.h"
+#include "CRulePointEntity.h"
 
-LINK_ENTITY_TO_CLASS(game_counter_set, CGameCounterSet);
-
-void CGameCounterSet::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
+void CRulePointEntity::Spawn()
 {
-	if (!CanFireForActivator(pActivator))
-		return;
-
-	SUB_UseTargets(pActivator, USE_SET, pev->frags);
-
-	if (RemoveOnFire())
-	{
-		UTIL_Remove(this);
-	}
+	CRuleEntity::Spawn();
+	pev->frame = 0;
+	pev->model = 0;
 }

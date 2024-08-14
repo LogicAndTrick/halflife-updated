@@ -13,19 +13,24 @@
  *
  ****/
 
-#include "CGameCounterSet.h"
+#pragma once
 
-LINK_ENTITY_TO_CLASS(game_counter_set, CGameCounterSet);
+#include "entities/CBaseEntity.h"
 
-void CGameCounterSet::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
+class CRuleEntity : public CBaseEntity
 {
-	if (!CanFireForActivator(pActivator))
-		return;
+public:
+	void Spawn() override;
+	bool KeyValue(KeyValueData* pkvd) override;
+	bool Save(CSave& save) override;
+	bool Restore(CRestore& restore) override;
+	static TYPEDESCRIPTION m_SaveData[];
 
-	SUB_UseTargets(pActivator, USE_SET, pev->frags);
+	void SetMaster(int iszMaster) { m_iszMaster = iszMaster; }
 
-	if (RemoveOnFire())
-	{
-		UTIL_Remove(this);
-	}
-}
+protected:
+	bool CanFireForActivator(CBaseEntity* pActivator);
+
+private:
+	string_t m_iszMaster;
+};

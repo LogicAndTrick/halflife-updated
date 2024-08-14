@@ -13,19 +13,18 @@
  *
  ****/
 
-#include "CGameCounterSet.h"
+#pragma once
 
-LINK_ENTITY_TO_CLASS(game_counter_set, CGameCounterSet);
+#include "CRuleEntity.h"
 
-void CGameCounterSet::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
+//
+// CRuleBrushEntity -- base class for all rule "brush" entities (not brushes)
+// Default behavior is to set up like a trigger, invisible, but keep the model for volume testing
+//
+class CRuleBrushEntity : public CRuleEntity
 {
-	if (!CanFireForActivator(pActivator))
-		return;
+public:
+	void Spawn() override;
 
-	SUB_UseTargets(pActivator, USE_SET, pev->frags);
-
-	if (RemoveOnFire())
-	{
-		UTIL_Remove(this);
-	}
-}
+private:
+};

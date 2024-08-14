@@ -13,19 +13,17 @@
  *
  ****/
 
-#include "CGameCounterSet.h"
+#pragma once
 
-LINK_ENTITY_TO_CLASS(game_counter_set, CGameCounterSet);
+#include "CRuleEntity.h"
 
-void CGameCounterSet::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
+//
+// CRulePointEntity -- base class for all rule "point" entities (not brushes)
+//
+class CRulePointEntity : public CRuleEntity
 {
-	if (!CanFireForActivator(pActivator))
-		return;
-
-	SUB_UseTargets(pActivator, USE_SET, pev->frags);
-
-	if (RemoveOnFire())
-	{
-		UTIL_Remove(this);
-	}
-}
+public:
+	void Spawn() override;
+	// LRC 1.8 - they don't cross transitions
+	int ObjectCaps() override { return CBaseEntity ::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
+};
