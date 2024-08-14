@@ -96,9 +96,6 @@
     <Filter Include="Header Files\dlls\entities\weapon">
       <UniqueIdentifier>{a2ab4143-8228-46e1-86b1-19bc6dc3e115}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dlls\entities\world">
-      <UniqueIdentifier>{8a7f4ca8-bf0c-4618-8dab-cacad9edcb57}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\dlls\entities\xen">
       <UniqueIdentifier>{52b6eec0-e156-4fb6-8aac-7fbced72ea62}</UniqueIdentifier>
     </Filter>
@@ -197,9 +194,6 @@
     </Filter>
     <Filter Include="Source Files\dlls\entities\weapon">
       <UniqueIdentifier>{6b03430d-d78e-4424-934d-c27e80bb95ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dlls\entities\world">
-      <UniqueIdentifier>{020a6459-f1ba-4455-ba4b-b6b0f424beeb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\xen">
       <UniqueIdentifier>{a55abbd4-7e2f-4027-8716-6bdf168d5a0f}</UniqueIdentifier>
@@ -324,9 +318,6 @@
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CLightFader.cpp">
@@ -743,6 +734,9 @@
     <ClCompile Include="..\..\dlls\entities\monster\CHGrunt.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CHornet.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CHoundeye.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
@@ -1010,9 +1004,6 @@
     <ClCompile Include="..\..\dlls\entities\weapon\CWeaponBox.cpp">
       <Filter>Source Files\dlls\entities\weapon</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\world\CWorldItem.cpp">
-      <Filter>Source Files\dlls\entities\world</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\xen\CXenHair.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
@@ -1047,9 +1038,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\h_export.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\hornet.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\items.cpp">
@@ -1370,9 +1358,6 @@
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CDecal.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CGenericCycler.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CLightFader.h">
@@ -1789,6 +1774,9 @@
     <ClInclude Include="..\..\dlls\entities\monster\CHGrunt.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CHornet.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CHoundeye.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
@@ -2056,9 +2044,6 @@
     <ClInclude Include="..\..\dlls\entities\weapon\CWeaponBox.h">
       <Filter>Header Files\dlls\entities\weapon</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\world\CWorldItem.h">
-      <Filter>Header Files\dlls\entities\world</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\xen\CXenHair.h">
       <Filter>Header Files\dlls\entities\xen</Filter>
     </ClInclude>
@@ -2090,9 +2075,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\gamerules.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\hornet.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\locus.h">

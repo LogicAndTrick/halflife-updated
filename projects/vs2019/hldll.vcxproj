@@ -149,7 +149,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CBaseToggle.cpp" />
     <ClCompile Include="..\..\dlls\entities\CCorpse.cpp" />
     <ClCompile Include="..\..\dlls\entities\CDecal.cpp" />
-    <ClCompile Include="..\..\dlls\entities\CGenericCycler.cpp" />
     <ClCompile Include="..\..\dlls\entities\CLightFader.cpp" />
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp" />
@@ -288,6 +287,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CHAssassin.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CHeadCrab.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CHGrunt.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CHornet.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CHoundeye.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CIchthyosaur.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CISlave.cpp" />
@@ -377,7 +377,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\weapon\CSqueak.cpp" />
     <ClCompile Include="..\..\dlls\entities\weapon\CTripmine.cpp" />
     <ClCompile Include="..\..\dlls\entities\weapon\CWeaponBox.cpp" />
-    <ClCompile Include="..\..\dlls\entities\world\CWorldItem.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenHair.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenHull.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenPLight.cpp" />
@@ -390,7 +389,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\gamerules.cpp" />
     <ClCompile Include="..\..\dlls\h_ai.cpp" />
     <ClCompile Include="..\..\dlls\h_export.cpp" />
-    <ClCompile Include="..\..\dlls\hornet.cpp" />
     <ClCompile Include="..\..\dlls\items.cpp" />
     <ClCompile Include="..\..\dlls\lights.cpp" />
     <ClCompile Include="..\..\dlls\locus.cpp" />
@@ -499,7 +497,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CBaseToggle.h" />
     <ClInclude Include="..\..\dlls\entities\CCorpse.h" />
     <ClInclude Include="..\..\dlls\entities\CDecal.h" />
-    <ClInclude Include="..\..\dlls\entities\CGenericCycler.h" />
     <ClInclude Include="..\..\dlls\entities\CLightFader.h" />
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h" />
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h" />
@@ -638,6 +635,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CHAssassin.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CHeadCrab.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CHGrunt.h" />
+    <ClInclude Include="..\..\dlls\entities\monster\CHornet.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CHoundeye.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CIchthyosaur.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CISlave.h" />
@@ -727,7 +725,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\weapon\CSqueak.h" />
     <ClInclude Include="..\..\dlls\entities\weapon\CTripmine.h" />
     <ClInclude Include="..\..\dlls\entities\weapon\CWeaponBox.h" />
-    <ClInclude Include="..\..\dlls\entities\world\CWorldItem.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenHair.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenHull.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenPLight.h" />
@@ -739,7 +736,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\extdll.h" />
     <ClInclude Include="..\..\dlls\game.h" />
     <ClInclude Include="..\..\dlls\gamerules.h" />
-    <ClInclude Include="..\..\dlls\hornet.h" />
     <ClInclude Include="..\..\dlls\locus.h" />
     <ClInclude Include="..\..\dlls\maprules.h" />
     <ClInclude Include="..\..\dlls\monsterevent.h" />

@@ -14,8 +14,8 @@
  ****/
 
 #include "CHgun.h"
+#include "entities/monster/CHornet.h"
 #include "gamerules.h"
-#include "hornet.h"
 #include "player.h"
 #include "weapons.h"
 

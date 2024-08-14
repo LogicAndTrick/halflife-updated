@@ -1,30 +1,21 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-//=========================================================
-// Hornets
-//=========================================================
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "monsters.h"
-#include "weapons.h"
-#include "soundent.h"
-#include "hornet.h"
+#include "CHornet.h"
+
 #include "gamerules.h"
-
 
 int iHornetTrail;
 int iHornetPuff;
@@ -113,7 +104,6 @@ void CHornet::Spawn()
 	SetNextThink(0.1);
 	ResetSequenceInfo();
 }
-
 
 void CHornet::Precache()
 {
@@ -214,7 +204,7 @@ old colors
 			WRITE_BYTE( 100 );   // r, g, b
 			WRITE_BYTE( 255 );   // r, g, b
 			break;
-	
+
 */
 
 	// trail
@@ -410,8 +400,8 @@ void CHornet::DartTouch(CBaseEntity* pOther)
 
 void CHornet::DieTouch(CBaseEntity* pOther)
 {
-	//Only deal damage if the owner exists in this map.
-	//Hornets that transition without their owner (e.g. Alien Grunt) will otherwise pass a null pointer down to TakeDamage.
+	// Only deal damage if the owner exists in this map.
+	// Hornets that transition without their owner (e.g. Alien Grunt) will otherwise pass a null pointer down to TakeDamage.
 	if (pOther && 0 != pOther->pev->takedamage && nullptr != pev->owner)
 	{ // do the damage
 
