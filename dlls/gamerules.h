@@ -19,10 +19,8 @@
 #pragma once
 
 //LRC
-#define GAME_NAME "Spirit of Half-Life 1.8 alpha1"
+#define GAME_NAME "Spirit Level 0.0"
 
-//#include "weapons.h"
-//#include "items.h"
 class CBasePlayerItem;
 class CBasePlayer;
 class CItem;

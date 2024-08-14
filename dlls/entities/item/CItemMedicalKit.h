@@ -17,9 +17,15 @@
 
 #include "CItem.h"
 
-class CItemLongJump : public CItem
+#define CHARGE_IN_MEDKIT 50 // Possibly implement skill system
+#define MAX_MEDKIT 200		// possibly allow mapper to change, say in worldspawn
+
+class CItemMedicalKit : public CItem // AJH new inventory based manual use medkit
 {
+public:
 	void Spawn() override;
 	void Precache() override;
 	bool MyTouch(CBasePlayer* pPlayer) override;
+	void EXPORT ItemTouch(CBaseEntity* pOther);
+	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
 };

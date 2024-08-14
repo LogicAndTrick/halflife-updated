@@ -617,10 +617,28 @@
     <ClCompile Include="..\..\dlls\entities\item\CHealthKit.cpp">
       <Filter>Source Files\dlls\entities\item</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItem.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemAntidote.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemAntiRad.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\item\CItemBattery.cpp">
       <Filter>Source Files\dlls\entities\item</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemCamera.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemFlare.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\item\CItemLongJump.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CItemMedicalKit.cpp">
       <Filter>Source Files\dlls\entities\item</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\item\CItemSecurity.cpp">
@@ -630,6 +648,9 @@
       <Filter>Source Files\dlls\entities\item</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\item\CItemSuit.cpp">
+      <Filter>Source Files\dlls\entities\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\item\CWorldItem.cpp">
       <Filter>Source Files\dlls\entities\item</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\light\CEnvLight.cpp">
@@ -1019,16 +1040,10 @@
     <ClCompile Include="..\..\dlls\h_ai.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\h_battery.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\h_cycler.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\h_export.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\healthkit.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\hornet.cpp">
@@ -1645,10 +1660,28 @@
     <ClInclude Include="..\..\dlls\entities\item\CHealthKit.h">
       <Filter>Header Files\dlls\entities\item</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItem.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemAntidote.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemAntiRad.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\item\CItemBattery.h">
       <Filter>Header Files\dlls\entities\item</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemCamera.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemFlare.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\item\CItemLongJump.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CItemMedicalKit.h">
       <Filter>Header Files\dlls\entities\item</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\item\CItemSecurity.h">
@@ -1658,6 +1691,9 @@
       <Filter>Header Files\dlls\entities\item</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\item\CItemSuit.h">
+      <Filter>Header Files\dlls\entities\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\item\CWorldItem.h">
       <Filter>Header Files\dlls\entities\item</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\light\CEnvLight.h">
@@ -2048,9 +2084,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\hornet.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\items.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\locus.h">

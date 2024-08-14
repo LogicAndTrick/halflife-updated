@@ -15,11 +15,12 @@
 
 #pragma once
 
-#include "CItem.h"
+#include "entities/CBaseEntity.h"
 
-class CItemLongJump : public CItem
+class CWorldItem : public CBaseEntity
 {
+public:
+	bool KeyValue(KeyValueData* pkvd) override;
 	void Spawn() override;
-	void Precache() override;
-	bool MyTouch(CBasePlayer* pPlayer) override;
+	int m_iType;
 };

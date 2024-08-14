@@ -24,10 +24,10 @@
 
 #include "skill.h"
 #include "game.h"
-#include "items.h"
 #include "voice_gamemgr.h"
 #include "hltv.h"
 #include "UserMessages.h"
+#include "entities/item/CItem.h"
 #include "entities/monster/CSatchelCharge.h"
 #include "entities/weapon/CBasePlayerAmmo.h"
 #include "entities/weapon/CBasePlayerItem.h"

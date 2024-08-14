@@ -30,8 +30,7 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings"></ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -55,8 +54,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader></PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;QUIVER;VOXEL;QUAKE2;VALVE_DLL;CLIENT_WEAPONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -83,8 +81,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader></PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -246,11 +243,18 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\inout\CInOutRegister.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CAirtank.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CHealthKit.cpp" />
+    <ClCompile Include="..\..\dlls\entities\item\CItem.cpp" />
+    <ClCompile Include="..\..\dlls\entities\item\CItemAntidote.cpp" />
+    <ClCompile Include="..\..\dlls\entities\item\CItemAntiRad.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CItemBattery.cpp" />
+    <ClCompile Include="..\..\dlls\entities\item\CItemCamera.cpp" />
+    <ClCompile Include="..\..\dlls\entities\item\CItemFlare.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CItemLongJump.cpp" />
+    <ClCompile Include="..\..\dlls\entities\item\CItemMedicalKit.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CItemSecurity.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CItemSoda.cpp" />
     <ClCompile Include="..\..\dlls\entities\item\CItemSuit.cpp" />
+    <ClCompile Include="..\..\dlls\entities\item\CWorldItem.cpp" />
     <ClCompile Include="..\..\dlls\entities\light\CEnvLight.cpp" />
     <ClCompile Include="..\..\dlls\entities\light\CLight.cpp" />
     <ClCompile Include="..\..\dlls\entities\light\CLightDynamic.cpp" />
@@ -380,10 +384,8 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\game.cpp" />
     <ClCompile Include="..\..\dlls\gamerules.cpp" />
     <ClCompile Include="..\..\dlls\h_ai.cpp" />
-    <ClCompile Include="..\..\dlls\h_battery.cpp" />
     <ClCompile Include="..\..\dlls\h_cycler.cpp" />
     <ClCompile Include="..\..\dlls\h_export.cpp" />
-    <ClCompile Include="..\..\dlls\healthkit.cpp" />
     <ClCompile Include="..\..\dlls\hornet.cpp" />
     <ClCompile Include="..\..\dlls\items.cpp" />
     <ClCompile Include="..\..\dlls\lights.cpp" />
@@ -590,11 +592,18 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\inout\CInOutRegister.h" />
     <ClInclude Include="..\..\dlls\entities\item\CAirtank.h" />
     <ClInclude Include="..\..\dlls\entities\item\CHealthKit.h" />
+    <ClInclude Include="..\..\dlls\entities\item\CItem.h" />
+    <ClInclude Include="..\..\dlls\entities\item\CItemAntidote.h" />
+    <ClInclude Include="..\..\dlls\entities\item\CItemAntiRad.h" />
     <ClInclude Include="..\..\dlls\entities\item\CItemBattery.h" />
+    <ClInclude Include="..\..\dlls\entities\item\CItemCamera.h" />
+    <ClInclude Include="..\..\dlls\entities\item\CItemFlare.h" />
     <ClInclude Include="..\..\dlls\entities\item\CItemLongJump.h" />
+    <ClInclude Include="..\..\dlls\entities\item\CItemMedicalKit.h" />
     <ClInclude Include="..\..\dlls\entities\item\CItemSecurity.h" />
     <ClInclude Include="..\..\dlls\entities\item\CItemSoda.h" />
     <ClInclude Include="..\..\dlls\entities\item\CItemSuit.h" />
+    <ClInclude Include="..\..\dlls\entities\item\CWorldItem.h" />
     <ClInclude Include="..\..\dlls\entities\light\CEnvLight.h" />
     <ClInclude Include="..\..\dlls\entities\light\CLight.h" />
     <ClInclude Include="..\..\dlls\entities\light\CLightDynamic.h" />
@@ -725,7 +734,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\game.h" />
     <ClInclude Include="..\..\dlls\gamerules.h" />
     <ClInclude Include="..\..\dlls\hornet.h" />
-    <ClInclude Include="..\..\dlls\items.h" />
     <ClInclude Include="..\..\dlls\locus.h" />
     <ClInclude Include="..\..\dlls\maprules.h" />
     <ClInclude Include="..\..\dlls\monsterevent.h" />
@@ -766,6 +774,5 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\public\interface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets"></ImportGroup>
 </Project>

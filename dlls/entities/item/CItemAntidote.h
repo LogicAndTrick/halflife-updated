@@ -17,9 +17,11 @@
 
 #include "CItem.h"
 
-class CItemLongJump : public CItem
+class CItemAntidote : public CItem // AJH new anti radiation syringe
 {
+public:
 	void Spawn() override;
 	void Precache() override;
 	bool MyTouch(CBasePlayer* pPlayer) override;
+	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
 };

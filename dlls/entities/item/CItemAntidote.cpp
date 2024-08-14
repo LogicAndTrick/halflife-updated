@@ -13,31 +13,33 @@
  *
  ****/
 
-#include "CItemSecurity.h"
+#include "CItemAntidote.h"
 #include "player.h"
 #include "UserMessages.h"
 
-LINK_ENTITY_TO_CLASS(item_security, CItemSecurity);
+LINK_ENTITY_TO_CLASS(item_antidote, CItemAntidote);
 
-void CItemSecurity::Spawn()
+void CItemAntidote::Spawn()
 {
 	Precache();
-	SET_MODEL(ENT(pev), "models/w_security.mdl");
+	SET_MODEL(ENT(pev), "models/w_antidote.mdl");
 	CItem::Spawn();
 }
 
-void CItemSecurity::Precache()
+void CItemAntidote::Precache()
 {
-	PRECACHE_MODEL("models/w_security.mdl");
+	PRECACHE_MODEL("models/w_antidote.mdl");
 }
 
-bool CItemSecurity::MyTouch(CBasePlayer* pPlayer)
+bool CItemAntidote::MyTouch(CBasePlayer* pPlayer)
 {
-	pPlayer->m_rgItems[ITEM_SECURITY] += 1; // AJH implement a new system with different cards instead of just MORE cards
+	pPlayer->SetSuitUpdate("!HEV_DET4", false, SUIT_NEXT_IN_1MIN);
+
+	pPlayer->m_rgItems[ITEM_ANTIDOTE] += 1;
 
 	MESSAGE_BEGIN(MSG_ONE, gmsgInventory, NULL, pPlayer->pev); // AJH msg change inventory
-	WRITE_SHORT((ITEM_SECURITY));							   // which item to change
-	WRITE_SHORT(pPlayer->m_rgItems[ITEM_SECURITY]);			   // set counter to this ammount
+	WRITE_SHORT((ITEM_ANTIDOTE));							   // which item to change
+	WRITE_SHORT(pPlayer->m_rgItems[ITEM_ANTIDOTE]);			   // set counter to this ammount
 	MESSAGE_END();
 
 	if (pev->noise) // AJH
@@ -46,4 +48,17 @@ bool CItemSecurity::MyTouch(CBasePlayer* pPlayer)
 		EMIT_SOUND(pPlayer->edict(), CHAN_ITEM, "items/gunpickup2.wav", 1, ATTN_NORM);
 
 	return true;
+}
+
+void CItemAntidote::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
+{
+
+	if (!(pActivator->IsPlayer()))
+	{
+		ALERT(at_debug, "DEBUG: Antidote kit used by non-player\n");
+		return;
+	}
+
+	CBasePlayer* m_hActivator = (CBasePlayer*)pActivator;
+	ALERT(at_console, "HazardSuit: Antitoxin shots remaining: %i\n", m_hActivator->m_rgItems[ITEM_ANTIDOTE]);
 }

@@ -42,7 +42,6 @@
 #include "gamerules.h"
 #include "game.h"
 #include "movewith.h" //LRC
-#include "items.h"	  //AJH Inventory system
 #include "locus.h"	  //LRC 1.8
 #include "pm_shared.h"
 #include "hltv.h"
@@ -50,6 +49,8 @@
 #include "client.h"
 #include "entities/env/CRainModify.h"
 #include "entities/env/CRainSettings.h"
+#include "entities/item/CItem.h"
+#include "entities/item/CItemCamera.h"
 #include "entities/weapon/CBasePlayerWeapon.h"
 #include "entities/weapon/CWeaponBox.h"
 
