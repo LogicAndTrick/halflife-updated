@@ -47,6 +47,8 @@
 #include "UserMessages.h"
 #include "client.h"
 #include "entities/CGib.h"
+#include "entities/CWorld.h"
+#include "entities/CCorpse.h"
 #include "entities/env/CRainModify.h"
 #include "entities/env/CRainSettings.h"
 #include "entities/func/CFuncTrackTrain.h"
@@ -59,7 +61,6 @@
 
 bool g_markFrameBounds = false; //LRC
 
-extern void CopyToBodyQue(entvars_t* pev);
 extern edict_t* EntSelectSpawnPoint(CBaseEntity* pPlayer);
 
 #define TRAIN_ACTIVE 0x80

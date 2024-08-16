@@ -29,10 +29,26 @@ This file contains "stubs" of class member implementations so that we can predic
 #include "nodes.h"
 #include "soundent.h"
 #include "skill.h"
+#include "entities/CWorld.h"
 #include "entities/env/CBeam.h"
 #include "entities/weapon/CBasePlayerAmmo.h"
 #include "entities/weapon/CBasePlayerWeapon.h"
 #include "entities/weapon/CGrenade.h"
+
+CBaseEntity* CBaseEntity::Instance(edict_t* pent)
+{
+	if (!pent)
+		return CWorld::World;
+	return (CBaseEntity*)GET_PRIVATE(pent);
+}
+
+CBaseEntity* CBaseEntity::Instance(entvars_t* pev)
+{
+	if (!pev)
+		return CWorld::World;
+
+	return Instance(ENT(pev));
+}
 
 // CBaseEntity Stubs
 bool CBaseEntity::TakeHealth(float flHealth, int bitsDamageType) { return true; }

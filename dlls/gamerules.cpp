@@ -26,6 +26,7 @@
 #include "skill.h"
 #include "game.h"
 #include "UserMessages.h"
+#include "entities/CWorld.h"
 #include "entities/weapon/CBasePlayerItem.h"
 
 extern edict_t* EntSelectSpawnPoint(CBaseEntity* pPlayer);

@@ -23,241 +23,9 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
-#include "nodes.h"
-#include "soundent.h"
-#include "client.h"
-#include "decals.h"
-#include "skill.h"
 #include "player.h"
-#include "weapons.h"
-#include "gamerules.h"
-#include "teamplay_gamerules.h"
-#include "movewith.h" //LRC
-#include "entities/CWorld.h"
-#include "entities/env/CMessage.h"
 
 CGlobalState gGlobalState;
-
-extern void W_Precache(); //weapon precache - weapons.cpp
-extern void I_Precache(); //item precache - items.cpp
-
-//
-// This must match the list in util.h
-//
-DLL_DECALLIST gDecals[] = {
-	{"{shot1", 0},	   // DECAL_GUNSHOT1
-	{"{shot2", 0},	   // DECAL_GUNSHOT2
-	{"{shot3", 0},	   // DECAL_GUNSHOT3
-	{"{shot4", 0},	   // DECAL_GUNSHOT4
-	{"{shot5", 0},	   // DECAL_GUNSHOT5
-	{"{lambda01", 0},  // DECAL_LAMBDA1
-	{"{lambda02", 0},  // DECAL_LAMBDA2
-	{"{lambda03", 0},  // DECAL_LAMBDA3
-	{"{lambda04", 0},  // DECAL_LAMBDA4
-	{"{lambda05", 0},  // DECAL_LAMBDA5
-	{"{lambda06", 0},  // DECAL_LAMBDA6
-	{"{scorch1", 0},   // DECAL_SCORCH1
-	{"{scorch2", 0},   // DECAL_SCORCH2
-	{"{blood1", 0},	   // DECAL_BLOOD1
-	{"{blood2", 0},	   // DECAL_BLOOD2
-	{"{blood3", 0},	   // DECAL_BLOOD3
-	{"{blood4", 0},	   // DECAL_BLOOD4
-	{"{blood5", 0},	   // DECAL_BLOOD5
-	{"{blood6", 0},	   // DECAL_BLOOD6
-	{"{yblood1", 0},   // DECAL_YBLOOD1
-	{"{yblood2", 0},   // DECAL_YBLOOD2
-	{"{yblood3", 0},   // DECAL_YBLOOD3
-	{"{yblood4", 0},   // DECAL_YBLOOD4
-	{"{yblood5", 0},   // DECAL_YBLOOD5
-	{"{yblood6", 0},   // DECAL_YBLOOD6
-	{"{break1", 0},	   // DECAL_GLASSBREAK1
-	{"{break2", 0},	   // DECAL_GLASSBREAK2
-	{"{break3", 0},	   // DECAL_GLASSBREAK3
-	{"{bigshot1", 0},  // DECAL_BIGSHOT1
-	{"{bigshot2", 0},  // DECAL_BIGSHOT2
-	{"{bigshot3", 0},  // DECAL_BIGSHOT3
-	{"{bigshot4", 0},  // DECAL_BIGSHOT4
-	{"{bigshot5", 0},  // DECAL_BIGSHOT5
-	{"{spit1", 0},	   // DECAL_SPIT1
-	{"{spit2", 0},	   // DECAL_SPIT2
-	{"{bproof1", 0},   // DECAL_BPROOF1
-	{"{gargstomp", 0}, // DECAL_GARGSTOMP1,	// Gargantua stomp crack
-	{"{smscorch1", 0}, // DECAL_SMALLSCORCH1,	// Small scorch mark
-	{"{smscorch2", 0}, // DECAL_SMALLSCORCH2,	// Small scorch mark
-	{"{smscorch3", 0}, // DECAL_SMALLSCORCH3,	// Small scorch mark
-	{"{mommablob", 0}, // DECAL_MOMMABIRTH		// BM Birth spray
-	{"{mommablob", 0}, // DECAL_MOMMASPLAT		// BM Mortar spray?? need decal
-};
-
-/*
-==============================================================================
-
-BODY QUE
-
-==============================================================================
-*/
-
-#define SF_DECAL_NOTINDEATHMATCH 2048
-
-class CDecal : public CBaseEntity
-{
-public:
-	void Spawn() override;
-	bool KeyValue(KeyValueData* pkvd) override;
-	void EXPORT StaticDecal();
-	void EXPORT TriggerDecal(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
-};
-
-LINK_ENTITY_TO_CLASS(infodecal, CDecal);
-
-// UNDONE:  These won't get sent to joining players in multi-player
-void CDecal::Spawn()
-{
-	if (pev->skin < 0 || (0 != gpGlobals->deathmatch && FBitSet(pev->spawnflags, SF_DECAL_NOTINDEATHMATCH)))
-	{
-		REMOVE_ENTITY(ENT(pev));
-		return;
-	}
-
-	if (FStringNull(pev->targetname))
-	{
-		SetThink(&CDecal::StaticDecal);
-		// if there's no targetname, the decal will spray itself on as soon as the world is done spawning.
-		SetNextThink(0);
-	}
-	else
-	{
-		// if there IS a targetname, the decal sprays itself on when it is triggered.
-		SetThink(&CDecal::SUB_DoNothing);
-		SetUse(&CDecal::TriggerDecal);
-	}
-}
-
-void CDecal::TriggerDecal(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
-{
-	// this is set up as a USE function for infodecals that have targetnames, so that the
-	// decal doesn't get applied until it is fired. (usually by a scripted sequence)
-	TraceResult trace;
-	int entityIndex;
-
-	UTIL_TraceLine(pev->origin - Vector(5, 5, 5), pev->origin + Vector(5, 5, 5), ignore_monsters, ENT(pev), &trace);
-
-	MESSAGE_BEGIN(MSG_BROADCAST, SVC_TEMPENTITY);
-	WRITE_BYTE(TE_BSPDECAL);
-	WRITE_COORD(pev->origin.x);
-	WRITE_COORD(pev->origin.y);
-	WRITE_COORD(pev->origin.z);
-	WRITE_SHORT((int)pev->skin);
-	entityIndex = (short)ENTINDEX(trace.pHit);
-	WRITE_SHORT(entityIndex);
-	if (0 != entityIndex)
-		WRITE_SHORT((int)VARS(trace.pHit)->modelindex);
-	MESSAGE_END();
-
-	SetThink(&CDecal::SUB_Remove);
-	SetNextThink(0.1);
-}
-
-
-void CDecal::StaticDecal()
-{
-	TraceResult trace;
-	int entityIndex, modelIndex;
-
-	UTIL_TraceLine(pev->origin - Vector(5, 5, 5), pev->origin + Vector(5, 5, 5), ignore_monsters, ENT(pev), &trace);
-
-	entityIndex = (short)ENTINDEX(trace.pHit);
-	if (0 != entityIndex)
-		modelIndex = (int)VARS(trace.pHit)->modelindex;
-	else
-		modelIndex = 0;
-
-	g_engfuncs.pfnStaticDecal(pev->origin, (int)pev->skin, entityIndex, modelIndex);
-
-	SUB_Remove();
-}
-
-
-bool CDecal::KeyValue(KeyValueData* pkvd)
-{
-	if (FStrEq(pkvd->szKeyName, "texture"))
-	{
-		pev->skin = DECAL_INDEX(pkvd->szValue);
-
-		// Found
-		if (pev->skin >= 0)
-			return true;
-		ALERT(at_debug, "Can't find decal %s\n", pkvd->szValue);
-		return true;
-	}
-
-	return CBaseEntity::KeyValue(pkvd);
-}
-
-
-// Body queue class here.... It's really just CBaseEntity
-class CCorpse : public CBaseEntity
-{
-	int ObjectCaps() override { return FCAP_DONT_SAVE; }
-};
-
-LINK_ENTITY_TO_CLASS(bodyque, CCorpse);
-
-static void InitBodyQue()
-{
-	string_t istrClassname = MAKE_STRING("bodyque");
-
-	g_pBodyQueueHead = CREATE_NAMED_ENTITY(istrClassname);
-	entvars_t* pev = VARS(g_pBodyQueueHead);
-
-	// Reserve 3 more slots for dead bodies
-	for (int i = 0; i < 3; i++)
-	{
-		pev->owner = CREATE_NAMED_ENTITY(istrClassname);
-		pev = VARS(pev->owner);
-	}
-
-	pev->owner = g_pBodyQueueHead;
-}
-
-
-//
-// make a body que entry for the given ent so the ent can be respawned elsewhere
-//
-// GLOBALS ASSUMED SET:  g_eoBodyQueueHead
-//
-void CopyToBodyQue(entvars_t* pev)
-{
-	if ((pev->effects & EF_NODRAW) != 0)
-		return;
-
-	entvars_t* pevHead = VARS(g_pBodyQueueHead);
-
-	pevHead->angles = pev->angles;
-	pevHead->model = pev->model;
-	pevHead->modelindex = pev->modelindex;
-	pevHead->frame = pev->frame;
-	pevHead->colormap = pev->colormap;
-	pevHead->movetype = MOVETYPE_TOSS;
-	pevHead->velocity = pev->velocity;
-	pevHead->flags = 0;
-	pevHead->deadflag = pev->deadflag;
-	pevHead->renderfx = kRenderFxDeadPlayer;
-	pevHead->renderamt = ENTINDEX(ENT(pev));
-
-	pevHead->effects = pev->effects | EF_NOINTERP;
-	//pevHead->goalstarttime = pev->goalstarttime;
-	//pevHead->goalframe	= pev->goalframe;
-	//pevHead->goalendtime = pev->goalendtime ;
-
-	pevHead->sequence = pev->sequence;
-	pevHead->animtime = pev->animtime;
-
-	UTIL_SetEdictOrigin(g_pBodyQueueHead, pev->origin);
-	UTIL_SetSize(pevHead, pev->mins, pev->maxs);
-	g_pBodyQueueHead = pevHead->owner;
-}
-
 
 CGlobalState::CGlobalState()
 {
@@ -291,7 +59,6 @@ globalentity_t* CGlobalState::Find(string_t globalname)
 	return pTest;
 }
 
-
 // This is available all the time now on impulse 104, remove later
 //#ifdef _DEBUG
 void CGlobalState::DumpGlobals()
@@ -309,7 +76,6 @@ void CGlobalState::DumpGlobals()
 }
 //#endif
 
-
 void CGlobalState::EntityAdd(string_t globalname, string_t mapName, GLOBALESTATE state)
 {
 	ASSERT(!Find(globalname));
@@ -324,7 +90,6 @@ void CGlobalState::EntityAdd(string_t globalname, string_t mapName, GLOBALESTATE
 	m_listCount++;
 }
 
-
 void CGlobalState::EntitySetState(string_t globalname, GLOBALESTATE state)
 {
 	globalentity_t* pEnt = Find(globalname);
@@ -333,14 +98,12 @@ void CGlobalState::EntitySetState(string_t globalname, GLOBALESTATE state)
 		pEnt->state = state;
 }
 
-
 const globalentity_t* CGlobalState::EntityFromTable(string_t globalname)
 {
 	globalentity_t* pEnt = Find(globalname);
 
 	return pEnt;
 }
-
 
 GLOBALESTATE CGlobalState::EntityGetState(string_t globalname)
 {
@@ -350,7 +113,6 @@ GLOBALESTATE CGlobalState::EntityGetState(string_t globalname)
 
 	return GLOBAL_OFF;
 }
-
 
 // Global Savedata for Delay
 TYPEDESCRIPTION CGlobalState::m_SaveData[] =
@@ -365,7 +127,6 @@ TYPEDESCRIPTION gGlobalEntitySaveData[] =
 		DEFINE_ARRAY(globalentity_t, levelName, FIELD_CHARACTER, 32),
 		DEFINE_FIELD(globalentity_t, state, FIELD_INTEGER),
 };
-
 
 bool CGlobalState::Save(CSave& save)
 {
@@ -416,7 +177,6 @@ void CGlobalState::EntityUpdate(string_t globalname, string_t mapname)
 		strcpy(pEnt->levelName, STRING(mapname));
 }
 
-
 void CGlobalState::ClearStates()
 {
 	globalentity_t* pFree = m_pList;
@@ -429,7 +189,6 @@ void CGlobalState::ClearStates()
 	Reset();
 }
 
-
 void SaveGlobalState(SAVERESTOREDATA* pSaveData)
 {
 	if (!CSaveRestoreBuffer::IsValidSaveRestoreData(pSaveData))
@@ -440,7 +199,6 @@ void SaveGlobalState(SAVERESTOREDATA* pSaveData)
 	CSave saveHelper(*pSaveData);
 	gGlobalState.Save(saveHelper);
 }
-
 
 void RestoreGlobalState(SAVERESTOREDATA* pSaveData)
 {
@@ -453,344 +211,8 @@ void RestoreGlobalState(SAVERESTOREDATA* pSaveData)
 	gGlobalState.Restore(restoreHelper);
 }
 
-
 void ResetGlobalState()
 {
 	gGlobalState.ClearStates();
 	gInitHUD = true; // Init the HUD on a new game / load game
-}
-
-
-
-// moved CWorld class definition to cbase.h
-//=======================
-// CWorld
-//
-// This spawns first when each level begins.
-//=======================
-
-LINK_ENTITY_TO_CLASS(worldspawn, CWorld);
-
-#define SF_WORLD_DARK 0x0001	  // Fade from black at startup
-#define SF_WORLD_TITLE 0x0002	  // Display game title at startup
-#define SF_WORLD_FORCETEAM 0x0004 // Force teams
-//#define SF_WORLD_STARTSUIT	0x0008		// LRC- Start this level with an HEV suit!
-
-bool g_allowGJump;
-
-bool g_startSuit; //LRC
-
-CWorld::CWorld()
-{
-	if (World)
-	{
-		ALERT(at_error, "Do not create multiple instances of worldspawn\n");
-		return;
-	}
-
-	World = this;
-}
-
-CWorld::~CWorld()
-{
-	if (World != this)
-	{
-		return;
-	}
-
-	World = nullptr;
-}
-
-void CWorld::Spawn()
-{
-	g_fGameOver = false;
-	Precache();
-}
-
-void CWorld::Precache()
-{
-	// Flag this entity for removal if it's not the actual world entity.
-	if (World != this)
-	{
-		UTIL_Remove(this);
-		return;
-	}
-
-	//LRC - set up the world lists
-	g_pWorld = this;
-	m_pAssistLink = NULL;
-	m_pFirstAlias = NULL;
-	//	ALERT(at_console, "Clearing AssistList\n");
-
-	g_pLastSpawn = NULL;
-
-#if 1
-	CVAR_SET_STRING("sv_gravity", "800"); // 67ft/sec
-	CVAR_SET_STRING("sv_stepsize", "18");
-#else
-	CVAR_SET_STRING("sv_gravity", "384"); // 32ft/sec
-	CVAR_SET_STRING("sv_stepsize", "24");
-#endif
-
-	CVAR_SET_STRING("room_type", "0"); // clear DSP
-
-	// Set up game rules
-	delete g_pGameRules;
-
-	g_pGameRules = InstallGameRules();
-
-	//!!!UNDONE why is there so much Spawn code in the Precache function? I'll just keep it here
-
-	/*	if ( WorldGraph.m_fGraphPresent && !WorldGraph.m_fGraphPointersSet )
-	{
-		if ( !WorldGraph.FSetGraphPointers() )
-		{
-			ALERT ( at_debug, "**Graph pointers were not set!\n");
-		}
-		else
-		{
-			ALERT ( at_debug, "**Graph Pointers Set!\n" );
-		} 
-	}*/
-
-	///!!!LATER - do we want a sound ent in deathmatch? (sjb)
-	//pSoundEnt = CBaseEntity::Create( "soundent", g_vecZero, g_vecZero, edict() );
-	pSoundEnt = GetClassPtr((CSoundEnt*)NULL);
-	pSoundEnt->Spawn();
-
-	if (!pSoundEnt)
-	{
-		ALERT(at_debug, "**COULD NOT CREATE SOUNDENT**\n");
-	}
-
-	InitBodyQue();
-
-	// init sentence group playback stuff from sentences.txt.
-	// ok to call this multiple times, calls after first are ignored.
-
-	SENTENCEG_Init();
-
-	// init texture type array from materials.txt
-
-	TEXTURETYPE_Init();
-
-
-	// the area based ambient sounds MUST be the first precache_sounds
-
-	// player precaches
-	W_Precache(); // get weapon precaches
-	I_Precache(); // get Inventory Item precaches
-
-	ClientPrecache();
-
-	// sounds used from C physics code
-	PRECACHE_SOUND("common/null.wav"); // clears sound channels
-
-	PRECACHE_SOUND("items/suitchargeok1.wav"); //!!! temporary sound for respawning weapons.
-	PRECACHE_SOUND("items/gunpickup2.wav");	   // player picks up a gun.
-
-	PRECACHE_SOUND("common/bodydrop3.wav"); // dead bodies hitting the ground (animation events)
-	PRECACHE_SOUND("common/bodydrop4.wav");
-
-	g_Language = (int)CVAR_GET_FLOAT("sv_language");
-	if (g_Language == LANGUAGE_GERMAN)
-	{
-		PRECACHE_MODEL("models/germangibs.mdl");
-	}
-	else
-	{
-		PRECACHE_MODEL("models/hgibs.mdl");
-		PRECACHE_MODEL("models/agibs.mdl");
-	}
-
-	PRECACHE_SOUND("weapons/ric1.wav");
-	PRECACHE_SOUND("weapons/ric2.wav");
-	PRECACHE_SOUND("weapons/ric3.wav");
-	PRECACHE_SOUND("weapons/ric4.wav");
-	PRECACHE_SOUND("weapons/ric5.wav");
-
-	PRECACHE_MODEL("sprites/null.spr"); //LRC
-
-	//
-	// Setup light animation tables. 'a' is total darkness, 'z' is maxbright.
-	//
-	int i;
-
-	// 0 normal
-	for (i = 0; i <= 13; i++)
-	{
-		LIGHT_STYLE(i, (char*)STRING(GetStdLightStyle(i)));
-	}
-
-	// styles 32-62 are assigned by the light program for switchable lights
-
-	// 63 testing
-	LIGHT_STYLE(63, "a");
-
-	for (i = 0; i < ARRAYSIZE(gDecals); i++)
-		gDecals[i].index = DECAL_INDEX(gDecals[i].name);
-
-	// init the WorldGraph.
-	WorldGraph.InitGraph();
-
-	// make sure the .NOD file is newer than the .BSP file.
-	if (!WorldGraph.CheckNODFile((char*)STRING(gpGlobals->mapname)))
-	{ // NOD file is not present, or is older than the BSP file.
-		WorldGraph.AllocNodes();
-	}
-	else
-	{ // Load the node graph for this level
-		if (!WorldGraph.FLoadGraph((char*)STRING(gpGlobals->mapname)))
-		{ // couldn't load, so alloc and prepare to build a graph.
-			ALERT(at_debug, "*Error opening .NOD file\n");
-			WorldGraph.AllocNodes();
-		}
-		else
-		{
-			ALERT(at_debug, "\n*Graph Loaded!\n");
-		}
-	}
-
-	if (pev->speed > 0)
-		CVAR_SET_FLOAT("sv_zmax", pev->speed);
-	else
-		CVAR_SET_FLOAT("sv_zmax", 4096);
-
-	if (!FStringNull(pev->netname))
-	{
-		ALERT(at_aiconsole, "Chapter title: %s\n", STRING(pev->netname));
-		CBaseEntity* pEntity = CBaseEntity::Create("env_message", g_vecZero, g_vecZero, NULL);
-		if (pEntity)
-		{
-			pEntity->SetThink(&CBaseEntity::SUB_CallUseToggle);
-			pEntity->pev->message = pev->netname;
-			pev->netname = 0;
-			pEntity->SetNextThink(0.3);
-			pEntity->pev->spawnflags = SF_MESSAGE_ONCE;
-		}
-	}
-
-	if ((pev->spawnflags & SF_WORLD_DARK) != 0)
-		CVAR_SET_FLOAT("v_dark", 1.0);
-	else
-		CVAR_SET_FLOAT("v_dark", 0.0);
-
-	gDisplayTitle = (pev->spawnflags & SF_WORLD_TITLE) != 0;
-
-	if ((pev->spawnflags & SF_WORLD_FORCETEAM) != 0)
-	{
-		CVAR_SET_FLOAT("mp_defaultteam", 1);
-	}
-	else
-	{
-		CVAR_SET_FLOAT("mp_defaultteam", 0);
-	}
-}
-
-
-//
-// Just to ignore the "wad" field.
-//
-bool CWorld::KeyValue(KeyValueData* pkvd)
-{
-	if (FStrEq(pkvd->szKeyName, "skyname"))
-	{
-		// Sent over net now.
-		CVAR_SET_STRING("sv_skyname", pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "sounds"))
-	{
-		gpGlobals->cdAudioTrack = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "WaveHeight"))
-	{
-		// Sent over net now.
-		pev->scale = atof(pkvd->szValue) * (1.0 / 8.0);
-		CVAR_SET_FLOAT("sv_wateramp", pev->scale);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "MaxRange"))
-	{
-		pev->speed = atof(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "chaptertitle"))
-	{
-		pev->netname = ALLOC_STRING(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "startdark"))
-	{
-		// UNDONE: This is a gross hack!!! The CVAR is NOT sent over the client/sever link
-		// but it will work for single player
-		int flag = atoi(pkvd->szValue);
-		if (0 != flag)
-			pev->spawnflags |= SF_WORLD_DARK;
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "newunit"))
-	{
-		// Single player only.  Clear save directory if set
-		if (0 != atoi(pkvd->szValue))
-			CVAR_SET_FLOAT("sv_newunit", 1);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "gametitle"))
-	{
-		if (0 != atoi(pkvd->szValue))
-			pev->spawnflags |= SF_WORLD_TITLE;
-
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "mapteams"))
-	{
-		pev->team = ALLOC_STRING(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "defaultteam"))
-	{
-		if (0 != atoi(pkvd->szValue))
-		{
-			pev->spawnflags |= SF_WORLD_FORCETEAM;
-		}
-		return true;
-	}
-	//LRC- let map designers start the player with his suit already on
-	else if (FStrEq(pkvd->szKeyName, "startsuit"))
-	{
-		g_startSuit = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "allowmonsters"))
-	{
-		CVAR_SET_FLOAT("mp_allowmonsters", atof(pkvd->szValue));
-		return true;
-	}
-	//LRC- ends
-
-	//AJH- Gauss Jump in single play
-	else if (FStrEq(pkvd->szKeyName, "allow_sp_gjump"))
-	{
-		g_allowGJump = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "timed_damage"))
-	{
-		CVAR_SET_FLOAT("timed_damage", atof(pkvd->szValue));
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "max_medkit"))
-	{
-		CVAR_SET_FLOAT("max_medkit", atof(pkvd->szValue));
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "max_cameras"))
-	{
-		CVAR_SET_FLOAT("max_cameras", atof(pkvd->szValue));
-		return true;
-	}
-
-	return CBaseEntity::KeyValue(pkvd);
 }

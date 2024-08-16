@@ -24,6 +24,7 @@
 #include "pm_defs.h"
 #include "pm_materials.h"
 #include "pm_shared.h"
+#include "entities/CWorld.h"
 #include "entities/monster/CTalkMonster.h"
 
 static char* memfgets(byte* pMemFile, int fileSize, int& filePos, char* pBuffer, int bufferSize);

@@ -33,6 +33,7 @@
 #include "UserMessages.h"
 #include "movewith.h"
 #include "locus.h"
+#include "entities/CWorld.h"
 #include "entities/alias/CBaseMutableAlias.h"
 #include "entities/alias/CInfoGroup.h"
 

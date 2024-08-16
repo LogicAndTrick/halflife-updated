@@ -23,6 +23,7 @@
 #include "gamerules.h"
 #include "skill.h"
 #include "UserMessages.h"
+#include "entities/CWorld.h"
 #include "entities/item/CItem.h"
 #include "entities/weapon/CBasePlayerAmmo.h"
 #include "entities/weapon/CBasePlayerItem.h"

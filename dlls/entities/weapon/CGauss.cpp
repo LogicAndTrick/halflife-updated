@@ -21,6 +21,7 @@
 #include "skill.h"
 #include "soundent.h"
 #include "weapons.h"
+#include "entities/CWorld.h"
 
 LINK_ENTITY_TO_CLASS(weapon_gauss, CGauss);
 

@@ -14,6 +14,7 @@
  ****/
 
 #include "CBaseEntity.h"
+#include "CWorld.h"
 #include "decals.h"
 #include "monsters.h"
 #include "movewith.h"
@@ -1078,4 +1079,19 @@ void CBaseEntity::TraceBleed(float flDamage, Vector vecDir, TraceResult* ptr, in
 			UTIL_BloodDecalTrace(&Bloodtr, BloodColor());
 		}
 	}
+}
+
+CBaseEntity* CBaseEntity::Instance(edict_t* pent)
+{
+	if (!pent)
+		return CWorld::World;
+	return (CBaseEntity*)GET_PRIVATE(pent);
+}
+
+CBaseEntity* CBaseEntity::Instance(entvars_t* pev)
+{
+	if (!pev)
+		return CWorld::World;
+
+	return Instance(ENT(pev));
 }

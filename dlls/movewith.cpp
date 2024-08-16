@@ -4,6 +4,7 @@
 #include "movewith.h"
 #include "saverestore.h"
 #include "player.h"
+#include "entities/CWorld.h"
 
 CWorld* g_pWorld = NULL; //LRC
 

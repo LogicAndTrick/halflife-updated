@@ -48,6 +48,8 @@
 #include "pm_defs.h"
 #include "UserMessages.h"
 #include "movewith.h"
+#include "entities/CWorld.h"
+#include "entities/CCorpse.h"
 #include "entities/item/CItemAntidote.h"
 #include "entities/item/CItemAntiRad.h"
 #include "entities/item/CItemCamera.h"
@@ -58,8 +60,6 @@
 #include "entities/weapon/CRpg.h"
 
 DLL_GLOBAL unsigned int g_ulFrameCount;
-
-extern void CopyToBodyQue(entvars_t* pev);
 
 void LinkUserMessages();
 
