@@ -986,22 +986,16 @@
     <ClCompile Include="..\..\dlls\entities\weapon\CWeaponBox.cpp">
       <Filter>Source Files\dlls\entities\weapon</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\xen\CXenHair.cpp">
+    <ClCompile Include="..\..\dlls\entities\xen\CActAnimating.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\xen\CXenHull.cpp">
+    <ClCompile Include="..\..\dlls\entities\xen\CXenHair.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\xen\CXenPLight.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeLarge.cpp">
-      <Filter>Source Files\dlls\entities\xen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeMed.cpp">
-      <Filter>Source Files\dlls\entities\xen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeSmall.cpp">
+    <ClCompile Include="..\..\dlls\entities\xen\CXenSpore.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\xen\CXenTree.cpp">
@@ -1092,9 +1086,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\world.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\xen.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\game_shared\filesystem_utils.cpp">
@@ -2002,22 +1993,16 @@
     <ClInclude Include="..\..\dlls\entities\weapon\CWeaponBox.h">
       <Filter>Header Files\dlls\entities\weapon</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\xen\CXenHair.h">
+    <ClInclude Include="..\..\dlls\entities\xen\CActAnimating.h">
       <Filter>Header Files\dlls\entities\xen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\xen\CXenHull.h">
+    <ClInclude Include="..\..\dlls\entities\xen\CXenHair.h">
       <Filter>Header Files\dlls\entities\xen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\xen\CXenPLight.h">
       <Filter>Header Files\dlls\entities\xen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeLarge.h">
-      <Filter>Header Files\dlls\entities\xen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeMed.h">
-      <Filter>Header Files\dlls\entities\xen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeSmall.h">
+    <ClInclude Include="..\..\dlls\entities\xen\CXenSpore.h">
       <Filter>Header Files\dlls\entities\xen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\xen\CXenTree.h">

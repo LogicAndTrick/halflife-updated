@@ -15,25 +15,23 @@
 
 #pragma once
 
-#include "CActAnimating.h"
+#include "entities/CBaseAnimating.h"
 
-class CSprite;
+#define XEN_PLANT_GLOW_SPRITE "sprites/flare3.spr"
+#define XEN_PLANT_HIDE_TIME 5
 
-class CXenPLight : public CActAnimating
+class CActAnimating : public CBaseAnimating
 {
 public:
-	void Spawn() override;
-	void Precache() override;
-	void Touch(CBaseEntity* pOther) override;
-	void Think() override;
+	void SetActivity(Activity act);
+	inline Activity GetActivity() { return m_Activity; }
 
-	void LightOn();
-	void LightOff();
+	int ObjectCaps() override { return CBaseAnimating::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
 
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
 	static TYPEDESCRIPTION m_SaveData[];
 
 private:
-	CSprite* m_pGlow;
+	Activity m_Activity;
 };

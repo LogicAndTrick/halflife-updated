@@ -13,27 +13,23 @@
  *
  ****/
 
-#pragma once
-
 #include "CActAnimating.h"
 
-class CSprite;
-
-class CXenPLight : public CActAnimating
-{
-public:
-	void Spawn() override;
-	void Precache() override;
-	void Touch(CBaseEntity* pOther) override;
-	void Think() override;
-
-	void LightOn();
-	void LightOff();
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	static TYPEDESCRIPTION m_SaveData[];
-
-private:
-	CSprite* m_pGlow;
+TYPEDESCRIPTION CActAnimating::m_SaveData[] =
+	{
+		DEFINE_FIELD(CActAnimating, m_Activity, FIELD_INTEGER),
 };
+
+IMPLEMENT_SAVERESTORE(CActAnimating, CBaseAnimating);
+
+void CActAnimating::SetActivity(Activity act)
+{
+	int sequence = LookupActivity(act);
+	if (sequence != ACTIVITY_NOT_AVAILABLE)
+	{
+		pev->sequence = sequence;
+		m_Activity = act;
+		pev->frame = 0;
+		ResetSequenceInfo();
+	}
+}

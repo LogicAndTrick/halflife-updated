@@ -375,12 +375,10 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\weapon\CSqueak.cpp" />
     <ClCompile Include="..\..\dlls\entities\weapon\CTripmine.cpp" />
     <ClCompile Include="..\..\dlls\entities\weapon\CWeaponBox.cpp" />
+    <ClCompile Include="..\..\dlls\entities\xen\CActAnimating.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenHair.cpp" />
-    <ClCompile Include="..\..\dlls\entities\xen\CXenHull.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenPLight.cpp" />
-    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeLarge.cpp" />
-    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeMed.cpp" />
-    <ClCompile Include="..\..\dlls\entities\xen\CXenSporeSmall.cpp" />
+    <ClCompile Include="..\..\dlls\entities\xen\CXenSpore.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTree.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp" />
     <ClCompile Include="..\..\dlls\game.cpp" />
@@ -411,7 +409,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\weapons_shared.cpp" />
     <ClCompile Include="..\..\dlls\weapons.cpp" />
     <ClCompile Include="..\..\dlls\world.cpp" />
-    <ClCompile Include="..\..\dlls\xen.cpp" />
     <ClCompile Include="..\..\game_shared\filesystem_utils.cpp" />
     <ClCompile Include="..\..\game_shared\voice_gamemgr.cpp" />
     <ClCompile Include="..\..\pm_shared\pm_debug.cpp" />
@@ -715,12 +712,10 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\weapon\CSqueak.h" />
     <ClInclude Include="..\..\dlls\entities\weapon\CTripmine.h" />
     <ClInclude Include="..\..\dlls\entities\weapon\CWeaponBox.h" />
+    <ClInclude Include="..\..\dlls\entities\xen\CActAnimating.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenHair.h" />
-    <ClInclude Include="..\..\dlls\entities\xen\CXenHull.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenPLight.h" />
-    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeLarge.h" />
-    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeMed.h" />
-    <ClInclude Include="..\..\dlls\entities\xen\CXenSporeSmall.h" />
+    <ClInclude Include="..\..\dlls\entities\xen\CXenSpore.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenTree.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenTreeTrigger.h" />
     <ClInclude Include="..\..\dlls\extdll.h" />

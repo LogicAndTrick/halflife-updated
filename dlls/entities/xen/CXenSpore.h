@@ -15,13 +15,10 @@
 
 #pragma once
 
+#include "entities/CPointEntity.h"
 #include "CActAnimating.h"
 
-#define TREE_AE_ATTACK 1
-
-class CXenTreeTrigger;
-
-class CXenTree : public CActAnimating
+class CXenSpore : public CActAnimating
 {
 public:
 	void Spawn() override;
@@ -33,17 +30,33 @@ public:
 		Attack();
 		return false;
 	}
-	void HandleAnimEvent(MonsterEvent_t* pEvent) override;
-	void Attack();
+	//	void		HandleAnimEvent( MonsterEvent_t *pEvent );
+	void Attack() {}
+
+	static const char* pModelNames[];
+};
+
+class CXenSporeSmall : public CXenSpore
+{
+	void Spawn() override;
+};
+
+class CXenSporeMed : public CXenSpore
+{
+	void Spawn() override;
+};
+
+class CXenSporeLarge : public CXenSpore
+{
+	void Spawn() override;
+
+	static const Vector m_hullSizes[];
+};
+
+// Fake collision box for big spores
+class CXenHull : public CPointEntity
+{
+public:
+	static CXenHull* CreateHull(CBaseEntity* source, const Vector& mins, const Vector& maxs, const Vector& offset);
 	int Classify() override { return CLASS_BARNACLE; }
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	static TYPEDESCRIPTION m_SaveData[];
-
-	static const char* pAttackHitSounds[];
-	static const char* pAttackMissSounds[];
-
-private:
-	CXenTreeTrigger* m_pTrigger;
 };
