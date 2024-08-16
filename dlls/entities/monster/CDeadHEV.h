@@ -15,15 +15,18 @@
 
 #pragma once
 
-#include "CBaseEntity.h"
+#include "entities/CBaseMonster.h"
 
-#define SF_DECAL_NOTINDEATHMATCH 2048
-
-class CDecal : public CBaseEntity
+// Dead HEV suit prop
+// LRC- i.e. the dead blokes you see in Xen.
+class CDeadHEV : public CBaseMonster
 {
 public:
 	void Spawn() override;
+	int Classify() override { return CLASS_HUMAN_MILITARY; }
+
 	bool KeyValue(KeyValueData* pkvd) override;
-	void EXPORT StaticDecal();
-	void EXPORT TriggerDecal(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
+
+	int m_iPose; // which sequence to display	-- temporary, don't need to save
+	static const char* m_szPoses[4];
 };

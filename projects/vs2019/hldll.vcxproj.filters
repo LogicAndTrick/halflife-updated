@@ -45,6 +45,9 @@
     <Filter Include="Header Files\dlls\entities\game">
       <UniqueIdentifier>{100406f5-f346-4bfd-8d0b-eb7d1f82c1e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\entities\hud">
+      <UniqueIdentifier>{0e9a3546-846f-4484-b156-1fb6f51f3ec2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\dlls\entities\info">
       <UniqueIdentifier>{8d1093ab-b366-4b32-8203-ddc51162be43}</UniqueIdentifier>
     </Filter>
@@ -71,6 +74,9 @@
     </Filter>
     <Filter Include="Header Files\dlls\entities\path">
       <UniqueIdentifier>{f84a6eac-793a-4061-9e41-e2aec6038c94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls\entities\player">
+      <UniqueIdentifier>{5ffb0ba1-be46-4a79-8ab5-f371648c952a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\dlls\entities\scripted">
       <UniqueIdentifier>{4826a3fc-a2fc-4f27-a778-b74d5cedcf26}</UniqueIdentifier>
@@ -138,6 +144,9 @@
     <Filter Include="Source Files\dlls\entities\game">
       <UniqueIdentifier>{3614d01f-ad67-4515-b3b0-eee3d7e88a0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\dlls\entities\hud">
+      <UniqueIdentifier>{57cba807-d894-4524-9371-20a0a7fe0d39}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\dlls\entities\info">
       <UniqueIdentifier>{daeebe42-265b-445c-8945-9f680c9d7211}</UniqueIdentifier>
     </Filter>
@@ -164,6 +173,9 @@
     </Filter>
     <Filter Include="Source Files\dlls\entities\path">
       <UniqueIdentifier>{6c2fcc1e-7892-4179-b53d-4161caa45bce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\entities\player">
+      <UniqueIdentifier>{3490eb5a-1bb9-421a-b72e-2ffd77ecc2b4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\scripted">
       <UniqueIdentifier>{908fe6d6-1804-49ba-bc8c-0924bb3c79c7}</UniqueIdentifier>
@@ -285,9 +297,6 @@
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CCorpse.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CDecal.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CGib.cpp">
@@ -575,7 +584,16 @@
     <ClCompile Include="..\..\dlls\entities\game\CRulePointEntity.cpp">
       <Filter>Source Files\dlls\entities\game</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\hud\CHudSprite.cpp">
+      <Filter>Source Files\dlls\entities\hud</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\info\CBaseDMStart.cpp">
+      <Filter>Source Files\dlls\entities\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\info\CDecal.cpp">
+      <Filter>Source Files\dlls\entities\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\info\CInfoIntermission.cpp">
       <Filter>Source Files\dlls\entities\info</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\info\CInfoMoveWith.cpp">
@@ -687,6 +705,9 @@
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CDeadHEV.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyer.cpp">
@@ -802,6 +823,21 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\path\CPathTrack.cpp">
       <Filter>Source Files\dlls\entities\path</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CPlayerFreeze.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CPlayerMarker.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CRevertSaved.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CStripWeapons.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\scripted\CScriptedSentence.cpp">
       <Filter>Source Files\dlls\entities\scripted</Filter>
@@ -1291,9 +1327,6 @@
     <ClInclude Include="..\..\dlls\entities\CCorpse.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CDecal.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CGib.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
@@ -1579,7 +1612,16 @@
     <ClInclude Include="..\..\dlls\entities\game\CRulePointEntity.h">
       <Filter>Header Files\dlls\entities\game</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\hud\CHudSprite.h">
+      <Filter>Header Files\dlls\entities\hud</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\info\CBaseDMStart.h">
+      <Filter>Header Files\dlls\entities\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\info\CDecal.h">
+      <Filter>Header Files\dlls\entities\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\info\CInfoIntermission.h">
       <Filter>Header Files\dlls\entities\info</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\info\CInfoMoveWith.h">
@@ -1691,6 +1733,9 @@
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CController.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CDeadHEV.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyer.h">
@@ -1806,6 +1851,21 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\path\CPathTrack.h">
       <Filter>Header Files\dlls\entities\path</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\player\CBasePlayer.h">
+      <Filter>Header Files\dlls\entities\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\player\CPlayerFreeze.h">
+      <Filter>Header Files\dlls\entities\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\player\CPlayerMarker.h">
+      <Filter>Header Files\dlls\entities\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\player\CRevertSaved.h">
+      <Filter>Header Files\dlls\entities\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\player\CStripWeapons.h">
+      <Filter>Header Files\dlls\entities\player</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\scripted\CScriptedSentence.h">
       <Filter>Header Files\dlls\entities\scripted</Filter>

@@ -30,8 +30,7 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings"></ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -55,8 +54,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader></PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;QUIVER;VOXEL;QUAKE2;VALVE_DLL;CLIENT_WEAPONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -83,8 +81,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader></PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -142,7 +139,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CBaseSpectator.cpp" />
     <ClCompile Include="..\..\dlls\entities\CBaseToggle.cpp" />
     <ClCompile Include="..\..\dlls\entities\CCorpse.cpp" />
-    <ClCompile Include="..\..\dlls\entities\CDecal.cpp" />
     <ClCompile Include="..\..\dlls\entities\CGib.cpp" />
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp" />
@@ -238,7 +234,10 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\game\CRuleBrushEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\game\CRuleEntity.cpp" />
     <ClCompile Include="..\..\dlls\entities\game\CRulePointEntity.cpp" />
+    <ClCompile Include="..\..\dlls\entities\hud\CHudSprite.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CBaseDMStart.cpp" />
+    <ClCompile Include="..\..\dlls\entities\info\CDecal.cpp" />
+    <ClCompile Include="..\..\dlls\entities\info\CInfoIntermission.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CInfoMoveWith.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CInfoTarget.cpp" />
     <ClCompile Include="..\..\dlls\entities\info\CNullEntity.cpp" />
@@ -276,6 +275,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CBullsquid.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CCineMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CDeadHEV.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyer.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFlyingMonster.cpp" />
@@ -314,6 +314,11 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\multi\CMultisource.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathTrack.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CPlayerFreeze.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CPlayerMarker.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CRevertSaved.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CStripWeapons.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CScriptedSentence.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CTankSequence.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CTrainSequence.cpp" />
@@ -478,7 +483,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CBaseSpectator.h" />
     <ClInclude Include="..\..\dlls\entities\CBaseToggle.h" />
     <ClInclude Include="..\..\dlls\entities\CCorpse.h" />
-    <ClInclude Include="..\..\dlls\entities\CDecal.h" />
     <ClInclude Include="..\..\dlls\entities\CGib.h" />
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h" />
     <ClInclude Include="..\..\dlls\entities\CSpeaker.h" />
@@ -574,7 +578,10 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\game\CRuleBrushEntity.h" />
     <ClInclude Include="..\..\dlls\entities\game\CRuleEntity.h" />
     <ClInclude Include="..\..\dlls\entities\game\CRulePointEntity.h" />
+    <ClInclude Include="..\..\dlls\entities\hud\CHudSprite.h" />
     <ClInclude Include="..\..\dlls\entities\info\CBaseDMStart.h" />
+    <ClInclude Include="..\..\dlls\entities\info\CDecal.h" />
+    <ClInclude Include="..\..\dlls\entities\info\CInfoIntermission.h" />
     <ClInclude Include="..\..\dlls\entities\info\CInfoMoveWith.h" />
     <ClInclude Include="..\..\dlls\entities\info\CInfoTarget.h" />
     <ClInclude Include="..\..\dlls\entities\info\CNullEntity.h" />
@@ -612,6 +619,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CBullsquid.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CCineMonster.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CController.h" />
+    <ClInclude Include="..\..\dlls\entities\monster\CDeadHEV.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyer.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFlyingMonster.h" />
@@ -650,6 +658,11 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\multi\CMultisource.h" />
     <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h" />
     <ClInclude Include="..\..\dlls\entities\path\CPathTrack.h" />
+    <ClInclude Include="..\..\dlls\entities\player\CBasePlayer.h" />
+    <ClInclude Include="..\..\dlls\entities\player\CPlayerFreeze.h" />
+    <ClInclude Include="..\..\dlls\entities\player\CPlayerMarker.h" />
+    <ClInclude Include="..\..\dlls\entities\player\CRevertSaved.h" />
+    <ClInclude Include="..\..\dlls\entities\player\CStripWeapons.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CScriptedSentence.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CTankSequence.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CTrainSequence.h" />
@@ -757,6 +770,5 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\public\interface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets"></ImportGroup>
 </Project>

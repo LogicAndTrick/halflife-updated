@@ -197,8 +197,6 @@ TYPEDESCRIPTION CBasePlayer::m_playerSaveData[] =
 
 LINK_ENTITY_TO_CLASS(player, CBasePlayer);
 
-
-
 void CBasePlayer::Pain()
 {
 	float flRndSound; //sound randomizer
@@ -1050,7 +1048,6 @@ void CBasePlayer::Killed(entvars_t* pevAttacker, int iGib)
 	SetNextThink(0.1);
 }
 
-
 // Set the activity based on an event or current state
 void CBasePlayer::SetAnimation(PLAYER_ANIM playerAnim)
 {
@@ -1241,7 +1238,6 @@ void CBasePlayer::TabulateAmmo()
 	ammo_hornets = AmmoInventory(GetAmmoIndex("Hornets"));
 }
 
-
 /*
 ===========
 WaterMove
@@ -1379,7 +1375,6 @@ void CBasePlayer::WaterMove()
 		pev->dmgtime = 0;
 	}
 }
-
 
 // true if the player is attached to a ladder
 bool CBasePlayer::IsOnLadder()
@@ -1740,8 +1735,6 @@ void CBasePlayer::PlayerUse()
 	}
 }
 
-
-
 void CBasePlayer::Jump()
 {
 	Vector vecWallCheckDir; // direction we're tracing a line to find a wall when walljumping
@@ -1791,8 +1784,6 @@ void CBasePlayer::Jump()
 	}
 }
 
-
-
 // This is a glorious hack to find free space when you've crouched into some solid space
 // Our crouching collisions do not work correctly for some reason and this is easier
 // than fixing the problem :(
@@ -1830,7 +1821,6 @@ int CBasePlayer::Classify()
 	return CLASS_PLAYER;
 }
 
-
 void CBasePlayer::AddPoints(int score, bool bAllowNegativeScore)
 {
 	// Positive score always adds
@@ -1858,7 +1848,6 @@ void CBasePlayer::AddPoints(int score, bool bAllowNegativeScore)
 	WRITE_SHORT(g_pGameRules->GetTeamIndex(m_szTeamName) + 1);
 	MESSAGE_END();
 }
-
 
 void CBasePlayer::AddPointsToTeam(int score, bool bAllowNegativeScore)
 {
@@ -1974,7 +1963,6 @@ void CBasePlayer::UpdateStatusBar()
 		}
 	}
 }
-
 
 #define CLIMB_SHAKE_FREQUENCY 22 // how many frames in between screen shakes when climbing
 #define MAX_CLIMB_SPEED 200		 // fastest vertical climbing speed possible
@@ -2223,9 +2211,6 @@ void CBasePlayer::PreThink()
 
 //#define SLOWFREEZE_DURATION	1.0
 //#define SLOWFREEZE_DAMAGE	3.0
-
-/* */
-
 
 void CBasePlayer::CheckTimeBasedDamage()
 {
@@ -2635,7 +2620,6 @@ CheckPowerups(entvars_t* pev)
 	pev->modelindex = g_ulModelIndexPlayer; // don't use eyes
 }
 
-
 //=========================================================
 // UpdatePlayerSound - updates the position of the player's
 // reserved sound slot in the sound list.
@@ -2754,7 +2738,6 @@ void CBasePlayer::UpdatePlayerSound()
 	// UTIL_ParticleEffect ( pev->origin + gpGlobals->v_forward * iVolume, g_vecZero, 255, 25 );
 	//ALERT ( at_console, "%d/%d\n", iVolume, m_iTargetVolume );
 }
-
 
 void CBasePlayer::PostThink()
 {
@@ -2917,7 +2900,6 @@ pt_end:
 	// Track button info so we can detect 'pressed' and 'released' buttons next frame
 	m_afButtonLast = pev->button;
 }
-
 
 // checks if the spot is clear of players
 bool IsSpawnPointValid(CBaseEntity* pPlayer, CBaseEntity* pSpot)
@@ -3177,7 +3159,6 @@ void CBasePlayer::Spawn()
 	g_pGameRules->PlayerSpawn(this);
 }
 
-
 void CBasePlayer::Precache()
 {
 	// SOUNDS / MODELS ARE PRECACHED in ClientPrecache() (game specific)
@@ -3207,7 +3188,6 @@ void CBasePlayer::Precache()
 	Rain_needsUpdate = 1;
 }
 
-
 bool CBasePlayer::Save(CSave& save)
 {
 	if (!CBaseMonster::Save(save))
@@ -3216,14 +3196,12 @@ bool CBasePlayer::Save(CSave& save)
 	return save.WriteFields("cPLAYER", "PLAYER", this, m_playerSaveData, ARRAYSIZE(m_playerSaveData));
 }
 
-
 //
 // Marks everything as new so the player will resend this to the hud.
 //
 void CBasePlayer::RenewItems()
 {
 }
-
 
 bool CBasePlayer::Restore(CRestore& restore)
 {
@@ -3302,8 +3280,6 @@ bool CBasePlayer::Restore(CRestore& restore)
 
 	return status;
 }
-
-
 
 void CBasePlayer::SelectNextItem(int iItem)
 {
@@ -3429,7 +3405,6 @@ void CBasePlayer::SelectPrevItem(int iItem)
 {
 }
 
-
 const char* CBasePlayer::TeamID()
 {
 	if (pev == NULL) // Not fully connected yet
@@ -3438,7 +3413,6 @@ const char* CBasePlayer::TeamID()
 	// return their team name
 	return m_szTeamName;
 }
-
 
 //==============================================
 // !!!UNDONE:ultra temporary SprayCan entity to apply
@@ -3595,7 +3569,6 @@ bool CBasePlayer::FlashlightIsOn()
 	return FBitSet(pev->effects, EF_DIMLIGHT);
 }
 
-
 void CBasePlayer::FlashlightTurnOn()
 {
 	if (!g_pGameRules->FAllowFlashlight())
@@ -3616,7 +3589,6 @@ void CBasePlayer::FlashlightTurnOn()
 		m_flFlashLightTime = FLASH_DRAIN_TIME + gpGlobals->time;
 	}
 }
-
 
 void CBasePlayer::FlashlightTurnOff()
 {
@@ -4071,8 +4043,6 @@ bool CBasePlayer::AddPlayerItem(CBasePlayerItem* pItem)
 	return false;
 }
 
-
-
 bool CBasePlayer::RemovePlayerItem(CBasePlayerItem* pItem)
 {
 	if (m_pActiveItem == pItem)
@@ -4109,7 +4079,6 @@ bool CBasePlayer::RemovePlayerItem(CBasePlayerItem* pItem)
 	}
 	return false;
 }
-
 
 //
 // Returns the unique ID for the ammo, or -1 if error
@@ -4165,7 +4134,6 @@ int CBasePlayer::GiveAmmo(int iCount, const char* szName, int iMax)
 	return i;
 }
 
-
 /*
 ============
 ItemPreFrame
@@ -4200,7 +4168,6 @@ void CBasePlayer::ItemPreFrame()
 
 	m_pActiveItem->ItemPreFrame();
 }
-
 
 /*
 ============
@@ -4762,7 +4729,6 @@ void CBasePlayer::UpdateClientData()
 	m_bRestored = false;
 }
 
-
 //=========================================================
 // FBecomeProne - Overridden for the player to set the proper
 // physics flags when a barnacle grabs player.
@@ -4792,7 +4758,6 @@ void CBasePlayer::BarnacleVictimReleased()
 	m_afPhysicsFlags &= ~PFLAG_ONBARNACLE;
 }
 
-
 //=========================================================
 // Illumination
 // return player light level plus virtual muzzle flash
@@ -4807,7 +4772,6 @@ int CBasePlayer::Illumination()
 	return iIllum;
 }
 
-
 void CBasePlayer::EnableControl(bool fControl)
 {
 	if (!fControl)
@@ -4818,7 +4782,6 @@ void CBasePlayer::EnableControl(bool fControl)
 	else
 		pev->flags &= ~FL_FROZEN;
 }
-
 
 #define DOT_1DEGREE 0.9998476951564
 #define DOT_2DEGREE 0.9993908270191
@@ -4922,7 +4885,6 @@ Vector CBasePlayer::GetAutoaimVector(float flDelta)
 	UTIL_MakeVectors(pev->v_angle + pev->punchangle + m_vecAutoAim);
 	return gpGlobals->v_forward;
 }
-
 
 Vector CBasePlayer::AutoaimDeflection(Vector& vecSrc, float flDist, float flDelta)
 {
@@ -5044,7 +5006,6 @@ Vector CBasePlayer::AutoaimDeflection(Vector& vecSrc, float flDist, float flDelt
 	return Vector(0, 0, 0);
 }
 
-
 void CBasePlayer::ResetAutoaim()
 {
 	if (m_vecAutoAim.x != 0 || m_vecAutoAim.y != 0)
@@ -5083,7 +5044,6 @@ int CBasePlayer::GetCustomDecalFrames()
 {
 	return m_nCustomSprayFrames;
 }
-
 
 //=========================================================
 // DropPlayerItem - drop the named item, or if no name,
@@ -5296,559 +5256,3 @@ void CBasePlayer::SetPrefsFromUserinfo(char* infobuffer)
 		m_iAutoWepSwitch = 1;
 	}
 }
-
-//=========================================================
-// Dead HEV suit prop
-// LRC- i.e. the dead blokes you see in Xen.
-//=========================================================
-class CDeadHEV : public CBaseMonster
-{
-public:
-	void Spawn() override;
-	int Classify() override { return CLASS_HUMAN_MILITARY; }
-
-	bool KeyValue(KeyValueData* pkvd) override;
-
-	int m_iPose; // which sequence to display	-- temporary, don't need to save
-	static const char* m_szPoses[4];
-};
-
-const char* CDeadHEV::m_szPoses[] = {"deadback", "deadsitting", "deadstomach", "deadtable"};
-
-bool CDeadHEV::KeyValue(KeyValueData* pkvd)
-{
-	if (FStrEq(pkvd->szKeyName, "pose"))
-	{
-		m_iPose = atoi(pkvd->szValue);
-		return true;
-	}
-
-	return CBaseMonster::KeyValue(pkvd);
-}
-
-LINK_ENTITY_TO_CLASS(monster_hevsuit_dead, CDeadHEV);
-
-//=========================================================
-// ********** DeadHEV SPAWN **********
-//=========================================================
-void CDeadHEV::Spawn()
-{
-	PRECACHE_MODEL("models/player.mdl");
-	SET_MODEL(ENT(pev), "models/player.mdl");
-
-	pev->effects = 0;
-	pev->yaw_speed = 8;
-	pev->sequence = 0;
-	pev->body = 1;
-	m_bloodColor = BLOOD_COLOR_RED;
-
-	pev->sequence = LookupSequence(m_szPoses[m_iPose]);
-
-	if (pev->sequence == -1)
-	{
-		ALERT(at_debug, "Dead hevsuit with bad pose\n");
-		pev->sequence = 0;
-		pev->effects = EF_BRIGHTFIELD;
-	}
-
-	// Corpses have less health
-	pev->health = 8;
-
-	MonsterInitDead();
-}
-
-
-class CStripWeapons : public CPointEntity
-{
-public:
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	bool KeyValue(KeyValueData* pkvd) override;
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	static TYPEDESCRIPTION m_SaveData[];
-
-private:
-	//	int m_iAmmo[MAX_WEAPONS];
-	int m_i9mm;
-	int m_i357;
-	int m_iBuck;
-	int m_iBolt;
-	int m_iARGren;
-	int m_iRock;
-	int m_iUranium;
-	int m_iSatchel;
-	int m_iSnark;
-	int m_iTrip;
-	int m_iGren;
-	int m_iHornet;
-};
-
-LINK_ENTITY_TO_CLASS(player_weaponstrip, CStripWeapons);
-
-TYPEDESCRIPTION CStripWeapons::m_SaveData[] =
-	{
-		DEFINE_FIELD(CStripWeapons, m_i9mm, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_i357, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iBuck, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iBolt, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iARGren, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iRock, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iUranium, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iSatchel, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iSnark, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iTrip, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iGren, FIELD_INTEGER),
-		DEFINE_FIELD(CStripWeapons, m_iHornet, FIELD_INTEGER),
-};
-
-IMPLEMENT_SAVERESTORE(CStripWeapons, CPointEntity);
-
-bool CStripWeapons::KeyValue(KeyValueData* pkvd)
-{
-	if (FStrEq(pkvd->szKeyName, "bullets"))
-	{
-		m_i9mm = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "magnum"))
-	{
-		m_i357 = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "shotgun"))
-	{
-		m_iBuck = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "crossbow"))
-	{
-		m_iBolt = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "argrenades"))
-	{
-		m_iARGren = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "rockets"))
-	{
-		m_iRock = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "uranium"))
-	{
-		m_iUranium = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "satchels"))
-	{
-		m_iSatchel = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "snarks"))
-	{
-		m_iSnark = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "tripmines"))
-	{
-		m_iTrip = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "handgrenades"))
-	{
-		m_iGren = atoi(pkvd->szValue);
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "hornetgun"))
-	{
-		m_iHornet = atoi(pkvd->szValue);
-		return true;
-	}
-	return CBaseEntity::KeyValue(pkvd);
-}
-
-void CStripWeapons::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
-{
-	CBasePlayer* pPlayer = NULL;
-
-	if (pActivator && pActivator->IsPlayer())
-	{
-		pPlayer = (CBasePlayer*)pActivator;
-	}
-	else if (!g_pGameRules->IsDeathmatch())
-	{
-		pPlayer = (CBasePlayer*)UTIL_GetLocalPlayer();
-	}
-
-	if (pPlayer)
-	{
-		pPlayer->RemoveItems(pev->spawnflags, m_i9mm, m_i357, m_iBuck, m_iBolt,
-			m_iARGren, m_iRock, m_iUranium, m_iSatchel, m_iSnark, m_iTrip, m_iGren, m_iHornet);
-		//		pPlayer->RemoveAllItems( false );
-	}
-}
-
-
-class CRevertSaved : public CPointEntity
-{
-public:
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	void EXPORT MessageThink();
-	void EXPORT LoadThink();
-	bool KeyValue(KeyValueData* pkvd) override;
-
-	bool Save(CSave& save) override;
-	bool Restore(CRestore& restore) override;
-	static TYPEDESCRIPTION m_SaveData[];
-
-	inline float Duration() { return pev->dmg_take; }
-	inline float HoldTime() { return pev->dmg_save; }
-	inline float MessageTime() { return m_messageTime; }
-	inline float LoadTime() { return m_loadTime; }
-
-	inline void SetDuration(float duration) { pev->dmg_take = duration; }
-	inline void SetHoldTime(float hold) { pev->dmg_save = hold; }
-	inline void SetMessageTime(float time) { m_messageTime = time; }
-	inline void SetLoadTime(float time) { m_loadTime = time; }
-
-private:
-	float m_messageTime;
-	float m_loadTime;
-};
-
-LINK_ENTITY_TO_CLASS(player_loadsaved, CRevertSaved);
-
-TYPEDESCRIPTION CRevertSaved::m_SaveData[] =
-	{
-		DEFINE_FIELD(CRevertSaved, m_messageTime, FIELD_FLOAT), // These are not actual times, but durations, so save as floats
-		DEFINE_FIELD(CRevertSaved, m_loadTime, FIELD_FLOAT),
-};
-
-IMPLEMENT_SAVERESTORE(CRevertSaved, CPointEntity);
-
-bool CRevertSaved::KeyValue(KeyValueData* pkvd)
-{
-	if (FStrEq(pkvd->szKeyName, "duration"))
-	{
-		SetDuration(atof(pkvd->szValue));
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "holdtime"))
-	{
-		SetHoldTime(atof(pkvd->szValue));
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "messagetime"))
-	{
-		SetMessageTime(atof(pkvd->szValue));
-		return true;
-	}
-	else if (FStrEq(pkvd->szKeyName, "loadtime"))
-	{
-		SetLoadTime(atof(pkvd->szValue));
-		return true;
-	}
-
-	return CPointEntity::KeyValue(pkvd);
-}
-
-void CRevertSaved::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
-{
-	UTIL_ScreenFadeAll(pev->rendercolor, Duration(), HoldTime(), pev->renderamt, FFADE_OUT);
-	SetNextThink(MessageTime());
-	SetThink(&CRevertSaved::MessageThink);
-}
-
-
-void CRevertSaved::MessageThink()
-{
-	UTIL_ShowMessageAll(STRING(pev->message));
-	float nextThink = LoadTime() - MessageTime();
-	if (nextThink > 0)
-	{
-		SetNextThink(nextThink);
-		SetThink(&CRevertSaved::LoadThink);
-	}
-	else
-		LoadThink();
-}
-
-
-void CRevertSaved::LoadThink()
-{
-	if (0 == gpGlobals->deathmatch)
-	{
-		SERVER_COMMAND("reload\n");
-	}
-}
-
-//=========================================================
-// Trigger to disable a player
-//=========================================================
-#define SF_FREEZE_LOCUS 1
-#define SF_DONTFREEZE 2
-#define SF_ACTIVE 0x800000
-
-class CPlayerFreeze : public CBaseDelay
-{
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	void Think() override;
-	STATE GetState() override { return pev->spawnflags & SF_ACTIVE ? STATE_ON : STATE_OFF; }
-};
-
-void CPlayerFreeze::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
-{
-	if (!(pev->spawnflags & SF_FREEZE_LOCUS))
-	{
-		pActivator = UTIL_FindEntityByClassname(NULL, "player");
-	}
-
-	float turnSpeed = 1E6;
-
-	if (pActivator && pActivator->pev->flags & FL_CLIENT)
-	{
-		//		if (!ShouldToggle(useType, pActivator->pev->flags & FL_FROZEN))
-		//			return;
-
-		if ((pev->spawnflags & SF_ACTIVE && useType == USE_TOGGLE) || useType == USE_OFF)
-		{
-			// unfreeze him
-			if (!(pev->spawnflags & SF_DONTFREEZE))
-			{
-				((CBasePlayer*)((CBaseEntity*)pActivator))->EnableControl(true);
-				m_hActivator = NULL;
-				DontThink();
-			}
-
-			//unclamp his view
-			MESSAGE_BEGIN(MSG_ONE, gmsgClampView, NULL, pActivator->pev);
-			WRITE_SHORT(0);
-			WRITE_SHORT(360);
-			WRITE_BYTE(0);
-			WRITE_BYTE(255);
-			WRITE_LONG(*(long*)&turnSpeed);
-			MESSAGE_END();
-
-			pev->spawnflags &= ~SF_ACTIVE;
-		}
-		else if ((!(pev->spawnflags & SF_ACTIVE) && useType == USE_TOGGLE) || useType == USE_ON)
-		{
-			// freeze him
-			if (!(pev->spawnflags & SF_DONTFREEZE))
-			{
-				((CBasePlayer*)((CBaseEntity*)pActivator))->EnableControl(false);
-			}
-
-			float yawRange = CalcLocus_Number(pActivator, STRING(pev->noise));
-			float pitchUpRange = CalcLocus_Number(pActivator, STRING(pev->noise1));
-			float pitchDownRange;
-			if (FStringNull(pev->noise2))
-				pitchDownRange = pitchUpRange;
-			else
-				pitchDownRange = CalcLocus_Number(pActivator, STRING(pev->noise2));
-
-			if (yawRange < 360 || pitchUpRange < 90 || pitchDownRange < 90)
-			{
-				Vector clampTargetDir = CalcLocus_Velocity(this, pActivator, STRING(pev->netname));
-				Vector clampTargetAngle = UTIL_VecToAngles(clampTargetDir);
-
-				if (!FStringNull(pev->noise3))
-					turnSpeed = CalcLocus_Number(pActivator, STRING(pev->noise3));
-
-				// clamp max values
-				if (yawRange > 360)
-					yawRange = 360;
-				if (pitchUpRange > 90)
-					pitchUpRange = 90;
-				if (pitchDownRange > 90)
-					pitchDownRange = 90;
-
-				if (clampTargetAngle.x > 90)
-					clampTargetAngle.x -= 360;
-
-				float minYaw = clampTargetAngle.y - yawRange / 2;
-				float maxYaw = clampTargetAngle.y + yawRange / 2;
-				// this is viewangle pitch, so up is negative
-				float minPitch = -clampTargetAngle.x + pitchDownRange;
-				float maxPitch = -clampTargetAngle.x - pitchUpRange;
-
-				while (minYaw < 0)
-				{
-					minYaw += 360;
-					maxYaw += 360;
-				}
-
-				//clamp the view
-				MESSAGE_BEGIN(MSG_ONE, gmsgClampView, NULL, pActivator->pev);
-				WRITE_SHORT(minYaw);
-				WRITE_SHORT(maxYaw);
-				WRITE_BYTE(minPitch + 128);
-				WRITE_BYTE(maxPitch + 128);
-				WRITE_LONG(*(long*)&turnSpeed);
-				MESSAGE_END();
-			}
-			else
-			{
-				//unclamp the view
-				MESSAGE_BEGIN(MSG_ONE, gmsgClampView, NULL, pActivator->pev);
-				WRITE_SHORT(0);
-				WRITE_SHORT(360);
-				WRITE_BYTE(0);
-				WRITE_BYTE(255);
-				WRITE_LONG(*(long*)&turnSpeed);
-				MESSAGE_END();
-			}
-
-			pev->spawnflags |= SF_ACTIVE;
-
-			if (m_flDelay)
-			{
-				m_hActivator = pActivator;
-				SetNextThink(m_flDelay);
-			}
-		}
-	}
-}
-
-void CPlayerFreeze::Think()
-{
-	Use(m_hActivator, this, USE_ON, 0);
-}
-
-LINK_ENTITY_TO_CLASS(player_freeze, CPlayerFreeze);
-
-//==========================================================
-// player marker for right mirroring a player in env_mirror
-//==========================================================
-
-class CPlayerMarker : public CBaseEntity
-{
-public:
-	void Spawn() override;
-	void Precache() override;
-};
-
-LINK_ENTITY_TO_CLASS(player_marker, CPlayerMarker);
-
-void CPlayerMarker ::Spawn(void)
-{
-	Precache();
-	SET_MODEL(ENT(pev), "models/null.mdl");
-	ALERT(at_aiconsole, "DEBUG: Player_marker coordinates is %f %f %f \n", pev->origin.x, pev->origin.y, pev->origin.z);
-}
-
-void CPlayerMarker ::Precache(void)
-{
-	PRECACHE_MODEL("models/null.mdl");
-}
-
-//=========================================================
-// Multiplayer intermission spots.
-//=========================================================
-class CInfoIntermission : public CPointEntity
-{
-	void Spawn() override;
-	void Think() override;
-};
-
-void CInfoIntermission::Spawn()
-{
-	UTIL_SetOrigin(this, pev->origin);
-	pev->solid = SOLID_NOT;
-	pev->effects = EF_NODRAW;
-	pev->v_angle = g_vecZero;
-
-	SetNextThink(2); // let targets spawn!
-}
-
-void CInfoIntermission::Think()
-{
-	CBaseEntity* pTarget;
-
-	// find my target
-	pTarget = UTIL_FindEntityByTargetname(NULL, STRING(pev->target));
-
-	if (pTarget)
-	{
-		pev->v_angle = UTIL_VecToAngles((pTarget->pev->origin - pev->origin).Normalize());
-		pev->v_angle.x = -pev->v_angle.x;
-	}
-}
-
-LINK_ENTITY_TO_CLASS(info_intermission, CInfoIntermission);
-
-
-//==============================================================
-// Hud sprite displayer
-//==============================================================
-#define SF_HUDSPR_ACTIVE 1
-
-class CHudSprite : public CBaseEntity
-{
-	void Spawn() override;
-	void Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value) override;
-	STATE GetState() override { return pev->spawnflags & SF_HUDSPR_ACTIVE ? STATE_ON : STATE_OFF; }
-	void Think() override;
-};
-
-void CHudSprite::Spawn()
-{
-	//LRC 1.8
-	// We can't keep a hud.txt spritename in pev->model, because on loading a saved game, it
-	// tries to precache it as though it was a model file. (And crashes.)
-	// So now we keep them in pev->message... but for backwards compatibility,
-	// transfer the "model" field into "message", and clear model.
-	if (FStringNull(pev->message))
-	{
-		pev->message = pev->model;
-		pev->model = 0;
-	}
-
-	if (FStringNull(pev->targetname))
-	{
-		pev->spawnflags |= SF_HUDSPR_ACTIVE;
-	}
-
-	if (pev->spawnflags & SF_HUDSPR_ACTIVE)
-	{
-		SetNextThink(2);
-	}
-}
-
-void CHudSprite::Think()
-{
-	Use(this, this, USE_ON, 0);
-}
-
-void CHudSprite::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
-{
-	if (!pActivator || !pActivator->IsPlayer())
-	{
-		pActivator = CBaseEntity::Instance(g_engfuncs.pfnPEntityOfEntIndex(1));
-	}
-
-	if (ShouldToggle(useType))
-	{
-		if (pev->spawnflags & SF_HUDSPR_ACTIVE)
-			pev->spawnflags &= ~SF_HUDSPR_ACTIVE;
-		else
-			pev->spawnflags |= SF_HUDSPR_ACTIVE;
-	}
-
-	//		byte   : true = ENABLE icon, false = DISABLE icon
-	//		string : the sprite name to display
-	//		byte   : red
-	//		byte   : green
-	//		byte   : blue
-	MESSAGE_BEGIN(MSG_ONE, gmsgStatusIcon, NULL, pActivator->pev);
-	WRITE_BYTE(pev->spawnflags & SF_HUDSPR_ACTIVE);
-	WRITE_STRING(STRING(pev->message));
-	WRITE_BYTE(pev->rendercolor.x);
-	WRITE_BYTE(pev->rendercolor.y);
-	WRITE_BYTE(pev->rendercolor.z);
-	MESSAGE_END();
-}
-
-LINK_ENTITY_TO_CLASS(hud_sprite, CHudSprite);
