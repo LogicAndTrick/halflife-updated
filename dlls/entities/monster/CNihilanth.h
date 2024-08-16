@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 #include "entities/env/CSprite.h"
 
 #define N_SCALE 15

@@ -14,7 +14,6 @@
 ****/
 
 #include "CBarney.h"
-#include "defaultai.h"
 #include "soundent.h"
 #include "weapons.h"
 

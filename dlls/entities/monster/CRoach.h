@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 #define ROACH_IDLE 0
 #define ROACH_BORED 1

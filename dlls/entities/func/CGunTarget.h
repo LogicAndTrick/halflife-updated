@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "entities/monster/CBaseMonster.h"
 
 #define FGUNTARGET_START_ON 0x0001
 

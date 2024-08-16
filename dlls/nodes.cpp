@@ -27,7 +27,7 @@
 #include "animation.h"
 #include "entities/func/CBaseDoor.h"
 #include "filesystem_utils.h"
-#include "entities/CBaseMonster.h"
+#include "entities/monster/CBaseMonster.h"
 #include "entities/CCorpse.h"
 
 #define HULL_STEP_SIZE 16 // how far the test hull moves on each step

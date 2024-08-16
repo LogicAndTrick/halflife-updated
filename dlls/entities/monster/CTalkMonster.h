@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 #define TALKRANGE_MIN 500.0 // don't talk to anyone farther away than this
 

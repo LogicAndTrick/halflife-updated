@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 #define FLYING_AE_FLAP (8)
 #define FLYING_AE_FLAPSOUND (9)

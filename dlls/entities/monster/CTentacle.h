@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 #define ACT_T_IDLE 1010
 #define ACT_T_TAP 1020

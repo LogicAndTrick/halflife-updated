@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "entities/monster/CBaseMonster.h"
 #include "pm_materials.h"
 
 /* MOVEMENT */

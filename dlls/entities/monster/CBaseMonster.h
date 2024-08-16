@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "CBaseToggle.h"
+#include "entities/CBaseToggle.h"
 #include "soundent.h"
 #include "weapons.h"
 #include "skill.h"
@@ -505,3 +505,26 @@ public:
 		return true;
 	}
 };
+
+/* DEFAULT AI SCHEDULES */
+
+extern Schedule_t slFail[];
+extern Schedule_t slIdleStand[];
+extern Schedule_t slIdleTrigger[];
+extern Schedule_t slIdleWalk[];
+extern Schedule_t slWakeAngry[];
+extern Schedule_t slAlertFace[];
+extern Schedule_t slAlertStand[];
+extern Schedule_t slCombatStand[];
+extern Schedule_t slCombatFace[];
+extern Schedule_t slReload[];
+extern Schedule_t slRangeAttack1[];
+extern Schedule_t slRangeAttack2[];
+extern Schedule_t slTakeCoverFromBestSound[];
+extern Schedule_t slMeleeAttack[];
+extern Schedule_t slSmallFlinch[];
+extern Schedule_t slDie[];
+extern Schedule_t slError[];
+extern Schedule_t slWalkToScript[];
+extern Schedule_t slRunToScript[];
+extern Schedule_t slWaitScript[];

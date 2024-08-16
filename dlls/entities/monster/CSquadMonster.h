@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 //=========================================================
 // CSquadMonster - all the extra data for monsters that

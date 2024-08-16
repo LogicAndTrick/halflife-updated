@@ -15,7 +15,6 @@
 
 #include "CTalkMonster.h"
 #include "animation.h"
-#include "defaultai.h"
 #include "entities/monster/CCineMonster.h"
 #include "scriptevent.h"
 #include "soundent.h"

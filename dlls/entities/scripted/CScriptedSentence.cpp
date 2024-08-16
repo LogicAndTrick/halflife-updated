@@ -14,7 +14,7 @@
  ****/
 
 #include "CScriptedSentence.h"
-#include "entities/CBaseMonster.h"
+#include "entities/monster/CBaseMonster.h"
 #include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(scripted_sentence, CScriptedSentence);

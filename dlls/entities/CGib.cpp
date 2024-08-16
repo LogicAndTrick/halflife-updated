@@ -14,8 +14,7 @@
  ****/
 
 #include "CGib.h"
-
-#include "CBaseMonster.h"
+#include "entities/monster/CBaseMonster.h"
 #include "soundent.h"
 #include "studio.h"
 #include "func/CBreakable.h"

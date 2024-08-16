@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 // Monstermaker spawnflags
 #define SF_MONSTERMAKER_START_ON 1		 // start active ( if has targetname )

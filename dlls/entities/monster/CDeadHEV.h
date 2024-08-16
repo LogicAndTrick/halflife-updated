@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 // Dead HEV suit prop
 // LRC- i.e. the dead blokes you see in Xen.

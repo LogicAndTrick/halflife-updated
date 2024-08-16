@@ -1,28 +1,20 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   This source code contains proprietary and confidential information of
-*   Valve LLC and its suppliers.  Access to this code is restricted to
-*   persons who have executed a written SDK license with Valve.  Any access,
-*   use or distribution of this code by or to any unlicensed person is illegal.
-*
-****/
-//=========================================================
-// Default behaviors.
-//=========================================================
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "schedule.h"
-#include "defaultai.h"
-#include "soundent.h"
-#include "entities/monster/CCineMonster.h"
-#include "entities/CBaseMonster.h"
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
+
+#include "CBaseMonster.h"
+#include "CCineMonster.h"
 
 //=========================================================
 // Fail
@@ -727,7 +719,7 @@ Schedule_t slError[] =
 			"Error"},
 };
 
-//LRC
+// LRC
 Task_t tlScriptedTeleport[] =
 	{
 		{TASK_PLANT_ON_SCRIPT, (float)0},
@@ -736,7 +728,7 @@ Task_t tlScriptedTeleport[] =
 		{TASK_END_SCRIPT, (float)0},
 };
 
-//LRC
+// LRC
 Schedule_t slTeleportToScript[] =
 	{
 		{tlScriptedTeleport,
@@ -952,7 +944,7 @@ Schedule_t* CBaseMonster::m_scheduleList[] =
 		slRunToScript,
 		slWaitScript,
 		slFaceScript,
-	    slTeleportToScript,
+		slTeleportToScript,
 		slCower,
 		slTakeCoverFromOrigin,
 		slTakeCoverFromBestSound,
@@ -963,7 +955,6 @@ Schedule_t* CBaseMonster::ScheduleFromName(const char* pName)
 {
 	return ScheduleInList(pName, m_scheduleList, ARRAYSIZE(m_scheduleList));
 }
-
 
 Schedule_t* CBaseMonster::ScheduleInList(const char* pName, Schedule_t** pList, int listCount)
 {
@@ -1171,4 +1162,430 @@ Schedule_t* CBaseMonster::GetScheduleOfType(int Type)
 	}
 
 	return NULL;
+}
+
+//=========================================================
+// GetSchedule - Decides which type of schedule best suits
+// the monster's current state and conditions. Then calls
+// monster's member function to get a pointer to a schedule
+// of the proper type.
+//=========================================================
+Schedule_t* CBaseMonster::GetSchedule()
+{
+	switch (m_MonsterState)
+	{
+	case MONSTERSTATE_PRONE:
+	{
+		return GetScheduleOfType(SCHED_BARNACLE_VICTIM_GRAB);
+		break;
+	}
+	case MONSTERSTATE_NONE:
+	{
+		ALERT(at_aiconsole, "MONSTERSTATE IS NONE!\n");
+		break;
+	}
+	case MONSTERSTATE_IDLE:
+	{
+		if (HasConditions(bits_COND_HEAR_SOUND))
+		{
+			return GetScheduleOfType(SCHED_ALERT_FACE);
+		}
+		else if (FRouteClear())
+		{
+			// no valid route!
+			return GetScheduleOfType(SCHED_IDLE_STAND);
+		}
+		else
+		{
+			// valid route. Get moving
+			return GetScheduleOfType(SCHED_IDLE_WALK);
+		}
+		break;
+	}
+	case MONSTERSTATE_ALERT:
+	{
+		if (HasConditions(bits_COND_ENEMY_DEAD) && LookupActivity(ACT_VICTORY_DANCE) != ACTIVITY_NOT_AVAILABLE)
+		{
+			return GetScheduleOfType(SCHED_VICTORY_DANCE);
+		}
+
+		if (HasConditions(bits_COND_LIGHT_DAMAGE | bits_COND_HEAVY_DAMAGE))
+		{
+			if (fabs(FlYawDiff()) < (1.0 - m_flFieldOfView) * 60) // roughly in the correct direction
+			{
+				return GetScheduleOfType(SCHED_TAKE_COVER_FROM_ORIGIN);
+			}
+			else
+			{
+				return GetScheduleOfType(SCHED_ALERT_SMALL_FLINCH);
+			}
+		}
+
+		else if (HasConditions(bits_COND_HEAR_SOUND))
+		{
+			return GetScheduleOfType(SCHED_ALERT_FACE);
+		}
+		else
+		{
+			return GetScheduleOfType(SCHED_ALERT_STAND);
+		}
+		break;
+	}
+	case MONSTERSTATE_COMBAT:
+	{
+		if (HasConditions(bits_COND_ENEMY_DEAD))
+		{
+			// clear the current (dead) enemy and try to find another.
+			m_hEnemy = NULL;
+
+			if (GetEnemy())
+			{
+				ClearConditions(bits_COND_ENEMY_DEAD);
+				return GetSchedule();
+			}
+			else
+			{
+				SetState(MONSTERSTATE_ALERT);
+				return GetSchedule();
+			}
+		}
+
+		if (HasConditions(bits_COND_NEW_ENEMY))
+		{
+			return GetScheduleOfType(SCHED_WAKE_ANGRY);
+		}
+		else if (HasConditions(bits_COND_LIGHT_DAMAGE) && !HasMemory(bits_MEMORY_FLINCHED))
+		{
+			return GetScheduleOfType(SCHED_SMALL_FLINCH);
+		}
+		else if (!HasConditions(bits_COND_SEE_ENEMY))
+		{
+			// we can't see the enemy
+			if (!HasConditions(bits_COND_ENEMY_OCCLUDED))
+			{
+				// enemy is unseen, but not occluded!
+				// turn to face enemy
+				return GetScheduleOfType(SCHED_COMBAT_FACE);
+			}
+			else
+			{
+				// chase!
+				return GetScheduleOfType(SCHED_CHASE_ENEMY);
+			}
+		}
+		else
+		{
+			// we can see the enemy
+			if (HasConditions(bits_COND_CAN_RANGE_ATTACK1))
+			{
+				return GetScheduleOfType(SCHED_RANGE_ATTACK1);
+			}
+			if (HasConditions(bits_COND_CAN_RANGE_ATTACK2))
+			{
+				return GetScheduleOfType(SCHED_RANGE_ATTACK2);
+			}
+			if (HasConditions(bits_COND_CAN_MELEE_ATTACK1))
+			{
+				return GetScheduleOfType(SCHED_MELEE_ATTACK1);
+			}
+			if (HasConditions(bits_COND_CAN_MELEE_ATTACK2))
+			{
+				return GetScheduleOfType(SCHED_MELEE_ATTACK2);
+			}
+			if (!HasConditions(bits_COND_CAN_RANGE_ATTACK1 | bits_COND_CAN_MELEE_ATTACK1))
+			{
+				// if we can see enemy but can't use either attack type, we must need to get closer to enemy
+				return GetScheduleOfType(SCHED_CHASE_ENEMY);
+			}
+			else if (!FacingIdeal())
+			{
+				// turn
+				return GetScheduleOfType(SCHED_COMBAT_FACE);
+			}
+			else
+			{
+				ALERT(at_aiconsole, "No suitable combat schedule!\n");
+			}
+		}
+		break;
+	}
+	case MONSTERSTATE_DEAD:
+	{
+		return GetScheduleOfType(SCHED_DIE);
+		break;
+	}
+	case MONSTERSTATE_SCRIPT:
+	{
+		ASSERT(m_pCine != NULL);
+		if (!m_pCine)
+		{
+			ALERT(at_aiconsole, "Script failed for %s\n", STRING(pev->classname));
+			//				ALERT( at_console, "Script failed for %s\n", STRING(pev->classname) );
+			CineCleanup();
+			return GetScheduleOfType(SCHED_IDLE_STAND);
+		}
+
+		return GetScheduleOfType(SCHED_AISCRIPT);
+	}
+	default:
+	{
+		ALERT(at_aiconsole, "Invalid State for GetSchedule!\n");
+		break;
+	}
+	}
+
+	return &slError[0];
+}
+
+//=========================================================
+// MaintainSchedule - does all the per-think schedule maintenance.
+// ensures that the monster leaves this function with a valid
+// schedule!
+//=========================================================
+void CBaseMonster::MaintainSchedule()
+{
+	Schedule_t* pNewSchedule;
+	int i;
+
+	// UNDONE: Tune/fix this 10... This is just here so infinite loops are impossible
+	for (i = 0; i < 10; i++)
+	{
+		if (m_pSchedule != NULL && TaskIsComplete())
+		{
+			NextScheduledTask();
+		}
+
+		// validate existing schedule
+		if (!FScheduleValid() || m_MonsterState != m_IdealMonsterState)
+		{
+			// if we come into this block of code, the schedule is going to have to be changed.
+			// if the previous schedule was interrupted by a condition, GetIdealState will be
+			// called. Else, a schedule finished normally.
+
+			// Notify the monster that his schedule is changing
+			ScheduleChange();
+
+			// Call GetIdealState if we're not dead and one or more of the following...
+			// - in COMBAT state with no enemy (it died?)
+			// - conditions bits (excluding SCHEDULE_DONE) indicate interruption,
+			// - schedule is done but schedule indicates it wants GetIdealState called
+			//   after successful completion (by setting bits_COND_SCHEDULE_DONE in iInterruptMask)
+			// DEAD & SCRIPT are not suggestions, they are commands!
+			if (m_IdealMonsterState != MONSTERSTATE_DEAD &&
+				(m_IdealMonsterState != MONSTERSTATE_SCRIPT || m_IdealMonsterState == m_MonsterState))
+			{
+				// if we're here, then either we're being told to do something (besides dying or playing a script)
+				// or our current schedule (besides dying) is invalid. -- LRC
+				if ((0 != m_afConditions && !HasConditions(bits_COND_SCHEDULE_DONE)) ||
+					(m_pSchedule && (m_pSchedule->iInterruptMask & bits_COND_SCHEDULE_DONE) != 0) ||
+					((m_MonsterState == MONSTERSTATE_COMBAT) && (m_hEnemy == NULL)))
+				{
+					GetIdealState();
+				}
+			}
+			if (HasConditions(bits_COND_TASK_FAILED) && m_MonsterState == m_IdealMonsterState)
+			{
+				if (m_failSchedule != SCHED_NONE)
+					pNewSchedule = GetScheduleOfType(m_failSchedule);
+				else
+					pNewSchedule = GetScheduleOfType(SCHED_FAIL);
+				// schedule was invalid because the current task failed to start or complete
+				ALERT(at_aiconsole, "Schedule Failed at %d!\n", m_iScheduleIndex);
+				ChangeSchedule(pNewSchedule);
+			}
+			else
+			{
+				SetState(m_IdealMonsterState);
+				if (m_MonsterState == MONSTERSTATE_SCRIPT || m_MonsterState == MONSTERSTATE_DEAD)
+					pNewSchedule = CBaseMonster::GetSchedule();
+				else
+					pNewSchedule = GetSchedule();
+				ChangeSchedule(pNewSchedule);
+			}
+		}
+
+		if (m_iTaskStatus == TASKSTATUS_NEW)
+		{
+			Task_t* pTask = GetTask();
+			ASSERT(pTask != NULL);
+			TaskBegin();
+			StartTask(pTask);
+		}
+
+		// UNDONE: Twice?!!!
+		if (m_Activity != m_IdealActivity)
+		{
+			SetActivity(m_IdealActivity);
+		}
+
+		if (!TaskIsComplete() && m_iTaskStatus != TASKSTATUS_NEW)
+			break;
+	}
+
+	if (TaskIsRunning())
+	{
+		Task_t* pTask = GetTask();
+		ASSERT(pTask != NULL);
+		RunTask(pTask);
+	}
+
+	// UNDONE: We have to do this so that we have an animation set to blend to if RunTask changes the animation
+	// RunTask() will always change animations at the end of a script!
+	// Don't do this twice
+	if (m_Activity != m_IdealActivity)
+	{
+		SetActivity(m_IdealActivity);
+	}
+}
+
+//=========================================================
+// ClearSchedule - blanks out the caller's schedule pointer
+// and index.
+//=========================================================
+void CBaseMonster::ClearSchedule()
+{
+	m_iTaskStatus = TASKSTATUS_NEW;
+	m_pSchedule = NULL;
+	m_iScheduleIndex = 0;
+}
+
+//=========================================================
+// IScheduleFlags - returns an integer with all Conditions
+// bits that are currently set and also set in the current
+// schedule's Interrupt mask.
+//=========================================================
+int CBaseMonster::IScheduleFlags()
+{
+	if (!m_pSchedule)
+	{
+		return 0;
+	}
+
+	// strip off all bits excepts the ones capable of breaking this schedule.
+	return m_afConditions & m_pSchedule->iInterruptMask;
+}
+
+//=========================================================
+// FHaveSchedule - Returns true if monster's m_pSchedule
+// is anything other than NULL.
+//=========================================================
+bool CBaseMonster::FHaveSchedule()
+{
+	if (m_pSchedule == NULL)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+//=========================================================
+// FScheduleDone - Returns true if the caller is on the
+// last task in the schedule
+//=========================================================
+bool CBaseMonster::FScheduleDone()
+{
+	ASSERT(m_pSchedule != NULL);
+
+	if (m_iScheduleIndex == m_pSchedule->cTasks)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+//=========================================================
+// FScheduleValid - returns true as long as the current
+// schedule is still the proper schedule to be executing,
+// taking into account all conditions
+//=========================================================
+bool CBaseMonster::FScheduleValid()
+{
+	if (m_pSchedule == NULL)
+	{
+		// schedule is empty, and therefore not valid.
+		return false;
+	}
+
+	if (HasConditions(m_pSchedule->iInterruptMask | bits_COND_SCHEDULE_DONE | bits_COND_TASK_FAILED))
+	{
+#ifdef DEBUG
+		if (HasConditions(bits_COND_TASK_FAILED) && m_failSchedule == SCHED_NONE)
+		{
+			// fail! Send a visual indicator.
+
+			Vector tmp = pev->origin;
+			tmp.z = pev->absmax.z + 16;
+			UTIL_Sparks(tmp);
+		}
+#endif // DEBUG
+
+		// some condition has interrupted the schedule, or the schedule is done
+		return false;
+	}
+
+	return true;
+}
+
+//=========================================================
+// ChangeSchedule - replaces the monster's schedule pointer
+// with the passed pointer, and sets the ScheduleIndex back
+// to 0
+//=========================================================
+void CBaseMonster::ChangeSchedule(Schedule_t* pNewSchedule)
+{
+	ASSERT(pNewSchedule != NULL);
+
+	m_pSchedule = pNewSchedule;
+	m_iScheduleIndex = 0;
+	m_iTaskStatus = TASKSTATUS_NEW;
+	m_afConditions = 0; // clear all of the conditions
+	m_failSchedule = SCHED_NONE;
+
+	if ((m_pSchedule->iInterruptMask & bits_COND_HEAR_SOUND) != 0 && (m_pSchedule->iSoundMask) == 0)
+	{
+		ALERT(at_aiconsole, "COND_HEAR_SOUND with no sound mask!\n");
+	}
+	else if (0 != m_pSchedule->iSoundMask && (m_pSchedule->iInterruptMask & bits_COND_HEAR_SOUND) == 0)
+	{
+		ALERT(at_aiconsole, "Sound mask without COND_HEAR_SOUND!\n");
+	}
+
+#if _DEBUG
+	if (!ScheduleFromName(pNewSchedule->pName))
+	{
+		ALERT(at_debug, "Schedule %s not in table!!!\n", pNewSchedule->pName);
+	}
+#endif
+
+// this is very useful code if you can isolate a test case in a level with a single monster. It will notify
+// you of every schedule selection the monster makes.
+#if 0
+	if ( FClassnameIs( pev, "monster_human_grunt" ) )
+	{
+		Task_t *pTask = GetTask();
+		
+		if ( pTask )
+		{
+			const char *pName = NULL;
+
+			if ( m_pSchedule )
+			{
+				pName = m_pSchedule->pName;
+			}
+			else
+			{
+				pName = "No Schedule";
+			}
+			
+			if ( !pName )
+			{
+				pName = "Unknown";
+			}
+
+			ALERT( at_aiconsole, "%s: picked schedule %s\n", STRING( pev->classname ), pName );
+		}
+	}
+#endif // 0
 }

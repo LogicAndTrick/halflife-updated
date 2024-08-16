@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 
 #define BARNACLE_BODY_HEIGHT 44 // how 'tall' the barnacle's model is.

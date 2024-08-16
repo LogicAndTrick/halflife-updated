@@ -14,8 +14,7 @@
  ****/
 
 #include "CBaseEntity.h"
-
-#include "CBaseMonster.h"
+#include "entities/monster/CBaseMonster.h"
 #include "CWorld.h"
 #include "decals.h"
 #include "movewith.h"

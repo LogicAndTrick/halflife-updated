@@ -15,7 +15,6 @@
 
 #include "CScientist.h"
 #include "schedule.h"
-#include "defaultai.h"
 #include "animation.h"
 #include "soundent.h"
 

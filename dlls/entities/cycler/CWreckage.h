@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "entities/monster/CBaseMonster.h"
 
 // Flaming Wreakage
 class CWreckage : public CBaseMonster

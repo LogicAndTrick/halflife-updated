@@ -14,8 +14,7 @@
  ****/
 
 #include "CTriggerOnSight.h"
-
-#include "entities/CBaseMonster.h"
+#include "entities/monster/CBaseMonster.h"
 
 LINK_ENTITY_TO_CLASS(trigger_onsight, CTriggerOnSight);
 

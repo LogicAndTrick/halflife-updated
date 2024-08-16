@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 //=========================================================
 // Furniture - this is the cool comment I cut-and-pasted

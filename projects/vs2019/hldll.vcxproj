@@ -117,7 +117,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\bmodels.cpp" />
     <ClCompile Include="..\..\dlls\cbase.cpp" />
     <ClCompile Include="..\..\dlls\client.cpp" />
-    <ClCompile Include="..\..\dlls\defaultai.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CBaseMutableAlias.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CInfoAlias.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CInfoGroup.cpp" />
@@ -138,7 +137,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\CBaseAnimating.cpp" />
     <ClCompile Include="..\..\dlls\entities\CBaseDelay.cpp" />
     <ClCompile Include="..\..\dlls\entities\CBaseEntity.cpp" />
-    <ClCompile Include="..\..\dlls\entities\CBaseMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\CBaseSpectator.cpp" />
     <ClCompile Include="..\..\dlls\entities\CBaseToggle.cpp" />
     <ClCompile Include="..\..\dlls\entities\CCorpse.cpp" />
@@ -272,6 +270,18 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CBabyCrab.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBarnacle.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBarney.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Schedule.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Think.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Task.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_SaveRestore.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Scripting.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_AI.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Combat.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Navigation.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Enemies.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Animation.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Positioning.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBaseTurret.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBigMomma.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBloater.cpp" />
@@ -322,13 +332,13 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Client.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Combat.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Flashlight.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Impulse.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Items.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Movement.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Multiplayer.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_SaveRestore.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Think.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer.cpp" />
-    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Impulse.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBloodSplat.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CPlayerFreeze.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CPlayerMarker.cpp" />
@@ -470,7 +480,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\cdll_dll.h" />
     <ClInclude Include="..\..\dlls\client.h" />
     <ClInclude Include="..\..\dlls\decals.h" />
-    <ClInclude Include="..\..\dlls\defaultai.h" />
     <ClInclude Include="..\..\dlls\enginecallback.h" />
     <ClInclude Include="..\..\dlls\entities\alias\CBaseMutableAlias.h" />
     <ClInclude Include="..\..\dlls\entities\alias\CInfoAlias.h" />
@@ -492,7 +501,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\CBaseAnimating.h" />
     <ClInclude Include="..\..\dlls\entities\CBaseDelay.h" />
     <ClInclude Include="..\..\dlls\entities\CBaseEntity.h" />
-    <ClInclude Include="..\..\dlls\entities\CBaseMonster.h" />
     <ClInclude Include="..\..\dlls\entities\CBaseSpectator.h" />
     <ClInclude Include="..\..\dlls\entities\CBaseToggle.h" />
     <ClInclude Include="..\..\dlls\entities\CCorpse.h" />
@@ -626,6 +634,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CBabyCrab.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBarnacle.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBarney.h" />
+    <ClInclude Include="..\..\dlls\entities\monster\CBaseMonster.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBaseTurret.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBigMomma.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBloater.h" />

@@ -14,7 +14,7 @@
  ****/
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 //=========================================================
 // GMan - misunderstood servant of the people

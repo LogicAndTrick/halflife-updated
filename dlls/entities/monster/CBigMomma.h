@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "entities/CBaseMonster.h"
+#include "CBaseMonster.h"
 
 // LRC brought in from animation.h
 #define ACTIVITY_NOT_AVAILABLE -1

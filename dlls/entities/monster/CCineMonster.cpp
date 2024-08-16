@@ -551,24 +551,6 @@ void CCineMonster::FixScriptMonsterSchedule(CBaseMonster* pMonster)
 	}
 }
 
-bool CBaseMonster::ExitScriptedSequence()
-{
-	if (pev->deadflag == DEAD_DYING)
-	{
-		// is this legal?
-		// BUGBUG -- This doesn't call Killed()
-		m_IdealMonsterState = MONSTERSTATE_DEAD;
-		return false;
-	}
-
-	if (m_pCine)
-	{
-		m_pCine->CancelScript();
-	}
-
-	return true;
-}
-
 void CCineMonster::AllowInterrupt(bool fAllow)
 {
 	if ((pev->spawnflags & SF_SCRIPT_NOINTERRUPT) != 0)
