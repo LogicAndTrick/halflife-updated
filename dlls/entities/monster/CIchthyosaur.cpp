@@ -285,9 +285,9 @@ void CIchthyosaur::SetYawSpeed()
 //=========================================================
 // Killed - overrides CFlyingMonster.
 //
-void CIchthyosaur::Killed(entvars_t* pevAttacker, int iGib)
+void CIchthyosaur::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
-	CBaseMonster::Killed(pevAttacker, iGib);
+	CBaseMonster::Killed(pevInflictor, pevAttacker, iGib);
 	pev->velocity = Vector(0, 0, 0);
 }
 

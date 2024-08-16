@@ -14,7 +14,6 @@
  ****/
 
 #include "CZombie.h"
-#include "monsters.h"
 #include "schedule.h"
 
 LINK_ENTITY_TO_CLASS(monster_zombie, CZombie);

@@ -827,7 +827,7 @@ void CBasePlayer::PackDeadPlayerItems()
 	RemoveAllItems(true); // now strip off everything that wasn't handled by the code above.
 }
 
-void CBasePlayer::Killed(entvars_t* pevAttacker, int iGib)
+void CBasePlayer::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	CSound* pSound;
 
@@ -838,7 +838,7 @@ void CBasePlayer::Killed(entvars_t* pevAttacker, int iGib)
 	m_pNextItem = NULL;
 #endif
 
-	g_pGameRules->PlayerKilled(this, pevAttacker, g_pevLastInflictor);
+	g_pGameRules->PlayerKilled(this, pevAttacker, pevInflictor);
 
 	if (m_pTank != NULL)
 	{

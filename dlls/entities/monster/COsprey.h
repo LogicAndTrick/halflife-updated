@@ -41,7 +41,7 @@ public:
 	void Precache() override;
 	int Classify() override { return CLASS_MACHINE; }
 	int BloodColor() override { return DONT_BLEED; }
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 
 	void UpdateGoal();
 	bool HasDead();

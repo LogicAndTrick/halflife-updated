@@ -16,7 +16,6 @@
 #pragma once
 
 #include "entities/CBaseMonster.h"
-#include "monsters.h"
 #include "entities/env/CBeam.h"
 #include "entities/env/CSprite.h"
 
@@ -73,7 +72,7 @@ public:
 
 	void PrescheduleThink() override;
 
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 	void DeathEffect();
 
 	void EyeOff();

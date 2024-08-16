@@ -1032,7 +1032,7 @@ Schedule_t* CAGrunt::GetScheduleOfType(int Type)
 	return CSquadMonster::GetScheduleOfType(Type);
 }
 
-void CAGrunt::Killed(entvars_t* pevAttacker, int iGib)
+void CAGrunt::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	if (pev->spawnflags & SF_MONSTER_NO_WPN_DROP)
 	{ // drop the hornetgun!
@@ -1046,5 +1046,5 @@ void CAGrunt::Killed(entvars_t* pevAttacker, int iGib)
 		DropItem("weapon_hornetgun", vecGunPos, vecGunAngles);
 	}
 
-	CBaseMonster::Killed(pevAttacker, iGib);
+	CBaseMonster::Killed(pevInflictor, pevAttacker, iGib);
 }

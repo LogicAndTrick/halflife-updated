@@ -14,7 +14,6 @@
  ****/
 
 #include "CScientist.h"
-#include "monsters.h"
 #include "schedule.h"
 #include "defaultai.h"
 #include "animation.h"
@@ -725,10 +724,10 @@ void CScientist::DeathSound()
 	PainSound();
 }
 
-void CScientist::Killed(entvars_t* pevAttacker, int iGib)
+void CScientist::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	SetUse(NULL);
-	CTalkMonster::Killed(pevAttacker, iGib);
+	CTalkMonster::Killed(pevInflictor, pevAttacker, iGib);
 }
 
 void CScientist::SetActivity(Activity newActivity)

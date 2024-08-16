@@ -42,7 +42,7 @@ public:
 	void AlertFlock();
 	void SpreadFlock();
 	void SpreadFlock2();
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 	void Poop();
 	bool FPathBlocked();
 	// bool KeyValue( KeyValueData *pkvd );

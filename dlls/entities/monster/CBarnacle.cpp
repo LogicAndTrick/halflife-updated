@@ -15,7 +15,6 @@
 
 #include "CBarnacle.h"
 #include "entities/CGib.h"
-#include "monsters.h"
 
 LINK_ENTITY_TO_CLASS(monster_barnacle, CBarnacle);
 
@@ -293,7 +292,7 @@ void CBarnacle::BarnacleThink()
 //=========================================================
 // Killed.
 //=========================================================
-void CBarnacle::Killed(entvars_t* pevAttacker, int iGib)
+void CBarnacle::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	CBaseMonster* pVictim;
 

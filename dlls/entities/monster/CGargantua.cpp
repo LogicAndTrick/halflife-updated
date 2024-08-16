@@ -652,12 +652,12 @@ void CGargantua::DeathEffect()
 	pSmoker->SetNextThink(2.5); // Start in 2.5 seconds
 }
 
-void CGargantua::Killed(entvars_t* pevAttacker, int iGib)
+void CGargantua::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	EyeOff();
 	UTIL_Remove(m_pEyeGlow);
 	m_pEyeGlow = NULL;
-	CBaseMonster::Killed(pevAttacker, GIB_NEVER);
+	CBaseMonster::Killed(pevInflictor, pevAttacker, GIB_NEVER);
 }
 
 //=========================================================

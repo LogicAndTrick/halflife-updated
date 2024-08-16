@@ -53,7 +53,7 @@ public:
 	void AlertSound() override;
 	void IdleSound() override;
 
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 
 	void StartTask(Task_t* pTask) override;
 	Schedule_t* GetSchedule() override;

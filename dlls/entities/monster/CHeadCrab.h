@@ -16,7 +16,6 @@
 #pragma once
 
 #include "entities/CBaseMonster.h"
-#include "monsters.h"
 #include "skill.h"
 
 //=========================================================

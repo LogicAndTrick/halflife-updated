@@ -614,7 +614,7 @@ void CBarney::TraceAttack(entvars_t* pevAttacker, float flDamage, Vector vecDir,
 }
 
 
-void CBarney::Killed(entvars_t* pevAttacker, int iGib)
+void CBarney::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	if (pev->body < m_iBaseBody + BARNEY_BODY_GUNGONE && !(pev->spawnflags & SF_MONSTER_NO_WPN_DROP))
 	{ // drop the gun!
@@ -633,7 +633,7 @@ void CBarney::Killed(entvars_t* pevAttacker, int iGib)
 	}
 
 	SetUse(NULL);
-	CTalkMonster::Killed(pevAttacker, iGib);
+	CTalkMonster::Killed(pevInflictor, pevAttacker, iGib);
 }
 
 //=========================================================

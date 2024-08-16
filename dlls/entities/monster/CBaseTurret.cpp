@@ -14,7 +14,6 @@
  ****/
 
 #include "CBaseTurret.h"
-#include "monsters.h"
 #include "weapons.h"
 
 TYPEDESCRIPTION CBaseTurret::m_SaveData[] =

@@ -36,7 +36,7 @@ class CTripmineGrenade : public CGrenade
 	void EXPORT PowerupThink();
 	void EXPORT BeamBreakThink();
 	void EXPORT DelayDeathThink();
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 
 	void MakeBeam();
 	void KillBeam();

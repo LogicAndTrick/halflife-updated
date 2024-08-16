@@ -15,7 +15,6 @@
 
 #include "CFuncTank.h"
 #include "entities/scripted/CTankSequence.h"
-#include "monsters.h"
 #include "movewith.h"
 #include "entities/player/CBasePlayer.h"
 

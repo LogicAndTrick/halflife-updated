@@ -109,7 +109,7 @@ public:
 	void Precache() override;
 	bool TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType) override;
 	void Touch(CBaseEntity* pOther) override;
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 	int IRelationship(CBaseEntity* pTarget) override;
 	bool CanPlaySentence(bool fDisregardState) override;
 

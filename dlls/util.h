@@ -239,6 +239,8 @@ extern float UTIL_AngleDiff(float destAngle, float srcAngle);
 extern Vector UTIL_AxisRotationToAngles(const Vector& vec, float angle); //LRC
 extern Vector UTIL_AxisRotationToVec(const Vector& vec, float angle);	 //LRC
 
+extern void UTIL_MoveToOrigin(edict_t* pent, const Vector& vecGoal, float flDist, int iMoveType);
+
 //LRC 1.8 - renamed CBaseAlias
 class CBaseMutableAlias;
 extern void UTIL_AddToAliasList(CBaseMutableAlias* pAlias);

@@ -14,7 +14,6 @@
  ****/
 
 #include "CNihilanth.h"
-#include "monsters.h"
 #include "weapons.h"
 #include "nodes.h"
 
@@ -243,9 +242,9 @@ void CNihilanth::StartupThink()
 	SetNextThink(0.1);
 }
 
-void CNihilanth::Killed(entvars_t* pevAttacker, int iGib)
+void CNihilanth::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
-	CBaseMonster::Killed(pevAttacker, iGib);
+	CBaseMonster::Killed(pevInflictor, pevAttacker, iGib);
 }
 
 void CNihilanth::DyingThink()

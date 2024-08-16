@@ -16,7 +16,6 @@
 #pragma once
 
 #include "CFlyingMonster.h"
-#include "monsters.h"
 #include "entities/env/CBeam.h"
 
 #define SEARCH_RETRY 16
@@ -51,7 +50,7 @@ public:
 	Schedule_t* GetSchedule() override;
 	Schedule_t* GetScheduleOfType(int Type) override;
 
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 	void BecomeDead() override;
 
 	void EXPORT CombatUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);

@@ -16,7 +16,6 @@
 #pragma once
 
 #include "CSquadMonster.h"
-#include "monsters.h"
 
 //=========================================================
 // Monster's Anim Events Go Here
@@ -78,7 +77,7 @@ public:
 	static const char* pDeathSounds[];
 
 	bool TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType) override;
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 	void GibMonster() override;
 
 	CSprite* m_pBall[2];   // hand balls

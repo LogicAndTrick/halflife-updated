@@ -14,7 +14,6 @@
  ****/
 
 #include "CHGrunt.h"
-#include "monsters.h"
 #include "schedule.h"
 #include "animation.h"
 #include "CTalkMonster.h"

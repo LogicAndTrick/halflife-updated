@@ -32,7 +32,7 @@ class CApache : public CBaseMonster
 	void Precache() override;
 	int Classify() override { return CLASS_HUMAN_MILITARY; }
 	int BloodColor() override { return DONT_BLEED; }
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 	void GibMonster() override;
 
 	void SetObjectCollisionBox() override

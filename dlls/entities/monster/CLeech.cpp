@@ -14,7 +14,6 @@
  ****/
 
 #include "CLeech.h"
-#include "monsters.h"
 
 LINK_ENTITY_TO_CLASS(monster_leech, CLeech);
 
@@ -554,7 +553,7 @@ void CLeech::SwimThink()
 	UpdateMotion();
 }
 
-void CLeech::Killed(entvars_t* pevAttacker, int iGib)
+void CLeech::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	Vector vecSplatDir;
 	TraceResult tr;

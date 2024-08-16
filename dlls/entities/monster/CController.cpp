@@ -101,7 +101,7 @@ bool CController::TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, fl
 	return CBaseMonster::TakeDamage(pevInflictor, pevAttacker, flDamage, bitsDamageType);
 }
 
-void CController::Killed(entvars_t* pevAttacker, int iGib)
+void CController::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	// shut off balls
 	/*
@@ -123,7 +123,7 @@ void CController::Killed(entvars_t* pevAttacker, int iGib)
 		m_pBall[1] = NULL;
 	}
 
-	CSquadMonster::Killed(pevAttacker, iGib);
+	CSquadMonster::Killed(pevInflictor, pevAttacker, iGib);
 }
 
 void CController::GibMonster()

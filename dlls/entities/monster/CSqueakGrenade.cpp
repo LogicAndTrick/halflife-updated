@@ -14,7 +14,6 @@
  ****/
 
 #include "CSqueakGrenade.h"
-#include "monsters.h"
 #include "weapons.h"
 #include "soundent.h"
 #include "gamerules.h"
@@ -111,7 +110,7 @@ void CSqueakGrenade::Precache()
 }
 
 
-void CSqueakGrenade::Killed(entvars_t* pevAttacker, int iGib)
+void CSqueakGrenade::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	pev->model = iStringNull; // make invisible
 	SetThink(&CSqueakGrenade::SUB_Remove);
@@ -139,7 +138,7 @@ void CSqueakGrenade::Killed(entvars_t* pevAttacker, int iGib)
 	if (m_hOwner != NULL)
 		pev->owner = m_hOwner->edict();
 
-	CBaseMonster::Killed(pevAttacker, GIB_ALWAYS);
+	CBaseMonster::Killed(pevInflictor, pevAttacker, GIB_ALWAYS);
 }
 
 void CSqueakGrenade::GibMonster()
@@ -168,7 +167,7 @@ void CSqueakGrenade::HuntThink()
 	{
 		g_vecAttackDir = pev->velocity.Normalize();
 		pev->health = -1;
-		Killed(pev, 0);
+		Killed(nullptr, pev, 0);
 		return;
 	}
 

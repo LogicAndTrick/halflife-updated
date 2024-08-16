@@ -128,7 +128,7 @@ void CApache::StartupUse(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE
 	SetUse(NULL);
 }
 
-void CApache::Killed(entvars_t* pevAttacker, int iGib)
+void CApache::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	pev->movetype = MOVETYPE_TOSS;
 	pev->gravity = 0.3;

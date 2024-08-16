@@ -50,7 +50,7 @@ void CAirtank::Precache()
 	PRECACHE_SOUND("doors/aliendoor3.wav");
 }
 
-void CAirtank::Killed(entvars_t* pevAttacker, int iGib)
+void CAirtank::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	pev->owner = ENT(pevAttacker);
 

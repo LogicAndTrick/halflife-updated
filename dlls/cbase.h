@@ -58,7 +58,6 @@ CBaseEntity
 #include "Platform.h"
 #include "saverestore.h"
 #include "schedule.h"
-#include "monsterevent.h"
 
 // C functions for external declarations that call the appropriate C++ methods
 
@@ -327,7 +326,7 @@ public:
 	virtual void TraceAttack(entvars_t* pevAttacker, float flDamage, Vector vecDir, TraceResult* ptr, int bitsDamageType);
 	virtual bool TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType);
 	virtual bool TakeHealth(float flHealth, int bitsDamageType);
-	virtual void Killed(entvars_t* pevAttacker, int iGib);
+	virtual void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib);
 	virtual int BloodColor() { return DONT_BLEED; }
 	virtual void TraceBleed(float flDamage, Vector vecDir, TraceResult* ptr, int bitsDamageType);
 	// LRC- superceded by GetState ( pActivator ).

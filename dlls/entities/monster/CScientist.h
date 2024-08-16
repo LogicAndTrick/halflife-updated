@@ -94,7 +94,7 @@ public:
 
 	void TalkInit();
 
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;

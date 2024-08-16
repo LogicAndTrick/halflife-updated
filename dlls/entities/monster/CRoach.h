@@ -41,7 +41,7 @@ public:
 	void Move(float flInterval) override;
 	void PickNewDest(int iCondition);
 	void EXPORT Touch(CBaseEntity* pOther) override;
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 
 	float m_flLastLightLevel;
 	float m_flNextSmellTime;

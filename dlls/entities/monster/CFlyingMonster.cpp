@@ -14,7 +14,6 @@
  ****/
 
 #include "CFlyingMonster.h"
-#include "monsters.h"
 
 int CFlyingMonster::CheckLocalMove(const Vector& vecStart, const Vector& vecEnd, CBaseEntity* pTarget, float* pflDist)
 {
@@ -108,13 +107,13 @@ float CFlyingMonster::ChangeYaw(int speed)
 	return CBaseMonster::ChangeYaw(speed);
 }
 
-void CFlyingMonster::Killed(entvars_t* pevAttacker, int iGib)
+void CFlyingMonster::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	pev->movetype = MOVETYPE_STEP;
 	ClearBits(pev->flags, FL_ONGROUND);
 	pev->angles.z = 0;
 	pev->angles.x = 0;
-	CBaseMonster::Killed(pevAttacker, iGib);
+	CBaseMonster::Killed(pevInflictor, pevAttacker, iGib);
 }
 
 void CFlyingMonster::HandleAnimEvent(MonsterEvent_t* pEvent)

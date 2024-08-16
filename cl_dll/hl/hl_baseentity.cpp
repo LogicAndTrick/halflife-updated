@@ -131,7 +131,7 @@ STATE CBaseToggle::GetState() { return STATE_ON; } //LRC
 void CGrenade::BounceSound() {}
 void CGrenade::Explode(Vector, Vector) {}
 void CGrenade::Explode(TraceResult*, int) {}
-void CGrenade::Killed(entvars_t*, int) {}
+void CGrenade::Killed(entvars_t* pevInflictor, entvars_t*, int) {}
 void CGrenade::Spawn() {}
 CGrenade* CGrenade::ShootTimed(entvars_t* pevOwner, Vector vecStart, Vector vecVelocity, float time) { return 0; }
 CGrenade* CGrenade::ShootContact(entvars_t* pevOwner, Vector vecStart, Vector vecVelocity) { return 0; }
@@ -247,7 +247,7 @@ void CBaseMonster::StartTask(Task_t* pTask) {}
 Schedule_t* CBaseMonster::ScheduleFromName(const char* pName) { return NULL; }
 void CBaseMonster::BecomeDead() {}
 void CBaseMonster::RunAI() {}
-void CBaseMonster::Killed(entvars_t* pevAttacker, int iGib) {}
+void CBaseMonster::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) {}
 bool CBaseMonster::TakeHealth(float flHealth, int bitsDamageType) { return false; }
 bool CBaseMonster::TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType) { return false; }
 bool CBaseMonster::Restore(class CRestore&) { return true; }

@@ -19,6 +19,7 @@
 #include "gamerules.h"
 #include "entities/player/CBasePlayer.h"
 #include "weapons.h"
+#include "../../../utils/vgui/include/VGUI.h"
 
 LINK_ENTITY_TO_CLASS(weapon_rpg, CRpg);
 
@@ -173,7 +174,7 @@ void CRpg::Holster()
 #ifndef CLIENT_DLL
 	if (m_pSpot)
 	{
-		m_pSpot->Killed(NULL, GIB_NEVER);
+		m_pSpot->Killed(nullptr, NULL,GIB_NEVER);
 		m_pSpot = NULL;
 	}
 #endif
@@ -230,7 +231,7 @@ void CRpg::SecondaryAttack()
 #ifndef CLIENT_DLL
 	if (!m_fSpotActive && m_pSpot)
 	{
-		m_pSpot->Killed(NULL, GIB_NORMAL);
+		m_pSpot->Killed(nullptr, NULL,GIB_NORMAL);
 		m_pSpot = NULL;
 	}
 #endif

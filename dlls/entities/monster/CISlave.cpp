@@ -14,7 +14,6 @@
  ****/
 
 #include "CISlave.h"
-#include "monsters.h"
 #include "schedule.h"
 #include "weapons.h"
 #include "soundent.h"
@@ -185,10 +184,10 @@ int CISlave::ISoundMask()
 		   bits_SOUND_PLAYER;
 }
 
-void CISlave::Killed(entvars_t* pevAttacker, int iGib)
+void CISlave::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	ClearBeams();
-	CSquadMonster::Killed(pevAttacker, iGib);
+	CSquadMonster::Killed(pevInflictor, pevAttacker, iGib);
 }
 
 //=========================================================

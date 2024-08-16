@@ -14,7 +14,6 @@
  ****/
 
 #include "CRoach.h"
-#include "monsters.h"
 #include "soundent.h"
 #include "decals.h"
 
@@ -125,7 +124,7 @@ void CRoach::Precache()
 //=========================================================
 // Killed.
 //=========================================================
-void CRoach::Killed(entvars_t* pevAttacker, int iGib)
+void CRoach::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	pev->solid = SOLID_NOT;
 

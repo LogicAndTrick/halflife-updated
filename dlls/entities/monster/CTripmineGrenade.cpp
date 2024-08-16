@@ -15,7 +15,6 @@
 
 #include "CTripmineGrenade.h"
 #include "entities/weapon/CTripmine.h"
-#include "monsters.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(monster_tripmine, CTripmineGrenade);
@@ -256,7 +255,7 @@ void CTripmineGrenade::BeamBreakThink()
 		// CGrenade code knows who the explosive really belongs to.
 		pev->owner = m_pRealOwner;
 		pev->health = 0;
-		Killed(VARS(pev->owner), GIB_NORMAL);
+		Killed(nullptr, VARS(pev->owner), GIB_NORMAL);
 		return;
 	}
 
@@ -277,7 +276,7 @@ bool CTripmineGrenade::TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacke
 	return CGrenade::TakeDamage(pevInflictor, pevAttacker, flDamage, bitsDamageType);
 }
 
-void CTripmineGrenade::Killed(entvars_t* pevAttacker, int iGib)
+void CTripmineGrenade::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	pev->takedamage = DAMAGE_NO;
 

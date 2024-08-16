@@ -93,7 +93,7 @@ public:
 	int IRelationship(CBaseEntity* pTarget) override;
 	void StopTalking();
 	bool ShouldSpeak();
-	void Killed(entvars_t* pevAttacker, int iGib) override;
+	void Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib) override;
 
 	CUSTOM_SCHEDULES;
 

@@ -14,9 +14,10 @@
  ****/
 
 #include "CBaseEntity.h"
+
+#include "CBaseMonster.h"
 #include "CWorld.h"
 #include "decals.h"
-#include "monsters.h"
 #include "movewith.h"
 #include "nodes.h"
 #include "weapons.h"
@@ -295,14 +296,14 @@ bool CBaseEntity::TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, fl
 	pev->health -= flDamage;
 	if (pev->health <= 0)
 	{
-		Killed(pevAttacker, GIB_NORMAL);
+		Killed(pevInflictor, pevAttacker, GIB_NORMAL);
 		return false;
 	}
 
 	return true;
 }
 
-void CBaseEntity::Killed(entvars_t* pevAttacker, int iGib)
+void CBaseEntity::Killed(entvars_t* pevInflictor, entvars_t* pevAttacker, int iGib)
 {
 	pev->takedamage = DAMAGE_NO;
 	pev->deadflag = DEAD_DEAD;
