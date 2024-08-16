@@ -16,7 +16,6 @@
 #include "CScientist.h"
 #include "schedule.h"
 #include "animation.h"
-#include "soundent.h"
 
 LINK_ENTITY_TO_CLASS(monster_scientist, CScientist);
 

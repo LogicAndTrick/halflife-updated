@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "CBaseEntity.h"
+#include "entities/CBaseEntity.h"
 
 #define ANNOUNCE_MINUTES_MIN 0.25
 #define ANNOUNCE_MINUTES_MAX 2.25

@@ -16,7 +16,6 @@
 #include "CISlave.h"
 #include "schedule.h"
 #include "weapons.h"
-#include "soundent.h"
 
 LINK_ENTITY_TO_CLASS(monster_alien_slave, CISlave);
 LINK_ENTITY_TO_CLASS(monster_vortigaunt, CISlave);

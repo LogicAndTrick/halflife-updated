@@ -15,7 +15,7 @@
 
 #include "CGib.h"
 #include "entities/monster/CBaseMonster.h"
-#include "soundent.h"
+#include "entities/sound/CSoundEnt.h"
 #include "studio.h"
 #include "func/CBreakable.h"
 

@@ -18,11 +18,11 @@
     <Filter Include="Header Files\dlls">
       <UniqueIdentifier>{e3b69fef-bfa6-4270-8280-f2b25793ac4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\classes">
+      <UniqueIdentifier>{01a142ce-7740-4d7d-8b5e-8cc6a08af18d}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\dlls\entities\alias">
       <UniqueIdentifier>{c51ed368-2cf6-42ef-9c9c-da28f2090456}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\dlls\entities\ambient">
-      <UniqueIdentifier>{eebc4416-9784-4170-a5da-4ed2e07f7d67}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\dlls\entities\button">
       <UniqueIdentifier>{6357a8cb-297d-41d3-9514-4206edc5b4c7}</UniqueIdentifier>
@@ -81,6 +81,9 @@
     <Filter Include="Header Files\dlls\entities\scripted">
       <UniqueIdentifier>{4826a3fc-a2fc-4f27-a778-b74d5cedcf26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\entities\sound">
+      <UniqueIdentifier>{861dc0e9-fad1-4ee9-8a36-55d6412548f0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\dlls\entities\spark">
       <UniqueIdentifier>{994dcbfc-a238-4cbc-9328-8bd82ff1a716}</UniqueIdentifier>
     </Filter>
@@ -117,11 +120,11 @@
     <Filter Include="Source Files\dlls">
       <UniqueIdentifier>{a59f65b1-455f-459d-bc2a-75775255cd5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\dlls\classes">
+      <UniqueIdentifier>{057d0a00-7a30-4b54-9ae5-1f7222cd42d7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\dlls\entities\alias">
       <UniqueIdentifier>{1b6de3b1-e618-4d59-b8b4-c9a3d52a2cc8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\dlls\entities\ambient">
-      <UniqueIdentifier>{220f514d-832d-40bc-a9da-e57b1b20e43c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\button">
       <UniqueIdentifier>{b03ed158-c0e3-46ea-8e32-3dbc5e4e93c1}</UniqueIdentifier>
@@ -180,6 +183,9 @@
     <Filter Include="Source Files\dlls\entities\scripted">
       <UniqueIdentifier>{908fe6d6-1804-49ba-bc8c-0924bb3c79c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\dlls\entities\sound">
+      <UniqueIdentifier>{68e216f3-e532-4bee-b98f-b8e76993348e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\dlls\entities\spark">
       <UniqueIdentifier>{97cc76ec-39fb-43f7-9151-d943eac70be9}</UniqueIdentifier>
     </Filter>
@@ -221,6 +227,9 @@
     <ClCompile Include="..\..\dlls\cbase.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\CSound.cpp">
+      <Filter>Source Files\dlls\classes</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\client.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -235,12 +244,6 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\alias\CMultiAlias.cpp">
       <Filter>Source Files\dlls\entities\alias</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\ambient\CAmbientGeneric.cpp">
-      <Filter>Source Files\dlls\entities\ambient</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\ambient\CTargetFMODAudio.cpp">
-      <Filter>Source Files\dlls\entities\ambient</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\button\CButtonTarget.cpp">
       <Filter>Source Files\dlls\entities\button</Filter>
@@ -297,9 +300,6 @@
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CPointEntity.cpp">
-      <Filter>Source Files\dlls\entities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\CSpeaker.cpp">
       <Filter>Source Files\dlls\entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\CWorld.cpp">
@@ -683,37 +683,37 @@
     <ClCompile Include="..\..\dlls\entities\monster\CBarney.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Schedule.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Think.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Task.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_SaveRestore.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Scripting.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_AI.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Combat.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Navigation.cpp">
-      <Filter>Source Files\dlls\entities\monster</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Enemies.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Animation.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Combat.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Enemies.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Navigation.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Positioning.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_SaveRestore.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Schedule.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Scripting.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Task.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster_Think.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CBaseMonster.cpp">
@@ -916,6 +916,18 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\scripted\CTrainSequence.cpp">
       <Filter>Source Files\dlls\entities\scripted</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\sound\CAmbientGeneric.cpp">
+      <Filter>Source Files\dlls\entities\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\sound\CSoundEnt.cpp">
+      <Filter>Source Files\dlls\entities\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\sound\CSpeaker.cpp">
+      <Filter>Source Files\dlls\entities\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\sound\CTargetFMODAudio.cpp">
+      <Filter>Source Files\dlls\entities\sound</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\spark\CShower.cpp">
       <Filter>Source Files\dlls\entities\spark</Filter>
@@ -1154,9 +1166,6 @@
     <ClCompile Include="..\..\dlls\sound.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\soundent.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\subs.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1300,6 +1309,9 @@
     <ClInclude Include="..\..\dlls\cdll_dll.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\CSound.h">
+      <Filter>Header Files\dlls\classes</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\client.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
@@ -1320,12 +1332,6 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\alias\CMultiAlias.h">
       <Filter>Header Files\dlls\entities\alias</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\ambient\CAmbientGeneric.h">
-      <Filter>Header Files\dlls\entities\ambient</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\ambient\CTargetFMODAudio.h">
-      <Filter>Header Files\dlls\entities\ambient</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\button\CButtonTarget.h">
       <Filter>Header Files\dlls\entities\button</Filter>
@@ -1382,9 +1388,6 @@
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CPointEntity.h">
-      <Filter>Header Files\dlls\entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\entities\CSpeaker.h">
       <Filter>Header Files\dlls\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\CWorld.h">
@@ -1936,6 +1939,18 @@
     <ClInclude Include="..\..\dlls\entities\scripted\CTrainSequence.h">
       <Filter>Header Files\dlls\entities\scripted</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\sound\CAmbientGeneric.h">
+      <Filter>Header Files\dlls\entities\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\sound\CSoundEnt.h">
+      <Filter>Header Files\dlls\entities\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\sound\CSpeaker.h">
+      <Filter>Header Files\dlls\entities\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\sound\CTargetFMODAudio.h">
+      <Filter>Header Files\dlls\entities\sound</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\spark\CShower.h">
       <Filter>Header Files\dlls\entities\spark</Filter>
     </ClInclude>
@@ -2162,9 +2177,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\skill.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\soundent.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\squad.h">

@@ -16,7 +16,7 @@
 #pragma once
 
 #include "entities/CBaseToggle.h"
-#include "soundent.h"
+#include "entities/sound/CSoundEnt.h"
 #include "weapons.h"
 #include "skill.h"
 

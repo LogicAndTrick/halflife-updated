@@ -18,7 +18,6 @@
 #include "CGrenade.h"
 #include "gamerules.h"
 #include "entities/player/CBasePlayer.h"
-#include "soundent.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_mp5, CMP5);

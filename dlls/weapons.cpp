@@ -25,7 +25,6 @@
 #include "cbase.h"
 #include "entities/player/CBasePlayer.h"
 #include "weapons.h"
-#include "soundent.h"
 #include "decals.h"
 #include "gamerules.h"
 #include "UserMessages.h"

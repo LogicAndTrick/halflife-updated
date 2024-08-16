@@ -15,7 +15,6 @@
 
 #include "COsprey.h"
 #include "weapons.h"
-#include "soundent.h"
 #include "customentity.h"
 #include "entities/env/CBeam.h"
 

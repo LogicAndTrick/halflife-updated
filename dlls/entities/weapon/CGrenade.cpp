@@ -17,7 +17,6 @@
 
 #include "decals.h"
 #include "skill.h"
-#include "soundent.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(grenade, CGrenade);

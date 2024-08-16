@@ -17,7 +17,6 @@
 #include "schedule.h"
 #include "animation.h"
 #include "nodes.h"
-#include "soundent.h"
 #include "game.h"
 
 LINK_ENTITY_TO_CLASS(monster_houndeye, CHoundeye);

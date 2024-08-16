@@ -14,7 +14,6 @@
  ****/
 
 #include "CRoach.h"
-#include "soundent.h"
 #include "decals.h"
 
 LINK_ENTITY_TO_CLASS(monster_cockroach, CRoach);

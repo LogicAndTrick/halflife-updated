@@ -14,8 +14,6 @@
  ****/
 
 #include "CGenericMonster.h"
-#include "customentity.h"
-#include "soundent.h"
 
 LINK_ENTITY_TO_CLASS(monster_generic, CGenericMonster);
 
@@ -24,7 +22,7 @@ TYPEDESCRIPTION CGenericMonster::m_SaveData[] =
 		DEFINE_FIELD(CGenericMonster, m_iszGibModel, FIELD_STRING),
 };
 
-IMPLEMENT_SAVERESTORE(CGenericMonster, CBaseMonster);
+IMPLEMENT_SAVERESTORE(CGenericMonster, CTalkMonster);
 
 bool CGenericMonster::KeyValue(KeyValueData* pkvd)
 {

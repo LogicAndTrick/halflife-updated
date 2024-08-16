@@ -14,7 +14,6 @@
  ****/
 
 #include "CTentacle.h"
-#include "soundent.h"
 
 LINK_ENTITY_TO_CLASS(monster_tentacle, CTentacle);
 

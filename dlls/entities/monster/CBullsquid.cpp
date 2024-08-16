@@ -16,7 +16,6 @@
 #include "CBullsquid.h"
 #include "nodes.h"
 #include "decals.h"
-#include "soundent.h"
 #include "entities/monster/CCineMonster.h"
 #include "game.h"
 

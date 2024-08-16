@@ -14,20 +14,17 @@
  ****/
 
 #include "CGMan.h"
-#include "soundent.h"
 #include "weapons.h"
 
-
 LINK_ENTITY_TO_CLASS(monster_gman, CGMan);
-
 
 TYPEDESCRIPTION CGMan::m_SaveData[] =
 	{
 		DEFINE_FIELD(CGMan, m_hTalkTarget, FIELD_EHANDLE),
 		DEFINE_FIELD(CGMan, m_flTalkTime, FIELD_TIME),
 };
-IMPLEMENT_SAVERESTORE(CGMan, CBaseMonster);
 
+IMPLEMENT_SAVERESTORE(CGMan, CBaseMonster);
 
 //=========================================================
 // Classify - indicates this monster's place in the

@@ -17,7 +17,7 @@
 #include "CCorpse.h"
 #include "entities/env/CMessage.h"
 #include "nodes.h"
-#include "soundent.h"
+#include "entities/sound/CSoundEnt.h"
 #include "client.h"
 #include "decals.h"
 #include "entities/player/CBasePlayer.h"

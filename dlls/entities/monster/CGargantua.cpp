@@ -16,7 +16,6 @@
 #include "CGargantua.h"
 #include "schedule.h"
 #include "weapons.h"
-#include "soundent.h"
 #include "decals.h"
 #include "entities/func/CBreakable.h"
 #include "entities/monster/CCineMonster.h"

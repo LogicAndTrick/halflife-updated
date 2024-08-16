@@ -17,7 +17,6 @@
 #include "animation.h"
 #include "entities/monster/CCineMonster.h"
 #include "scriptevent.h"
-#include "soundent.h"
 
 //=========================================================
 // Talking monster base class

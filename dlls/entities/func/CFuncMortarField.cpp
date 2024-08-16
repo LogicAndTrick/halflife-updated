@@ -14,7 +14,7 @@
  ****/
 
 #include "CFuncMortarField.h"
-#include "soundent.h"
+#include "entities/sound/CSoundEnt.h"
 
 LINK_ENTITY_TO_CLASS(func_mortar_field, CFuncMortarField);
 
