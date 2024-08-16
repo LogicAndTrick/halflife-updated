@@ -1,28 +1,22 @@
-//=========== (C) Copyright 1999 Valve, L.L.C. All rights reserved. ===========
-//
-// The copyright to the contents herein is the property of Valve, L.L.C.
-// The contents may be used and/or copied only with the written permission of
-// Valve, L.L.C., or in accordance with the terms and conditions stipulated in
-// the agreement/contract under which the contents have been supplied.
-//
-// Purpose: Functionality for the observer chase camera
-//
-// $Workfile:     $
-// $Date:         $
-//
-//-----------------------------------------------------------------------------
-// $Log: $
-//
-// $NoKeywords: $
-//=============================================================================
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "entities/player/CBasePlayer.h"
-#include "weapons.h"
+/***
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
+
+#include "CBasePlayer.h"
+#include "entities/weapon/CBasePlayerItem.h"
 #include "pm_shared.h"
 #include "UserMessages.h"
-#include "entities/weapon/CBasePlayerItem.h"
 
 // Find the next client in the game for this player to spectate
 void CBasePlayer::Observer_FindNextPlayer(bool bReverse)
@@ -194,7 +188,7 @@ void CBasePlayer::Observer_CheckProperties()
 
 
 			m_iObserverWeapon = weapon;
-			//send weapon update
+			// send weapon update
 			MESSAGE_BEGIN(MSG_ONE, gmsgCurWeapon, NULL, pev);
 			WRITE_BYTE(1); // 1 = current weapon, not on target
 			WRITE_BYTE(m_iObserverWeapon);

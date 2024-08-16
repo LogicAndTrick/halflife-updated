@@ -347,6 +347,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Items.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Movement.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Multiplayer.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Observer.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_SaveRestore.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Think.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer.cpp" />
@@ -436,7 +437,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\locus.cpp" />
     <ClCompile Include="..\..\dlls\movewith.cpp" />
     <ClCompile Include="..\..\dlls\multiplay_gamerules.cpp" />
-    <ClCompile Include="..\..\dlls\observer.cpp" />
     <ClCompile Include="..\..\dlls\plane.cpp" />
     <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp" />
     <ClCompile Include="..\..\dlls\skill.cpp" />
