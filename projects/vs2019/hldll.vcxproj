@@ -123,6 +123,10 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\classes\nodes\CQueue.cpp" />
     <ClCompile Include="..\..\dlls\classes\nodes\CQueuePriority.cpp" />
     <ClCompile Include="..\..\dlls\classes\nodes\CStack.cpp" />
+    <ClCompile Include="..\..\dlls\classes\saverestore\CGlobalState.cpp" />
+    <ClCompile Include="..\..\dlls\classes\saverestore\CRestore.cpp" />
+    <ClCompile Include="..\..\dlls\classes\saverestore\CSave.cpp" />
+    <ClCompile Include="..\..\dlls\classes\saverestore\CSaveRestoreBuffer.cpp" />
     <ClCompile Include="..\..\dlls\client.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CBaseMutableAlias.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CInfoAlias.cpp" />
@@ -443,7 +447,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\util.cpp" />
     <ClCompile Include="..\..\dlls\weapons_shared.cpp" />
     <ClCompile Include="..\..\dlls\weapons.cpp" />
-    <ClCompile Include="..\..\dlls\world.cpp" />
     <ClCompile Include="..\..\game_shared\filesystem_utils.cpp" />
     <ClCompile Include="..\..\game_shared\voice_gamemgr.cpp" />
     <ClCompile Include="..\..\pm_shared\pm_debug.cpp" />
@@ -493,6 +496,10 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\classes\nodes\CQueue.h" />
     <ClInclude Include="..\..\dlls\classes\nodes\CQueuePriority.h" />
     <ClInclude Include="..\..\dlls\classes\nodes\CStack.h" />
+    <ClInclude Include="..\..\dlls\classes\saverestore\CGlobalState.h" />
+    <ClInclude Include="..\..\dlls\classes\saverestore\CRestore.h" />
+    <ClInclude Include="..\..\dlls\classes\saverestore\CSave.h" />
+    <ClInclude Include="..\..\dlls\classes\saverestore\CSaveRestoreBuffer.h" />
     <ClInclude Include="..\..\dlls\client.h" />
     <ClInclude Include="..\..\dlls\decals.h" />
     <ClInclude Include="..\..\dlls\enginecallback.h" />

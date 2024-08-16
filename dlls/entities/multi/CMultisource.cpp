@@ -14,6 +14,7 @@
  ****/
 
 #include "CMultisource.h"
+#include "classes/saverestore/CGlobalState.h"
 
 LINK_ENTITY_TO_CLASS(multisource, CMultiSource);
 

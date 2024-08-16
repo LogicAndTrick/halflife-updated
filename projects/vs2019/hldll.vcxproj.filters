@@ -24,6 +24,9 @@
     <Filter Include="Header Files\dlls\classes\nodes">
       <UniqueIdentifier>{e09a1cd2-7f43-49ba-88e6-2c85ad6e1e95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\classes\saverestore">
+      <UniqueIdentifier>{b90d5044-104d-41d3-9cf6-3cc5ca606c78}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\dlls\entities\alias">
       <UniqueIdentifier>{c51ed368-2cf6-42ef-9c9c-da28f2090456}</UniqueIdentifier>
     </Filter>
@@ -131,6 +134,9 @@
     </Filter>
     <Filter Include="Source Files\dlls\classes\nodes">
       <UniqueIdentifier>{5fbb7218-9df2-4a4b-ad52-10a2acdde45f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\classes\saverestore">
+      <UniqueIdentifier>{a76cd282-3704-4b4c-94f6-63a415913995}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\entities\alias">
       <UniqueIdentifier>{1b6de3b1-e618-4d59-b8b4-c9a3d52a2cc8}</UniqueIdentifier>
@@ -259,6 +265,18 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\classes\nodes\CStack.cpp">
       <Filter>Source Files\dlls\classes\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\saverestore\CGlobalState.cpp">
+      <Filter>Source Files\dlls\classes\saverestore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\saverestore\CRestore.cpp">
+      <Filter>Source Files\dlls\classes\saverestore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\saverestore\CSave.cpp">
+      <Filter>Source Files\dlls\classes\saverestore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\saverestore\CSaveRestoreBuffer.cpp">
+      <Filter>Source Files\dlls\classes\saverestore</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\client.cpp">
       <Filter>Source Files\dlls</Filter>
@@ -1220,9 +1238,6 @@
     <ClCompile Include="..\..\dlls\weapons.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\world.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\game_shared\filesystem_utils.cpp">
       <Filter>Source Files\game_shared</Filter>
     </ClCompile>
@@ -1365,6 +1380,18 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\classes\nodes\CStack.h">
       <Filter>Header Files\dlls\classes\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\saverestore\CGlobalState.h">
+      <Filter>Header Files\dlls\classes\saverestore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\saverestore\CRestore.h">
+      <Filter>Header Files\dlls\classes\saverestore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\saverestore\CSave.h">
+      <Filter>Header Files\dlls\classes\saverestore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\saverestore\CSaveRestoreBuffer.h">
+      <Filter>Header Files\dlls\classes\saverestore</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\client.h">
       <Filter>Header Files\dlls</Filter>

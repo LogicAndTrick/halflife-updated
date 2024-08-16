@@ -16,9 +16,10 @@
 #include "CBaseEntity.h"
 #include "entities/monster/CBaseMonster.h"
 #include "CWorld.h"
+#include "classes/nodes/CGraph.h"
+#include "classes/saverestore/CGlobalState.h"
 #include "decals.h"
 #include "movewith.h"
-#include "classes/nodes/CGraph.h"
 #include "weapons.h"
 
 TYPEDESCRIPTION CBaseEntity::m_SaveData[] =

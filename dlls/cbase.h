@@ -63,6 +63,9 @@ CBaseEntity
 
 #define EXPORT DLLEXPORT
 
+class CRestore;
+class CSave;
+
 extern "C" DLLEXPORT int GetEntityAPI(DLL_FUNCTIONS* pFunctionTable, int interfaceVersion);
 extern "C" DLLEXPORT int GetEntityAPI2(DLL_FUNCTIONS* pFunctionTable, int* interfaceVersion);
 extern "C" DLLEXPORT int GetNewDLLFunctions(NEW_DLL_FUNCTIONS* pFunctionTable, int* interfaceVersion);
@@ -84,9 +87,6 @@ extern int DispatchRestore(edict_t* pent, SAVERESTOREDATA* pSaveData, int global
 extern void DispatchObjectCollsionBox(edict_t* pent);
 extern void SaveWriteFields(SAVERESTOREDATA* pSaveData, const char* pname, void* pBaseData, TYPEDESCRIPTION* pFields, int fieldCount);
 extern void SaveReadFields(SAVERESTOREDATA* pSaveData, const char* pname, void* pBaseData, TYPEDESCRIPTION* pFields, int fieldCount);
-extern void SaveGlobalState(SAVERESTOREDATA* pSaveData);
-extern void RestoreGlobalState(SAVERESTOREDATA* pSaveData);
-extern void ResetGlobalState();
 
 //extern CBaseEntity *g_pDesiredList; //LRC- handles DesiredVel, for movewith
 

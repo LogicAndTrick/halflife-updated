@@ -1,28 +1,19 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-/*
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-===== world.cpp ========================================================
-
-  precaches and defs for entities and other data that must always be available.
-
-*/
-
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
+#include "CGlobalState.h"
 #include "entities/player/CBasePlayer.h"
 
 CGlobalState gGlobalState;
@@ -60,7 +51,7 @@ globalentity_t* CGlobalState::Find(string_t globalname)
 }
 
 // This is available all the time now on impulse 104, remove later
-//#ifdef _DEBUG
+// #ifdef _DEBUG
 void CGlobalState::DumpGlobals()
 {
 	static const char* estates[] = {"Off", "On", "Dead"};
@@ -74,7 +65,7 @@ void CGlobalState::DumpGlobals()
 		pTest = pTest->pNext;
 	}
 }
-//#endif
+// #endif
 
 void CGlobalState::EntityAdd(string_t globalname, string_t mapName, GLOBALESTATE state)
 {

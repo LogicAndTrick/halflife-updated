@@ -14,6 +14,7 @@
  ****/
 
 #include "CEnvGlobal.h"
+#include "classes/saverestore/CGlobalState.h"
 
 LINK_ENTITY_TO_CLASS(env_global, CEnvGlobal);
 

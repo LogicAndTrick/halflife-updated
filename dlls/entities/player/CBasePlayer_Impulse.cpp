@@ -22,6 +22,7 @@
 #include "UserMessages.h"
 #include "entities/CGib.h"
 #include "entities/CWorld.h"
+#include "classes/saverestore/CGlobalState.h"
 
 void CBasePlayer::ImpulseCommands()
 {

@@ -22,6 +22,10 @@
 #include "pm_shared.h"
 #include "movewith.h"
 #include "skill.h"
+#include "classes/saverestore/CGlobalState.h"
+#include "classes/saverestore/CRestore.h"
+#include "classes/saverestore/CSave.h"
+#include "classes/saverestore/CSaveRestoreBuffer.h"
 
 void EntvarsKeyvalue(entvars_t* pev, KeyValueData* pkvd);
 

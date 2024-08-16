@@ -18,3 +18,5 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
+#include "classes/saverestore/CSave.h"
+#include "classes/saverestore/CRestore.h"
