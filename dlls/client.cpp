@@ -48,6 +48,7 @@
 #include "pm_defs.h"
 #include "UserMessages.h"
 #include "movewith.h"
+#include "entities/CBaseSpectator.h"
 #include "entities/CWorld.h"
 #include "entities/CCorpse.h"
 #include "entities/item/CItemAntidote.h"
