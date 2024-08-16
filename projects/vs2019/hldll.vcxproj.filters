@@ -248,6 +248,9 @@
     <ClCompile Include="..\..\dlls\classes\CSound.cpp">
       <Filter>Source Files\dlls\classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\EHANDLE.cpp">
+      <Filter>Source Files\dlls\classes</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\classes\nodes\CGraph.cpp">
       <Filter>Source Files\dlls\classes\nodes</Filter>
     </ClCompile>
@@ -1361,6 +1364,9 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\classes\CSound.h">
+      <Filter>Header Files\dlls\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\EHANDLE.h">
       <Filter>Header Files\dlls\classes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\classes\nodes\CGraph.h">
