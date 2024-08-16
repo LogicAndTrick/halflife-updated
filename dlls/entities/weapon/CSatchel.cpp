@@ -15,7 +15,7 @@
 
 #include "CSatchel.h"
 #include "entities/player/CBasePlayer.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_satchel, CSatchel);

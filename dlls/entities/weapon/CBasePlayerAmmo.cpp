@@ -14,7 +14,7 @@
  ****/
 
 #include "CBasePlayerAmmo.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "entities/player/CBasePlayer.h"
 
 void CBasePlayerAmmo::Spawn()

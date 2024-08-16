@@ -1,36 +1,29 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-//
-// teamplay_gamerules.cpp
-//
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "entities/player/CBasePlayer.h"
-#include "weapons.h"
-#include "gamerules.h"
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "skill.h"
-#include "game.h"
-#include "voice_gamemgr.h"
-#include "hltv.h"
-#include "UserMessages.h"
+#include "CHalfLifeMultiplay.h"
+#include "entities/CBaseEntity.h"
+#include "entities/player/CBasePlayer.h"
 #include "entities/item/CItem.h"
-#include "entities/monster/CSatchelCharge.h"
 #include "entities/weapon/CBasePlayerAmmo.h"
 #include "entities/weapon/CBasePlayerItem.h"
+#include "entities/monster/CSatchelCharge.h"
+#include "UserMessages.h"
+#include "voice_gamemgr.h"
+#include "hltv.h"
+#include "game.h"
 
 #define ITEM_RESPAWN_TIME 30
 #define WEAPON_RESPAWN_TIME 20
@@ -226,7 +219,6 @@ void CHalfLifeMultiplay::Think()
 				return;
 			}
 
-
 			if (pPlayer)
 			{
 				remain = flFragLimit - pPlayer->pev->frags;
@@ -254,7 +246,6 @@ void CHalfLifeMultiplay::Think()
 	last_frags = frags_remaining;
 	last_time = time_remaining;
 }
-
 
 //=========================================================
 //=========================================================
@@ -299,13 +290,13 @@ bool CHalfLifeMultiplay::FShouldSwitchWeapon(CBasePlayer* pPlayer, CBasePlayerIt
 		return false;
 	}
 
-	//Never switch
+	// Never switch
 	if (pPlayer->m_iAutoWepSwitch == 0)
 	{
 		return false;
 	}
 
-	//Only switch if not attacking
+	// Only switch if not attacking
 	if (pPlayer->m_iAutoWepSwitch == 2 && (pPlayer->m_afButtonLast & (IN_ATTACK | IN_ATTACK2)) != 0)
 	{
 		return false;
@@ -440,7 +431,7 @@ float CHalfLifeMultiplay::FlPlayerFallDamage(CBasePlayer* pPlayer)
 
 	switch (iFallDamage)
 	{
-	case 1: //progressive
+	case 1: // progressive
 		pPlayer->m_flFallVelocity -= PLAYER_MAX_SAFE_FALL_SPEED;
 		return pPlayer->m_flFallVelocity * DAMAGE_FOR_FALL_SPEED;
 		break;
@@ -482,7 +473,7 @@ void CHalfLifeMultiplay::PlayerSpawn(CBasePlayer* pPlayer)
 	bool addDefault;
 	CBaseEntity* pWeaponEntity = NULL;
 
-	//Ensure the player switches to the Glock on spawn regardless of setting
+	// Ensure the player switches to the Glock on spawn regardless of setting
 	const int originalAutoWepSwitch = pPlayer->m_iAutoWepSwitch;
 	pPlayer->m_iAutoWepSwitch = 1;
 
@@ -517,7 +508,7 @@ bool CHalfLifeMultiplay::FPlayerCanRespawn(CBasePlayer* pPlayer)
 //=========================================================
 float CHalfLifeMultiplay::FlPlayerSpawnTime(CBasePlayer* pPlayer)
 {
-	return gpGlobals->time; //now!
+	return gpGlobals->time; // now!
 }
 
 bool CHalfLifeMultiplay::AllowAutoTargetCrosshair()
@@ -534,7 +525,6 @@ int CHalfLifeMultiplay::IPointsForKill(CBasePlayer* pAttacker, CBasePlayer* pKil
 	return 1;
 }
 
-
 //=========================================================
 // PlayerKilled - someone/something killed this player
 //=========================================================
@@ -543,7 +533,6 @@ void CHalfLifeMultiplay::PlayerKilled(CBasePlayer* pVictim, entvars_t* pKiller, 
 	DeathNotice(pVictim, pKiller, pInflictor);
 
 	pVictim->m_iDeaths += 1;
-
 
 	FireTargets("game_playerdie", pVictim, pVictim, USE_TOGGLE, 0);
 	CBasePlayer* peKiller = NULL;
@@ -564,9 +553,9 @@ void CHalfLifeMultiplay::PlayerKilled(CBasePlayer* pVictim, entvars_t* pKiller, 
 	}
 	else
 	{ // killed by the world
-		//MH	pKiller->frags -= 1;	this should be victim (we don't want to give the world frags)
+		// MH	pKiller->frags -= 1;	this should be victim (we don't want to give the world frags)
 		pVictim->pev->frags -= 1;
-		//END
+		// END
 	}
 
 	// update the scores
@@ -612,7 +601,7 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, entvars_t* pKiller, e
 	CBaseEntity* Killer = CBaseEntity::Instance(pKiller);
 
 	const char* killer_weapon_name = "world"; // by default, the player is killed by the world
-	const char* kill_technique = "killed %";  //AJH default is 'killed' (% = victim's name)
+	const char* kill_technique = "killed %";  // AJH default is 'killed' (% = victim's name)
 	int killer_index = 0;
 
 	// Hack to fix name change
@@ -654,30 +643,28 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, entvars_t* pKiller, e
 	else if (strncmp(killer_weapon_name, "func_", 5) == 0)
 		killer_weapon_name += 5;
 
-
 	if (pevInflictor)
 	{
 		CBaseEntity* Inflictor = CBaseEntity::Instance(pevInflictor);
 		if (Inflictor->killname)
 		{
-			killer_weapon_name = STRING(Inflictor->killname); //AJH Custom 'kill' names for entities
+			killer_weapon_name = STRING(Inflictor->killname); // AJH Custom 'kill' names for entities
 		}
 		if (Inflictor->killmethod)
 		{
-			kill_technique = STRING(Inflictor->killmethod); //AJH Custom 'kill' techniques for entities
+			kill_technique = STRING(Inflictor->killmethod); // AJH Custom 'kill' techniques for entities
 		}
 	}
 
-
 	//	if(CBaseEntity* game_deathnotice = UTIL_FindEntityByClassname(NULL,"game_deathnotice")){ //AJH fully custom/random kill strings
-	//Figure out how to implement
+	// Figure out how to implement
 	//	}
 
 	MESSAGE_BEGIN(MSG_ALL, gmsgDeathMsg);
 	WRITE_BYTE(killer_index);				// the killer
 	WRITE_BYTE(ENTINDEX(pVictim->edict())); // the victim
 	WRITE_STRING(killer_weapon_name);		// what they were killed by (should this be a string?)
-	WRITE_STRING(kill_technique);			//AJH How the victim was killed.
+	WRITE_STRING(kill_technique);			// AJH How the victim was killed.
 	MESSAGE_END();
 
 	// replace the code names with the 'real' names
@@ -781,7 +768,7 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, entvars_t* pKiller, e
 	return; // just remove for now
 			/*
 	char	szText[ 128 ];
-
+		
 	if ( pKiller->flags & FL_MONSTER )
 	{
 		// killed by a monster
@@ -789,7 +776,7 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, entvars_t* pKiller, e
 		strcat ( szText, " was killed by a monster.\n" );
 		return;
 	}
-
+		
 	if ( pKiller == pVictim->pev )
 	{
 		strcpy ( szText, STRING( pVictim->pev->netname ) );
@@ -798,11 +785,11 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, entvars_t* pKiller, e
 	else if ( pKiller->flags & FL_CLIENT )
 	{
 		strcpy ( szText, STRING( pKiller->netname ) );
-
+		
 		strcat( szText, " : " );
 		strcat( szText, killer_weapon_name );
 		strcat( szText, " : " );
-
+		
 		strcat ( szText, STRING( pVictim->pev->netname ) );
 		strcat ( szText, "\n" );
 	}
@@ -821,7 +808,7 @@ void CHalfLifeMultiplay::DeathNotice(CBasePlayer* pVictim, entvars_t* pKiller, e
 		strcpy ( szText, STRING( pVictim->pev->netname ) );
 		strcat ( szText, " died mysteriously.\n" );
 	}
-
+		
 	UTIL_ClientPrintAll( szText );
 */
 }
@@ -954,7 +941,6 @@ int CHalfLifeMultiplay::ItemShouldRespawn(CItem* pItem)
 	return GR_ITEM_RESPAWN_YES;
 }
 
-
 //=========================================================
 // At what time in the future may this Item respawn?
 //=========================================================
@@ -1021,7 +1007,6 @@ float CHalfLifeMultiplay::FlHealthChargerRechargeTime()
 	return 60;
 }
 
-
 float CHalfLifeMultiplay::FlHEVChargerRechargeTime()
 {
 	return 30;
@@ -1051,7 +1036,6 @@ edict_t* CHalfLifeMultiplay::GetPlayerSpawnSpot(CBasePlayer* pPlayer)
 
 	return pentSpawnSpot;
 }
-
 
 //=========================================================
 //=========================================================
@@ -1192,7 +1176,6 @@ skipwhite:
 		goto skipwhite;
 	}
 
-
 	// handle quoted strings specially
 	if (c == '\"')
 	{
@@ -1257,12 +1240,9 @@ bool COM_TokenWaiting(char* buffer)
 	return false;
 }
 
-
-
 /*
 ==============
 ReloadMapCycleFile
-
 
 Parses mapcycle.txt file into mapcycle_t structure
 ==============

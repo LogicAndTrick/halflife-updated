@@ -14,7 +14,7 @@
  ****/
 
 #include "CBasePlayer.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "UserMessages.h"
 #include "entities/CCorpse.h"
 #include "entities/weapon/CBasePlayerItem.h"

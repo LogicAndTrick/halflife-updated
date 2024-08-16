@@ -15,7 +15,7 @@
 
 #include "CItemMedicalKit.h"
 
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "entities/player/CBasePlayer.h"
 #include "UserMessages.h"
 

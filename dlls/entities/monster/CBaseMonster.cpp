@@ -15,7 +15,7 @@
 
 #include "CBaseMonster.h"
 #include "entities/CGib.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "classes/nodes/CGraph.h"
 
 //=========================================================

@@ -15,7 +15,7 @@
 
 #include "CWallHealth.h"
 #include "entities/player/CBasePlayer.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "skill.h"
 
 LINK_ENTITY_TO_CLASS(func_healthcharger, CWallHealth);

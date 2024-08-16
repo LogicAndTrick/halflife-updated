@@ -16,7 +16,7 @@
 #include "util.h"
 #include "cbase.h"
 #include "client.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "game.h"
 #include "pm_shared.h"
 #include "movewith.h"

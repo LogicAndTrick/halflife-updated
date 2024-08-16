@@ -21,7 +21,7 @@
 #include "client.h"
 #include "decals.h"
 #include "entities/player/CBasePlayer.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "weapon/CBasePlayerItem.h"
 #include "weapon/CBasePlayerWeapon.h"
 

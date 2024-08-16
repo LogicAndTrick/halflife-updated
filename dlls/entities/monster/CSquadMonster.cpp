@@ -14,7 +14,7 @@
  ****/
 
 #include "CSquadMonster.h"
-#include "plane.h"
+#include "classes/CPlane.h"
 
 //=========================================================
 // Save/Restore

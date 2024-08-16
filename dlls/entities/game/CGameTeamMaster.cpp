@@ -14,7 +14,7 @@
  ****/
 
 #include "CGameTeamMaster.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 
 LINK_ENTITY_TO_CLASS(game_team_master, CGameTeamMaster);
 

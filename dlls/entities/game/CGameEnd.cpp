@@ -14,7 +14,7 @@
  ****/
 
 #include "CGameEnd.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 
 LINK_ENTITY_TO_CLASS(game_end, CGameEnd);
 

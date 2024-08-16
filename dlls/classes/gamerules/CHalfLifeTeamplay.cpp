@@ -1,32 +1,26 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-//
-// teamplay_gamerules.cpp
-//
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
+
+#include "CHalfLifeTeamplay.h"
+#include "entities/CBaseEntity.h"
 #include "entities/player/CBasePlayer.h"
-#include "weapons.h"
-#include "gamerules.h"
-#include "teamplay_gamerules.h"
+#include "entities/CWorld.h"
 #include "game.h"
 #include "UserMessages.h"
-#include "entities/CWorld.h"
 
-//TODO: these should be members of CHalfLifeTeamplay
+// TODO: these should be members of CHalfLifeTeamplay
 static char team_names[MAX_TEAMS][MAX_TEAMNAME_LENGTH];
 static int team_scores[MAX_TEAMS];
 static int num_teams = 0;
@@ -169,7 +163,6 @@ void CHalfLifeTeamplay::UpdateGameMode(CBasePlayer* pPlayer)
 	MESSAGE_END();
 }
 
-
 const char* CHalfLifeTeamplay::SetDefaultPlayerTeam(CBasePlayer* pPlayer)
 {
 	// copy out the team name from the model
@@ -196,7 +189,6 @@ const char* CHalfLifeTeamplay::SetDefaultPlayerTeam(CBasePlayer* pPlayer)
 
 	return pPlayer->m_szTeamName;
 }
-
 
 //=========================================================
 // InitHUD
@@ -250,7 +242,6 @@ void CHalfLifeTeamplay::InitHUD(CBasePlayer* pPlayer)
 	}
 }
 
-
 void CHalfLifeTeamplay::ChangePlayerTeam(CBasePlayer* pPlayer, const char* pTeamName, bool bKill, bool bGib)
 {
 	int damageFlags = DMG_GENERIC;
@@ -297,7 +288,6 @@ void CHalfLifeTeamplay::ChangePlayerTeam(CBasePlayer* pPlayer, const char* pTeam
 	WRITE_SHORT(g_pGameRules->GetTeamIndex(pPlayer->m_szTeamName) + 1);
 	MESSAGE_END();
 }
-
 
 //=========================================================
 // ClientUserInfoChanged
@@ -390,7 +380,6 @@ void CHalfLifeTeamplay::PlayerKilled(CBasePlayer* pVictim, entvars_t* pKiller, e
 	}
 }
 
-
 //=========================================================
 // IsTeamplay
 //=========================================================
@@ -473,7 +462,6 @@ const char* CHalfLifeTeamplay::GetTeamID(CBaseEntity* pEntity)
 	return pEntity->TeamID();
 }
 
-
 int CHalfLifeTeamplay::GetTeamIndex(const char* pTeamName)
 {
 	if (pTeamName && *pTeamName != 0)
@@ -489,7 +477,6 @@ int CHalfLifeTeamplay::GetTeamIndex(const char* pTeamName)
 	return -1; // No match
 }
 
-
 const char* CHalfLifeTeamplay::GetIndexedTeamName(int teamIndex)
 {
 	if (teamIndex < 0 || teamIndex >= num_teams)
@@ -497,7 +484,6 @@ const char* CHalfLifeTeamplay::GetIndexedTeamName(int teamIndex)
 
 	return team_names[teamIndex];
 }
-
 
 bool CHalfLifeTeamplay::IsValidTeam(const char* pTeamName)
 {
@@ -541,7 +527,6 @@ const char* CHalfLifeTeamplay::TeamWithFewestPlayers()
 
 	return pTeamName;
 }
-
 
 //=========================================================
 //=========================================================
@@ -605,7 +590,7 @@ void CHalfLifeTeamplay::RecountTeams(bool bResendInfo)
 				team_scores[tm] += plr->pev->frags;
 			}
 
-			if (bResendInfo) //Someone's info changed, let's send the team info again.
+			if (bResendInfo) // Someone's info changed, let's send the team info again.
 			{
 				if (plr && IsValidTeam(plr->TeamID()))
 				{

@@ -15,7 +15,7 @@
 
 #include "CSqueakGrenade.h"
 #include "weapons.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 
 LINK_ENTITY_TO_CLASS(monster_snark, CSqueakGrenade);
 

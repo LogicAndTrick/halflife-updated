@@ -16,7 +16,7 @@
 #include <algorithm>
 
 #include "CBasePlayer.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "pm_shared.h"
 #include "UserMessages.h"
 #include "entities/env/CRainModify.h"

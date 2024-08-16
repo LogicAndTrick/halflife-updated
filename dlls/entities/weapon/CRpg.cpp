@@ -16,7 +16,7 @@
 #include "CRpg.h"
 #include "CBasePlayerAmmo.h"
 #include "CRpgRocket.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "entities/player/CBasePlayer.h"
 #include "weapons.h"
 #include "../../../utils/vgui/include/VGUI.h"

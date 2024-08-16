@@ -20,7 +20,7 @@
 #include "entities/CWorld.h"
 #include "client.h"
 #include "game.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "classes/nodes/CGraph.h"
 
 void CBasePlayer::PreThink()

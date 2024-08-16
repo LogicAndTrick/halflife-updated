@@ -30,7 +30,8 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings"></ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -54,7 +55,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;QUIVER;VOXEL;QUAKE2;VALVE_DLL;CLIENT_WEAPONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -81,7 +83,8 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -113,8 +116,13 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\animation.cpp" />
     <ClCompile Include="..\..\dlls\bmodels.cpp" />
     <ClCompile Include="..\..\dlls\cbase.cpp" />
+    <ClCompile Include="..\..\dlls\classes\CPlane.cpp" />
     <ClCompile Include="..\..\dlls\classes\CSound.cpp" />
     <ClCompile Include="..\..\dlls\classes\EHANDLE.cpp" />
+    <ClCompile Include="..\..\dlls\classes\gamerules\CGameRules.cpp" />
+    <ClCompile Include="..\..\dlls\classes\gamerules\CHalfLifeMultiplay.cpp" />
+    <ClCompile Include="..\..\dlls\classes\gamerules\CHalfLifeRules.cpp" />
+    <ClCompile Include="..\..\dlls\classes\gamerules\CHalfLifeTeamplay.cpp" />
     <ClCompile Include="..\..\dlls\classes\nodes\CGraph.cpp" />
     <ClCompile Include="..\..\dlls\classes\nodes\CLink.cpp" />
     <ClCompile Include="..\..\dlls\classes\nodes\CNode.cpp" />
@@ -428,19 +436,14 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\xen\CXenTree.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp" />
     <ClCompile Include="..\..\dlls\game.cpp" />
-    <ClCompile Include="..\..\dlls\gamerules.cpp" />
     <ClCompile Include="..\..\dlls\h_ai.cpp" />
     <ClCompile Include="..\..\dlls\h_export.cpp" />
     <ClCompile Include="..\..\dlls\lights.cpp" />
     <ClCompile Include="..\..\dlls\locus.cpp" />
     <ClCompile Include="..\..\dlls\movewith.cpp" />
-    <ClCompile Include="..\..\dlls\multiplay_gamerules.cpp" />
-    <ClCompile Include="..\..\dlls\plane.cpp" />
-    <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp" />
     <ClCompile Include="..\..\dlls\skill.cpp" />
     <ClCompile Include="..\..\dlls\sound.cpp" />
     <ClCompile Include="..\..\dlls\subs.cpp" />
-    <ClCompile Include="..\..\dlls\teamplay_gamerules.cpp" />
     <ClCompile Include="..\..\dlls\UserMessages.cpp" />
     <ClCompile Include="..\..\dlls\util.cpp" />
     <ClCompile Include="..\..\dlls\weapons_shared.cpp" />
@@ -487,8 +490,13 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\animation.h" />
     <ClInclude Include="..\..\dlls\cbase.h" />
     <ClInclude Include="..\..\dlls\cdll_dll.h" />
+    <ClInclude Include="..\..\dlls\classes\CPlane.h" />
     <ClInclude Include="..\..\dlls\classes\CSound.h" />
     <ClInclude Include="..\..\dlls\classes\EHANDLE.h" />
+    <ClInclude Include="..\..\dlls\classes\gamerules\CGameRules.h" />
+    <ClInclude Include="..\..\dlls\classes\gamerules\CHalfLifeMultiplay.h" />
+    <ClInclude Include="..\..\dlls\classes\gamerules\CHalfLifeRules.h" />
+    <ClInclude Include="..\..\dlls\classes\gamerules\CHalfLifeTeamplay.h" />
     <ClInclude Include="..\..\dlls\classes\nodes\CGraph.h" />
     <ClInclude Include="..\..\dlls\classes\nodes\CLink.h" />
     <ClInclude Include="..\..\dlls\classes\nodes\CNode.h" />
@@ -782,16 +790,13 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\xen\CXenTreeTrigger.h" />
     <ClInclude Include="..\..\dlls\extdll.h" />
     <ClInclude Include="..\..\dlls\game.h" />
-    <ClInclude Include="..\..\dlls\gamerules.h" />
     <ClInclude Include="..\..\dlls\locus.h" />
     <ClInclude Include="..\..\dlls\movewith.h" />
-    <ClInclude Include="..\..\dlls\plane.h" />
     <ClInclude Include="..\..\dlls\saverestore.h" />
     <ClInclude Include="..\..\dlls\schedule.h" />
     <ClInclude Include="..\..\dlls\scriptevent.h" />
     <ClInclude Include="..\..\dlls\skill.h" />
     <ClInclude Include="..\..\dlls\squad.h" />
-    <ClInclude Include="..\..\dlls\teamplay_gamerules.h" />
     <ClInclude Include="..\..\dlls\UserMessages.h" />
     <ClInclude Include="..\..\dlls\util.h" />
     <ClInclude Include="..\..\dlls\vector.h" />
@@ -814,5 +819,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\public\interface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets"></ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>

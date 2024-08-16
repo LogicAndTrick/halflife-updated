@@ -14,7 +14,7 @@
  ****/
 
 #include "CItem.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "entities/player/CBasePlayer.h"
 
 void CItem::Spawn()

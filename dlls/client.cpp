@@ -37,7 +37,7 @@
 #include "client.h"
 #include "classes/CSound.h"
 #include "entities/sound/CSoundEnt.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "game.h"
 #include "customentity.h"
 #include "weapons.h"

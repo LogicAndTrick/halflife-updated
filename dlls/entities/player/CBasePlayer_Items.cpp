@@ -16,7 +16,7 @@
 #include "CBasePlayer.h"
 #include "entities/weapon/CBasePlayerItem.h"
 #include "game.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "UserMessages.h"
 #include "entities/weapon/CBasePlayerWeapon.h"
 #include "entities/weapon/CWeaponBox.h"

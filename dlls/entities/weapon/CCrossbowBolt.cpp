@@ -14,7 +14,7 @@
  ****/
 
 #include "CCrossbowBolt.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "skill.h"
 #include "weapons.h"
 

@@ -16,7 +16,7 @@
 
 #include "CHealthKit.h"
 #include "entities/player/CBasePlayer.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "skill.h"
 #include "UserMessages.h"
 

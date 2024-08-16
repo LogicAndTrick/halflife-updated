@@ -15,7 +15,7 @@
 
 #include "CHornet.h"
 
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 
 int iHornetTrail;
 int iHornetPuff;

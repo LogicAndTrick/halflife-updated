@@ -21,6 +21,9 @@
     <Filter Include="Header Files\dlls\classes">
       <UniqueIdentifier>{01a142ce-7740-4d7d-8b5e-8cc6a08af18d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\classes\gamerules">
+      <UniqueIdentifier>{684b875b-cf6f-4cf4-aafd-45e2cea7b15f}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\dlls\classes\nodes">
       <UniqueIdentifier>{e09a1cd2-7f43-49ba-88e6-2c85ad6e1e95}</UniqueIdentifier>
     </Filter>
@@ -131,6 +134,9 @@
     </Filter>
     <Filter Include="Source Files\dlls\classes">
       <UniqueIdentifier>{057d0a00-7a30-4b54-9ae5-1f7222cd42d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\classes\gamerules">
+      <UniqueIdentifier>{81243ec2-daad-42c8-aa45-31c6d721ac44}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\classes\nodes">
       <UniqueIdentifier>{5fbb7218-9df2-4a4b-ad52-10a2acdde45f}</UniqueIdentifier>
@@ -245,11 +251,26 @@
     <ClCompile Include="..\..\dlls\cbase.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\CPlane.cpp">
+      <Filter>Source Files\dlls\classes</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\classes\CSound.cpp">
       <Filter>Source Files\dlls\classes</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\classes\EHANDLE.cpp">
       <Filter>Source Files\dlls\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\gamerules\CGameRules.cpp">
+      <Filter>Source Files\dlls\classes\gamerules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\gamerules\CHalfLifeMultiplay.cpp">
+      <Filter>Source Files\dlls\classes\gamerules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\gamerules\CHalfLifeRules.cpp">
+      <Filter>Source Files\dlls\classes\gamerules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\classes\gamerules\CHalfLifeTeamplay.cpp">
+      <Filter>Source Files\dlls\classes\gamerules</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\classes\nodes\CGraph.cpp">
       <Filter>Source Files\dlls\classes\nodes</Filter>
@@ -1190,9 +1211,6 @@
     <ClCompile Include="..\..\dlls\game.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\gamerules.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\h_ai.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1208,15 +1226,6 @@
     <ClCompile Include="..\..\dlls\movewith.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\multiplay_gamerules.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\plane.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\skill.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1224,9 +1233,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\subs.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\teamplay_gamerules.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\UserMessages.cpp">
@@ -1363,11 +1369,26 @@
     <ClInclude Include="..\..\dlls\cdll_dll.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\CPlane.h">
+      <Filter>Header Files\dlls\classes</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\classes\CSound.h">
       <Filter>Header Files\dlls\classes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\classes\EHANDLE.h">
       <Filter>Header Files\dlls\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\gamerules\CGameRules.h">
+      <Filter>Header Files\dlls\classes\gamerules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\gamerules\CHalfLifeMultiplay.h">
+      <Filter>Header Files\dlls\classes\gamerules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\gamerules\CHalfLifeRules.h">
+      <Filter>Header Files\dlls\classes\gamerules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\classes\gamerules\CHalfLifeTeamplay.h">
+      <Filter>Header Files\dlls\classes\gamerules</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\classes\nodes\CGraph.h">
       <Filter>Header Files\dlls\classes\nodes</Filter>
@@ -2248,16 +2269,10 @@
     <ClInclude Include="..\..\dlls\game.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\gamerules.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\locus.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\movewith.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\plane.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\saverestore.h">
@@ -2273,9 +2288,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\squad.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\teamplay_gamerules.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\UserMessages.h">

@@ -20,7 +20,7 @@
 #include "util.h"
 #include "cbase.h"
 #include "weapons.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "pm_defs.h"
 #include "pm_materials.h"
 #include "pm_shared.h"

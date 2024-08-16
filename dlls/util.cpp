@@ -29,7 +29,7 @@
 #include "decals.h"
 #include "entities/player/CBasePlayer.h"
 #include "weapons.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "UserMessages.h"
 #include "movewith.h"
 #include "locus.h"

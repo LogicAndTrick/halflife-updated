@@ -17,7 +17,7 @@
 #include "entities/item/CItemCamera.h"
 #include "UserMessages.h"
 #include "game.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "entities/CWorld.h"
 
 LINK_ENTITY_TO_CLASS(player, CBasePlayer);

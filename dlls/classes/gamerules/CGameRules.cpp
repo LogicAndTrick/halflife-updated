@@ -1,35 +1,28 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-//=========================================================
-// GameRules.cpp
-//=========================================================
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
+#include "CGameRules.h"
+
+#include "CHalfLifeMultiplay.h"
+#include "CHalfLifeRules.h"
+#include "CHalfLifeTeamplay.h"
+#include "entities/CBaseEntity.h"
 #include "entities/player/CBasePlayer.h"
-#include "weapons.h"
-#include "gamerules.h"
-#include "teamplay_gamerules.h"
-#include "skill.h"
-#include "game.h"
-#include "UserMessages.h"
 #include "entities/CWorld.h"
 #include "entities/weapon/CBasePlayerItem.h"
-
-extern edict_t* EntSelectSpawnPoint(CBaseEntity* pPlayer);
+#include "game.h"
 
 CBasePlayerItem* CGameRules::FindNextBestWeapon(CBasePlayer* pPlayer, CBasePlayerItem* pCurrentWeapon)
 {
@@ -68,10 +61,10 @@ CBasePlayerItem* CGameRules::FindNextBestWeapon(CBasePlayer* pPlayer, CBasePlaye
 			}
 			else if (pCheck->iWeight() > iBestWeight)
 			{
-				//ALERT ( at_console, "Considering %s\n", STRING( pCheck->pev->classname ) );
-				// we keep updating the 'best' weapon just in case we can't find a weapon of the same weight
-				// that the player was using. This will end up leaving the player with his heaviest-weighted
-				// weapon.
+				// ALERT ( at_console, "Considering %s\n", STRING( pCheck->pev->classname ) );
+				//  we keep updating the 'best' weapon just in case we can't find a weapon of the same weight
+				//  that the player was using. This will end up leaving the player with his heaviest-weighted
+				//  weapon.
 				if (pCheck->CanDeploy())
 				{
 					// if this weapon is useable, flag it as the best
@@ -138,7 +131,7 @@ edict_t* CGameRules::GetPlayerSpawnSpot(CBasePlayer* pPlayer)
 	pPlayer->pev->punchangle = g_vecZero;
 	pPlayer->pev->fixangle = 1;
 
-	//LRC
+	// LRC
 	if (pentSpawnSpot->v.spawnflags & 1) // the START WITH SUIT flag
 	{
 		g_startSuit = true;
@@ -203,7 +196,7 @@ void CGameRules::RefreshSkillData()
 
 	ALERT(at_debug, "\nGAME SKILL LEVEL:%d\n", iSkill);
 
-	//Agrunt
+	// Agrunt
 	gSkillData.agruntHealth = GetSkillCvar("sk_agrunt_health");
 	gSkillData.agruntDmgPunch = GetSkillCvar("sk_agrunt_dmg_punch");
 
@@ -286,7 +279,7 @@ void CGameRules::RefreshSkillData()
 	gSkillData.zombieDmgOneSlash = GetSkillCvar("sk_zombie_dmg_one_slash");
 	gSkillData.zombieDmgBothSlash = GetSkillCvar("sk_zombie_dmg_both_slash");
 
-	//Turret
+	// Turret
 	gSkillData.turretHealth = GetSkillCvar("sk_turret_health");
 
 	// MiniTurret
@@ -375,7 +368,6 @@ void CGameRules::RefreshSkillData()
 //=========================================================
 // instantiate the proper game rules object
 //=========================================================
-
 CGameRules* InstallGameRules()
 {
 	SERVER_COMMAND("exec game.cfg\n");

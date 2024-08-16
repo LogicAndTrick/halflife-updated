@@ -19,7 +19,7 @@
 #include "entities/weapon/CBasePlayerWeapon.h"
 #include "entities/weapon/CWeaponBox.h"
 #include "UserMessages.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "hltv.h"
 
 /* ATTACKING */

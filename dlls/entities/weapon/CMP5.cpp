@@ -16,7 +16,7 @@
 #include "CMP5.h"
 #include "CBasePlayerAmmo.h"
 #include "CGrenade.h"
-#include "gamerules.h"
+#include "classes/gamerules/CGameRules.h"
 #include "entities/player/CBasePlayer.h"
 #include "weapons.h"
 
