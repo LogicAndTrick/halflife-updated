@@ -22,7 +22,7 @@
 #include "schedule.h"
 #include "defaultai.h"
 #include "soundent.h"
-#include "scripted.h"
+#include "entities/monster/CCineMonster.h"
 #include "entities/CBaseMonster.h"
 
 //=========================================================

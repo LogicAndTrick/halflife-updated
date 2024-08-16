@@ -19,7 +19,7 @@
 #include "soundent.h"
 #include "decals.h"
 #include "entities/func/CBreakable.h"
-#include "scripted.h"
+#include "entities/monster/CCineMonster.h"
 #include "entities/CGib.h"
 #include "entities/env/CEnvExplosion.h"
 

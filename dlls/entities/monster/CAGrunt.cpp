@@ -14,8 +14,7 @@
  ****/
 
 #include "CAGrunt.h"
-
-#include "scripted.h"
+#include "entities/monster/CCineMonster.h"
 
 int iAgruntMuzzleFlash;
 

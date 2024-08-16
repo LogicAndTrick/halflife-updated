@@ -680,6 +680,9 @@
     <ClCompile Include="..\..\dlls\entities\monster\CBullsquid.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\monster\CCineMonster.cpp">
+      <Filter>Source Files\dlls\entities\monster</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp">
       <Filter>Source Files\dlls\entities\monster</Filter>
     </ClCompile>
@@ -1050,9 +1053,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\player.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\scripted.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp">
@@ -1696,6 +1696,9 @@
     <ClInclude Include="..\..\dlls\entities\monster\CBullsquid.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\monster\CCineMonster.h">
+      <Filter>Header Files\dlls\entities\monster</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\monster\CController.h">
       <Filter>Header Files\dlls\entities\monster</Filter>
     </ClInclude>
@@ -2057,9 +2060,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\schedule.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\scripted.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\scriptevent.h">

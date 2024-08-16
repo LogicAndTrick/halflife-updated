@@ -17,7 +17,7 @@
 #include "schedule.h"
 #include "weapons.h"
 #include "soundent.h"
-#include "scripted.h"
+#include "entities/monster/CCineMonster.h"
 #include "game.h"
 #include "entities/weapon/CGrenade.h"
 

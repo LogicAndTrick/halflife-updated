@@ -273,6 +273,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\monster\CBigMomma.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBloater.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CBullsquid.cpp" />
+    <ClCompile Include="..\..\dlls\entities\monster\CCineMonster.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CController.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyer.cpp" />
     <ClCompile Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.cpp" />
@@ -397,7 +398,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\observer.cpp" />
     <ClCompile Include="..\..\dlls\plane.cpp" />
     <ClCompile Include="..\..\dlls\player.cpp" />
-    <ClCompile Include="..\..\dlls\scripted.cpp" />
     <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp" />
     <ClCompile Include="..\..\dlls\skill.cpp" />
     <ClCompile Include="..\..\dlls\sound.cpp" />
@@ -613,6 +613,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\monster\CBigMomma.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBloater.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CBullsquid.h" />
+    <ClInclude Include="..\..\dlls\entities\monster\CCineMonster.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CController.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyer.h" />
     <ClInclude Include="..\..\dlls\entities\monster\CFlockingFlyerFlock.h" />
@@ -734,7 +735,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\player.h" />
     <ClInclude Include="..\..\dlls\saverestore.h" />
     <ClInclude Include="..\..\dlls\schedule.h" />
-    <ClInclude Include="..\..\dlls\scripted.h" />
     <ClInclude Include="..\..\dlls\scriptevent.h" />
     <ClInclude Include="..\..\dlls\skill.h" />
     <ClInclude Include="..\..\dlls\soundent.h" />

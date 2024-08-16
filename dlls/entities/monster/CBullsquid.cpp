@@ -17,7 +17,7 @@
 #include "nodes.h"
 #include "decals.h"
 #include "soundent.h"
-#include "scripted.h"
+#include "entities/monster/CCineMonster.h"
 #include "game.h"
 
 int iSquidSpitSprite;

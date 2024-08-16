@@ -28,10 +28,11 @@
 #include "animation.h"
 #include "saverestore.h"
 #include "weapons.h"
-#include "scripted.h"
+#include "entities/monster/CCineMonster.h"
 #include "decals.h"
 #include "soundent.h"
 #include "gamerules.h"
+#include "scriptevent.h"
 #include "entities/monster/CSquadMonster.h"
 
 #define MONSTER_CUT_CORNER_DIST 8 // 8 means the monster's bounding box is contained without the box of the node in WC

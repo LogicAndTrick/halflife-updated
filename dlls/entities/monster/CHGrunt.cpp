@@ -20,7 +20,7 @@
 #include "CTalkMonster.h"
 #include "weapons.h"
 #include "soundent.h"
-#include "scripted.h" //LRC
+#include "entities/monster/CCineMonster.h"
 #include "entities/env/CBeam.h"
 #include "entities/weapon/CGrenade.h"
 
