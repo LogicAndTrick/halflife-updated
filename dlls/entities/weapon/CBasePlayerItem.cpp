@@ -15,7 +15,7 @@
 
 #include "CBasePlayerItem.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 TYPEDESCRIPTION CBasePlayerItem::m_SaveData[] =
 	{

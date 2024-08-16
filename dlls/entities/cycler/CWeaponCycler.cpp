@@ -14,7 +14,7 @@
  ****/
 
 #include "CWeaponCycler.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(cycler_weapon, CWeaponCycler);
 

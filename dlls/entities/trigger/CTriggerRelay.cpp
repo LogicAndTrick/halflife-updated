@@ -15,7 +15,7 @@
 
 #include "CTriggerRelay.h"
 #include "locus.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(trigger_relay, CTriggerRelay);
 

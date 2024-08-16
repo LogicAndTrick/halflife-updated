@@ -14,7 +14,7 @@
  ****/
 
 #include "CCalcNumFromEnt.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(calc_numfroment, CCalcNumFromEnt); // LRC 1.8: new name for this entity
 LINK_ENTITY_TO_CLASS(calc_subratio, CCalcNumFromEnt);	// old name, still legal

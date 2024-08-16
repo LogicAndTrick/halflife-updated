@@ -11,7 +11,7 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 
 

@@ -23,7 +23,7 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "monsters.h"
 #include "weapons.h"
 #include "soundent.h"

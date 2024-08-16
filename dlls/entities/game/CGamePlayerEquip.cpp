@@ -14,7 +14,7 @@
  ****/
 
 #include "CGamePlayerEquip.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(game_player_equip, CGamePlayerEquip);
 

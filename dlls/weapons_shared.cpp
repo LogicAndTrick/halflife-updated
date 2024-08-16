@@ -15,7 +15,7 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "weapons.h"
 #include "gamerules.h"
 #include "entities/weapon/CBasePlayerItem.h"

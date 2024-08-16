@@ -14,7 +14,7 @@
  ****/
 
 #include "CRainModify.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(rain_modify, CRainModify);
 

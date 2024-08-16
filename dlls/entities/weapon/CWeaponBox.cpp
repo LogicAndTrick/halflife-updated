@@ -15,7 +15,7 @@
 
 #include "CWeaponBox.h"
 #include "CBasePlayerItem.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(weaponbox, CWeaponBox);
 

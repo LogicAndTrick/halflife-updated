@@ -14,7 +14,7 @@
  ****/
 
 #include "CEnvSound.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(env_sound, CEnvSound);
 

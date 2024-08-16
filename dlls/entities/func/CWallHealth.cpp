@@ -14,7 +14,7 @@
  ****/
 
 #include "CWallHealth.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "gamerules.h"
 #include "skill.h"
 

@@ -16,7 +16,7 @@
 #include "CEgon.h"
 #include "CBasePlayerAmmo.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "skill.h"
 #include "weapons.h"
 

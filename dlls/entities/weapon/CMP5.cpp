@@ -17,7 +17,7 @@
 #include "CBasePlayerAmmo.h"
 #include "CGrenade.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "soundent.h"
 #include "weapons.h"
 

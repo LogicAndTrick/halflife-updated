@@ -17,7 +17,7 @@
 #include "entities/scripted/CTankSequence.h"
 #include "monsters.h"
 #include "movewith.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 TYPEDESCRIPTION CFuncTank::m_SaveData[] =
 	{

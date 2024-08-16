@@ -15,7 +15,7 @@
 
 #include "CEnvFog.h"
 #include "movewith.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(env_fog, CEnvFog);
 

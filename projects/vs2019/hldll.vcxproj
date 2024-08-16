@@ -30,7 +30,8 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings"></ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -54,7 +55,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;QUIVER;VOXEL;QUAKE2;VALVE_DLL;CLIENT_WEAPONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -81,7 +83,8 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader></PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -314,10 +317,23 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\multi\CMultisource.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathTrack.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Ammo.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Autoaim.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Client.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Combat.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Flashlight.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Items.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Movement.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Multiplayer.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_SaveRestore.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Think.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Impulse.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CBloodSplat.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CPlayerFreeze.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CPlayerMarker.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CRevertSaved.cpp" />
+    <ClCompile Include="..\..\dlls\entities\player\CSprayCan.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CStripWeapons.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CScriptedSentence.cpp" />
     <ClCompile Include="..\..\dlls\entities\scripted\CTankSequence.cpp" />
@@ -401,7 +417,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\nodes.cpp" />
     <ClCompile Include="..\..\dlls\observer.cpp" />
     <ClCompile Include="..\..\dlls\plane.cpp" />
-    <ClCompile Include="..\..\dlls\player.cpp" />
     <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp" />
     <ClCompile Include="..\..\dlls\skill.cpp" />
     <ClCompile Include="..\..\dlls\sound.cpp" />
@@ -659,9 +674,11 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h" />
     <ClInclude Include="..\..\dlls\entities\path\CPathTrack.h" />
     <ClInclude Include="..\..\dlls\entities\player\CBasePlayer.h" />
+    <ClInclude Include="..\..\dlls\entities\player\CBloodSplat.h" />
     <ClInclude Include="..\..\dlls\entities\player\CPlayerFreeze.h" />
     <ClInclude Include="..\..\dlls\entities\player\CPlayerMarker.h" />
     <ClInclude Include="..\..\dlls\entities\player\CRevertSaved.h" />
+    <ClInclude Include="..\..\dlls\entities\player\CSprayCan.h" />
     <ClInclude Include="..\..\dlls\entities\player\CStripWeapons.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CScriptedSentence.h" />
     <ClInclude Include="..\..\dlls\entities\scripted\CTankSequence.h" />
@@ -740,7 +757,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\movewith.h" />
     <ClInclude Include="..\..\dlls\nodes.h" />
     <ClInclude Include="..\..\dlls\plane.h" />
-    <ClInclude Include="..\..\dlls\player.h" />
     <ClInclude Include="..\..\dlls\saverestore.h" />
     <ClInclude Include="..\..\dlls\schedule.h" />
     <ClInclude Include="..\..\dlls\scriptevent.h" />
@@ -770,5 +786,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\public\interface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets"></ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>

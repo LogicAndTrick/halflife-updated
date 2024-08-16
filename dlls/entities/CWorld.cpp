@@ -20,7 +20,7 @@
 #include "soundent.h"
 #include "client.h"
 #include "decals.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "gamerules.h"
 
 extern void W_Precache(); // weapon precache - weapons.cpp

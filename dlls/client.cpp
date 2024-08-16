@@ -33,7 +33,7 @@
 #include "cbase.h"
 #include "com_model.h"
 #include "saverestore.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "client.h"
 #include "soundent.h"
 #include "gamerules.h"

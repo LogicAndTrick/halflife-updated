@@ -14,7 +14,7 @@
  ****/
 
 #include "CTriggerSound.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(trigger_sound, CTriggerSound);
 

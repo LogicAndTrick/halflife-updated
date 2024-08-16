@@ -16,7 +16,7 @@
 #include "CItemMedicalKit.h"
 
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "UserMessages.h"
 
 LINK_ENTITY_TO_CLASS(item_medicalkit, CItemMedicalKit);

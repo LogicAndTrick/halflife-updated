@@ -15,7 +15,7 @@
 
 #include "CStripWeapons.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 
 LINK_ENTITY_TO_CLASS(player_weaponstrip, CStripWeapons);
 

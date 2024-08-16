@@ -16,7 +16,7 @@
 #include "CPlayerFreeze.h"
 
 #include "locus.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "UserMessages.h"
 
 LINK_ENTITY_TO_CLASS(player_freeze, CPlayerFreeze);

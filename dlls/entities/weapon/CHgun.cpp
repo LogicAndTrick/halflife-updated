@@ -16,7 +16,7 @@
 #include "CHgun.h"
 #include "entities/monster/CHornet.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_hornetgun, CHgun);

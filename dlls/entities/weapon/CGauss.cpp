@@ -16,7 +16,7 @@
 #include "CGauss.h"
 #include "CBasePlayerAmmo.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "shake.h"
 #include "skill.h"
 #include "soundent.h"

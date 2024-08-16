@@ -15,7 +15,7 @@
 
 #include "CTriggerHevCharge.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(trigger_hevcharge, CTriggerHevCharge);

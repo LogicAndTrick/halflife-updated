@@ -17,7 +17,7 @@
 #include "CCrossbow.h"
 #include "CCrossbowBolt.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "weapons.h"
 
 class CCrossbowBolt;

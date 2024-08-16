@@ -824,7 +824,43 @@
     <ClCompile Include="..\..\dlls\entities\path\CPathTrack.cpp">
       <Filter>Source Files\dlls\entities\path</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Ammo.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Autoaim.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Client.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Combat.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Flashlight.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Items.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Movement.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Multiplayer.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_SaveRestore.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Think.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Impulse.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CBloodSplat.cpp">
       <Filter>Source Files\dlls\entities\player</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\player\CPlayerFreeze.cpp">
@@ -834,6 +870,9 @@
       <Filter>Source Files\dlls\entities\player</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\player\CRevertSaved.cpp">
+      <Filter>Source Files\dlls\entities\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\entities\player\CSprayCan.cpp">
       <Filter>Source Files\dlls\entities\player</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\entities\player\CStripWeapons.cpp">
@@ -1083,9 +1122,6 @@
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\plane.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\player.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp">
@@ -1855,6 +1891,9 @@
     <ClInclude Include="..\..\dlls\entities\player\CBasePlayer.h">
       <Filter>Header Files\dlls\entities\player</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\player\CBloodSplat.h">
+      <Filter>Header Files\dlls\entities\player</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\entities\player\CPlayerFreeze.h">
       <Filter>Header Files\dlls\entities\player</Filter>
     </ClInclude>
@@ -1862,6 +1901,9 @@
       <Filter>Header Files\dlls\entities\player</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\player\CRevertSaved.h">
+      <Filter>Header Files\dlls\entities\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\entities\player\CSprayCan.h">
       <Filter>Header Files\dlls\entities\player</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\entities\player\CStripWeapons.h">
@@ -2096,9 +2138,6 @@
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\plane.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\player.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\saverestore.h">

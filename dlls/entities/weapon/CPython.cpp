@@ -16,7 +16,7 @@
 #include "CPython.h"
 #include "CBasePlayerAmmo.h"
 #include "gamerules.h"
-#include "player.h"
+#include "entities/player/CBasePlayer.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_python, CPython);
