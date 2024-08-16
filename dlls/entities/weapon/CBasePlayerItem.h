@@ -46,6 +46,8 @@ struct AmmoInfo
 	const char* WeaponName = nullptr;
 };
 
+void Item_Precache(); // item precache
+
 // Items that the player has in their inventory that they can use
 class CBasePlayerItem : public CBaseAnimating
 {

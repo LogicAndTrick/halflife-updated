@@ -17,7 +17,9 @@
 
 #include "CBasePlayerItem.h"
 
-// inventory items that
+void Weapon_Precache(); // weapon precache
+
+// inventory items that you can shoot
 class CBasePlayerWeapon : public CBasePlayerItem
 {
 public:

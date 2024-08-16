@@ -22,9 +22,8 @@
 #include "decals.h"
 #include "entities/player/CBasePlayer.h"
 #include "gamerules.h"
-
-extern void W_Precache(); // weapon precache - weapons.cpp
-extern void I_Precache(); // item precache - items.cpp
+#include "weapon/CBasePlayerItem.h"
+#include "weapon/CBasePlayerWeapon.h"
 
 bool g_startSuit; // LRC
 
@@ -283,8 +282,8 @@ void CWorld::Precache()
 	// the area based ambient sounds MUST be the first precache_sounds
 
 	// player precaches
-	W_Precache(); // get weapon precaches
-	I_Precache(); // get Inventory Item precaches
+	Weapon_Precache(); // get weapon precaches
+	Item_Precache(); // get Inventory Item precaches
 
 	ClientPrecache();
 
