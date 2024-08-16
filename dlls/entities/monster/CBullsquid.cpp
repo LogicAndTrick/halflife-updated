@@ -14,7 +14,7 @@
  ****/
 
 #include "CBullsquid.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 #include "decals.h"
 #include "entities/monster/CCineMonster.h"
 #include "game.h"

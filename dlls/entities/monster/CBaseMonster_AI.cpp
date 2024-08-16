@@ -16,7 +16,7 @@
 #include "CBaseMonster.h"
 #include "CCineMonster.h"
 #include "CSquadMonster.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 
 //=========================================================
 // SetState

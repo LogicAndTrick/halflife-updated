@@ -117,6 +117,12 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\bmodels.cpp" />
     <ClCompile Include="..\..\dlls\cbase.cpp" />
     <ClCompile Include="..\..\dlls\classes\CSound.cpp" />
+    <ClCompile Include="..\..\dlls\classes\nodes\CGraph.cpp" />
+    <ClCompile Include="..\..\dlls\classes\nodes\CLink.cpp" />
+    <ClCompile Include="..\..\dlls\classes\nodes\CNode.cpp" />
+    <ClCompile Include="..\..\dlls\classes\nodes\CQueue.cpp" />
+    <ClCompile Include="..\..\dlls\classes\nodes\CQueuePriority.cpp" />
+    <ClCompile Include="..\..\dlls\classes\nodes\CStack.cpp" />
     <ClCompile Include="..\..\dlls\client.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CBaseMutableAlias.cpp" />
     <ClCompile Include="..\..\dlls\entities\alias\CInfoAlias.cpp" />
@@ -323,6 +329,9 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\motion\CMotionManager.cpp" />
     <ClCompile Include="..\..\dlls\entities\multi\CMultiManager.cpp" />
     <ClCompile Include="..\..\dlls\entities\multi\CMultisource.cpp" />
+    <ClCompile Include="..\..\dlls\entities\nodes\CNodeEnt.cpp" />
+    <ClCompile Include="..\..\dlls\entities\nodes\CNodeViewer.cpp" />
+    <ClCompile Include="..\..\dlls\entities\nodes\CTestHull.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathCorner.cpp" />
     <ClCompile Include="..\..\dlls\entities\path\CPathTrack.cpp" />
     <ClCompile Include="..\..\dlls\entities\player\CBasePlayer_Ammo.cpp" />
@@ -423,7 +432,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\locus.cpp" />
     <ClCompile Include="..\..\dlls\movewith.cpp" />
     <ClCompile Include="..\..\dlls\multiplay_gamerules.cpp" />
-    <ClCompile Include="..\..\dlls\nodes.cpp" />
     <ClCompile Include="..\..\dlls\observer.cpp" />
     <ClCompile Include="..\..\dlls\plane.cpp" />
     <ClCompile Include="..\..\dlls\singleplay_gamerules.cpp" />
@@ -479,6 +487,12 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\cbase.h" />
     <ClInclude Include="..\..\dlls\cdll_dll.h" />
     <ClInclude Include="..\..\dlls\classes\CSound.h" />
+    <ClInclude Include="..\..\dlls\classes\nodes\CGraph.h" />
+    <ClInclude Include="..\..\dlls\classes\nodes\CLink.h" />
+    <ClInclude Include="..\..\dlls\classes\nodes\CNode.h" />
+    <ClInclude Include="..\..\dlls\classes\nodes\CQueue.h" />
+    <ClInclude Include="..\..\dlls\classes\nodes\CQueuePriority.h" />
+    <ClInclude Include="..\..\dlls\classes\nodes\CStack.h" />
     <ClInclude Include="..\..\dlls\client.h" />
     <ClInclude Include="..\..\dlls\decals.h" />
     <ClInclude Include="..\..\dlls\enginecallback.h" />
@@ -676,6 +690,9 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\motion\CMotionManager.h" />
     <ClInclude Include="..\..\dlls\entities\multi\CMultiManager.h" />
     <ClInclude Include="..\..\dlls\entities\multi\CMultisource.h" />
+    <ClInclude Include="..\..\dlls\entities\nodes\CNodeEnt.h" />
+    <ClInclude Include="..\..\dlls\entities\nodes\CNodeViewer.h" />
+    <ClInclude Include="..\..\dlls\entities\nodes\CTestHull.h" />
     <ClInclude Include="..\..\dlls\entities\path\CPathCorner.h" />
     <ClInclude Include="..\..\dlls\entities\path\CPathTrack.h" />
     <ClInclude Include="..\..\dlls\entities\player\CBasePlayer.h" />
@@ -762,7 +779,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\gamerules.h" />
     <ClInclude Include="..\..\dlls\locus.h" />
     <ClInclude Include="..\..\dlls\movewith.h" />
-    <ClInclude Include="..\..\dlls\nodes.h" />
     <ClInclude Include="..\..\dlls\plane.h" />
     <ClInclude Include="..\..\dlls\saverestore.h" />
     <ClInclude Include="..\..\dlls\schedule.h" />

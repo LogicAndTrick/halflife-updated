@@ -18,7 +18,7 @@
 #include "CWorld.h"
 #include "decals.h"
 #include "movewith.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 #include "weapons.h"
 
 TYPEDESCRIPTION CBaseEntity::m_SaveData[] =

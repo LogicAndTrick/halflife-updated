@@ -16,7 +16,7 @@
 #include "CWorld.h"
 #include "CCorpse.h"
 #include "entities/env/CMessage.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 #include "entities/sound/CSoundEnt.h"
 #include "client.h"
 #include "decals.h"

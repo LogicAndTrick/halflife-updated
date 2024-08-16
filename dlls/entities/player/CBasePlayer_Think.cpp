@@ -21,7 +21,7 @@
 #include "client.h"
 #include "game.h"
 #include "gamerules.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 
 void CBasePlayer::PreThink()
 {

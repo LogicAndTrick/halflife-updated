@@ -16,7 +16,7 @@
 #include "CBaseMonster.h"
 #include "entities/CGib.h"
 #include "gamerules.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 
 //=========================================================
 // KeyValue

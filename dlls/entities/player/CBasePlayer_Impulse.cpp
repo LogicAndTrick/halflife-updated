@@ -17,7 +17,7 @@
 #include "CBloodSplat.h"
 #include "CSprayCan.h"
 #include "game.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 #include "pm_shared.h"
 #include "UserMessages.h"
 #include "entities/CGib.h"

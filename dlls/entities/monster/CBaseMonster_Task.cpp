@@ -15,7 +15,7 @@
 
 #include "CBaseMonster.h"
 #include "CCineMonster.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 
 //=========================================================
 // GetTask - returns a pointer to the current

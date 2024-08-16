@@ -16,7 +16,7 @@
 #include "CIchthyosaur.h"
 
 #include "schedule.h"
-#include "nodes.h"
+#include "classes/nodes/CGraph.h"
 #include "animation.h"
 #include "weapons.h"
 
