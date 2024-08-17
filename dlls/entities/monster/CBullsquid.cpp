@@ -17,7 +17,7 @@
 #include "classes/nodes/CGraph.h"
 #include "decals.h"
 #include "entities/monster/CCineMonster.h"
-#include "game.h"
+#include "api/game.h"
 
 int iSquidSpitSprite;
 

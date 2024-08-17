@@ -17,7 +17,7 @@
 #include "schedule.h"
 #include "animation.h"
 #include "classes/nodes/CGraph.h"
-#include "game.h"
+#include "api/game.h"
 
 LINK_ENTITY_TO_CLASS(monster_houndeye, CHoundeye);
 

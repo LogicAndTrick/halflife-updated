@@ -17,7 +17,7 @@
 #include "entities/CBaseEntity.h"
 #include "entities/player/CBasePlayer.h"
 #include "entities/CWorld.h"
-#include "game.h"
+#include "api/game.h"
 #include "UserMessages.h"
 
 // TODO: these should be members of CHalfLifeTeamplay
@@ -62,7 +62,6 @@ CHalfLifeTeamplay::CHalfLifeTeamplay()
 }
 
 #include "voice_gamemgr.h"
-extern CVoiceGameMgr g_VoiceGameMgr;
 
 void CHalfLifeTeamplay::Think()
 {

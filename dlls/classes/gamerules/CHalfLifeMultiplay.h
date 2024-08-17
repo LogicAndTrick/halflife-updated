@@ -16,6 +16,9 @@
 #pragma once
 
 #include "CGameRules.h"
+#include "voice_gamemgr.h"
+
+extern CVoiceGameMgr g_VoiceGameMgr;
 
 // CHalfLifeMultiplay - rules for the basic half life multiplayer competition
 class CHalfLifeMultiplay : public CGameRules

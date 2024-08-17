@@ -15,7 +15,7 @@
 
 #include "CHeadCrab.h"
 
-#include "game.h"
+#include "api/game.h"
 
 Task_t tlHCRangeAttack1[] =
 	{

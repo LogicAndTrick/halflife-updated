@@ -18,6 +18,9 @@
     <Filter Include="Header Files\dlls">
       <UniqueIdentifier>{e3b69fef-bfa6-4270-8280-f2b25793ac4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\api">
+      <UniqueIdentifier>{dc2e3691-4afc-41c1-8d0d-51d3db2e9245}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\dlls\classes">
       <UniqueIdentifier>{01a142ce-7740-4d7d-8b5e-8cc6a08af18d}</UniqueIdentifier>
     </Filter>
@@ -114,6 +117,9 @@
     <Filter Include="Header Files\dlls\entities\xen">
       <UniqueIdentifier>{52b6eec0-e156-4fb6-8aac-7fbced72ea62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\dlls\util">
+      <UniqueIdentifier>{a49e2282-080e-4cda-a7b7-9a091610ccb1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\engine">
       <UniqueIdentifier>{b85e935a-5cc8-482d-b85f-6cdaa3452ccb}</UniqueIdentifier>
     </Filter>
@@ -131,6 +137,9 @@
     </Filter>
     <Filter Include="Source Files\dlls">
       <UniqueIdentifier>{a59f65b1-455f-459d-bc2a-75775255cd5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dlls\api">
+      <UniqueIdentifier>{1e447ab6-074a-4250-b22e-fabf1489dab3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\dlls\classes">
       <UniqueIdentifier>{057d0a00-7a30-4b54-9ae5-1f7222cd42d7}</UniqueIdentifier>
@@ -228,6 +237,9 @@
     <Filter Include="Source Files\dlls\entities\xen">
       <UniqueIdentifier>{a55abbd4-7e2f-4027-8716-6bdf168d5a0f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\dlls\util">
+      <UniqueIdentifier>{c1dd87f7-43b4-46fb-afb8-29ba15ece014}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\game_shared">
       <UniqueIdentifier>{9cd951c6-53c4-4c79-826f-13ac1af8a8b6}</UniqueIdentifier>
     </Filter>
@@ -244,6 +256,42 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\animation.cpp">
       <Filter>Source Files\dlls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\saverestore.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\dispatch.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\util1 - Copy (2).cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\util1 - Copy (3).cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\util1 - Copy (4).cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\util1 - Copy (5).cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\frame.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\player.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\server.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\client1.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\game.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\engine_api.cpp">
+      <Filter>Source Files\dlls\api</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\bmodels.cpp">
       <Filter>Source Files\dlls</Filter>
@@ -1208,9 +1256,6 @@
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\game.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\h_ai.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1240,6 +1285,42 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\util.cpp">
       <Filter>Source Files\dlls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (10).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (11).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (2).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (3).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (4).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (5).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (6).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (7).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (8).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy (9).cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1 - Copy.cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\util1.cpp">
+      <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\weapons_shared.cpp">
       <Filter>Source Files\dlls</Filter>
@@ -1362,6 +1443,42 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\animation.h">
       <Filter>Header Files\dlls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\client1.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\saverestore.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\util1 - Copy (2).h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\util1 - Copy (3).h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\util1 - Copy (4).h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\util1 - Copy (5).h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\util1 - Copy (6).h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\frame.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\player.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\server.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\dispatch.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\game.h">
+      <Filter>Header Files\dlls\api</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\cbase.h">
       <Filter>Header Files\dlls</Filter>
@@ -2266,9 +2383,6 @@
     <ClInclude Include="..\..\dlls\extdll.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\game.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\locus.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
@@ -2295,6 +2409,42 @@
     </ClInclude>
     <ClInclude Include="..\..\dlls\util.h">
       <Filter>Header Files\dlls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (10).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (11).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (2).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (3).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (4).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (5).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (6).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (7).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (8).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy (9).h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1 - Copy.h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\util1.h">
+      <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\vector.h">
       <Filter>Header Files\dlls</Filter>

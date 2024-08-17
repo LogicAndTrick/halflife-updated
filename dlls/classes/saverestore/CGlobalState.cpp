@@ -179,31 +179,3 @@ void CGlobalState::ClearStates()
 	}
 	Reset();
 }
-
-void SaveGlobalState(SAVERESTOREDATA* pSaveData)
-{
-	if (!CSaveRestoreBuffer::IsValidSaveRestoreData(pSaveData))
-	{
-		return;
-	}
-
-	CSave saveHelper(*pSaveData);
-	gGlobalState.Save(saveHelper);
-}
-
-void RestoreGlobalState(SAVERESTOREDATA* pSaveData)
-{
-	if (!CSaveRestoreBuffer::IsValidSaveRestoreData(pSaveData))
-	{
-		return;
-	}
-
-	CRestore restoreHelper(*pSaveData);
-	gGlobalState.Restore(restoreHelper);
-}
-
-void ResetGlobalState()
-{
-	gGlobalState.ClearStates();
-	gInitHUD = true; // Init the HUD on a new game / load game
-}

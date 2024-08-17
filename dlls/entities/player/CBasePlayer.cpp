@@ -16,7 +16,7 @@
 #include "CBasePlayer.h"
 #include "entities/item/CItemCamera.h"
 #include "UserMessages.h"
-#include "game.h"
+#include "api/game.h"
 #include "classes/gamerules/CGameRules.h"
 #include "entities/CWorld.h"
 

@@ -16,7 +16,7 @@
 #include "CBigMomma.h"
 
 #include "decals.h"
-#include "game.h"
+#include "api/game.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(info_bigmomma, CInfoBM);

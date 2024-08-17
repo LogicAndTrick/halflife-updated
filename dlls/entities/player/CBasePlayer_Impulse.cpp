@@ -16,7 +16,7 @@
 #include "CBasePlayer.h"
 #include "CBloodSplat.h"
 #include "CSprayCan.h"
-#include "game.h"
+#include "api/game.h"
 #include "classes/nodes/CGraph.h"
 #include "pm_shared.h"
 #include "UserMessages.h"

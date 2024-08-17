@@ -19,7 +19,7 @@
 #include "entities/weapon/CBasePlayerWeapon.h"
 #include "entities/CWorld.h"
 #include "client.h"
-#include "game.h"
+#include "api/game.h"
 #include "classes/gamerules/CGameRules.h"
 #include "classes/nodes/CGraph.h"
 

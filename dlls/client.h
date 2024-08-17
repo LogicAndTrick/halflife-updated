@@ -15,21 +15,7 @@
 
 #pragma once
 
-extern void respawn(entvars_t* pev, bool fCopyCorpse);
-extern qboolean ClientConnect(edict_t* pEntity, const char* pszName, const char* pszAddress, char szRejectReason[128]);
-extern void ClientDisconnect(edict_t* pEntity);
-extern void ClientKill(edict_t* pEntity);
-extern void ClientPutInServer(edict_t* pEntity);
-extern void ClientCommand(edict_t* pEntity);
-extern void ClientUserInfoChanged(edict_t* pEntity, char* infobuffer);
-extern void ServerActivate(edict_t* pEdictList, int edictCount, int clientMax);
-extern void ServerDeactivate();
-void InitMapLoadingUtils();
-extern void StartFrame();
-extern void PlayerPostThink(edict_t* pEntity);
-extern void PlayerPreThink(edict_t* pEntity);
-extern void ParmsNewLevel();
-extern void ParmsChangeLevel();
+void respawn(entvars_t* pev, bool fCopyCorpse);
 
 extern void ClientPrecache();
 

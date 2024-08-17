@@ -21,6 +21,7 @@
 #include "decals.h"
 #include "movewith.h"
 #include "weapons.h"
+#include "api/dispatch.h"
 
 TYPEDESCRIPTION CBaseEntity::m_SaveData[] =
 	{

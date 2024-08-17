@@ -22,7 +22,7 @@
 #include "entities/player/CBasePlayer.h"
 #include "entities/CWorld.h"
 #include "entities/weapon/CBasePlayerItem.h"
-#include "game.h"
+#include "api/game.h"
 
 CBasePlayerItem* CGameRules::FindNextBestWeapon(CBasePlayer* pPlayer, CBasePlayerItem* pCurrentWeapon)
 {

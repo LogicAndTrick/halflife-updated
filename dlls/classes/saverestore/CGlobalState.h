@@ -36,11 +36,6 @@ struct globalentity_s
 	GLOBALESTATE state;
 	globalentity_t* pNext;
 };
-
-extern void SaveGlobalState(SAVERESTOREDATA* pSaveData);
-extern void RestoreGlobalState(SAVERESTOREDATA* pSaveData);
-extern void ResetGlobalState();
-
 class CGlobalState
 {
 public:

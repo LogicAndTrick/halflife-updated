@@ -23,7 +23,7 @@
 #include "UserMessages.h"
 #include "voice_gamemgr.h"
 #include "hltv.h"
-#include "game.h"
+#include "api/game.h"
 
 #define ITEM_RESPAWN_TIME 30
 #define WEAPON_RESPAWN_TIME 20

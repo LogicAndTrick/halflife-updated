@@ -14,6 +14,8 @@
  ****/
 
 #include "CController.h"
+
+#include "api/dispatch.h"
 #include "entities/monster/CCineMonster.h"
 
 LINK_ENTITY_TO_CLASS(monster_alien_controller, CController);

@@ -1,23 +1,24 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-#include "extdll.h"
-#include "eiface.h"
-#include "util.h"
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
+
+#include "api/game.h"
 #include "client.h"
-#include "game.h"
+#include "util.h"
+#include "api/client1.h"
 #include "filesystem_utils.h"
+#include "frame.h"
 
 cvar_t displaysoundlist = {"displaysoundlist", "0"};
 
@@ -43,16 +44,16 @@ cvar_t allowmonsters = {"mp_allowmonsters", "0", FCVAR_SERVER};
 cvar_t mp3player = {"mp3player", "1", FCVAR_SERVER};
 cvar_t mp3volume = {"mp3volume", "1", FCVAR_SERVER};
 
-cvar_t timeddamage = {"timed_damage", "0", FCVAR_SERVER | FCVAR_ARCHIVE}; //AJH Time based damage (nervegas/rad, not poison) on/off
-cvar_t maxcameras = {"max_cameras", "2", FCVAR_SERVER | FCVAR_ARCHIVE};	  //AJH the maximum number of inventory cameras a player may carry
-cvar_t maxmedkit = {"max_medkit", "200", FCVAR_SERVER | FCVAR_ARCHIVE};	  //AJH The maximum portable medkit charge a player may have
+cvar_t timeddamage = {"timed_damage", "0", FCVAR_SERVER | FCVAR_ARCHIVE}; // AJH Time based damage (nervegas/rad, not poison) on/off
+cvar_t maxcameras = {"max_cameras", "2", FCVAR_SERVER | FCVAR_ARCHIVE};	  // AJH the maximum number of inventory cameras a player may carry
+cvar_t maxmedkit = {"max_medkit", "200", FCVAR_SERVER | FCVAR_ARCHIVE};	  // AJH The maximum portable medkit charge a player may have
 
 cvar_t allow_spectators = {"allow_spectators", "0.0", FCVAR_SERVER}; // 0 prevents players from being spectators
 
-cvar_t impulsetarget = {"sohl_impulsetarget", "0", FCVAR_SERVER}; //LRC - trigger ents manually
-cvar_t mw_debug = {"sohl_mwdebug", "0", FCVAR_SERVER};			  //LRC - debug info. for MoveWith. (probably not useful for most people.)
+cvar_t impulsetarget = {"sohl_impulsetarget", "0", FCVAR_SERVER}; // LRC - trigger ents manually
+cvar_t mw_debug = {"sohl_mwdebug", "0", FCVAR_SERVER};			  // LRC - debug info. for MoveWith. (probably not useful for most people.)
 
-//LRC 1.8 - cvars for mapmakers to read (for use with calc_cvar.)
+// LRC 1.8 - cvars for mapmakers to read (for use with calc_cvar.)
 cvar_t cvar_user1 = {"user1", "0", FCVAR_SERVER};
 cvar_t cvar_user2 = {"user2", "0", FCVAR_SERVER};
 cvar_t cvar_user3 = {"user3", "0", FCVAR_SERVER};
@@ -66,8 +67,8 @@ cvar_t mp_chattime = {"mp_chattime", "10", FCVAR_SERVER};
 
 cvar_t sv_allowbunnyhopping = {"sv_allowbunnyhopping", "0", FCVAR_SERVER};
 
-//CVARS FOR SKILL LEVEL SETTINGS
-// Agrunt
+// CVARS FOR SKILL LEVEL SETTINGS
+//  Agrunt
 cvar_t sk_agrunt_health1 = {"sk_agrunt_health1", "0"};
 cvar_t sk_agrunt_health2 = {"sk_agrunt_health2", "0"};
 cvar_t sk_agrunt_health3 = {"sk_agrunt_health3", "0"};
@@ -280,7 +281,7 @@ cvar_t sk_zombie_dmg_both_slash2 = {"sk_zombie_dmg_both_slash2", "0"};
 cvar_t sk_zombie_dmg_both_slash3 = {"sk_zombie_dmg_both_slash3", "0"};
 
 
-//Turret
+// Turret
 cvar_t sk_turret_health1 = {"sk_turret_health1", "0"};
 cvar_t sk_turret_health2 = {"sk_turret_health2", "0"};
 cvar_t sk_turret_health3 = {"sk_turret_health3", "0"};
@@ -483,7 +484,7 @@ static bool SV_InitServer()
 	if (UTIL_IsValveGameDirectory())
 	{
 		g_engfuncs.pfnServerPrint("This mod has detected that it is being run from a Valve game directory which is not supported\n"
-			"Run this mod from its intended location\n\nThe game will now shut down\n");
+								  "Run this mod from its intended location\n\nThe game will now shut down\n");
 		return false;
 	}
 
@@ -504,7 +505,7 @@ void GameDLLInit()
 	if (!SV_InitServer())
 	{
 		g_engfuncs.pfnServerPrint("Error initializing server\n");
-		//Shut the game down as soon as possible.
+		// Shut the game down as soon as possible.
 		SERVER_COMMAND("quit\n");
 		return;
 	}
@@ -530,21 +531,21 @@ void GameDLLInit()
 	CVAR_REGISTER(&teamoverride);
 	CVAR_REGISTER(&defaultteam);
 	CVAR_REGISTER(&allowmonsters);
-	CVAR_REGISTER(&impulsetarget); //LRC
-	CVAR_REGISTER(&mw_debug);	   //LRC
-	CVAR_REGISTER(&cvar_user1);	   //LRC
-	CVAR_REGISTER(&cvar_user2);	   //LRC
-	CVAR_REGISTER(&cvar_user3);	   //LRC
-	CVAR_REGISTER(&cvar_user4);	   //LRC
-	CVAR_REGISTER(&cvar_user5);	   //LRC
-	CVAR_REGISTER(&cvar_user6);	   //LRC
-	CVAR_REGISTER(&cvar_user7);	   //LRC
-	CVAR_REGISTER(&cvar_user8);	   //LRC
-	//CVAR_REGISTER (&mp3player); //G-Cont. Stuff for Mp3 player	//AJH - Too late, I've already added mp3/ogg
-	//CVAR_REGISTER (&mp3volume); //G-Cont. Stuff for Mp3 player	//AJH
-	CVAR_REGISTER(&timeddamage); //AJH Time based damage (nervegas/rad, not poison) on/off
-	CVAR_REGISTER(&maxcameras);	 //AJH the maximum number of inventory cameras a player may carry
-	CVAR_REGISTER(&maxmedkit);	 //AJH The maximum portable medkit charge a player may have
+	CVAR_REGISTER(&impulsetarget); // LRC
+	CVAR_REGISTER(&mw_debug);	   // LRC
+	CVAR_REGISTER(&cvar_user1);	   // LRC
+	CVAR_REGISTER(&cvar_user2);	   // LRC
+	CVAR_REGISTER(&cvar_user3);	   // LRC
+	CVAR_REGISTER(&cvar_user4);	   // LRC
+	CVAR_REGISTER(&cvar_user5);	   // LRC
+	CVAR_REGISTER(&cvar_user6);	   // LRC
+	CVAR_REGISTER(&cvar_user7);	   // LRC
+	CVAR_REGISTER(&cvar_user8);	   // LRC
+	// CVAR_REGISTER (&mp3player); //G-Cont. Stuff for Mp3 player	//AJH - Too late, I've already added mp3/ogg
+	// CVAR_REGISTER (&mp3volume); //G-Cont. Stuff for Mp3 player	//AJH
+	CVAR_REGISTER(&timeddamage); // AJH Time based damage (nervegas/rad, not poison) on/off
+	CVAR_REGISTER(&maxcameras);	 // AJH the maximum number of inventory cameras a player may carry
+	CVAR_REGISTER(&maxmedkit);	 // AJH The maximum portable medkit charge a player may have
 
 	CVAR_REGISTER(&mp_chattime);
 
@@ -765,7 +766,7 @@ void GameDLLInit()
 	CVAR_REGISTER(&sk_zombie_dmg_both_slash3); // {"sk_zombie_dmg_both_slash3","0"};
 
 
-	//Turret
+	// Turret
 	CVAR_REGISTER(&sk_turret_health1); // {"sk_turret_health1","0"};
 	CVAR_REGISTER(&sk_turret_health2); // {"sk_turret_health2","0"};
 	CVAR_REGISTER(&sk_turret_health3); // {"sk_turret_health3","0"};

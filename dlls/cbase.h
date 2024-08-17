@@ -76,18 +76,6 @@ extern "C" DLLEXPORT int GetNewDLLFunctions(NEW_DLL_FUNCTIONS* pFunctionTable, i
 */
 inline bool gTouchDisabled = false;
 
-extern int DispatchSpawn(edict_t* pent);
-extern void DispatchKeyValue(edict_t* pentKeyvalue, KeyValueData* pkvd);
-extern void DispatchTouch(edict_t* pentTouched, edict_t* pentOther);
-extern void DispatchUse(edict_t* pentUsed, edict_t* pentOther);
-extern void DispatchThink(edict_t* pent);
-extern void DispatchBlocked(edict_t* pentBlocked, edict_t* pentOther);
-extern void DispatchSave(edict_t* pent, SAVERESTOREDATA* pSaveData);
-extern int DispatchRestore(edict_t* pent, SAVERESTOREDATA* pSaveData, int globalEntity);
-extern void DispatchObjectCollsionBox(edict_t* pent);
-extern void SaveWriteFields(SAVERESTOREDATA* pSaveData, const char* pname, void* pBaseData, TYPEDESCRIPTION* pFields, int fieldCount);
-extern void SaveReadFields(SAVERESTOREDATA* pSaveData, const char* pname, void* pBaseData, TYPEDESCRIPTION* pFields, int fieldCount);
-
 //extern CBaseEntity *g_pDesiredList; //LRC- handles DesiredVel, for movewith
 
 //LRC- added USE_SAME, USE_NOT, and USE_KILL
