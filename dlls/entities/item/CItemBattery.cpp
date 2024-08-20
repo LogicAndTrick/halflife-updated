@@ -15,7 +15,7 @@
 
 #include "CItemBattery.h"
 #include "entities/player/CBasePlayer.h"
-#include "skill.h"
+#include "util/skill.h"
 #include "UserMessages.h"
 #include "weapons.h"
 

@@ -16,7 +16,7 @@
 #include "CRecharge.h"
 #include "classes/gamerules/CGameRules.h"
 #include "entities/player/CBasePlayer.h"
-#include "skill.h"
+#include "util/skill.h"
 
 LINK_ENTITY_TO_CLASS(func_recharge, CRecharge);
 

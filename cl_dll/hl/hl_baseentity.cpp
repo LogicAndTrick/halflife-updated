@@ -28,7 +28,7 @@ This file contains "stubs" of class member implementations so that we can predic
 #include "weapons.h"
 #include "classes/nodes/CGraph.h"
 #include "entities/sound/CSoundEnt.h"
-#include "skill.h"
+#include "util/skill.h"
 #include "entities/CWorld.h"
 #include "entities/env/CBeam.h"
 #include "entities/weapon/CBasePlayerAmmo.h"

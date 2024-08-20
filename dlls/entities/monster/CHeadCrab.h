@@ -16,7 +16,7 @@
 #pragma once
 
 #include "CBaseMonster.h"
-#include "skill.h"
+#include "util/skill.h"
 
 //=========================================================
 // Monster's Anim Events Go Here

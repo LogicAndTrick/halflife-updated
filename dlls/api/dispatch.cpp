@@ -18,7 +18,7 @@
 #include "classes/saverestore/CGlobalState.h"
 #include "dispatch.h"
 #include "util/movewith.h"
-#include "skill.h"
+#include "util/skill.h"
 
 extern void SetObjectCollisionBox(entvars_t* pev);
 

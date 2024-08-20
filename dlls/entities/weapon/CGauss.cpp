@@ -19,7 +19,7 @@
 #include "entities/player/CBasePlayer.h"
 #include "entities/sound/CSoundEnt.h"
 #include "shake.h"
-#include "skill.h"
+#include "util/skill.h"
 #include "weapons.h"
 #include "entities/CWorld.h"
 

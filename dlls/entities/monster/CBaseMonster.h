@@ -19,7 +19,7 @@
 #include "entities/sound/CSoundEnt.h"
 #include "util/ai.h"
 #include "weapons.h"
-#include "skill.h"
+#include "util/skill.h"
 
 /* CHECKLOCALMOVE result types */
 #define LOCALMOVE_INVALID 0					 // move is not possible

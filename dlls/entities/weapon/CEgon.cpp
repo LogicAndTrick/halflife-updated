@@ -17,7 +17,7 @@
 #include "CBasePlayerAmmo.h"
 #include "classes/gamerules/CGameRules.h"
 #include "entities/player/CBasePlayer.h"
-#include "skill.h"
+#include "util/skill.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(weapon_egon, CEgon);

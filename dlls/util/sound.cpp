@@ -1,22 +1,19 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
-//=========================================================
-// sound.cpp
-//=========================================================
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
-#include "extdll.h"
+#include "sound.h"
 #include "util.h"
 #include "cbase.h"
 #include "weapons.h"
@@ -27,14 +24,59 @@
 #include "entities/CWorld.h"
 #include "entities/monster/CTalkMonster.h"
 
-static char* memfgets(byte* pMemFile, int fileSize, int& filePos, char* pBuffer, int bufferSize);
+static char* memfgets(byte* pMemFile, int fileSize, int& filePos, char* pBuffer, int bufferSize)
+{
+	// Bullet-proofing
+	if (!pMemFile || !pBuffer)
+		return NULL;
+
+	if (filePos >= fileSize)
+		return NULL;
+
+	int i = filePos;
+	int last = fileSize;
+
+	// fgets always NULL terminates, so only read bufferSize-1 characters
+	if (last - filePos > (bufferSize - 1))
+		last = filePos + (bufferSize - 1);
+
+	bool stop = false;
+
+	// Stop at the next newline (inclusive) or end of buffer
+	while (i < last && !stop)
+	{
+		if (pMemFile[i] == '\n')
+			stop = true;
+		i++;
+	}
+
+
+	// If we actually advanced the pointer, copy it over
+	if (i != filePos)
+	{
+		// We read in size bytes
+		int size = i - filePos;
+		// copy it out
+		memcpy(pBuffer, pMemFile + filePos, sizeof(byte) * size);
+
+		// If the buffer isn't full, terminate (this is always true)
+		if (size < bufferSize)
+			pBuffer[size] = 0;
+
+		// Update file pointer
+		filePos = i;
+		return pBuffer;
+	}
+
+	// No data read, bail
+	return NULL;
+}
 
 // ==================== SENTENCE GROUPS, UTILITY FUNCTIONS  ======================================
 
 #define CSENTENCE_LRU_MAX 32 // max number of elements per sentence group
 
 // group of related sentences
-
 typedef struct sentenceg
 {
 	char szgroupname[CBSENTENCENAME_MAX];
@@ -53,7 +95,6 @@ char gszallsentencenames[CVOXFILESENTENCEMAX][CBSENTENCENAME_MAX];
 int gcallsentences = 0;
 
 // randomize list of sentence name indices
-
 void USENTENCEG_InitLRU(unsigned char* plru, int count)
 {
 	int i, j, k;
@@ -84,7 +125,6 @@ void USENTENCEG_InitLRU(unsigned char* plru, int count)
 // ipick is passed in as the requested sentence ordinal.
 // ipick 'next' is returned.
 // return of -1 indicates an error.
-
 int USENTENCEG_PickSequential(int isentenceg, char* szfound, int ipick, bool freset)
 {
 	char* szgroupname;
@@ -123,8 +163,6 @@ int USENTENCEG_PickSequential(int isentenceg, char* szfound, int ipick, bool fre
 	return ipick + 1;
 }
 
-
-
 // pick a random sentence from rootname0 to rootnameX.
 // picks from the rgsentenceg[isentenceg] least
 // recently used, modifies lru array. returns the sentencename.
@@ -132,7 +170,6 @@ int USENTENCEG_PickSequential(int isentenceg, char* szfound, int ipick, bool fre
 // rest of the lru filled with -1. The first integer in the lru is
 // actually the size of the list.  Returns ipick, the ordinal
 // of the picked sentence within the group.
-
 int USENTENCEG_Pick(int isentenceg, char* szfound)
 {
 	char* szgroupname;
@@ -182,7 +219,6 @@ int USENTENCEG_Pick(int isentenceg, char* szfound)
 
 // Given sentence group rootname (name without number suffix),
 // get sentence group index (isentenceg). Returns -1 if no such name.
-
 int SENTENCEG_GetIndex(const char* szgroupname)
 {
 	int i;
@@ -207,7 +243,6 @@ int SENTENCEG_GetIndex(const char* szgroupname)
 // returns ipick - which sentence was picked to
 // play from the group. Ipick is only needed if you plan on stopping
 // the sound before playback is done (see SENTENCEG_Stop).
-
 int SENTENCEG_PlayRndI(edict_t* entity, int isentenceg,
 	float volume, float attenuation, int flags, int pitch)
 {
@@ -226,7 +261,6 @@ int SENTENCEG_PlayRndI(edict_t* entity, int isentenceg,
 }
 
 // same as above, but takes sentence group name instead of index
-
 int SENTENCEG_PlayRndSz(edict_t* entity, const char* szgroupname,
 	float volume, float attenuation, int flags, int pitch)
 {
@@ -254,7 +288,6 @@ int SENTENCEG_PlayRndSz(edict_t* entity, const char* szgroupname,
 }
 
 // play sentences in sequential order from sentence group.  Reset after last sentence.
-
 int SENTENCEG_PlaySequentialSz(edict_t* entity, const char* szgroupname,
 	float volume, float attenuation, int flags, int pitch, int ipick, bool freset)
 {
@@ -277,10 +310,8 @@ int SENTENCEG_PlaySequentialSz(edict_t* entity, const char* szgroupname,
 	return ipicknext;
 }
 
-
 // for this entity, for the given sentence within the sentence group, stop
 // the sentence.
-
 void SENTENCEG_Stop(edict_t* entity, int isentenceg, int ipick)
 {
 	char buffer[64];
@@ -303,7 +334,6 @@ void SENTENCEG_Stop(edict_t* entity, int isentenceg, int ipick)
 // open sentences.txt, scan for groups, build rgsentenceg
 // Should be called from world spawn, only works on the
 // first call and is ignored subsequently.
-
 void SENTENCEG_Init()
 {
 	char buffer[512]{};
@@ -401,7 +431,7 @@ void SENTENCEG_Init()
 		}
 		else
 		{
-			//name matches with previous, increment group count
+			// name matches with previous, increment group count
 			if (isentencegs >= 0)
 				rgsentenceg[isentencegs].count++;
 		}
@@ -423,7 +453,6 @@ void SENTENCEG_Init()
 }
 
 // convert sentence (sample) name to !sentencenum, return !sentencenum
-
 int SENTENCEG_Lookup(const char* sample, char* sentencenum)
 {
 	char sznum[32];
@@ -464,7 +493,7 @@ void EMIT_SOUND_DYN(edict_t* entity, int channel, const char* sample, float volu
 void EMIT_SOUND_PREDICTED(edict_t* entity, int channel, const char* sample, float volume, float attenuation,
 	int flags, int pitch)
 {
-	//If entity is not a player this will return false.
+	// If entity is not a player this will return false.
 	if (0 != g_engfuncs.pfnCanSkipPlayer(entity))
 	{
 		pmove->PM_PlaySound(channel, sample, volume, attenuation, flags, pitch);
@@ -476,7 +505,6 @@ void EMIT_SOUND_PREDICTED(edict_t* entity, int channel, const char* sample, floa
 }
 
 // play a specific sentence over the HEV suit speaker - just pass player entity, and !sentencename
-
 void EMIT_SOUND_SUIT(edict_t* entity, const char* sample)
 {
 	float fvol;
@@ -491,7 +519,6 @@ void EMIT_SOUND_SUIT(edict_t* entity, const char* sample)
 }
 
 // play a sentence, randomly selected from the passed in group id, over the HEV suit speaker
-
 void EMIT_GROUPID_SUIT(edict_t* entity, int isentenceg)
 {
 	float fvol;
@@ -506,7 +533,6 @@ void EMIT_GROUPID_SUIT(edict_t* entity, int isentenceg)
 }
 
 // play a sentence, randomly selected from the passed in groupname
-
 void EMIT_GROUPNAME_SUIT(edict_t* entity, const char* groupname)
 {
 	float fvol;
@@ -535,56 +561,6 @@ char grgchTextureType[CTEXTURESMAX];				   // parallel array of texture types
 // open materials.txt,  get size, alloc space,
 // save in array.  Only works first time called,
 // ignored on subsequent calls.
-
-static char* memfgets(byte* pMemFile, int fileSize, int& filePos, char* pBuffer, int bufferSize)
-{
-	// Bullet-proofing
-	if (!pMemFile || !pBuffer)
-		return NULL;
-
-	if (filePos >= fileSize)
-		return NULL;
-
-	int i = filePos;
-	int last = fileSize;
-
-	// fgets always NULL terminates, so only read bufferSize-1 characters
-	if (last - filePos > (bufferSize - 1))
-		last = filePos + (bufferSize - 1);
-
-	bool stop = false;
-
-	// Stop at the next newline (inclusive) or end of buffer
-	while (i < last && !stop)
-	{
-		if (pMemFile[i] == '\n')
-			stop = true;
-		i++;
-	}
-
-
-	// If we actually advanced the pointer, copy it over
-	if (i != filePos)
-	{
-		// We read in size bytes
-		int size = i - filePos;
-		// copy it out
-		memcpy(pBuffer, pMemFile + filePos, sizeof(byte) * size);
-
-		// If the buffer isn't full, terminate (this is always true)
-		if (size < bufferSize)
-			pBuffer[size] = 0;
-
-		// Update file pointer
-		filePos = i;
-		return pBuffer;
-	}
-
-	// No data read, bail
-	return NULL;
-}
-
-
 void TEXTURETYPE_Init()
 {
 	char buffer[512];
@@ -651,10 +627,8 @@ void TEXTURETYPE_Init()
 
 // given texture name, find texture type
 // if not found, return type 'concrete'
-
 // NOTE: this routine should ONLY be called if the
 // current texture under the player changes!
-
 char TEXTURETYPE_Find(char* name)
 {
 	// CONSIDER: pre-sort texture names and perform faster binary search here
@@ -672,7 +646,6 @@ char TEXTURETYPE_Find(char* name)
 // original traceline endpoints used by the attacker, iBulletType is the type of bullet that hit the texture.
 // returns volume of strike instrument (crowbar) to play
 //   (this is not used for footsteps, only attack sound effects. --LRC)
-
 float TEXTURETYPE_PlaySound(TraceResult* ptr, Vector vecSrc, Vector vecEnd, int iBulletType)
 {
 	// hit the world, try to play sound based on texture material type
@@ -836,7 +809,7 @@ float TEXTURETYPE_PlaySound(TraceResult* ptr, Vector vecSrc, Vector vecEnd, int 
 		{
 			UTIL_Sparks(ptr->vecEndPos);
 
-			float flVolume = RANDOM_FLOAT(0.7, 1.0); //random volume range
+			float flVolume = RANDOM_FLOAT(0.7, 1.0); // random volume range
 			switch (RANDOM_LONG(0, 1))
 			{
 			case 0:
@@ -853,7 +826,7 @@ float TEXTURETYPE_PlaySound(TraceResult* ptr, Vector vecSrc, Vector vecEnd, int 
 
 	// play material hit sound
 	UTIL_EmitAmbientSound(CWorld::World->edict(), ptr->vecEndPos, rgsz[RANDOM_LONG(0, cnt - 1)], fvol, fattn, 0, 96 + RANDOM_LONG(0, 0xf));
-	//EMIT_SOUND_DYN( ENT(m_pPlayer->pev), CHAN_WEAPON, rgsz[RANDOM_LONG(0,cnt-1)], fvol, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf));
+	// EMIT_SOUND_DYN( ENT(m_pPlayer->pev), CHAN_WEAPON, rgsz[RANDOM_LONG(0,cnt-1)], fvol, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf));
 
 	return fvolbar;
 }

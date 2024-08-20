@@ -14,7 +14,7 @@
  ****/
 
 #include "CMiniTurret.h"
-#include "skill.h"
+#include "util/skill.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(monster_miniturret, CMiniTurret);

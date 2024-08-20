@@ -17,7 +17,7 @@
 #include "CHealthKit.h"
 #include "entities/player/CBasePlayer.h"
 #include "classes/gamerules/CGameRules.h"
-#include "skill.h"
+#include "util/skill.h"
 #include "UserMessages.h"
 
 LINK_ENTITY_TO_CLASS(item_healthkit, CHealthKit);

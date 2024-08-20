@@ -1241,12 +1241,6 @@
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\skill.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\sound.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\subs.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1277,10 +1271,10 @@
     <ClCompile Include="..\..\dlls\util\movewith.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (7).cpp">
+    <ClCompile Include="..\..\dlls\util\skill.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (8).cpp">
+    <ClCompile Include="..\..\dlls\util\sound.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util\util1 - Copy (9).cpp">
@@ -2344,9 +2338,6 @@
     <ClInclude Include="..\..\dlls\scriptevent.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\skill.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\squad.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
@@ -2377,10 +2368,10 @@
     <ClInclude Include="..\..\dlls\util\movewith.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (7).h">
+    <ClInclude Include="..\..\dlls\util\skill.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (8).h">
+    <ClInclude Include="..\..\dlls\util\sound.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\util\util1 - Copy (9).h">
