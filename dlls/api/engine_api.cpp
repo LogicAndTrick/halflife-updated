@@ -135,4 +135,17 @@ int GetNewDLLFunctions(NEW_DLL_FUNCTIONS* pFunctionTable, int* interfaceVersion)
 	memcpy(pFunctionTable, &gNewDLLFunctions, sizeof(gNewDLLFunctions));
 	return 1;
 }
+
+#ifdef WIN32
+#define FNPTRS_DLLEXPORT __stdcall
+#else
+#define FNPTRS_DLLEXPORT __attribute__((visibility("default")))
+#endif
+
+void FNPTRS_DLLEXPORT GiveFnptrsToDll(enginefuncs_t* pengfuncsFromEngine, globalvars_t* pGlobals)
+{
+	memcpy(&g_engfuncs, pengfuncsFromEngine, sizeof(enginefuncs_t));
+	gpGlobals = pGlobals;
+}
+
 }

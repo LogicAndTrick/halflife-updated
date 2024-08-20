@@ -442,8 +442,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\xen\CXenSpore.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTree.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp" />
-    <ClCompile Include="..\..\dlls\h_ai.cpp" />
-    <ClCompile Include="..\..\dlls\h_export.cpp" />
     <ClCompile Include="..\..\dlls\lights.cpp" />
     <ClCompile Include="..\..\dlls\locus.cpp" />
     <ClCompile Include="..\..\dlls\movewith.cpp" />
@@ -455,7 +453,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\util\util1 - Copy (10).cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (11).cpp" />
     <ClCompile Include="..\..\dlls\util\animation.cpp" />
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (3).cpp" />
+    <ClCompile Include="..\..\dlls\util\ai.cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (4).cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (5).cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (6).cpp" />
@@ -825,7 +823,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\util\util1 - Copy (10).h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (11).h" />
     <ClInclude Include="..\..\dlls\util\animation.h" />
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (3).h" />
+    <ClInclude Include="..\..\dlls\util\ai.h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (4).h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (5).h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (6).h" />

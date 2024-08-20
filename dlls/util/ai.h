@@ -14,3 +14,10 @@
  ****/
 
 #pragma once
+
+#include "extdll.h"
+
+bool FBoxVisible(entvars_t* pevLooker, entvars_t* pevTarget, Vector& vecTargetOrigin, float flSize = 0.0);
+Vector VecCheckToss(entvars_t* pev, const Vector& vecSpot1, Vector vecSpot2, float flGravityAdj = 1.0);
+Vector VecCheckThrow(entvars_t* pev, const Vector& vecSpot1, Vector vecSpot2, float flSpeed, float flGravityAdj = 1.0);
+bool IsFacing(entvars_t* pevTest, const Vector& reference);
