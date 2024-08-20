@@ -254,9 +254,6 @@
     <ClCompile Include="..\..\common\mathlib.cpp">
       <Filter>Source Files\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\animation.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\api\saverestore.cpp">
       <Filter>Source Files\dlls\api</Filter>
     </ClCompile>
@@ -289,9 +286,6 @@
     </ClCompile>
     <ClCompile Include="..\..\dlls\api\engine_api.cpp">
       <Filter>Source Files\dlls\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\bmodels.cpp">
-      <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\classes\CPlane.cpp">
       <Filter>Source Files\dlls\classes</Filter>
@@ -1283,7 +1277,7 @@
     <ClCompile Include="..\..\dlls\util\util1 - Copy (11).cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (2).cpp">
+    <ClCompile Include="..\..\dlls\util\animation.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util\util1 - Copy (3).cpp">
@@ -1425,15 +1419,6 @@
     </ClInclude>
     <ClInclude Include="..\..\common\weaponinfo.h">
       <Filter>Header Files\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\activity.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\activitymap.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\animation.h">
-      <Filter>Header Files\dlls</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\api\client.h">
       <Filter>Header Files\dlls\api</Filter>
@@ -2398,7 +2383,7 @@
     <ClInclude Include="..\..\dlls\util\util1 - Copy (11).h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (2).h">
+    <ClInclude Include="..\..\dlls\util\animation.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\util\util1 - Copy (3).h">

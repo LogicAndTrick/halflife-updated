@@ -15,7 +15,7 @@
 
 #include "CHGrunt.h"
 #include "schedule.h"
-#include "animation.h"
+#include "util/animation.h"
 #include "CTalkMonster.h"
 #include "weapons.h"
 #include "entities/monster/CCineMonster.h"

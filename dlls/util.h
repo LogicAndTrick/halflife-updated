@@ -20,7 +20,6 @@
 //
 // Misc utility code
 //
-#include "activity.h"
 #include "enginecallback.h"
 
 class CBaseEntity;
@@ -402,7 +401,6 @@ extern void UTIL_StripToken(const char* pKey, char* pDest); // for redundant key
 // Misc functions
 extern void SetMovedir(entvars_t* pev);
 extern Vector GetMovedir(Vector vecAngles);
-extern Vector VecBModelOrigin(entvars_t* pevBModel);
 extern int BuildChangeList(LEVELLIST* pLevelList, int maxList);
 
 //

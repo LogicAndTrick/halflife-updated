@@ -20,3 +20,5 @@
 #include "cbase.h"
 #include "classes/saverestore/CSave.h"
 #include "classes/saverestore/CRestore.h"
+
+extern Vector VecBModelOrigin(entvars_t* pevBModel);

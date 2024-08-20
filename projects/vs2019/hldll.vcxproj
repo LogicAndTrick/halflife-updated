@@ -113,7 +113,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\common\mathlib.cpp" />
-    <ClCompile Include="..\..\dlls\animation.cpp" />
     <ClCompile Include="..\..\dlls\api\saverestore.cpp" />
     <ClCompile Include="..\..\dlls\api\dispatch.cpp" />
     <ClCompile Include="..\..\dlls\api\spectator.cpp" />
@@ -125,7 +124,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\api\client.cpp" />
     <ClCompile Include="..\..\dlls\api\game.cpp" />
     <ClCompile Include="..\..\dlls\api\engine_api.cpp" />
-    <ClCompile Include="..\..\dlls\bmodels.cpp" />
     <ClCompile Include="..\..\dlls\classes\CPlane.cpp" />
     <ClCompile Include="..\..\dlls\classes\CSound.cpp" />
     <ClCompile Include="..\..\dlls\classes\EHANDLE.cpp" />
@@ -456,7 +454,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\util.cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (10).cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (11).cpp" />
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (2).cpp" />
+    <ClCompile Include="..\..\dlls\util\animation.cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (3).cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (4).cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (5).cpp" />
@@ -505,9 +503,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\common\studio_event.h" />
     <ClInclude Include="..\..\common\usercmd.h" />
     <ClInclude Include="..\..\common\weaponinfo.h" />
-    <ClInclude Include="..\..\dlls\activity.h" />
-    <ClInclude Include="..\..\dlls\activitymap.h" />
-    <ClInclude Include="..\..\dlls\animation.h" />
     <ClInclude Include="..\..\dlls\api\client.h" />
     <ClInclude Include="..\..\dlls\api\saverestore.h" />
     <ClInclude Include="..\..\dlls\api\spectator.h" />
@@ -829,7 +824,7 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\util.h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (10).h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (11).h" />
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (2).h" />
+    <ClInclude Include="..\..\dlls\util\animation.h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (3).h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (4).h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (5).h" />

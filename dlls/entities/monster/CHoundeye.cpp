@@ -15,7 +15,7 @@
 
 #include "CHoundeye.h"
 #include "schedule.h"
-#include "animation.h"
+#include "util/animation.h"
 #include "classes/nodes/CGraph.h"
 #include "api/game.h"
 

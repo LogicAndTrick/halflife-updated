@@ -16,7 +16,7 @@
 #pragma once
 
 #include "CBaseDelay.h"
-#include "animation.h"
+#include "util/animation.h"
 #include "saverestore.h"
 
 class CBaseAnimating : public CBaseDelay

@@ -14,10 +14,9 @@
  ****/
 
 #include "CIchthyosaur.h"
-
 #include "schedule.h"
 #include "classes/nodes/CGraph.h"
-#include "animation.h"
+#include "util/animation.h"
 #include "weapons.h"
 
 LINK_ENTITY_TO_CLASS(monster_ichthyosaur, CIchthyosaur);

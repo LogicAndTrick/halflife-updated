@@ -1,30 +1,25 @@
 /***
-*
-*	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
-*
-*   Use, distribution, and modification of this source code and/or resulting
-*   object code is restricted to non-commercial enhancements to products from
-*   Valve LLC.  All other use, distribution, or modification is prohibited
-*   without written permission from Valve LLC.
-*
-****/
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 
 #include "extdll.h"
 #include "util.h"
-
 #include "studio.h"
-#include "activity.h"
-#include "activitymap.h"
 #include "animation.h"
 #include "scriptevent.h"
 
 #pragma warning(disable : 4244)
-
-
 
 bool ExtractBbox(void* pmodel, int sequence, float* mins, float* maxs)
 {
@@ -48,7 +43,6 @@ bool ExtractBbox(void* pmodel, int sequence, float* mins, float* maxs)
 
 	return true;
 }
-
 
 int LookupActivity(void* pmodel, entvars_t* pev, int activity)
 {
@@ -76,7 +70,6 @@ int LookupActivity(void* pmodel, entvars_t* pev, int activity)
 
 	return seq;
 }
-
 
 int LookupActivityHeaviest(void* pmodel, entvars_t* pev, int activity)
 {
@@ -143,14 +136,12 @@ int LookupSequence(void* pmodel, const char* label)
 	return -1;
 }
 
-
 bool IsSoundEvent(int eventNumber)
 {
 	if (eventNumber == SCRIPT_EVENT_SOUND || eventNumber == SCRIPT_EVENT_SOUND_VOICE)
 		return true;
 	return false;
 }
-
 
 void SequencePrecache(void* pmodel, const char* pSequenceName)
 {
@@ -190,8 +181,6 @@ void SequencePrecache(void* pmodel, const char* pSequenceName)
 	}
 }
 
-
-
 void GetSequenceInfo(void* pmodel, entvars_t* pev, float* pflFrameRate, float* pflGroundSpeed)
 {
 	studiohdr_t* pstudiohdr;
@@ -224,7 +213,6 @@ void GetSequenceInfo(void* pmodel, entvars_t* pev, float* pflFrameRate, float* p
 	}
 }
 
-
 int GetSequenceFlags(void* pmodel, entvars_t* pev)
 {
 	studiohdr_t* pstudiohdr;
@@ -238,7 +226,6 @@ int GetSequenceFlags(void* pmodel, entvars_t* pev)
 
 	return pseqdesc->flags;
 }
-
 
 int GetAnimationEvent(void* pmodel, entvars_t* pev, MonsterEvent_t* pMonsterEvent, float flStart, float flEnd, int index)
 {
@@ -343,7 +330,6 @@ float SetController(void* pmodel, entvars_t* pev, int iController, float flValue
 	return setting * (1.0 / 255.0) * (pbonecontroller->end - pbonecontroller->start) + pbonecontroller->start;
 }
 
-
 float SetBlending(void* pmodel, entvars_t* pev, int iBlender, float flValue)
 {
 	studiohdr_t* pstudiohdr;
@@ -386,9 +372,6 @@ float SetBlending(void* pmodel, entvars_t* pev, int iBlender, float flValue)
 
 	return setting * (1.0 / 255.0) * (pseqdesc->blendend[iBlender] - pseqdesc->blendstart[iBlender]) + pseqdesc->blendstart[iBlender];
 }
-
-
-
 
 int FindTransition(void* pmodel, int iEndingAnim, int iGoalAnim, int* piDir)
 {
@@ -478,7 +461,6 @@ void SetBodygroup(void* pmodel, entvars_t* pev, int iGroup, int iValue)
 	pev->body = (pev->body - (iCurrent * pbodypart->base) + (iValue * pbodypart->base));
 }
 
-
 int GetBodygroup(void* pmodel, entvars_t* pev, int iGroup)
 {
 	studiohdr_t* pstudiohdr;
@@ -500,7 +482,7 @@ int GetBodygroup(void* pmodel, entvars_t* pev, int iGroup)
 	return iCurrent;
 }
 
-//LRC
+// LRC
 int GetBoneCount(void* pmodel)
 {
 	studiohdr_t* pstudiohdr;
@@ -519,7 +501,7 @@ int GetBoneCount(void* pmodel)
 #define min(a, b) (((a) < (b)) ? (a) : (b))
 #endif
 
-//LRC
+// LRC
 void SetBones(void* pmodel, float (*data)[3], int datasize)
 {
 	studiohdr_t* pstudiohdr;

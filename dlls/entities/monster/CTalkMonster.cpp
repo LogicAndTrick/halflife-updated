@@ -14,7 +14,7 @@
  ****/
 
 #include "CTalkMonster.h"
-#include "animation.h"
+#include "util/animation.h"
 #include "entities/monster/CCineMonster.h"
 #include "scriptevent.h"
 

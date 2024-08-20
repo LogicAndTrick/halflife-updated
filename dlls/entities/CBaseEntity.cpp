@@ -252,8 +252,17 @@ bool CBaseEntity::TakeHealth(float flHealth, int bitsDamageType)
 	return true;
 }
 
-// inflict damage on this entity.  bitsDamageType indicates type of damage inflicted, ie: DMG_CRUSH
+//
+// BModelOrigin - calculates origin of a bmodel from absmin/size because all bmodel origins are 0 0 0
+//
+Vector VecBModelOrigin(entvars_t* pevBModel)
+{
+	return (pevBModel->absmin + pevBModel->absmax) * 0.5; // LRC - bug fix for rotating ents
 
+	//	return pevBModel->absmin + ( pevBModel->size * 0.5 );
+}
+
+// inflict damage on this entity.  bitsDamageType indicates type of damage inflicted, ie: DMG_CRUSH
 bool CBaseEntity::TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, float flDamage, int bitsDamageType)
 {
 	Vector vecTemp;
