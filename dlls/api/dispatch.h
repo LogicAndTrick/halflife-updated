@@ -26,3 +26,4 @@ void DispatchBlocked(edict_t* pentBlocked, edict_t* pentOther);
 void DispatchSave(edict_t* pent, SAVERESTOREDATA* pSaveData);
 int DispatchRestore(edict_t* pent, SAVERESTOREDATA* pSaveData, int globalEntity);
 void DispatchObjectCollsionBox(edict_t* pent);
+void OnFreeEntPrivateData(edict_s* pEdict);

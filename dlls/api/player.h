@@ -17,5 +17,11 @@
 
 #include "extdll.h"
 
-extern void PlayerPostThink(edict_t* pEntity);
-extern void PlayerPreThink(edict_t* pEntity);
+void PlayerPostThink(edict_t* pEntity);
+void PlayerPreThink(edict_t* pEntity);
+
+void PlayerCustomization(edict_t* pEntity, customization_t* pCust);
+
+void SetupVisibility(edict_t* pViewEntity, edict_t* pClient, unsigned char** pvs, unsigned char** pas);
+int GetWeaponData(struct edict_s* player, struct weapon_data_s* info);
+int GetHullBounds(int hullnumber, float* mins, float* maxs);

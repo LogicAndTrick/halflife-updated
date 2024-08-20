@@ -18,7 +18,6 @@
 #include "entities/env/CMessage.h"
 #include "classes/nodes/CGraph.h"
 #include "entities/sound/CSoundEnt.h"
-#include "client.h"
 #include "decals.h"
 #include "entities/player/CBasePlayer.h"
 #include "classes/gamerules/CGameRules.h"
@@ -284,8 +283,7 @@ void CWorld::Precache()
 	// player precaches
 	Weapon_Precache(); // get weapon precaches
 	Item_Precache(); // get Inventory Item precaches
-
-	ClientPrecache();
+	Client_Precache();
 
 	// sounds used from C physics code
 	PRECACHE_SOUND("common/null.wav"); // clears sound channels

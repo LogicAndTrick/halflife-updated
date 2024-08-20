@@ -14,3 +14,9 @@
  ****/
 
 #pragma once
+
+#include "extdll.h"
+
+void SpectatorConnect(edict_t* pEntity);
+void SpectatorDisconnect(edict_t* pEntity);
+void SpectatorThink(edict_t* pEntity);

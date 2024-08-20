@@ -17,6 +17,8 @@
 
 #include "extdll.h"
 
+const char* GetGameDescription();
+
 void GameDLLInit();
 void GameDLLShutdown();
 

@@ -14,11 +14,26 @@
  ****/
 
 #include "api/game.h"
-#include "client.h"
 #include "util.h"
-#include "api/client1.h"
+#include "api/client.h"
 #include "filesystem_utils.h"
 #include "frame.h"
+#include "classes/gamerules/CGameRules.h"
+
+/*
+===============
+GetGameDescription
+
+Returns the descriptive name of this .dll.  E.g., Half-Life, or Team Fortress 2
+===============
+*/
+const char* GetGameDescription()
+{
+	if (g_pGameRules) // this function may be called before the world has spawned, and the game rules initialized
+		return g_pGameRules->GetGameDescription();
+	else
+		return GAME_NAME;
+}
 
 cvar_t displaysoundlist = {"displaysoundlist", "0"};
 

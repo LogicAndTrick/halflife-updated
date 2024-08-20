@@ -17,8 +17,10 @@
 
 #include "extdll.h"
 
-extern void ServerActivate(edict_t* pEdictList, int edictCount, int clientMax);
-extern void ServerDeactivate();
+void Sys_Error(const char* error_string);
 
-extern void ParmsNewLevel();
-extern void ParmsChangeLevel();
+void ServerActivate(edict_t* pEdictList, int edictCount, int clientMax);
+void ServerDeactivate();
+
+void ParmsNewLevel();
+void ParmsChangeLevel();

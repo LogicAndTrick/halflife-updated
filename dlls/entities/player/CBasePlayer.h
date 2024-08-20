@@ -18,6 +18,8 @@
 #include "entities/monster/CBaseMonster.h"
 #include "pm_materials.h"
 
+void Client_Precache(); // player & client precache
+
 /* MOVEMENT */
 #define PLAYER_FATAL_FALL_SPEED 1024															  // approx 60 feet
 #define PLAYER_MAX_SAFE_FALL_SPEED 580															  // approx 20 feet

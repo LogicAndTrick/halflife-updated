@@ -14,18 +14,18 @@
  ****/
 
 #include "entities/CBaseEntity.h"
-#include "client.h"
-#include "frame.h"
+#include "api/cmd.h"
+#include "api/frame.h"
+#include "api/network.h"
 #include "api/player.h"
 #include "api/game.h"
-#include "api/client1.h"
+#include "api/client.h"
 #include "api/dispatch.h"
 #include "api/saverestore.h"
 #include "api/server.h"
+#include "api/spectator.h"
 
 #include "pm_shared.h"
-
-void OnFreeEntPrivateData(edict_s* pEdict);
 
 static DLL_FUNCTIONS gFunctionTable =
 	{

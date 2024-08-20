@@ -18,10 +18,10 @@
 #include "entities/weapon/CBasePlayerItem.h"
 #include "entities/weapon/CBasePlayerWeapon.h"
 #include "entities/CWorld.h"
-#include "client.h"
 #include "api/game.h"
 #include "classes/gamerules/CGameRules.h"
 #include "classes/nodes/CGraph.h"
+#include "entities/CCorpse.h"
 
 void CBasePlayer::PreThink()
 {
@@ -188,6 +188,26 @@ void CBasePlayer::PreThink()
 	if ((m_afPhysicsFlags & PFLAG_ONBARNACLE) != 0)
 	{
 		pev->velocity = g_vecZero;
+	}
+}
+
+// called by ClientKill and DeadThink
+void respawn(entvars_t* pev, bool fCopyCorpse)
+{
+	if (0 != gpGlobals->coop || 0 != gpGlobals->deathmatch)
+	{
+		if (fCopyCorpse)
+		{
+			// make a copy of the dead body for appearances sake
+			CopyToBodyQue(pev);
+		}
+
+		// respawn player
+		GetClassPtr((CBasePlayer*)pev)->Spawn();
+	}
+	else
+	{ // restart the entire server
+		SERVER_COMMAND("reload\n");
 	}
 }
 

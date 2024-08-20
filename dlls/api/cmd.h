@@ -14,3 +14,8 @@
  ****/
 
 #pragma once
+
+#include "extdll.h"
+
+void CmdStart(const edict_t* player, const struct usercmd_s* cmd, unsigned int random_seed);
+void CmdEnd(const edict_t* player);

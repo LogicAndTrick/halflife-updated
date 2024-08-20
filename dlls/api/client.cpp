@@ -13,7 +13,7 @@
  *
  ****/
 
-#include "api/client1.h"
+#include "api/client.h"
 #include "api/game.h"
 #include "UserMessages.h"
 #include "classes/CSound.h"
