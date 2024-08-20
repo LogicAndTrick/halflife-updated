@@ -14,7 +14,7 @@
  ****/
 
 #include "CEnvBeamTrail.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(env_beamtrail, CEnvBeamTrail);
 

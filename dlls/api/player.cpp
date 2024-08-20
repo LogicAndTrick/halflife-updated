@@ -15,7 +15,7 @@
 
 #include "player.h"
 #include "entities/player/CBasePlayer.h"
-#include "movewith.h"
+#include "util/movewith.h"
 #include "pm_shared.h"
 #include "entities/weapon/CBasePlayerItem.h"
 #include "entities/weapon/CBasePlayerWeapon.h"

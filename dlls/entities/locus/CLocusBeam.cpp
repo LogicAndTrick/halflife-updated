@@ -14,7 +14,7 @@
  ****/
 
 #include "CLocusBeam.h"
-#include "locus.h"
+#include "util/locus.h"
 #include "entities/env/CBeam.h"
 
 LINK_ENTITY_TO_CLASS(locus_beam, CLocusBeam);

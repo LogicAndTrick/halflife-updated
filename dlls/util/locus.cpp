@@ -1,16 +1,28 @@
+/***
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
 //=========================================
 // NEW file for Spirit of Half-Life 0.7
 // Created 14/01/02
 //=========================================
 
+#include "util/locus.h"
+#include "entities/CBaseEntity.h"
+#include "entities/locus/CLocusVariable.h"
+
 // Spirit of Half-Life's particle system uses "locus triggers" to tell
 // entities where to perform their actions.
-
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "locus.h"
-#include "entities/locus/CLocusVariable.h"
 
 // LRC 1.8
 //  randomized vectors can be written in two ways:

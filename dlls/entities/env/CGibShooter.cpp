@@ -15,7 +15,7 @@
 
 #include "CGibShooter.h"
 #include "entities/CGib.h"
-#include "locus.h"
+#include "util/locus.h"
 
 LINK_ENTITY_TO_CLASS(gibshooter, CGibShooter);
 

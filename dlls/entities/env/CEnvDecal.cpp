@@ -16,7 +16,7 @@
 #include "CEnvDecal.h"
 
 #include "decals.h"
-#include "locus.h"
+#include "util/locus.h"
 
 LINK_ENTITY_TO_CLASS(env_decal, CEnvDecal);
 

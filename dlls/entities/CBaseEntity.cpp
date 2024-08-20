@@ -19,7 +19,7 @@
 #include "classes/nodes/CGraph.h"
 #include "classes/saverestore/CGlobalState.h"
 #include "decals.h"
-#include "movewith.h"
+#include "util/movewith.h"
 #include "weapons.h"
 #include "api/dispatch.h"
 

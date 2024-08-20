@@ -14,3 +14,6 @@
  ****/
 
 #pragma once
+
+int GetStdLightStyle(int iStyle); // LRC- declared here so it can be used by everything that
+								  //  needs to deal with the standard lightstyles.

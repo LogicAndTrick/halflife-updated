@@ -14,7 +14,7 @@
  ****/
 
 #include "CMonsterMaker.h"
-#include "locus.h"
+#include "util/locus.h"
 #include "api/dispatch.h"
 
 LINK_ENTITY_TO_CLASS(monstermaker, CMonsterMaker);

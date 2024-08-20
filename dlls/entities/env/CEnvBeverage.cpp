@@ -15,7 +15,7 @@
 
 #include "CEnvBeverage.h"
 
-#include "locus.h"
+#include "util/locus.h"
 
 void CEnvBeverage::Precache()
 {

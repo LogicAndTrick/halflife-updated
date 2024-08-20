@@ -15,7 +15,7 @@
 
 #include "CPlayerFreeze.h"
 
-#include "locus.h"
+#include "util/locus.h"
 #include "entities/player/CBasePlayer.h"
 #include "UserMessages.h"
 

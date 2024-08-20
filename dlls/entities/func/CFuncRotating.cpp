@@ -14,7 +14,7 @@
  ****/
 
 #include "CFuncRotating.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 // covering cheesy noise1, noise2, & noise3 fields so they make more sense (for rotating fans)
 #define noiseStart noise1

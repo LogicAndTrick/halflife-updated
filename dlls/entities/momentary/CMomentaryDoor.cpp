@@ -15,7 +15,7 @@
 
 #include "CMomentaryDoor.h"
 #include "entities/func/CBaseDoor.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(momentary_door, CMomentaryDoor);
 

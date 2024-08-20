@@ -1,15 +1,27 @@
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
-#include "movewith.h"
-#include "saverestore.h"
+/***
+ *
+ *	Copyright (c) 1996-2001, Valve LLC. All rights reserved.
+ *
+ *	This product contains software technology licensed from Id
+ *	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
+ *	All Rights Reserved.
+ *
+ *   Use, distribution, and modification of this source code and/or resulting
+ *   object code is restricted to non-commercial enhancements to products from
+ *   Valve LLC.  All other use, distribution, or modification is prohibited
+ *   without written permission from Valve LLC.
+ *
+ ****/
+
+#include "util/movewith.h"
+#include "entities/CBaseEntity.h"
 #include "entities/player/CBasePlayer.h"
 #include "entities/CWorld.h"
 
-CWorld* g_pWorld = NULL; //LRC
+CWorld* g_pWorld = NULL; // LRC
 
-bool g_doingDesired = false; //LRC - marks whether the Desired functions are currently
-							 // being processed.
+bool g_doingDesired = false; // LRC - marks whether the Desired functions are currently
+							 //  being processed.
 
 void UTIL_AddToAssistList(CBaseEntity* pEnt)
 {
@@ -115,7 +127,7 @@ int ApplyDesiredSettings(CBaseEntity* pListMember)
 	if (pListMember->m_iLFlags & LF_DESIRED_THINK)
 	{
 		pListMember->m_iLFlags &= ~LF_DESIRED_THINK;
-		//ALERT(at_console, "DesiredThink %s\n", STRING(pListMember->pev->targetname));
+		// ALERT(at_console, "DesiredThink %s\n", STRING(pListMember->pev->targetname));
 		pListMember->Think();
 	}
 
@@ -140,8 +152,8 @@ void AssistChildren(CBaseEntity* pEnt, Vector vecAdjustVel, Vector vecAdjustAVel
 		pChild->pev->velocity = pChild->pev->velocity - vecAdjustVel;	 // (pChild->pev->velocity - pEnt->m_vecPostAssistVel) + pEnt->m_vecPostAssistVel*fFraction;
 		pChild->pev->avelocity = pChild->pev->avelocity - vecAdjustAVel; // (pChild->pev->avelocity - pEnt->m_vecPostAssistAVel) + pEnt->m_vecPostAssistAVel*fFraction;
 
-		//ALERT(at_console, "AssistChild %s: origin %f %f %f, old vel %f %f %f. fraction %f, new vel %f %f %f, dest %f %f %f\n", STRING(pChild->pev->targetname), pChild->pev->origin.x, pChild->pev->origin.y, pChild->pev->origin.z, pChild->m_vecPostAssistVel.x, pChild->m_vecPostAssistVel.y, pChild->m_vecPostAssistVel.z, fFraction, pChild->pev->velocity.x, pChild->pev->velocity.y, pChild->pev->velocity.z, pChild->pev->origin.x + pChild->pev->velocity.x*gpGlobals->frametime, pChild->pev->origin.y + pChild->pev->velocity.y*gpGlobals->frametime, pChild->pev->origin.z + pChild->pev->velocity.z*gpGlobals->frametime );
-		//ALERT(at_console, "AssistChild %s: origin %f %f %f. velocity was %f %f %f, now %f %f %f\n", STRING(pChild->pev->targetname), pChild->pev->origin.x, pChild->pev->origin.y, pChild->pev->origin.z, pChild->m_vecPostAssistVel.x, pChild->m_vecPostAssistVel.y, pChild->m_vecPostAssistVel.z, pChild->pev->velocity.x, pChild->pev->velocity.y, pChild->pev->velocity.z);
+		// ALERT(at_console, "AssistChild %s: origin %f %f %f, old vel %f %f %f. fraction %f, new vel %f %f %f, dest %f %f %f\n", STRING(pChild->pev->targetname), pChild->pev->origin.x, pChild->pev->origin.y, pChild->pev->origin.z, pChild->m_vecPostAssistVel.x, pChild->m_vecPostAssistVel.y, pChild->m_vecPostAssistVel.z, fFraction, pChild->pev->velocity.x, pChild->pev->velocity.y, pChild->pev->velocity.z, pChild->pev->origin.x + pChild->pev->velocity.x*gpGlobals->frametime, pChild->pev->origin.y + pChild->pev->velocity.y*gpGlobals->frametime, pChild->pev->origin.z + pChild->pev->velocity.z*gpGlobals->frametime );
+		// ALERT(at_console, "AssistChild %s: origin %f %f %f. velocity was %f %f %f, now %f %f %f\n", STRING(pChild->pev->targetname), pChild->pev->origin.x, pChild->pev->origin.y, pChild->pev->origin.z, pChild->m_vecPostAssistVel.x, pChild->m_vecPostAssistVel.y, pChild->m_vecPostAssistVel.z, pChild->pev->velocity.x, pChild->pev->velocity.y, pChild->pev->velocity.z);
 
 		AssistChildren(pChild, vecAdjustVel, vecAdjustAVel);
 	}
@@ -224,7 +236,7 @@ int TryAssistEntity(CBaseEntity* pEnt)
 				pEnt->pev->avelocity = pEnt->pev->avelocity * fFraction;
 			}
 
-			//ALERT(at_console, "Assist %s: origin %f %f %f, old vel %f %f %f. fraction %f, new vel %f %f %f, dest %f %f %f\n", STRING(pEnt->pev->targetname), pEnt->pev->origin.x, pEnt->pev->origin.y, pEnt->pev->origin.z, pEnt->m_vecPostAssistVel.x, pEnt->m_vecPostAssistVel.y, pEnt->m_vecPostAssistVel.z, fFraction, pEnt->pev->velocity.x, pEnt->pev->velocity.y, pEnt->pev->velocity.z, pEnt->pev->origin.x + pEnt->pev->velocity.x*gpGlobals->frametime, pEnt->pev->origin.y + pEnt->pev->velocity.y*gpGlobals->frametime, pEnt->pev->origin.z + pEnt->pev->velocity.z*gpGlobals->frametime);
+			// ALERT(at_console, "Assist %s: origin %f %f %f, old vel %f %f %f. fraction %f, new vel %f %f %f, dest %f %f %f\n", STRING(pEnt->pev->targetname), pEnt->pev->origin.x, pEnt->pev->origin.y, pEnt->pev->origin.z, pEnt->m_vecPostAssistVel.x, pEnt->m_vecPostAssistVel.y, pEnt->m_vecPostAssistVel.z, fFraction, pEnt->pev->velocity.x, pEnt->pev->velocity.y, pEnt->pev->velocity.z, pEnt->pev->origin.x + pEnt->pev->velocity.x*gpGlobals->frametime, pEnt->pev->origin.y + pEnt->pev->velocity.y*gpGlobals->frametime, pEnt->pev->origin.z + pEnt->pev->velocity.z*gpGlobals->frametime);
 
 			AssistChildren(pEnt, vecVelTemp - pEnt->pev->velocity, vecAVelTemp - pEnt->pev->avelocity);
 			UTIL_DesiredPostAssist(pEnt);
@@ -310,7 +322,7 @@ void CheckAssistList()
 void CheckDesiredList()
 {
 	CBaseEntity* pListMember;
-	int loopbreaker = 1000; //assume this is the max. number of entities which will use DesiredList in any one frame
+	int loopbreaker = 1000; // assume this is the max. number of entities which will use DesiredList in any one frame
 							//	bool liststart = false;
 	if (g_doingDesired)
 		ALERT(at_debug, "CheckDesiredList: doingDesired is already set!?\n");
@@ -357,8 +369,6 @@ void CheckDesiredList()
 	g_doingDesired = false;
 }
 
-
-
 void UTIL_MarkForAssist(CBaseEntity* pEnt, bool correctSpeed)
 {
 	pEnt->m_iLFlags |= LF_DOASSIST;
@@ -377,7 +387,7 @@ void UTIL_MarkForDesired(CBaseEntity* pEnt)
 
 	if (g_doingDesired)
 	{
-		//ALERT(at_console, "doingDesired is true, start immediately\n");
+		// ALERT(at_console, "doingDesired is true, start immediately\n");
 		ApplyDesiredSettings(pEnt);
 		return;
 	}
@@ -410,8 +420,6 @@ void UTIL_DesiredThink(CBaseEntity* pEnt)
 	pEnt->DontThink();
 	UTIL_MarkForDesired(pEnt);
 }
-
-
 
 // LRC- change the origin to the given position, and bring any movewiths along too.
 void UTIL_AssignOrigin(CBaseEntity* pEntity, const Vector vecOrigin)
@@ -451,7 +459,7 @@ void UTIL_AssignOrigin(CBaseEntity* pEntity, const Vector vecOrigin, bool bIniti
 		Vector vecTemp;
 		while (pChild)
 		{
-			//ALERT(at_console,"  pre: parent origin is (%f %f %f), child origin is (%f %f %f)\n",
+			// ALERT(at_console,"  pre: parent origin is (%f %f %f), child origin is (%f %f %f)\n",
 			//	pEntity->pev->origin.x,pEntity->pev->origin.y,pEntity->pev->origin.z,
 			//	pChild->pev->origin.x,pChild->pev->origin.y,pChild->pev->origin.z
 			//);
@@ -465,8 +473,8 @@ void UTIL_AssignOrigin(CBaseEntity* pEntity, const Vector vecOrigin, bool bIniti
 				vecTemp = vecDiff + pChild->pev->origin;
 				UTIL_AssignOrigin(pChild, vecTemp, false);
 			}
-			//ALERT(at_console,"  child origin becomes (%f %f %f)\n",pChild->pev->origin.x,pChild->pev->origin.y,pChild->pev->origin.z);
-			//ALERT(at_console,"ent %p has sibling %p\n",pChild,pChild->m_pSiblingMoveWith);
+			// ALERT(at_console,"  child origin becomes (%f %f %f)\n",pChild->pev->origin.x,pChild->pev->origin.y,pChild->pev->origin.z);
+			// ALERT(at_console,"ent %p has sibling %p\n",pChild,pChild->m_pSiblingMoveWith);
 			pChild = pChild->m_pSiblingMoveWith;
 		}
 		//		}
@@ -506,18 +514,18 @@ void UTIL_SetAngles(CBaseEntity* pEntity, const Vector vecAngles, bool bInitiato
 				vecTemp = vecDiff + pChild->pev->angles;
 				UTIL_SetAngles(pChild, vecTemp, false);
 			}
-			//ALERT(at_console,"  child origin becomes (%f %f %f)\n",pChild->pev->origin.x,pChild->pev->origin.y,pChild->pev->origin.z);
-			//ALERT(at_console,"ent %p has sibling %p\n",pChild,pChild->m_pSiblingMoveWith);
+			// ALERT(at_console,"  child origin becomes (%f %f %f)\n",pChild->pev->origin.x,pChild->pev->origin.y,pChild->pev->origin.z);
+			// ALERT(at_console,"ent %p has sibling %p\n",pChild,pChild->m_pSiblingMoveWith);
 			pChild = pChild->m_pSiblingMoveWith;
 		}
 	}
 }
 
-//LRC- an arbitrary limit. If this number is exceeded we assume there's an infinite loop, and abort.
+// LRC- an arbitrary limit. If this number is exceeded we assume there's an infinite loop, and abort.
 #define MAX_MOVEWITH_DEPTH 100
 
-//LRC- for use in supporting movewith. Tell the entity that whatever it's moving with is about to change velocity.
-// loopbreaker is there to prevent the game from hanging...
+// LRC- for use in supporting movewith. Tell the entity that whatever it's moving with is about to change velocity.
+//  loopbreaker is there to prevent the game from hanging...
 void UTIL_SetMoveWithVelocity(CBaseEntity* pEnt, const Vector vecSet, int loopbreaker)
 {
 	if (loopbreaker <= 0)
@@ -552,7 +560,7 @@ void UTIL_SetMoveWithVelocity(CBaseEntity* pEnt, const Vector vecSet, int loopbr
 	//		vecNew.x, vecNew.y, vecNew.z
 	//	);
 
-	//LRC- velocity is ignored on entities that aren't thinking! (Aargh...)
+	// LRC- velocity is ignored on entities that aren't thinking! (Aargh...)
 	//	if (fThinkTime)
 	//	{
 	//		UTIL_DesiredNextThink( pEnt, fThinkTime );
@@ -586,7 +594,7 @@ void UTIL_SetMoveWithVelocity(CBaseEntity* pEnt, const Vector vecSet, int loopbr
 	//		UTIL_SetDesiredVel(pEnt, vecNew);
 }
 
-//LRC
+// LRC
 void UTIL_SetVelocity(CBaseEntity* pEnt, const Vector vecSet)
 {
 	Vector vecNew;
@@ -621,7 +629,7 @@ void UTIL_SetVelocity(CBaseEntity* pEnt, const Vector vecSet)
 	pEnt->pev->velocity = vecNew;
 }
 
-//LRC - one more MoveWith utility. This one's for the simple version of RotWith.
+// LRC - one more MoveWith utility. This one's for the simple version of RotWith.
 void UTIL_SetMoveWithAvelocity(CBaseEntity* pEnt, const Vector vecSet, int loopbreaker)
 {
 	if (loopbreaker <= 0)
@@ -657,7 +665,7 @@ void UTIL_SetMoveWithAvelocity(CBaseEntity* pEnt, const Vector vecSet, int loopb
 		}
 	}
 
-	//UTIL_SetDesiredAvelocity(pEnt, vecNew);
+	// UTIL_SetDesiredAvelocity(pEnt, vecNew);
 	pEnt->pev->avelocity = vecNew;
 }
 
@@ -687,6 +695,6 @@ void UTIL_SetAvelocity(CBaseEntity* pEnt, const Vector vecSet)
 			}
 		}
 	}
-	//UTIL_SetDesiredAvelocity(pEnt, vecNew);
+	// UTIL_SetDesiredAvelocity(pEnt, vecNew);
 	pEnt->pev->avelocity = vecNew;
 }

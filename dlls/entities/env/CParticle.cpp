@@ -14,7 +14,7 @@
  ****/
 
 #include "CParticle.h"
-#include "movewith.h"
+#include "util/movewith.h"
 #include "UserMessages.h"
 
 LINK_ENTITY_TO_CLASS(env_particle, CParticle);

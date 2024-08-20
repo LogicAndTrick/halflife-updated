@@ -15,7 +15,7 @@
 
 #include "CEnvCustomize.h"
 #include "entities/monster/CTalkMonster.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(env_customize, CEnvCustomize);
 

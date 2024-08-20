@@ -14,7 +14,7 @@
  ****/
 
 #include "CMultiManager.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(multi_manager, CMultiManager);
 

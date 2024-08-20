@@ -1241,15 +1241,6 @@
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\lights.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\locus.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\movewith.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\skill.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
@@ -1277,13 +1268,13 @@
     <ClCompile Include="..\..\dlls\util\ai.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (4).cpp">
+    <ClCompile Include="..\..\dlls\util\light.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (5).cpp">
+    <ClCompile Include="..\..\dlls\util\locus.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (6).cpp">
+    <ClCompile Include="..\..\dlls\util\movewith.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util\util1 - Copy (7).cpp">
@@ -2344,12 +2335,6 @@
     <ClInclude Include="..\..\dlls\extdll.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\locus.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\movewith.h">
-      <Filter>Header Files\dlls</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\saverestore.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
@@ -2383,13 +2368,13 @@
     <ClInclude Include="..\..\dlls\util\ai.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (4).h">
+    <ClInclude Include="..\..\dlls\util\light.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (5).h">
+    <ClInclude Include="..\..\dlls\util\locus.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (6).h">
+    <ClInclude Include="..\..\dlls\util\movewith.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\util\util1 - Copy (7).h">

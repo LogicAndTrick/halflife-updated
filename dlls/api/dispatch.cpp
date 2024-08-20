@@ -17,7 +17,7 @@
 #include "classes/gamerules/CGameRules.h"
 #include "classes/saverestore/CGlobalState.h"
 #include "dispatch.h"
-#include "movewith.h"
+#include "util/movewith.h"
 #include "skill.h"
 
 extern void SetObjectCollisionBox(entvars_t* pev);

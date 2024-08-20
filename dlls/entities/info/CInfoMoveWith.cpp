@@ -14,7 +14,7 @@
  ****/
 
 #include "CInfoMoveWith.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(info_movewith, CInfoMoveWith);
 

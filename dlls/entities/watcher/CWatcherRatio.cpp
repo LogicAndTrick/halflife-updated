@@ -14,7 +14,7 @@
  ****/
 
 #include "CWatcherRatio.h"
-#include "locus.h"
+#include "util/locus.h"
 
 LINK_ENTITY_TO_CLASS(watcher_number, CWatcherRatio);
 

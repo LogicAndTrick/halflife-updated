@@ -15,7 +15,7 @@
 
 #include "CFuncTank.h"
 #include "entities/scripted/CTankSequence.h"
-#include "movewith.h"
+#include "util/movewith.h"
 #include "entities/player/CBasePlayer.h"
 
 TYPEDESCRIPTION CFuncTank::m_SaveData[] =

@@ -442,9 +442,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\entities\xen\CXenSpore.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTree.cpp" />
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp" />
-    <ClCompile Include="..\..\dlls\lights.cpp" />
-    <ClCompile Include="..\..\dlls\locus.cpp" />
-    <ClCompile Include="..\..\dlls\movewith.cpp" />
     <ClCompile Include="..\..\dlls\skill.cpp" />
     <ClCompile Include="..\..\dlls\sound.cpp" />
     <ClCompile Include="..\..\dlls\subs.cpp" />
@@ -454,9 +451,9 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClCompile Include="..\..\dlls\util\util1 - Copy (11).cpp" />
     <ClCompile Include="..\..\dlls\util\animation.cpp" />
     <ClCompile Include="..\..\dlls\util\ai.cpp" />
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (4).cpp" />
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (5).cpp" />
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (6).cpp" />
+    <ClCompile Include="..\..\dlls\util\light.cpp" />
+    <ClCompile Include="..\..\dlls\util\locus.cpp" />
+    <ClCompile Include="..\..\dlls\util\movewith.cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (7).cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (8).cpp" />
     <ClCompile Include="..\..\dlls\util\util1 - Copy (9).cpp" />
@@ -811,8 +808,6 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\entities\xen\CXenTree.h" />
     <ClInclude Include="..\..\dlls\entities\xen\CXenTreeTrigger.h" />
     <ClInclude Include="..\..\dlls\extdll.h" />
-    <ClInclude Include="..\..\dlls\locus.h" />
-    <ClInclude Include="..\..\dlls\movewith.h" />
     <ClInclude Include="..\..\dlls\saverestore.h" />
     <ClInclude Include="..\..\dlls\schedule.h" />
     <ClInclude Include="..\..\dlls\scriptevent.h" />
@@ -824,9 +819,9 @@ cmd /c ""$(ProjectDir)..\..\filecopy.bat" "$(SolutionDir)../../network" "" "delt
     <ClInclude Include="..\..\dlls\util\util1 - Copy (11).h" />
     <ClInclude Include="..\..\dlls\util\animation.h" />
     <ClInclude Include="..\..\dlls\util\ai.h" />
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (4).h" />
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (5).h" />
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (6).h" />
+    <ClInclude Include="..\..\dlls\util\light.h" />
+    <ClInclude Include="..\..\dlls\util\locus.h" />
+    <ClInclude Include="..\..\dlls\util\movewith.h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (7).h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (8).h" />
     <ClInclude Include="..\..\dlls\util\util1 - Copy (9).h" />

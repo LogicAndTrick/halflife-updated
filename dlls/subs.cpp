@@ -26,7 +26,7 @@
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
-#include "locus.h"
+#include "util/locus.h"
 
 extern bool FEntIsVisible(entvars_t* pev, entvars_t* pevTarget);
 

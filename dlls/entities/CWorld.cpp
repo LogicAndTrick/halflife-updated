@@ -21,6 +21,7 @@
 #include "decals.h"
 #include "entities/player/CBasePlayer.h"
 #include "classes/gamerules/CGameRules.h"
+#include "util/light.h"
 #include "weapon/CBasePlayerItem.h"
 #include "weapon/CBasePlayerWeapon.h"
 

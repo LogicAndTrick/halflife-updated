@@ -15,7 +15,7 @@
 
 #include "CAutoTrigger.h"
 #include "classes/saverestore/CGlobalState.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(trigger_auto, CAutoTrigger);
 

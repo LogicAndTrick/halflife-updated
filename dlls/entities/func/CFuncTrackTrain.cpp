@@ -16,7 +16,7 @@
 #include "CFuncTrackTrain.h"
 #include "entities/path/CPathCorner.h"
 #include "entities/path/CPathTrack.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(func_tracktrain, CFuncTrackTrain);
 

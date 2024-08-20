@@ -15,7 +15,7 @@
 
 #include "CBaseToggle.h"
 #include "func/CBaseDoor.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 #define ACCELTIMEINCREMENT 0.1 // AJH for acceleration/deceleration time steps
 

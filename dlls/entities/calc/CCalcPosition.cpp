@@ -15,7 +15,7 @@
 
 #include "CCalcPosition.h"
 #include "entities/CBaseAnimating.h"
-#include "locus.h"
+#include "util/locus.h"
 
 LINK_ENTITY_TO_CLASS(calc_position, CCalcPosition);
 LINK_ENTITY_TO_CLASS(calc_posfroment, CCalcPosition); // LRC 1.8

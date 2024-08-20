@@ -14,7 +14,7 @@
  ****/
 
 #include "CCalcFromCVar.h"
-#include "locus.h"
+#include "util/locus.h"
 
 LINK_ENTITY_TO_CLASS(calc_fromcvar, CCalcFromCVar);
 

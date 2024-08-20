@@ -14,7 +14,7 @@
  ****/
 
 #include "CCalcNumFromNum.h"
-#include "locus.h"
+#include "util/locus.h"
 
 LINK_ENTITY_TO_CLASS(calc_numfromnum, CCalcNumFromNum); // LRC 1.8: new name for this entity
 LINK_ENTITY_TO_CLASS(calc_ratio, CCalcNumFromNum);		// old name, still legal

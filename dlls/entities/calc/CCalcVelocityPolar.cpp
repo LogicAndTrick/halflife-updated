@@ -14,7 +14,7 @@
  ****/
 
 #include "CCalcVelocityPolar.h"
-#include "locus.h"
+#include "util/locus.h"
 
 LINK_ENTITY_TO_CLASS(calc_velocity_polar, CCalcVelocityPolar);
 LINK_ENTITY_TO_CLASS(calc_vecfromvec, CCalcVelocityPolar); // LRC 1.8

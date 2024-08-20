@@ -14,8 +14,8 @@
  ****/
 
 #include "CEnvDLight.h"
-#include "locus.h"
-#include "movewith.h"
+#include "util/locus.h"
+#include "util/movewith.h"
 #include "UserMessages.h"
 
 LINK_ENTITY_TO_CLASS(env_dlight, CEnvDLight);

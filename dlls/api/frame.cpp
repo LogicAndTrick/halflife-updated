@@ -19,7 +19,7 @@
 #include "entities/CBaseEntity.h"
 #include "filesystem_utils.h"
 #include "game.h"
-#include "movewith.h"
+#include "util/movewith.h"
 #include "pm_defs.h"
 #include "pm_shared.h"
 #include "classes/gamerules/CGameRules.h"

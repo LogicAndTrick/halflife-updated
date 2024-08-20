@@ -14,7 +14,7 @@
  ****/
 
 #include "CEnvSky.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(env_sky, CEnvSky);
 

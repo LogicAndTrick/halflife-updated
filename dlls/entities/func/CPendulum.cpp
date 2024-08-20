@@ -15,7 +15,7 @@
 
 #include "CPendulum.h"
 #include "CBaseDoor.h"
-#include "movewith.h"
+#include "util/movewith.h"
 
 LINK_ENTITY_TO_CLASS(func_pendulum, CPendulum);
 

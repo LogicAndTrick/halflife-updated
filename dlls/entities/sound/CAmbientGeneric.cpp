@@ -14,7 +14,7 @@
  ****/
 
 #include "CAmbientGeneric.h"
-#include "locus.h"
+#include "util/locus.h"
 
 // presets for runtime pitch and vol modulation of ambient sounds
 
