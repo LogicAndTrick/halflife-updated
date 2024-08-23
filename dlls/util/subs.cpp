@@ -12,23 +12,11 @@
  *   without written permission from Valve LLC.
  *
  ****/
-/*
 
-  Last Modifed 4 May 2004 By Andrew Hamilton (AJH)
-  :- Added support for acceleration of doors etc
+#include "subs.h"
 
-===== subs.cpp ========================================================
-
-  frequently used global functions
-
-*/
-
-#include "extdll.h"
-#include "util.h"
-#include "cbase.h"
+#include "trace.h"
 #include "util/locus.h"
-
-extern bool FEntIsVisible(entvars_t* pev, entvars_t* pevTarget);
 
 void FireTargets(const char* targetName, CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)
 {

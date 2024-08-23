@@ -17,6 +17,7 @@
 
 #include "CBasePlayer.h"
 #include "entities/CWorld.h"
+#include "util/trace.h"
 
 /* FREEZE PLAYER */
 

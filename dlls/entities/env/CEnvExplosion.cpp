@@ -16,7 +16,9 @@
 #include "CEnvExplosion.h"
 #include "weapons.h"
 #include "decals.h"
+#include "util/decal.h"
 #include "util/locus.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(env_explosion, CEnvExplosion);
 

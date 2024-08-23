@@ -1241,19 +1241,16 @@
     <ClCompile Include="..\..\dlls\entities\xen\CXenTreeTrigger.cpp">
       <Filter>Source Files\dlls\entities\xen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\subs.cpp">
-      <Filter>Source Files\dlls</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\dlls\UserMessages.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (10).cpp">
+    <ClCompile Include="..\..\dlls\util\entities.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (11).cpp">
+    <ClCompile Include="..\..\dlls\util\trace.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util\animation.cpp">
@@ -1277,10 +1274,10 @@
     <ClCompile Include="..\..\dlls\util\sound.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy (9).cpp">
+    <ClCompile Include="..\..\dlls\util\subs.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1 - Copy.cpp">
+    <ClCompile Include="..\..\dlls\util\decal.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util\util1.cpp">
@@ -2347,10 +2344,10 @@
     <ClInclude Include="..\..\dlls\util.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (10).h">
+    <ClInclude Include="..\..\dlls\util\entities.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (11).h">
+    <ClInclude Include="..\..\dlls\util\trace.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\util\animation.h">
@@ -2374,10 +2371,10 @@
     <ClInclude Include="..\..\dlls\util\sound.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy (9).h">
+    <ClInclude Include="..\..\dlls\util\subs.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1 - Copy.h">
+    <ClInclude Include="..\..\dlls\util\decal.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\util\util1.h">

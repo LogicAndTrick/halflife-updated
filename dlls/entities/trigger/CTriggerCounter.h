@@ -17,6 +17,8 @@
 
 #include "CTriggerMultiple.h"
 
+#define SPAWNFLAG_NOMESSAGE 1
+
 // ==============================
 // trigger_counter
 // After the counter has been triggered "cTriggersLeft"

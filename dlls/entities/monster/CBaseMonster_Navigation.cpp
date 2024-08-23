@@ -16,6 +16,7 @@
 #include "CBaseMonster.h"
 #include "api/dispatch.h"
 #include "classes/nodes/CGraph.h"
+#include "util/trace.h"
 
 #define MONSTER_CUT_CORNER_DIST 8 // 8 means the monster's bounding box is contained without the box of the node in WC
 #define DIST_TO_CHECK 200

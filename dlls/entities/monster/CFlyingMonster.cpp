@@ -15,6 +15,8 @@
 
 #include "CFlyingMonster.h"
 
+#include "util/trace.h"
+
 int CFlyingMonster::CheckLocalMove(const Vector& vecStart, const Vector& vecEnd, CBaseEntity* pTarget, float* pflDist)
 {
 	// UNDONE: need to check more than the endpoint

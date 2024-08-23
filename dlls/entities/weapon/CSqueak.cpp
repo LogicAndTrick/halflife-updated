@@ -16,6 +16,7 @@
 #include "CSqueak.h"
 #include "entities/player/CBasePlayer.h"
 #include "weapons.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(weapon_snark, CSqueak);
 

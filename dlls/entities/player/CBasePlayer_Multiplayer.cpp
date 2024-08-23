@@ -18,6 +18,7 @@
 #include "UserMessages.h"
 #include "entities/CCorpse.h"
 #include "entities/weapon/CBasePlayerItem.h"
+#include "util/trace.h"
 
 /* MULTIPLAYER PREFERENCES */
 

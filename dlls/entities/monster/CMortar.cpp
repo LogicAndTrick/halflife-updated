@@ -15,6 +15,8 @@
 
 #include "CMortar.h"
 
+#include "util/trace.h"
+
 LINK_ENTITY_TO_CLASS(monster_mortar, CMortar);
 
 void CMortar::Spawn()

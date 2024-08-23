@@ -23,6 +23,7 @@
 #include "entities/CGib.h"
 #include "entities/CWorld.h"
 #include "classes/saverestore/CGlobalState.h"
+#include "util/trace.h"
 
 void CBasePlayer::ImpulseCommands()
 {

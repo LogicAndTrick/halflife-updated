@@ -17,6 +17,7 @@
 #include "CCineMonster.h"
 #include "CSquadMonster.h"
 #include "classes/nodes/CGraph.h"
+#include "util/trace.h"
 
 //=========================================================
 // SetState

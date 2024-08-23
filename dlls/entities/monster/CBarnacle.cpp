@@ -15,6 +15,7 @@
 
 #include "CBarnacle.h"
 #include "entities/CGib.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(monster_barnacle, CBarnacle);
 

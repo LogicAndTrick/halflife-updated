@@ -14,6 +14,7 @@
  ****/
 
 #include "CBaseMonster.h"
+#include "util/trace.h"
 
 //=========================================================
 // MakeIdealYaw - gets a yaw value for the caller that would

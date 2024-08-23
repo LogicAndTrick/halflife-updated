@@ -15,6 +15,8 @@
 
 #include "CTentacle.h"
 
+#include "util/trace.h"
+
 LINK_ENTITY_TO_CLASS(monster_tentacle, CTentacle);
 
 TYPEDESCRIPTION CTentacle::m_SaveData[] =

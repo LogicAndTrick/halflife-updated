@@ -94,7 +94,6 @@ typedef enum
 
 extern char* GetStringForUseType(USE_TYPE useType);
 
-extern void FireTargets(const char* targetName, CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
 
 typedef void (CBaseEntity::*BASEPTR)();
 typedef void (CBaseEntity::*ENTITYFUNCPTR)(CBaseEntity* pOther);
@@ -495,9 +494,6 @@ public:
 
 	int m_fireState;
 };
-
-// LRC- moved here from player.cpp. I'd put it in util.h with its friends, but it needs CBaseEntity to be declared.
-inline bool FNullEnt(CBaseEntity* ent) { return (ent == NULL) || FNullEnt(ent->edict()); }
 
 
 

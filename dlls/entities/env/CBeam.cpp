@@ -17,6 +17,8 @@
 #include "customentity.h"
 #include "weapons.h"
 #include "decals.h"
+#include "util/decal.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(beam, CBeam);
 

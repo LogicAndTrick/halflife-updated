@@ -17,6 +17,7 @@
 #include "entities/weapon/CBasePlayerItem.h"
 #include "api/game.h"
 #include "classes/gamerules/CGameRules.h"
+#include "util/trace.h"
 
 #define DOT_1DEGREE 0.9998476951564
 #define DOT_2DEGREE 0.9993908270191

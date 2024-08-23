@@ -15,6 +15,8 @@
 
 #include "CGamePlayerZone.h"
 
+#include "util/trace.h"
+
 LINK_ENTITY_TO_CLASS(game_zone_player, CGamePlayerZone);
 
 TYPEDESCRIPTION CGamePlayerZone::m_SaveData[] =
@@ -69,7 +71,7 @@ void CGamePlayerZone::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYP
 		if (pPlayer)
 		{
 			TraceResult trace;
-			int hullNumber;
+			HULL_NUMBER hullNumber;
 			bool inside = false;
 
 			hullNumber = human_hull;

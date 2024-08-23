@@ -18,6 +18,7 @@
 #include "entities/player/CBasePlayer.h"
 #include "util/skill.h"
 #include "weapons.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(weapon_crowbar, CCrowbar);
 

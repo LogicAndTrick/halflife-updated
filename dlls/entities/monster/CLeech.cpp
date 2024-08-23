@@ -15,6 +15,8 @@
 
 #include "CLeech.h"
 
+#include "util/trace.h"
+
 LINK_ENTITY_TO_CLASS(monster_leech, CLeech);
 
 TYPEDESCRIPTION CLeech::m_SaveData[] =

@@ -18,6 +18,8 @@
 #include "decals.h"
 #include "entities/monster/CCineMonster.h"
 #include "api/game.h"
+#include "util/decal.h"
+#include "util/trace.h"
 
 int iSquidSpitSprite;
 

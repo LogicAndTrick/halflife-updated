@@ -19,6 +19,7 @@
 #include "entities/monster/CCineMonster.h"
 #include "api/game.h"
 #include "entities/weapon/CGrenade.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(monster_human_assassin, CHAssassin);
 

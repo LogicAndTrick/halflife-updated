@@ -16,6 +16,7 @@
 #include "CEnvWarpBall.h"
 #include "CBeam.h"
 #include "CSprite.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(env_warpball, CEnvWarpBall);
 

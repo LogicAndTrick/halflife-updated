@@ -35,9 +35,9 @@ void USENTENCEG_InitLRU(unsigned char* plru, int count);
 void SENTENCEG_Init();
 void SENTENCEG_Stop(edict_t* entity, int isentenceg, int ipick);
 int SENTENCEG_PlayRndI(edict_t* entity, int isentenceg, float volume, float attenuation, int flags, int pitch);
-int SENTENCEG_PlayRndSz(edict_t* entity, const char* szrootname, float volume, float attenuation, int flags, int pitch);
-int SENTENCEG_PlaySequentialSz(edict_t* entity, const char* szrootname, float volume, float attenuation, int flags, int pitch, int ipick, bool freset);
-int SENTENCEG_GetIndex(const char* szrootname);
+int SENTENCEG_PlayRndSz(edict_t* entity, const char* szgroupname, float volume, float attenuation, int flags, int pitch);
+int SENTENCEG_PlaySequentialSz(edict_t* entity, const char* szgroupname, float volume, float attenuation, int flags, int pitch, int ipick, bool freset);
+int SENTENCEG_GetIndex(const char* szgroupname);
 int SENTENCEG_Lookup(const char* sample, char* sentencenum);
 
 void TEXTURETYPE_Init();
@@ -68,8 +68,7 @@ inline void STOP_SOUND(edict_t* entity, int channel, const char* sample)
  *	@brief Just like @see EMIT_SOUND_DYN, but will skip the current host player if they have cl_lw turned on.
  *	@details entity must be the current host entity for this to work, and must be called only inside a player's PostThink method.
  */
-void EMIT_SOUND_PREDICTED(edict_t* entity, int channel, const char* sample, float volume, float attenuation,
-	int flags, int pitch);
+void EMIT_SOUND_PREDICTED(edict_t* entity, int channel, const char* sample, float volume, float attenuation, int flags, int pitch);
 
 void EMIT_SOUND_SUIT(edict_t* entity, const char* sample);
 void EMIT_GROUPID_SUIT(edict_t* entity, int isentenceg);

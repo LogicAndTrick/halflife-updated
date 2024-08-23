@@ -15,6 +15,7 @@
 
 #include "CTriggerOnSight.h"
 #include "entities/monster/CBaseMonster.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(trigger_onsight, CTriggerOnSight);
 

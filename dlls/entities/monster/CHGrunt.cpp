@@ -21,6 +21,7 @@
 #include "entities/monster/CCineMonster.h"
 #include "entities/env/CBeam.h"
 #include "entities/weapon/CGrenade.h"
+#include "util/trace.h"
 
 
 int g_fGruntQuestion; // true if an idle grunt asked a question. Cleared when someone answers.

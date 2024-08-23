@@ -15,6 +15,7 @@
 
 #include "cmd.h"
 #include "entities/player/CBasePlayer.h"
+#include "util/trace.h"
 
 /*
 =================

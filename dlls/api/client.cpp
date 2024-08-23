@@ -26,6 +26,7 @@
 #include "entities/item/CItemMedicalKit.h"
 #include "entities/player/CBasePlayer.h"
 #include "entities/sound/CSoundEnt.h"
+#include "util/trace.h"
 
 /*
 ===========

@@ -15,6 +15,7 @@
 
 #include "CLightning.h"
 #include "customentity.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(env_lightning, CLightning);
 LINK_ENTITY_TO_CLASS(env_beam, CLightning);

@@ -22,6 +22,8 @@
 #include "entities/env/CRainModify.h"
 #include "entities/env/CRainSettings.h"
 #include "entities/weapon/CBasePlayerItem.h"
+#include "util/entities.h"
+#include "util/trace.h"
 
 /* FULL UPDATES */
 

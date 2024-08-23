@@ -22,6 +22,7 @@
 #include "classes/gamerules/CGameRules.h"
 #include "classes/nodes/CGraph.h"
 #include "entities/CCorpse.h"
+#include "util/trace.h"
 
 void CBasePlayer::PreThink()
 {

@@ -16,6 +16,8 @@
 #include "CBaseMonster.h"
 #include "CCineMonster.h"
 #include "entities/CGib.h"
+#include "util/decal.h"
+#include "util/trace.h"
 
 /* ATTACKS */
 

@@ -16,6 +16,7 @@
 #include "CMonsterMaker.h"
 #include "util/locus.h"
 #include "api/dispatch.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(monstermaker, CMonsterMaker);
 

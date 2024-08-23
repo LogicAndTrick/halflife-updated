@@ -16,6 +16,8 @@
 #include "CSatchelCharge.h"
 #include "weapons.h"
 #include "entities/player/CBasePlayer.h"
+#include "util/entities.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(monster_satchel, CSatchelCharge);
 

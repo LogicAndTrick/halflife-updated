@@ -14,3 +14,10 @@
  ****/
 
 #pragma once
+
+#include "extdll.h"
+
+extern void UTIL_BloodDecalTrace(TraceResult* pTrace, int bloodColor);
+extern void UTIL_DecalTrace(TraceResult* pTrace, int decalNumber);
+extern void UTIL_PlayerDecalTrace(TraceResult* pTrace, int playernum, int decalNumber, bool bIsCustom);
+extern void UTIL_GunshotDecalTrace(TraceResult* pTrace, int decalNumber);

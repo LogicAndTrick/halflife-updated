@@ -14,6 +14,8 @@
  ****/
 
 #include "ai.h"
+
+#include "trace.h"
 #include "util.h"
 #include "api/game.h"
 

@@ -16,6 +16,7 @@
 #include "CBaseMonster.h"
 #include "CCineMonster.h"
 #include "scriptevent.h"
+#include "util/trace.h"
 
 void CBaseMonster::HandleAnimEvent(MonsterEvent_t* pEvent)
 {

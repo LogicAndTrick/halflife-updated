@@ -346,6 +346,8 @@ void CBasePlayer::Spawn()
 	g_irunninggausspred = false;
 }
 
+typedef enum {} IGNORE_MONSTERS;
+
 /*
 =====================
 UTIL_TraceLine

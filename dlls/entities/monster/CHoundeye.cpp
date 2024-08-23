@@ -18,6 +18,7 @@
 #include "util/animation.h"
 #include "classes/nodes/CGraph.h"
 #include "api/game.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(monster_houndeye, CHoundeye);
 

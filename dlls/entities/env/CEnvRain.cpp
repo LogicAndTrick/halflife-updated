@@ -15,6 +15,8 @@
 
 #include "CEnvRain.h"
 
+#include "util/trace.h"
+
 LINK_ENTITY_TO_CLASS(env_rain, CEnvRain);
 
 TYPEDESCRIPTION CEnvRain::m_SaveData[] =

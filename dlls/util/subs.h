@@ -14,3 +14,14 @@
  ****/
 
 #pragma once
+
+#include "extdll.h"
+#include "util.h"
+#include "cbase.h"
+
+class CBaseEntity;
+
+extern bool FEntIsVisible(entvars_t* pev, entvars_t* pevTarget);
+extern void FireTargets(const char* targetName, CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value);
+extern void SetMovedir(entvars_t* pev);
+extern Vector GetMovedir(Vector vecAngles);

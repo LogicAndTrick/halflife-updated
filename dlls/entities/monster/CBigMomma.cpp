@@ -18,6 +18,9 @@
 #include "decals.h"
 #include "api/game.h"
 #include "weapons.h"
+#include "util/decal.h"
+#include "util/entities.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(info_bigmomma, CInfoBM);
 

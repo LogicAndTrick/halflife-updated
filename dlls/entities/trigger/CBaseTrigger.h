@@ -17,6 +17,11 @@
 
 #include "entities/CBaseToggle.h"
 
+#define SF_TRIGGER_ALLOWMONSTERS 1 // monsters allowed to fire this trigger
+#define SF_TRIGGER_NOCLIENTS 2	   // players not allowed to fire this trigger
+#define SF_TRIGGER_PUSHABLES 4	   // only pushables can fire this trigger
+#define SF_TRIGGER_EVERYTHING 8	   // everything else can fire this trigger (e.g. gibs, rockets)
+
 // trigger_x entities
 class CBaseTrigger : public CBaseToggle
 {

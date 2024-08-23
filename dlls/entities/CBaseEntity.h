@@ -19,7 +19,15 @@
 #include "util.h"
 #include "cbase.h"
 #include "util/sound.h"
+#include "util/subs.h"
 #include "classes/saverestore/CSave.h"
 #include "classes/saverestore/CRestore.h"
 
 extern Vector VecBModelOrigin(entvars_t* pevBModel);
+
+// This is the glue that hooks .MAP entity class names to our CPP classes
+// The _declspec forces them to be exported by name so we can do a lookup with GetProcAddress()
+// The function is used to intialize / allocate the object for the entity
+#define LINK_ENTITY_TO_CLASS(mapClassName, DLLClassName)    \
+	extern "C" DLLEXPORT void mapClassName(entvars_t* pev); \
+	void mapClassName(entvars_t* pev) { GetClassPtr((DLLClassName*)pev); }

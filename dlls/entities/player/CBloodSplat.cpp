@@ -15,6 +15,9 @@
 
 #include "CBloodSplat.h"
 
+#include "util/decal.h"
+#include "util/trace.h"
+
 void CBloodSplat::Spawn(entvars_t* pevOwner)
 {
 	pev->origin = pevOwner->origin + Vector(0, 0, 32);

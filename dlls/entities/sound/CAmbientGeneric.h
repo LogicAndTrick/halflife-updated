@@ -17,6 +17,19 @@
 
 #include "entities/CBaseEntity.h"
 
+#define AMBIENT_SOUND_STATIC 0 // medium radius attenuation
+#define AMBIENT_SOUND_EVERYWHERE 1
+#define AMBIENT_SOUND_SMALLRADIUS 2
+#define AMBIENT_SOUND_MEDIUMRADIUS 4
+#define AMBIENT_SOUND_LARGERADIUS 8
+#define AMBIENT_SOUND_START_SILENT 16
+#define AMBIENT_SOUND_NOT_LOOPING 32
+#define AMBIENT_SOUND_CUSTOM_ATTENUATION 0x80000
+
+#define LFO_SQUARE 1
+#define LFO_TRIANGLE 2
+#define LFO_RANDOM 3
+
 #define CDPVPRESETMAX 27
 
 // runtime pitch shift and volume fadein/out structure

@@ -15,6 +15,8 @@
 
 #include "CRoach.h"
 #include "decals.h"
+#include "util/decal.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(monster_cockroach, CRoach);
 

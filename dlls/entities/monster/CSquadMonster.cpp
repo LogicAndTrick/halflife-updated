@@ -15,6 +15,7 @@
 
 #include "CSquadMonster.h"
 #include "classes/CPlane.h"
+#include "util/trace.h"
 
 //=========================================================
 // Save/Restore

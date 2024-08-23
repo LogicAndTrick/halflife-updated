@@ -18,6 +18,8 @@
 #include "entities/sound/CSoundEnt.h"
 #include "studio.h"
 #include "func/CBreakable.h"
+#include "util/decal.h"
+#include "util/trace.h"
 
 // HACKHACK -- The gib velocity equations don't work
 void CGib::LimitVelocity()

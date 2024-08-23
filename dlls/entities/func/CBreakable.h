@@ -41,7 +41,13 @@ typedef enum
 } Materials;
 
 #define NUM_SHARDS 6 // this many shards spawned when breakable objects break;
+
+#define SF_BREAK_TRIGGER_ONLY 1 // may only be broken by trigger
+#define SF_BREAK_TOUCH 2		// can be 'crashed through' by running player (plate glass)
+#define SF_BREAK_PRESSURE 4		// can be broken by a player standing on it
+#define SF_BREAK_FADE_RESPAWN 8 // LRC- fades in gradually when respawned
 #define SF_BREAKABLE_INVERT 16
+#define SF_BREAK_CROWBAR 256	// instant break if hit with crowbar
 
 // func_breakable - bmodel that breaks into pieces after taking damage
 class CBreakable : public CBaseDelay

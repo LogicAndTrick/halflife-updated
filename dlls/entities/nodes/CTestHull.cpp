@@ -19,6 +19,7 @@
 #include "entities/CCorpse.h"
 #include "Platform.h"
 #include "filesystem_utils.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(testhull, CTestHull);
 

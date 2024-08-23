@@ -18,6 +18,8 @@
 #include "entities/CBaseEntity.h"
 
 #define SF_PENDULUM_SWING 2 // spawnflag that makes a pendulum a rope swing.
+#define SF_PENDULUM_AUTO_RETURN 16
+#define SF_PENDULUM_PASSABLE 32
 
 class CPendulum : public CBaseEntity
 {

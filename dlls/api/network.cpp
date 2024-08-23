@@ -21,6 +21,7 @@
 #include "pm_shared.h"
 #include "entities/player/CBasePlayer.h"
 #include "entities/weapon/CRpg.h"
+#include "util/trace.h"
 
 
 /*

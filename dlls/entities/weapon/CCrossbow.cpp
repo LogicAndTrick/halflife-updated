@@ -19,6 +19,7 @@
 #include "classes/gamerules/CGameRules.h"
 #include "entities/player/CBasePlayer.h"
 #include "weapons.h"
+#include "util/trace.h"
 
 class CCrossbowBolt;
 

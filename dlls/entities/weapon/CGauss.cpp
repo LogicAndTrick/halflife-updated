@@ -22,6 +22,7 @@
 #include "util/skill.h"
 #include "weapons.h"
 #include "entities/CWorld.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(weapon_gauss, CGauss);
 

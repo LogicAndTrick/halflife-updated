@@ -15,6 +15,7 @@
 
 #include "CFuncMortarField.h"
 #include "entities/sound/CSoundEnt.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(func_mortar_field, CFuncMortarField);
 

@@ -17,6 +17,8 @@
 
 #include "entities/CBaseEntity.h"
 
+#define SPEAKER_START_SILENT 1 // wait for trigger 'on' to start announcements
+
 #define ANNOUNCE_MINUTES_MIN 0.25
 #define ANNOUNCE_MINUTES_MAX 2.25
 

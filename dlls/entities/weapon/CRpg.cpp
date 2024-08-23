@@ -20,6 +20,7 @@
 #include "entities/player/CBasePlayer.h"
 #include "weapons.h"
 #include "../../../utils/vgui/include/VGUI.h"
+#include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(weapon_rpg, CRpg);
 

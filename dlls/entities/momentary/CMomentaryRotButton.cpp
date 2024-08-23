@@ -15,6 +15,8 @@
 
 #include "CMomentaryRotButton.h"
 
+#include "entities/func/CPendulum.h"
+
 LINK_ENTITY_TO_CLASS(momentary_rot_button, CMomentaryRotButton);
 
 TYPEDESCRIPTION CMomentaryRotButton::m_SaveData[] =

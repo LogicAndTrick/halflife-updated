@@ -17,6 +17,7 @@
 #include "util/animation.h"
 #include "entities/monster/CCineMonster.h"
 #include "scriptevent.h"
+#include "util/trace.h"
 
 //=========================================================
 // Talking monster base class
