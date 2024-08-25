@@ -14,7 +14,6 @@
  ****/
 
 #include "CBeam.h"
-#include "customentity.h"
 #include "weapons.h"
 #include "decals.h"
 #include "util/decal.h"

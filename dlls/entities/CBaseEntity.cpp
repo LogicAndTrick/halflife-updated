@@ -1110,3 +1110,22 @@ CBaseEntity* CBaseEntity::Instance(entvars_t* pev)
 
 	return Instance(ENT(pev));
 }
+
+const char* GetStringForState(STATE state)
+{
+	switch (state)
+	{
+	case STATE_ON:
+		return "ON";
+	case STATE_OFF:
+		return "OFF";
+	case STATE_TURN_ON:
+		return "TURN ON";
+	case STATE_TURN_OFF:
+		return "TURN OFF";
+	case STATE_IN_USE:
+		return "IN USE";
+	default:
+		return "STATE_UNKNOWN!?";
+	}
+}

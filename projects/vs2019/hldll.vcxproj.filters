@@ -1295,7 +1295,7 @@
     <ClCompile Include="..\..\dlls\util\message.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\util1.cpp">
+    <ClCompile Include="..\..\dlls\util\stringutil.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\weapons_shared.cpp">
@@ -2407,7 +2407,7 @@
     <ClInclude Include="..\..\dlls\util\message.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\util1.h">
+    <ClInclude Include="..\..\dlls\util\stringutil.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\vector.h">

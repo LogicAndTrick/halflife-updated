@@ -16,6 +16,7 @@
 #pragma once
 
 #include "entities/CBaseEntity.h"
+#include "customentity.h"
 
 #define SF_BEAM_STARTON 0x0001
 #define SF_BEAM_TOGGLE 0x0002
@@ -30,11 +31,6 @@
 #define SF_BEAM_TEMPORARY 0x8000
 // LRC - tripbeams
 #define SF_BEAM_TRIPPED 0x80000
-
-#define BEAM_FSINE 0x10
-#define BEAM_FSOLID 0x20
-#define BEAM_FSHADEIN 0x40
-#define BEAM_FSHADEOUT 0x80
 
 class CBeam : public CBaseEntity
 {

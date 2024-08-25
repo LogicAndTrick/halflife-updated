@@ -62,73 +62,10 @@ inline bool FStringNull(int iString)
 
 #define cchMapNameMost 32
 
-// Dot products for view cone checking
-#define VIEW_FIELD_FULL (float)-1.0		   // +-180 degrees
-#define VIEW_FIELD_WIDE (float)-0.7		   // +-135 degrees 0.1 // +-85 degrees, used for full FOV checks
-#define VIEW_FIELD_NARROW (float)0.7	   // +-45 degrees, more narrow check used to set up ranged attacks
-#define VIEW_FIELD_ULTRA_NARROW (float)0.9 // +-25 degrees, more narrow check used to set up ranged attacks
 
-// All monsters need this data
-#define DONT_BLEED -1
-#define BLOOD_COLOR_RED (byte)247
-#define BLOOD_COLOR_YELLOW (byte)195
-#define BLOOD_COLOR_GREEN BLOOD_COLOR_YELLOW
 
-typedef enum
-{
-	MONSTERSTATE_NONE = 0,
-	MONSTERSTATE_IDLE,
-	MONSTERSTATE_COMBAT,
-	MONSTERSTATE_ALERT,
-	MONSTERSTATE_HUNT,
-	MONSTERSTATE_PRONE,
-	MONSTERSTATE_SCRIPT,
-	MONSTERSTATE_PLAYDEAD,
-	MONSTERSTATE_DEAD
-} MONSTERSTATE;
-
-//LRC- the values used for the new "global states" mechanism.
-typedef enum
-{
-	STATE_OFF = 0,	// disabled, inactive, invisible, closed, or stateless. Or non-alert monster.
-	STATE_TURN_ON,	// door opening, env_fade fading in, etc.
-	STATE_ON,		// enabled, active, visisble, or open. Or alert monster.
-	STATE_TURN_OFF, // door closing, monster dying (?).
-	STATE_IN_USE,	// player is in control (train/tank/barney/scientist).
-					// In_Use isn't very useful, I'll probably remove it.
-} STATE;
-
-extern char* GetStringForState(STATE state);
-
-// Things that toggle (buttons/triggers/doors) need this
-typedef enum
-{
-	TS_AT_TOP,
-	TS_AT_BOTTOM,
-	TS_GOING_UP,
-	TS_GOING_DOWN
-} TOGGLE_STATE;
-
-// Misc useful
-inline bool FStrEq(const char* sz1, const char* sz2)
-{
-	return (strcmp(sz1, sz2) == 0);
-}
-inline bool FClassnameIs(edict_t* pent, const char* szClassname)
-{
-	return FStrEq(STRING(VARS(pent)->classname), szClassname);
-}
-inline bool FClassnameIs(entvars_t* pev, const char* szClassname)
-{
-	return FStrEq(STRING(pev->classname), szClassname);
-}
 extern Vector UTIL_GetAimVector(edict_t* pent, float flSpeed);
 
-extern void UTIL_StringToVector(float* pVector, const char* pString);
-extern void UTIL_StringToRandomVector(float* pVector, const char* pString); //LRC
-extern void UTIL_StringToIntArray(int* pVector, int count, const char* pString);
-
-extern char* UTIL_VarArgs(const char* format, ...);
 extern bool UTIL_TeamsMatch(const char* pTeamName1, const char* pTeamName2);
 
 
@@ -138,8 +75,6 @@ class CBasePlayer;
 
 
 
-
-extern void UTIL_StripToken(const char* pKey, char* pDest); // for redundant keynames
 
 // Misc functions
 extern int BuildChangeList(LEVELLIST* pLevelList, int maxList);
@@ -168,11 +103,6 @@ void DBG_AssertFunction(bool fExpr, const char* szExpr, const char* szFile, int 
 
 inline DLL_GLOBAL int g_Language;
 
-
-#define SND_SPAWNING (1 << 8)	  // duplicated in protocol.h we're spawing, used in some cases for ambients
-#define SND_STOP (1 << 5)		  // duplicated in protocol.h stop sound
-#define SND_CHANGE_VOL (1 << 6)	  // duplicated in protocol.h change sound vol
-#define SND_CHANGE_PITCH (1 << 7) // duplicated in protocol.h change sound pitch
 
 #define SVC_TEMPENTITY 23
 #define SVC_INTERMISSION 30

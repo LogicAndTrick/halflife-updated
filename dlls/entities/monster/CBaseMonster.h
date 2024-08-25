@@ -122,6 +122,26 @@ enum
 		return pSchedule;                                                                         \
 	}
 
+typedef enum
+{
+	MONSTERSTATE_NONE = 0,
+	MONSTERSTATE_IDLE,
+	MONSTERSTATE_COMBAT,
+	MONSTERSTATE_ALERT,
+	MONSTERSTATE_HUNT,
+	MONSTERSTATE_PRONE,
+	MONSTERSTATE_SCRIPT,
+	MONSTERSTATE_PLAYDEAD,
+	MONSTERSTATE_DEAD
+} MONSTERSTATE;
+
+/* VIEW CONES*/
+// Dot products for view cone checking
+#define VIEW_FIELD_FULL (float)-1.0		   // +-180 degrees
+#define VIEW_FIELD_WIDE (float)-0.7		   // +-135 degrees 0.1 // +-85 degrees, used for full FOV checks
+#define VIEW_FIELD_NARROW (float)0.7	   // +-45 degrees, more narrow check used to set up ranged attacks
+#define VIEW_FIELD_ULTRA_NARROW (float)0.9 // +-25 degrees, more narrow check used to set up ranged attacks
+
 /* MISC USEFUL METHODS */
 extern void EjectBrass(const Vector& vecOrigin, const Vector& vecVelocity, float rotation, int model, int soundtype);
 

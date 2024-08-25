@@ -58,6 +58,7 @@ CBaseEntity
 #include "Platform.h"
 #include "saverestore.h"
 #include "schedule.h"
+#include "util/stringutil.h"
 
 // C functions for external declarations that call the appropriate C++ methods
 
@@ -94,6 +95,20 @@ typedef enum
 
 extern char* GetStringForUseType(USE_TYPE useType);
 
+// Things that toggle (buttons/triggers/doors) need this
+typedef enum
+{
+	TS_AT_TOP,
+	TS_AT_BOTTOM,
+	TS_GOING_UP,
+	TS_GOING_DOWN
+} TOGGLE_STATE;
+
+// All monsters need this data
+#define DONT_BLEED -1
+#define BLOOD_COLOR_RED (byte)247
+#define BLOOD_COLOR_YELLOW (byte)195
+#define BLOOD_COLOR_GREEN BLOOD_COLOR_YELLOW
 
 typedef void (CBaseEntity::*BASEPTR)();
 typedef void (CBaseEntity::*ENTITYFUNCPTR)(CBaseEntity* pOther);
@@ -129,6 +144,19 @@ class CThinker;
 #define SF_NORESPAWN (1 << 30) // !!!set this bit on guns and stuff that should never respawn.
 
 #include "classes/EHANDLE.h"
+
+// LRC- the values used for the new "global states" mechanism.
+typedef enum
+{
+	STATE_OFF = 0,	// disabled, inactive, invisible, closed, or stateless. Or non-alert monster.
+	STATE_TURN_ON,	// door opening, env_fade fading in, etc.
+	STATE_ON,		// enabled, active, visisble, or open. Or alert monster.
+	STATE_TURN_OFF, // door closing, monster dying (?).
+	STATE_IN_USE,	// player is in control (train/tank/barney/scientist).
+					// In_Use isn't very useful, I'll probably remove it.
+} STATE;
+
+extern const char* GetStringForState(STATE state);
 
 //
 // Base Entity.  All entity types derive from this

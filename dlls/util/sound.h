@@ -20,6 +20,11 @@
 
 // Sound Utilities
 
+#define SND_SPAWNING (1 << 8)	  // duplicated in protocol.h we're spawing, used in some cases for ambients
+#define SND_STOP (1 << 5)		  // duplicated in protocol.h stop sound
+#define SND_CHANGE_VOL (1 << 6)	  // duplicated in protocol.h change sound vol
+#define SND_CHANGE_PITCH (1 << 7) // duplicated in protocol.h change sound pitch
+
 // sentence groups
 #define CBSENTENCENAME_MAX 16
 #define CVOXFILESENTENCEMAX 1536 // max number of sentences in game. NOTE: this must match \
