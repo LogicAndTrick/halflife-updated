@@ -15,6 +15,8 @@
 
 #include "CMessage.h"
 
+#include "util/message.h"
+
 LINK_ENTITY_TO_CLASS(env_message, CMessage);
 
 void CMessage::Spawn()

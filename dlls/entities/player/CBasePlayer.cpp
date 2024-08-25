@@ -19,6 +19,7 @@
 #include "api/game.h"
 #include "classes/gamerules/CGameRules.h"
 #include "entities/CWorld.h"
+#include "util/message.h"
 
 LINK_ENTITY_TO_CLASS(player, CBasePlayer);
 

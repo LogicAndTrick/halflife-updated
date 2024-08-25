@@ -14,6 +14,8 @@
  ****/
 
 #include "entities.h"
+
+#include "alias.h"
 #include "entities/CBaseEntity.h"
 
 CBaseEntity* UTIL_FindEntityInSphere(CBaseEntity* pStartEntity, const Vector& vecCenter, float flRadius)
@@ -313,4 +315,90 @@ void UTIL_PrecacheOther(const char* szClassname)
 	if (pEntity)
 		pEntity->Precache();
 	REMOVE_ENTITY(pent);
+}
+
+void UTIL_Remove(CBaseEntity* pEntity)
+{
+	if (!pEntity)
+		return;
+
+	pEntity->UpdateOnRemove();
+	pEntity->pev->flags |= FL_KILLME;
+	pEntity->pev->targetname = 0;
+}
+
+bool UTIL_IsValidEntity(edict_t* pent)
+{
+	if (!pent || 0 != pent->free || (pent->v.flags & FL_KILLME) != 0)
+		return false;
+	return true;
+}
+
+bool UTIL_IsMasterTriggered(string_t sMaster, CBaseEntity* pActivator)
+{
+	int i, j, found = false;
+	const char* szMaster;
+	char szBuf[80];
+	CBaseEntity* pMaster;
+	int reverse = false;
+
+
+	if (!FStringNull(sMaster))
+	{
+		//		ALERT(at_console, "IsMasterTriggered(%s, %s \"%s\")\n", STRING(iszMaster), STRING(pActivator->pev->classname), STRING(pActivator->pev->targetname));
+		szMaster = STRING(sMaster);
+		if (szMaster[0] == '~') // inverse master
+		{
+			reverse = true;
+			szMaster++;
+		}
+
+		pMaster = UTIL_FindEntityByTargetname(NULL, szMaster);
+		if (!pMaster)
+		{
+			for (i = 0; szMaster[i]; i++)
+			{
+				if (szMaster[i] == '(')
+				{
+					for (j = i + 1; szMaster[j]; j++)
+					{
+						if (szMaster[j] == ')')
+						{
+							strncpy(szBuf, szMaster + i + 1, (j - i) - 1);
+							szBuf[(j - i) - 1] = 0;
+							pActivator = UTIL_FindEntityByTargetname(NULL, szBuf);
+							found = true;
+							break;
+						}
+					}
+					if (!found) // no ) found
+					{
+						ALERT(at_error, "Missing ')' in master \"%s\"\n", szMaster);
+						return false;
+					}
+					break;
+				}
+			}
+			if (!found) // no ( found
+			{
+				ALERT(at_debug, "Master \"%s\" not found!\n", szMaster);
+				return true;
+			}
+
+			strncpy(szBuf, szMaster, i);
+			szBuf[i] = 0;
+			pMaster = UTIL_FindEntityByTargetname(NULL, szBuf);
+		}
+
+		if (pMaster)
+		{
+			if (reverse)
+				return (pMaster->GetState(pActivator) != STATE_ON);
+			else
+				return (pMaster->GetState(pActivator) == STATE_ON);
+		}
+	}
+
+	// if the entity has no master (or the master is missing), just say yes.
+	return true;
 }

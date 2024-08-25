@@ -15,6 +15,8 @@
 
 #include "CShake.h"
 
+#include "util/effects.h"
+
 LINK_ENTITY_TO_CLASS(env_shake, CShake);
 
 void CShake::Spawn()

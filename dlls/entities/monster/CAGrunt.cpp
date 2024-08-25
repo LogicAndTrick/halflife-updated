@@ -15,6 +15,7 @@
 
 #include "CAGrunt.h"
 #include "entities/monster/CCineMonster.h"
+#include "util/effects.h"
 #include "util/trace.h"
 
 int iAgruntMuzzleFlash;

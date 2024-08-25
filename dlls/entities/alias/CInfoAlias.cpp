@@ -15,6 +15,8 @@
 
 #include "CInfoAlias.h"
 
+#include "util/alias.h"
+
 LINK_ENTITY_TO_CLASS(info_alias, CInfoAlias);
 
 TYPEDESCRIPTION CInfoAlias::m_SaveData[] = // AJH

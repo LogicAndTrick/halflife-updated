@@ -20,6 +20,8 @@
 #include "cbase.h"
 #include "util/sound.h"
 #include "util/subs.h"
+#include "util/mathutil.h"
+#include "util/random.h"
 #include "classes/saverestore/CSave.h"
 #include "classes/saverestore/CRestore.h"
 

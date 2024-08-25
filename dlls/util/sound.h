@@ -84,3 +84,5 @@ void EMIT_GROUPNAME_SUIT(edict_t* entity, const char* groupname);
 	EMIT_SOUND_DYN(ENT(pev), chan, array[RANDOM_LONG(0, ARRAYSIZE(array) - 1)], 1.0, ATTN_NORM, 0, RANDOM_LONG(95, 105));
 
 #define RANDOM_SOUND_ARRAY(array) (array)[RANDOM_LONG(0, ARRAYSIZE((array)) - 1)]
+
+void UTIL_EmitAmbientSound(edict_t* entity, const Vector& vecOrigin, const char* samp, float vol, float attenuation, int fFlags, int pitch);

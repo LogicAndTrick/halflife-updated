@@ -15,6 +15,7 @@
 
 #include "ai.h"
 
+#include "util/mathutil.h"
 #include "trace.h"
 #include "util.h"
 #include "api/game.h"

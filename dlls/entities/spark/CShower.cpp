@@ -15,6 +15,8 @@
 
 #include "CShower.h"
 
+#include "util/effects.h"
+
 LINK_ENTITY_TO_CLASS(spark_shower, CShower);
 
 void CShower::Spawn()

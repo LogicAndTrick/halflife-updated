@@ -17,6 +17,7 @@
 #include "CRpg.h"
 #include "util/skill.h"
 #include "CGrenade.h"
+#include "util/effects.h"
 #include "util/trace.h"
 
 LINK_ENTITY_TO_CLASS(rpg_rocket, CRpgRocket);

@@ -61,6 +61,50 @@ int UTIL_PointContents(const Vector& vec)
 	return POINT_CONTENTS(vec);
 }
 
+float UTIL_WaterLevel(const Vector& position, float minz, float maxz)
+{
+	Vector midUp = position;
+	midUp.z = minz;
+
+	if (UTIL_PointContents(midUp) != CONTENTS_WATER)
+		return minz;
+
+	midUp.z = maxz;
+	if (UTIL_PointContents(midUp) == CONTENTS_WATER)
+		return maxz;
+
+	float diff = maxz - minz;
+	while (diff > 1.0)
+	{
+		midUp.z = minz + diff / 2.0;
+		if (UTIL_PointContents(midUp) == CONTENTS_WATER)
+		{
+			minz = midUp.z;
+		}
+		else
+		{
+			maxz = midUp.z;
+		}
+		diff = maxz - minz;
+	}
+
+	return midUp.z;
+}
+
+CBaseEntity* UTIL_FindEntityForward(CBaseEntity* pMe)
+{
+	TraceResult tr;
+
+	UTIL_MakeVectors(pMe->pev->v_angle);
+	UTIL_TraceLine(pMe->pev->origin + pMe->pev->view_ofs, pMe->pev->origin + pMe->pev->view_ofs + gpGlobals->v_forward * 8192, dont_ignore_monsters, pMe->edict(), &tr);
+	if (tr.flFraction != 1.0 && !FNullEnt(tr.pHit))
+	{
+		CBaseEntity* pHit = CBaseEntity::Instance(tr.pHit);
+		return pHit;
+	}
+	return NULL;
+}
+
 // Smart version, it'll clean itself up when it pops off stack
 UTIL_GroupTrace::UTIL_GroupTrace(int groupmask, int op)
 {

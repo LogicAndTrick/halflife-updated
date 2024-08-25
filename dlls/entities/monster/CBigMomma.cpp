@@ -19,6 +19,7 @@
 #include "api/game.h"
 #include "weapons.h"
 #include "util/decal.h"
+#include "util/effects.h"
 #include "util/entities.h"
 #include "util/trace.h"
 

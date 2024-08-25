@@ -15,6 +15,8 @@
 
 #include "CLocusAlias.h"
 
+#include "util/alias.h"
+
 LINK_ENTITY_TO_CLASS(locus_alias, CLocusAlias);
 
 TYPEDESCRIPTION CLocusAlias::m_SaveData[] =

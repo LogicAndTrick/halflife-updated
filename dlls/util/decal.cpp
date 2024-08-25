@@ -13,10 +13,11 @@
  *
  ****/
 
-#include "decal.h"
+#include "util/decal.h"
 #include "util.h"
 #include "decals.h"
-#include "entities.h"
+#include "util/effects.h"
+#include "util/entities.h"
 #include "entities/CBaseEntity.h"
 
 void UTIL_BloodDecalTrace(TraceResult* pTrace, int bloodColor)

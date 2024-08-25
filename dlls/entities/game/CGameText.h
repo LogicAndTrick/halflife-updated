@@ -16,6 +16,7 @@
 #pragma once
 
 #include "CRulePointEntity.h"
+#include "util/message.h"
 
 #define SF_ENVTEXT_ALLPLAYERS 0x0001
 #define SF_ENVTEXT_ONLY_ONCE 0x0002

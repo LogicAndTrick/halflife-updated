@@ -15,6 +15,8 @@
 
 #include "CTriggerMultiple.h"
 
+#include "util/message.h"
+
 LINK_ENTITY_TO_CLASS(trigger_multiple, CTriggerMultiple);
 
 void CTriggerMultiple::Spawn()

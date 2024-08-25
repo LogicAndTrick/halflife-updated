@@ -15,6 +15,8 @@
 
 #include "CEnvSpark.h"
 
+#include "util/effects.h"
+
 LINK_ENTITY_TO_CLASS(env_spark, CEnvSpark);
 LINK_ENTITY_TO_CLASS(env_debris, CEnvSpark);
 

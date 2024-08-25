@@ -122,122 +122,22 @@ inline bool FClassnameIs(entvars_t* pev, const char* szClassname)
 {
 	return FStrEq(STRING(pev->classname), szClassname);
 }
-
-// Misc. Prototypes
-extern float UTIL_VecToYaw(const Vector& vec);
-extern Vector UTIL_VecToAngles(const Vector& vec);
-extern float UTIL_AngleMod(float a);
-extern float UTIL_AngleDiff(float destAngle, float srcAngle);
-
-extern Vector UTIL_AxisRotationToAngles(const Vector& vec, float angle); //LRC
-extern Vector UTIL_AxisRotationToVec(const Vector& vec, float angle);	 //LRC
-
-
-//LRC 1.8 - renamed CBaseAlias
-class CBaseMutableAlias;
-extern void UTIL_AddToAliasList(CBaseMutableAlias* pAlias);
-extern void UTIL_FlushAliases();
-
-extern void UTIL_MakeVectors(const Vector& vecAngles);
-
-inline void UTIL_MakeVectorsPrivate(const Vector& vecAngles, float* p_vForward, float* p_vRight, float* p_vUp)
-{
-	g_engfuncs.pfnAngleVectors(vecAngles, p_vForward, p_vRight, p_vUp);
-}
-
-extern void UTIL_MakeAimVectors(const Vector& vecAngles); // like MakeVectors, but assumes pitch isn't inverted
-extern void UTIL_MakeInvVectors(const Vector& vec, globalvars_t* pgv);
-
-extern void UTIL_EmitAmbientSound(edict_t* entity, const Vector& vecOrigin, const char* samp, float vol, float attenuation, int fFlags, int pitch);
-extern void UTIL_ParticleEffect(const Vector& vecOrigin, const Vector& vecDirection, unsigned int ulColor, unsigned int ulCount);
-extern void UTIL_ScreenShake(const Vector& center, float amplitude, float frequency, float duration, float radius);
-extern void UTIL_ScreenShakeAll(const Vector& center, float amplitude, float frequency, float duration);
-extern void UTIL_ShowMessage(const char* pString, CBaseEntity* pPlayer);
-extern void UTIL_ShowMessageAll(const char* pString);
-extern void UTIL_ScreenFadeAll(const Vector& color, float fadeTime, float holdTime, int alpha, int flags);
-extern void UTIL_ScreenFade(CBaseEntity* pEntity, const Vector& color, float fadeTime, float fadeHold, int alpha, int flags);
-
 extern Vector UTIL_GetAimVector(edict_t* pent, float flSpeed);
 
-extern bool UTIL_IsMasterTriggered(string_t sMaster, CBaseEntity* pActivator);
-extern void UTIL_BloodStream(const Vector& origin, const Vector& direction, int color, int amount);
-extern void UTIL_BloodDrips(const Vector& origin, const Vector& direction, int color, int amount);
-extern Vector UTIL_RandomBloodVector();
-extern bool UTIL_ShouldShowBlood(int bloodColor);
-
-extern void UTIL_Sparks(const Vector& position);
-extern void UTIL_Ricochet(const Vector& position, float scale);
 extern void UTIL_StringToVector(float* pVector, const char* pString);
 extern void UTIL_StringToRandomVector(float* pVector, const char* pString); //LRC
 extern void UTIL_StringToIntArray(int* pVector, int count, const char* pString);
-extern Vector UTIL_ClampVectorToBox(const Vector& input, const Vector& clampSize);
-extern float UTIL_Approach(float target, float value, float speed);
-extern float UTIL_ApproachAngle(float target, float value, float speed);
-extern float UTIL_AngleDistance(float next, float cur);
-inline float UTIL_Lerp(float lerpfactor, float A, float B) { return A + lerpfactor * (B - A); } //LRC 1.8 - long-missing convenience!
 
 extern char* UTIL_VarArgs(const char* format, ...);
-extern void UTIL_Remove(CBaseEntity* pEntity);
-extern bool UTIL_IsValidEntity(edict_t* pent);
 extern bool UTIL_TeamsMatch(const char* pTeamName1, const char* pTeamName2);
-extern bool UTIL_IsFacing(entvars_t* pevTest, const Vector& reference); //LRC
-
-// Use for ease-in, ease-out style interpolation (accel/decel)
-extern float UTIL_SplineFraction(float value, float scale);
-
-// Search for water transition along a vertical line
-extern float UTIL_WaterLevel(const Vector& position, float minz, float maxz);
-extern void UTIL_Bubbles(Vector mins, Vector maxs, int count);
-extern void UTIL_BubbleTrail(Vector from, Vector to, int count);
 
 
-// prints a message to each client
-extern void UTIL_ClientPrintAll(int msg_dest, const char* msg_name, const char* param1 = NULL, const char* param2 = NULL, const char* param3 = NULL, const char* param4 = NULL);
-inline void UTIL_CenterPrintAll(const char* msg_name, const char* param1 = NULL, const char* param2 = NULL, const char* param3 = NULL, const char* param4 = NULL)
-{
-	UTIL_ClientPrintAll(HUD_PRINTCENTER, msg_name, param1, param2, param3, param4);
-}
 
 class CBasePlayerItem;
 class CBasePlayer;
 
-// prints messages through the HUD
-extern void ClientPrint(entvars_t* client, int msg_dest, const char* msg_name, const char* param1 = NULL, const char* param2 = NULL, const char* param3 = NULL, const char* param4 = NULL);
-
-// prints a message to the HUD say (chat)
-extern void UTIL_SayText(const char* pText, CBaseEntity* pEntity);
-extern void UTIL_SayTextAll(const char* pText, CBaseEntity* pEntity);
 
 
-typedef struct hudtextparms_s
-{
-	float x;
-	float y;
-	int effect;
-	byte r1, g1, b1, a1;
-	byte r2, g2, b2, a2;
-	float fadeinTime;
-	float fadeoutTime;
-	float holdTime;
-	float fxTime;
-	int channel;
-} hudtextparms_t;
-
-// prints as transparent 'title' to the HUD
-extern void UTIL_HudMessageAll(const hudtextparms_t& textparms, const char* pMessage);
-extern void UTIL_HudMessage(CBaseEntity* pEntity, const hudtextparms_t& textparms, const char* pMessage);
-
-// for handy use with ClientPrint params
-extern char* UTIL_dtos1(int d);
-extern char* UTIL_dtos2(int d);
-extern char* UTIL_dtos3(int d);
-extern char* UTIL_dtos4(int d);
-
-// Writes message to console with timestamp and FragLog header.
-extern void UTIL_LogPrintf(const char* fmt, ...);
-
-// Sorta like FInViewCone, but for nonmonsters.
-extern float UTIL_DotPoints(const Vector& vecSrc, const Vector& vecCheck, const Vector& vecDir);
 
 extern void UTIL_StripToken(const char* pKey, char* pDest); // for redundant keynames
 
@@ -286,14 +186,7 @@ inline DLL_GLOBAL int g_Language;
 #define PLAYBACK_EVENT_DELAY(flags, who, index, delay) PLAYBACK_EVENT_FULL(flags, who, index, delay, g_vecZero, g_vecZero, 0.0, 0.0, 0, 0, 0, 0);
 
 
-int UTIL_SharedRandomLong(unsigned int seed, int low, int high);
-float UTIL_SharedRandomFloat(unsigned int seed, float low, float high);
-
 float UTIL_WeaponTimeBase();
-
-CBaseEntity* UTIL_FindEntityForward(CBaseEntity* pMe);
-// LRC- for aliases and groups
-CBaseEntity* UTIL_FollowReference(CBaseEntity* pStartEntity, const char* szName);
 
 // for trigger_viewset
 bool HaveCamerasInPVS(edict_t* edict);

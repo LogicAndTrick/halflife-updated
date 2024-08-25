@@ -27,6 +27,7 @@
 #include "weapons.h"
 #include "decals.h"
 #include "util/decal.h"
+#include "util/effects.h"
 
 /*
 ==============================================================================

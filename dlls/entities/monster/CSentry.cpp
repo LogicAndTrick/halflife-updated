@@ -16,6 +16,7 @@
 #include "CSentry.h"
 #include "util/skill.h"
 #include "weapons.h"
+#include "util/effects.h"
 
 LINK_ENTITY_TO_CLASS(monster_sentry, CSentry);
 

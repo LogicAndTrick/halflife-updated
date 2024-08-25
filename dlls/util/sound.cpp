@@ -16,6 +16,7 @@
 #include "sound.h"
 #include "util.h"
 #include "cbase.h"
+#include "effects.h"
 #include "weapons.h"
 #include "classes/gamerules/CGameRules.h"
 #include "pm_defs.h"
@@ -829,4 +830,19 @@ float TEXTURETYPE_PlaySound(TraceResult* ptr, Vector vecSrc, Vector vecEnd, int 
 	// EMIT_SOUND_DYN( ENT(m_pPlayer->pev), CHAN_WEAPON, rgsz[RANDOM_LONG(0,cnt-1)], fvol, ATTN_NORM, 0, 96 + RANDOM_LONG(0,0xf));
 
 	return fvolbar;
+}
+
+void UTIL_EmitAmbientSound(edict_t* entity, const Vector& vecOrigin, const char* samp, float vol, float attenuation, int fFlags, int pitch)
+{
+	float rgfl[3];
+	vecOrigin.CopyToArray(rgfl);
+
+	if (samp && *samp == '!')
+	{
+		char name[32];
+		if (SENTENCEG_Lookup(samp, name) >= 0)
+			EMIT_AMBIENT_SOUND(entity, rgfl, name, vol, attenuation, fFlags, pitch);
+	}
+	else
+		EMIT_AMBIENT_SOUND(entity, rgfl, samp, vol, attenuation, fFlags, pitch);
 }

@@ -22,7 +22,9 @@
 #include "util/movewith.h"
 #include "weapons.h"
 #include "api/dispatch.h"
+#include "util/alias.h"
 #include "util/decal.h"
+#include "util/effects.h"
 #include "util/trace.h"
 
 TYPEDESCRIPTION CBaseEntity::m_SaveData[] =

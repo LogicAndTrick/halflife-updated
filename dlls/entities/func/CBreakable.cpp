@@ -16,6 +16,7 @@
 #include "CBreakable.h"
 #include "entities/env/CEnvExplosion.h"
 #include "decals.h"
+#include "util/effects.h"
 
 LINK_ENTITY_TO_CLASS(func_breakable, CBreakable);
 

@@ -23,6 +23,7 @@
 #include "pm_defs.h"
 #include "pm_shared.h"
 #include "classes/gamerules/CGameRules.h"
+#include "util/message.h"
 
 static bool g_LastAllowBunnyHoppingState = false;
 static unsigned int g_ulFrameCount = 0;

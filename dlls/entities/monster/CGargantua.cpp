@@ -22,6 +22,7 @@
 #include "entities/CGib.h"
 #include "entities/env/CEnvExplosion.h"
 #include "util/decal.h"
+#include "util/effects.h"
 #include "util/trace.h"
 
 int gStompSprite = 0, gGargGibModel = 0;

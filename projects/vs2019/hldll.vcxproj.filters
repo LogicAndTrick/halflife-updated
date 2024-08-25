@@ -15,11 +15,11 @@
     <Filter Include="Header Files\common">
       <UniqueIdentifier>{d9b0bb75-7f25-443b-8899-6b1a9e1dd63c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dlls">
-      <UniqueIdentifier>{e3b69fef-bfa6-4270-8280-f2b25793ac4e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\dlls\api">
       <UniqueIdentifier>{dc2e3691-4afc-41c1-8d0d-51d3db2e9245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dlls">
+      <UniqueIdentifier>{e3b69fef-bfa6-4270-8280-f2b25793ac4e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\dlls\classes">
       <UniqueIdentifier>{01a142ce-7740-4d7d-8b5e-8cc6a08af18d}</UniqueIdentifier>
@@ -135,9 +135,6 @@
     <Filter Include="Source Files\common">
       <UniqueIdentifier>{42fd860c-8851-42ea-81e1-ffda08a6174d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\dlls">
-      <UniqueIdentifier>{a59f65b1-455f-459d-bc2a-75775255cd5c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\dlls\api">
       <UniqueIdentifier>{1e447ab6-074a-4250-b22e-fabf1489dab3}</UniqueIdentifier>
     </Filter>
@@ -237,6 +234,9 @@
     <Filter Include="Source Files\dlls\entities\xen">
       <UniqueIdentifier>{a55abbd4-7e2f-4027-8716-6bdf168d5a0f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\dlls">
+      <UniqueIdentifier>{a59f65b1-455f-459d-bc2a-75775255cd5c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\dlls\util">
       <UniqueIdentifier>{c1dd87f7-43b4-46fb-afb8-29ba15ece014}</UniqueIdentifier>
     </Filter>
@@ -254,37 +254,37 @@
     <ClCompile Include="..\..\common\mathlib.cpp">
       <Filter>Source Files\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\api\saverestore.cpp">
-      <Filter>Source Files\dlls\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\api\dispatch.cpp">
-      <Filter>Source Files\dlls\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\api\spectator.cpp">
-      <Filter>Source Files\dlls\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\api\network.cpp">
+    <ClCompile Include="..\..\dlls\api\client.cpp">
       <Filter>Source Files\dlls\api</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\api\cmd.cpp">
       <Filter>Source Files\dlls\api</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dlls\api\dispatch.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\engine_api.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\dlls\api\frame.cpp">
-      <Filter>Source Files\dlls\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\api\player.cpp">
-      <Filter>Source Files\dlls\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\api\server.cpp">
-      <Filter>Source Files\dlls\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\dlls\api\client.cpp">
       <Filter>Source Files\dlls\api</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\api\game.cpp">
       <Filter>Source Files\dlls\api</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\api\engine_api.cpp">
+    <ClCompile Include="..\..\dlls\api\network.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\player.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\saverestore.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\server.cpp">
+      <Filter>Source Files\dlls\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\api\spectator.cpp">
       <Filter>Source Files\dlls\api</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\classes\CPlane.cpp">
@@ -1247,16 +1247,19 @@
     <ClCompile Include="..\..\dlls\util.cpp">
       <Filter>Source Files\dlls</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\entities.cpp">
+    <ClCompile Include="..\..\dlls\util\ai.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\trace.cpp">
+    <ClCompile Include="..\..\dlls\util\alias.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util\animation.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\ai.cpp">
+    <ClCompile Include="..\..\dlls\util\decal.cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\entities.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util\light.cpp">
@@ -1277,7 +1280,19 @@
     <ClCompile Include="..\..\dlls\util\subs.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\dlls\util\decal.cpp">
+    <ClCompile Include="..\..\dlls\util\trace.cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\mathutil.cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\random.cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\effects.cpp">
+      <Filter>Source Files\dlls\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dlls\util\message.cpp">
       <Filter>Source Files\dlls\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\dlls\util\util1.cpp">
@@ -1399,31 +1414,31 @@
     <ClInclude Include="..\..\dlls\api\client.h">
       <Filter>Header Files\dlls\api</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\api\saverestore.h">
-      <Filter>Header Files\dlls\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\api\spectator.h">
-      <Filter>Header Files\dlls\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\api\network.h">
-      <Filter>Header Files\dlls\api</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\dlls\api\cmd.h">
-      <Filter>Header Files\dlls\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\api\frame.h">
-      <Filter>Header Files\dlls\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\api\player.h">
-      <Filter>Header Files\dlls\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\dlls\api\server.h">
       <Filter>Header Files\dlls\api</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\api\dispatch.h">
       <Filter>Header Files\dlls\api</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\dlls\api\frame.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\dlls\api\game.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\network.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\player.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\saverestore.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\server.h">
+      <Filter>Header Files\dlls\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\api\spectator.h">
       <Filter>Header Files\dlls\api</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\cbase.h">
@@ -2344,16 +2359,19 @@
     <ClInclude Include="..\..\dlls\util.h">
       <Filter>Header Files\dlls</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\entities.h">
+    <ClInclude Include="..\..\dlls\util\ai.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\trace.h">
+    <ClInclude Include="..\..\dlls\util\alias.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\util\animation.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\ai.h">
+    <ClInclude Include="..\..\dlls\util\decal.h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\entities.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\util\light.h">
@@ -2374,7 +2392,19 @@
     <ClInclude Include="..\..\dlls\util\subs.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dlls\util\decal.h">
+    <ClInclude Include="..\..\dlls\util\trace.h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\mathutil.h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\random.h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\effects.h">
+      <Filter>Header Files\dlls\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dlls\util\message.h">
       <Filter>Header Files\dlls\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\dlls\util\util1.h">

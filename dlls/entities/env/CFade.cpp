@@ -16,6 +16,7 @@
 #include "CFade.h"
 #include "entities/player/CBasePlayer.h"
 #include "shake.h"
+#include "util/effects.h"
 
 LINK_ENTITY_TO_CLASS(env_fade, CFade);
 

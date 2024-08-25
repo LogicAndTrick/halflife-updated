@@ -168,3 +168,8 @@ extern void UTIL_SetOrigin(CBaseEntity* pEntity, const Vector& vecOrigin);
 
 // allows precacheing of other entities
 extern void UTIL_PrecacheOther(const char* szClassname);
+
+extern void UTIL_Remove(CBaseEntity* pEntity);
+extern bool UTIL_IsValidEntity(edict_t* pent);
+
+extern bool UTIL_IsMasterTriggered(string_t sMaster, CBaseEntity* pActivator);

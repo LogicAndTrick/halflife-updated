@@ -15,6 +15,7 @@
 
 #include "CBaseMonster.h"
 #include "CCineMonster.h"
+#include "util/effects.h"
 
 //=========================================================
 // Fail

@@ -13,9 +13,10 @@
  *
  ****/
 
-#include "subs.h"
-
-#include "trace.h"
+#include "util/subs.h"
+#include "util/alias.h"
+#include "util/mathutil.h"
+#include "util/trace.h"
 #include "util/locus.h"
 
 void FireTargets(const char* targetName, CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE useType, float value)

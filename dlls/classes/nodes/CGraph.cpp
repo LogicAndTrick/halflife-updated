@@ -21,6 +21,7 @@
 #include "CQueuePriority.h"
 #include "entities/func/CBaseDoor.h"
 #include "entities/CCorpse.h"
+#include "util/effects.h"
 #include "util/trace.h"
 
 CGraph WorldGraph;

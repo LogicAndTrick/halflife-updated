@@ -15,6 +15,7 @@
 
 #include "CGMan.h"
 #include "weapons.h"
+#include "util/effects.h"
 
 LINK_ENTITY_TO_CLASS(monster_gman, CGMan);
 

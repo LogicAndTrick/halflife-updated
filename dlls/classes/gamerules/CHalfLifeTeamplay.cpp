@@ -19,6 +19,7 @@
 #include "entities/CWorld.h"
 #include "api/game.h"
 #include "UserMessages.h"
+#include "util/message.h"
 
 // TODO: these should be members of CHalfLifeTeamplay
 static char team_names[MAX_TEAMS][MAX_TEAMNAME_LENGTH];

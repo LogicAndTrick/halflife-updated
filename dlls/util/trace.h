@@ -17,6 +17,8 @@
 
 #include "extdll.h"
 
+class CBaseEntity;
+
 typedef enum
 {
 	ignore_monsters = 1,
@@ -44,6 +46,11 @@ extern void UTIL_TraceHull(const Vector& vecStart, const Vector& vecEnd, IGNORE_
 extern TraceResult UTIL_GetGlobalTrace();
 extern void UTIL_TraceModel(const Vector& vecStart, const Vector& vecEnd, HULL_NUMBER hullNumber, edict_t* pentModel, TraceResult* ptr);
 extern int UTIL_PointContents(const Vector& vec);
+
+// Search for water transition along a vertical line
+float UTIL_WaterLevel(const Vector& position, float minz, float maxz);
+
+CBaseEntity* UTIL_FindEntityForward(CBaseEntity* pMe);
 
 #define GROUP_OP_AND 0
 #define GROUP_OP_NAND 1

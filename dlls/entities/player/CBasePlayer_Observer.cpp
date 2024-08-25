@@ -17,6 +17,7 @@
 #include "entities/weapon/CBasePlayerItem.h"
 #include "pm_shared.h"
 #include "UserMessages.h"
+#include "util/message.h"
 
 // Find the next client in the game for this player to spectate
 void CBasePlayer::Observer_FindNextPlayer(bool bReverse)

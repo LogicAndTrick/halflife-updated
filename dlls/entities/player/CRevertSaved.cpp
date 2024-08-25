@@ -15,6 +15,8 @@
 
 #include "CRevertSaved.h"
 #include "shake.h"
+#include "util/effects.h"
+#include "util/message.h"
 
 LINK_ENTITY_TO_CLASS(player_loadsaved, CRevertSaved);
 

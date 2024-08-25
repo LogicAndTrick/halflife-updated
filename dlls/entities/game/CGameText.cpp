@@ -15,6 +15,8 @@
 
 #include "CGameText.h"
 
+#include "util/message.h"
+
 LINK_ENTITY_TO_CLASS(game_text, CGameText);
 
 // Save parms as a block.  Will break save/restore if the structure changes, but this entity didn't ship with Half-Life, so

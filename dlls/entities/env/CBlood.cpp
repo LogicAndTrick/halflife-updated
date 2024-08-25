@@ -16,6 +16,7 @@
 #include "CBlood.h"
 
 #include "util/decal.h"
+#include "util/effects.h"
 #include "util/locus.h"
 #include "util/trace.h"
 
