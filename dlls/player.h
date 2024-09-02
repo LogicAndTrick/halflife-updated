@@ -196,7 +196,7 @@ public:
 	Vector m_vecAutoAim;
 	bool m_fOnTarget;
 	int m_iDeaths;
-	float m_iRespawnFrames; // used in PlayerDeathThink() to make sure players can always respawn
+	float m_flRespawnTimer; // used in PlayerDeathThink() to make sure players can always respawn
 
 	int m_lastx, m_lasty; // These are the previous update's crosshair angles, DON"T SAVE/RESTORE
 
@@ -283,6 +283,7 @@ public:
 	void DropPlayerItem(char* pszItemName);
 	bool HasPlayerItem(CBasePlayerItem* pCheckItem);
 	bool HasNamedPlayerItem(const char* pszItemName);
+	bool HasPlayerItemFromID(int nID);
 	bool HasWeapons(); // do I have ANY weapons?
 	void SelectPrevItem(int iItem);
 	void SelectNextItem(int iItem);

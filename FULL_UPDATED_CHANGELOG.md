@@ -1,4 +1,4 @@
-This is the changelog from Steam Half-Life to Half-Life Updated version 1.0.0.
+This is the changelog from Steam Half-Life to Half-Life Updated version 1.1.0.
 
 Fixes for bugs introduced in beta builds are not included in this list.
 
@@ -43,6 +43,7 @@ Fixes for bugs introduced in beta builds are not included in this list.
 * Fixed player weapons still receiving input when starting to use a func_tank (halflife issue [#3345](https://github.com/ValveSoftware/halflife/issues/3345)) (Thanks Oxofemple.)
 * Fixed limit in world weapons (e.g. Hand Grenade) respawning at wrong time if server is near edict limit
 * Disabled fall think function for weapons when the player picks it up to prevent possible double-pickup which removes the weapon and crashes the game
+* Fixed weapon events not treating pushable objects as BSP models [#220](https://github.com/twhl-community/halflife-updated/pull/220) (Thanks Toodles2You)
 
 ### Crowbar
 
@@ -51,6 +52,7 @@ Fixes for bugs introduced in beta builds are not included in this list.
 * Fixed crowbar not showing in weapon list if there are empty weapon slots with a lower id (halflife [#3181](https://github.com/ValveSoftware/halflife/issues/3181))
 * Fixed the Crowbar damage always being calculated halved (halflife issue [#1600](https://github.com/ValveSoftware/halflife/pull/1600) (Thanks YaLTeR)
 * Fixed Crowbar playing back swing events twice sometimes (halflife issue [#3230](https://github.com/ValveSoftware/halflife/issues/3230))
+* Fixed crowbar applying breakable glass decals to unbreakable pushable objects [#219](https://github.com/twhl-community/halflife-updated/pull/219) (Thanks Toodles2You)
 
 ### Glock
 
@@ -116,6 +118,7 @@ Fixes for bugs introduced in beta builds are not included in this list.
 * Fixed Hand grenade not playing deploy animation after finishing a throw (halflife issue [#2495](https://github.com/ValveSoftware/halflife/issues/2495))
 * Fixed Hand grenades staying primed when switching away or dropping the weapon (halflife issue [#3251](https://github.com/ValveSoftware/halflife/issues/3251))
 * Fixed hand grenade animations not playing correctly [#209](https://github.com/twhl-community/halflife-updated/pull/209) (Thanks Toodles2You)
+* Reset frame to 0 when grenade bounces [#238](https://github.com/twhl-community/halflife-updated/issues/238) (Thanks FreeSlave)
 
 ### Satchel charge
 
@@ -434,6 +437,7 @@ Fixes for bugs introduced in beta builds are not included in this list.
 * Disabled GCC optimization that prevents mod dlls from unloading after engine calls dlclose
 * Fixed third party libraries possibly not being linked to when building Linux server dll (Thanks a1batross)
 * Mods made with this SDK will now shut down if they detect they are being run from a Valve game directory (e.g. by placing the dlls in `Half-Life/valve/cl_dlls` and `Half-Life/valve/dlls`). This is not supported and puts users at risk of being VAC banned. Run mods from their intended location only
+* Link Linux binaries with `-Wl` and `--no-undefined` flags to avoid situations where something was referenced but wasn't added in the build (Thanks a1batross)
 
 ## Git repository changes
 
