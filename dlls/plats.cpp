@@ -2250,7 +2250,6 @@ void CFuncTrainControls::Spawn()
 	SetNextThink(0);
 }
 
-
 // ----------------------------------------------------------------------------
 //
 // Track changer / Train elevator

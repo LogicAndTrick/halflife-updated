@@ -405,11 +405,11 @@ void CTalkMonster::StartTask(Task_t* pTask)
 
 			if (yaw < 0)
 			{
-				pev->ideal_yaw = V_min(yaw + 45, 0) + pev->angles.y;
+				pev->ideal_yaw = V_min(yaw + 45.0f, 0.0f) + pev->angles.y;
 			}
 			else
 			{
-				pev->ideal_yaw = V_max(yaw - 45, 0) + pev->angles.y;
+				pev->ideal_yaw = V_max(yaw - 45.0f, 0.0f) + pev->angles.y;
 			}
 		}
 		TaskComplete();
@@ -1238,7 +1238,7 @@ bool CTalkMonster::TakeDamage(entvars_t* pevInflictor, entvars_t* pevAttacker, f
 		{
 			CBaseEntity* pFriend = FindNearestFriend(false);
 
-			if (pFriend && pFriend->IsAlive())
+			if (pFriend && pFriend->IsAlive() && pFriend->pev->deadflag == DEAD_NO)
 			{
 				// only if not dead or dying!
 				CTalkMonster* pTalkMonster = (CTalkMonster*)pFriend;
@@ -1441,7 +1441,10 @@ bool CTalkMonster::CanFollow()
 {
 	if (m_MonsterState == MONSTERSTATE_SCRIPT || m_IdealMonsterState == MONSTERSTATE_SCRIPT)
 	{
-		if (!m_pCine->CanInterrupt())
+		// It's possible for m_MonsterState to still be MONSTERSTATE_SCRIPT when the script has already ended.
+		// We'll treat a null pointer as an uninterruptable script and wait for the NPC to change states
+		// before allowing players to make them follow them again.
+		if (!m_pCine || !m_pCine->CanInterrupt())
 			return false;
 	}
 

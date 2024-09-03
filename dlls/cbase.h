@@ -133,7 +133,10 @@ typedef void (CBaseEntity::*USEPTR)(CBaseEntity* pActivator, CBaseEntity* pCalle
 #define CLASS_FACTION_C 16
 #define CLASS_BARNACLE 99 // special because no one pays attention to it, and it eats a wide cross-section of creatures.
 
+#define CLASS_VEHICLE 14
+
 class CBaseEntity;
+class CBaseToggle;
 class CBaseMonster;
 class CBasePlayerItem;
 class CSquadMonster;
@@ -332,6 +335,7 @@ public:
 	virtual void TraceBleed(float flDamage, Vector vecDir, TraceResult* ptr, int bitsDamageType);
 	//LRC- superceded by GetState ( pActivator ).
 	//	virtual bool    IsTriggered( CBaseEntity *pActivator ) {return true;}
+	virtual CBaseToggle* MyTogglePointer() { return NULL; }
 	virtual CBaseMonster* MyMonsterPointer() { return NULL; }
 	virtual CSquadMonster* MySquadMonsterPointer() { return NULL; }
 	virtual int GetToggleState() { return TS_AT_TOP; }
@@ -738,6 +742,14 @@ public:
 	void EXPORT AngularMoveDoneNow();
 	bool IsLockedByMaster();
 
+	virtual CBaseToggle* MyTogglePointer() { return this; }
+
+	// monsters use this, but so could buttons for instance
+	virtual void PlaySentence(const char* pszSentence, float duration, float volume, float attenuation);
+	virtual void PlayScriptedSentence(const char* pszSentence, float duration, float volume, float attenuation, bool bConcurrent, CBaseEntity* pListener);
+	virtual void SentenceStop();
+	virtual bool IsAllowedToSpeak() { return false; }
+
 	static float AxisValue(int flags, const Vector& angles);
 	static void AxisDir(entvars_t* pev);
 	static float AxisDelta(int flags, const Vector& angle1, const Vector& angle2);
@@ -747,6 +759,9 @@ public:
 						// of the switches in the multisource have been triggered, then
 						// the button will be allowed to operate. Otherwise, it will be
 						// deactivated.
+
+protected:
+	virtual void PlaySentenceCore(const char* pszSentence, float duration, float volume, float attenuation);
 };
 #define SetMoveDone(a) m_pfnCallWhenMoveDone = static_cast<void (CBaseToggle::*)()>(a)
 
@@ -831,6 +846,7 @@ public:
 
 	static TYPEDESCRIPTION m_SaveData[];
 	int ObjectCaps() override;
+	virtual bool IsAllowedToSpeak() { return true; }
 
 	bool m_fStayPushed; // button stays pushed in until touched again?
 	bool m_fRotating;	// a rotating button?  default is a sliding button.

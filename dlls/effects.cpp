@@ -466,7 +466,7 @@ LINK_ENTITY_TO_CLASS(trip_beam, CTripBeam);
 void CTripBeam::Spawn()
 {
 	CLightning::Spawn();
-	SetTouch(&CTripBeam::TriggerTouch);
+	SetTouch(&CBeam::TriggerTouch);
 	pev->solid = SOLID_TRIGGER;
 	RelinkBeam();
 }
@@ -4859,7 +4859,7 @@ void CEnvMirror ::MirrorThink(void)
 
 		if (UTIL_PlayerByIndex(1))
 		{
-			PLAYBACK_EVENT_FULL(FEV_RELIABLE | FEV_GLOBAL, edict(), m_usMirror, 0.0, (float*)&Center(), (float*)&g_vecZero, 0.0, 0.0, m_flRadius, pev->frags, 1, 0);
+			PLAYBACK_EVENT_FULL(FEV_RELIABLE | FEV_GLOBAL, edict(), m_usMirror, 0.0, Center(), g_vecZero, 0.0, 0.0, m_flRadius, pev->frags, 1, 0);
 			bSent = true;
 		}
 	}
@@ -4868,7 +4868,7 @@ void CEnvMirror ::MirrorThink(void)
 		if (pev->rendermode != kRenderNormal)
 		{
 			pev->rendermode = kRenderNormal;
-			PLAYBACK_EVENT_FULL(FEV_RELIABLE | FEV_GLOBAL, edict(), m_usMirror, 0.0, (float*)&Center(), (float*)&g_vecZero, 0.0, 0.0, m_flRadius, pev->frags, 0, 0);
+			PLAYBACK_EVENT_FULL(FEV_RELIABLE | FEV_GLOBAL, edict(), m_usMirror, 0.0, Center(), g_vecZero, 0.0, 0.0, m_flRadius, pev->frags, 0, 0);
 		}
 
 		bSent = true;

@@ -102,7 +102,7 @@ bool CInfoAlias ::KeyValue(KeyValueData* pkvd) //AJH
 		{
 			char tmp[128];
 
-			UTIL_StripToken(pkvd->szKeyName, tmp);
+			UTIL_StripToken(pkvd->szKeyName, tmp, sizeof(tmp));
 			int iValue = atoi(pkvd->szValue);
 			if (iValue <= MAX_ALIAS_TARGETS && iValue > 0)
 			{
@@ -269,7 +269,7 @@ bool CInfoGroup::KeyValue(KeyValueData* pkvd)
 	else if (m_cMembers < MAX_MULTI_TARGETS)
 	{
 		char tmp[128];
-		UTIL_StripToken(pkvd->szKeyName, tmp);
+		UTIL_StripToken(pkvd->szKeyName, tmp, sizeof(tmp));
 		m_iszMemberName[m_cMembers] = ALLOC_STRING(tmp);
 		m_iszMemberValue[m_cMembers] = ALLOC_STRING(pkvd->szValue);
 		m_cMembers++;
@@ -361,7 +361,7 @@ bool CMultiAlias::KeyValue(KeyValueData* pkvd)
 	else if (m_cTargets < MAX_MULTI_TARGETS)
 	{
 		char tmp[128];
-		UTIL_StripToken(pkvd->szKeyName, tmp);
+		UTIL_StripToken(pkvd->szKeyName, tmp, sizeof(tmp));
 
 		m_iszTargets[m_cTargets] = ALLOC_STRING(tmp);
 		m_iValues[m_cTargets] = atoi(pkvd->szValue);

@@ -60,7 +60,7 @@ public:
 	bool Save(CSave& save) override;
 	bool Restore(CRestore& restore) override;
 	static TYPEDESCRIPTION m_SaveData[];
-	bool CFuncTankControls::OnControls(entvars_t* pevTest) override;
+	bool OnControls(entvars_t* pevTest) override;
 
 	bool m_active;				  // am I being used to control tanks right now?
 	Vector m_vecControllerUsePos; // where was the player standing when he used me?
@@ -247,7 +247,7 @@ protected:
 
 	int m_iTankClass; // Behave As
 
-	void CFuncTank::UpdateSpot();
+	void UpdateSpot();
 	//	CLaserSpot*  m_pViewTarg;	// Player view indicator
 
 	CPointEntity* m_pFireProxy; //LRC - locus position for custom shots

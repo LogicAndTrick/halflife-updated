@@ -90,7 +90,7 @@ public:
 #define RPG_WEIGHT 20
 #define GAUSS_WEIGHT 20
 #define EGON_WEIGHT 20
-#define HORNETGUN_WEIGHT 10
+#define HORNETGUN_WEIGHT 15
 #define HANDGRENADE_WEIGHT 5
 #define SNARK_WEIGHT 5
 #define SATCHEL_WEIGHT -10
@@ -180,6 +180,7 @@ typedef enum
 #define ITEM_FLAG_NOAUTOSWITCHEMPTY 4
 #define ITEM_FLAG_LIMITINWORLD 8
 #define ITEM_FLAG_EXHAUSTIBLE 16 // A player can totally exhaust their ammo supply and lose this weapon
+#define ITEM_FLAG_NOAUTOSWITCHTO 32
 
 #define WEAPON_IS_ONTARGET 0x40
 
@@ -826,8 +827,6 @@ public:
 	void UpdateSpot();
 	bool ShouldWeaponIdle() override { return true; }
 
-	bool IsUseable() override;
-
 	CLaserSpot* m_pSpot;
 	bool m_fSpotActive;
 	int m_cActiveRockets; // how many missiles in flight from this launcher right now?
@@ -860,9 +859,11 @@ public:
 	void EXPORT RocketTouch(CBaseEntity* pOther);
 	static CRpgRocket* CreateRpgRocket(Vector vecOrigin, Vector vecAngles, CBaseEntity* pOwner, CRpg* pLauncher);
 
+	CRpg* GetLauncher();
+
 	int m_iTrail;
 	float m_flIgniteTime;
-	EHANDLE m_pLauncher; // handle back to the launcher that fired me.
+	EHANDLE m_hLauncher; // handle back to the launcher that fired me.
 };
 
 #define GAUSS_PRIMARY_CHARGE_VOLUME 256 // how loud gauss is while charging
@@ -999,6 +1000,7 @@ public:
 	void Fire(const Vector& vecOrigSrc, const Vector& vecDir);
 
 	bool HasAmmo();
+	bool CanHolster();
 
 	void UseAmmo(int count);
 
@@ -1151,6 +1153,7 @@ public:
 	void Holster() override;
 	void WeaponIdle() override;
 	void Throw();
+	void Detonate();
 
 	bool UseDecrement() override
 	{

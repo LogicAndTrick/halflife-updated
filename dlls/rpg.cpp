@@ -103,10 +103,10 @@ LINK_ENTITY_TO_CLASS(rpg_rocket, CRpgRocket);
 
 CRpgRocket::~CRpgRocket()
 {
-	if (m_pLauncher)
+	if (m_hLauncher)
 	{
 		// my launcher is still around, tell it I'm dead.
-		static_cast<CRpg*>(static_cast<CBaseEntity*>(m_pLauncher))->m_cActiveRockets--;
+		static_cast<CRpg*>(static_cast<CBaseEntity*>(m_hLauncher))->m_cActiveRockets--;
 	}
 }
 
@@ -120,7 +120,7 @@ CRpgRocket* CRpgRocket::CreateRpgRocket(Vector vecOrigin, Vector vecAngles, CBas
 	pRocket->pev->angles = vecAngles;
 	pRocket->Spawn();
 	pRocket->SetTouch(&CRpgRocket::RocketTouch);
-	pRocket->m_pLauncher = pLauncher; // remember what RPG fired me.
+	pRocket->m_hLauncher = pLauncher; // remember what RPG fired me.
 	pLauncher->m_cActiveRockets++;	  // register this missile as active for the launcher
 	pRocket->pev->owner = pOwner->edict();
 
@@ -208,6 +208,14 @@ void CRpgRocket::IgniteThink()
 }
 
 
+CRpg* CRpgRocket::GetLauncher()
+{
+	if (!m_hLauncher)
+		return NULL;
+
+	return (CRpg*)((CBaseEntity*)m_hLauncher);
+}
+
 void CRpgRocket::FollowThink()
 {
 	CBaseEntity* pOther = NULL;
@@ -224,8 +232,16 @@ void CRpgRocket::FollowThink()
 	// Examine all entities within a reasonable radius
 	while ((pOther = UTIL_FindEntityByClassname(pOther, "laser_spot")) != NULL)
 	{
-		UTIL_TraceLine(pev->origin, pOther->pev->origin, dont_ignore_monsters, ENT(pev), &tr);
-		// ALERT( at_console, "%f\n", tr.flFraction );
+		Vector vSpotLocation = pOther->pev->origin;
+
+		/*if (UTIL_PointContents(vSpotLocation) == CONTENTS_SKY)
+		{
+			ALERT(at_console, "laser spot is in the sky...\n");
+		}*/
+
+		UTIL_TraceLine(pev->origin, vSpotLocation, dont_ignore_monsters, ENT(pev), &tr);
+		//ALERT(at_console, "fraction: %f\n", tr.flFraction);
+
 		if (tr.flFraction >= 0.90)
 		{
 			vecDir = pOther->pev->origin - pev->origin;
@@ -277,7 +293,27 @@ void CRpgRocket::FollowThink()
 			Detonate();
 		}
 	}
-	// ALERT( at_console, "%.0f\n", flSpeed );
+
+	if (GetLauncher())
+	{
+		float flDistance = (pev->origin - GetLauncher()->pev->origin).Length();
+
+		// if we've travelled more than max distance the player can send a spot, stop tracking the original launcher (allow it to reload)
+		if (flDistance > 8192.0f || gpGlobals->time - m_flIgniteTime > 6.0f)
+		{
+			// ALERT(at_console, "RPG too far (%f)!\n", flDistance);
+			GetLauncher()->m_cActiveRockets--;
+			m_hLauncher = NULL;
+		}
+
+		//ALERT(at_console, "%.0f, m_pLauncher: %u, flDistance: %f\n", flSpeed, GetLauncher(), flDistance);
+	}
+
+	if ((UTIL_PointContents(pev->origin) == CONTENTS_SKY))
+	{
+		//ALERT( at_console, "Rocket is in the sky, detonating...\n");
+		Detonate();
+	}
 
 	SetNextThink(0.1);
 }
@@ -287,6 +323,8 @@ void CRpgRocket::FollowThink()
 
 void CRpg::Reload()
 {
+	//ALERT(at_console, "RPG Reload, m_cActiveRockets: %d, m_fSpotActive: %d\n", m_cActiveRockets, m_fSpotActive);
+
 	if (m_iClip == 1)
 	{
 		// don't bother with any of this if don't need to reload.
@@ -310,6 +348,8 @@ void CRpg::Reload()
 
 	if (0 != m_cActiveRockets && m_fSpotActive)
 	{
+		//ALERT(at_console, "RPG reload failed, m_cActiveRockets: %d, m_fSpotActive: %d\n", m_cActiveRockets, m_fSpotActive);
+
 		// no reloading when there are active missiles tracking the designator.
 		// ward off future autoreload attempts by setting next attack time into the future for a bit.
 		return;
@@ -387,7 +427,7 @@ bool CRpg::GetItemInfo(ItemInfo* p)
 	p->iSlot = 3;
 	p->iPosition = 0;
 	p->iId = m_iId = WEAPON_RPG;
-	p->iFlags = 0;
+	p->iFlags = ITEM_FLAG_NOAUTOSWITCHTO;
 	p->iWeight = RPG_WEIGHT;
 
 	return true;
@@ -473,6 +513,8 @@ void CRpg::PrimaryAttack()
 
 		m_flNextPrimaryAttack = GetNextAttackDelay(1.5);
 		m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 1.5;
+
+		ResetEmptySound();
 	}
 	else
 	{
@@ -500,12 +542,6 @@ void CRpg::SecondaryAttack()
 
 void CRpg::WeaponIdle()
 {
-	// Reset when the player lets go of the trigger.
-	if ((m_pPlayer->pev->button & (IN_ATTACK | IN_ATTACK2)) == 0)
-	{
-		ResetEmptySound();
-	}
-
 	UpdateSpot();
 
 	if (m_flTimeWeaponIdle > UTIL_WeaponTimeBase())
@@ -534,6 +570,7 @@ void CRpg::WeaponIdle()
 			m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 6.1;
 		}
 
+		ResetEmptySound();
 		SendWeaponAnim(iAnim);
 	}
 	else
@@ -548,6 +585,12 @@ void CRpg::UpdateSpot()
 {
 
 #ifndef CLIENT_DLL
+	// Don't turn on the laser if we're in the middle of a reload.
+	if (m_fInReload)
+	{
+		return;
+	}
+
 	if (m_fSpotActive)
 	{
 		if (!m_pSpot)
@@ -565,17 +608,6 @@ void CRpg::UpdateSpot()
 		UTIL_SetOrigin(m_pSpot, tr.vecEndPos);
 	}
 #endif
-}
-
-bool CRpg::IsUseable()
-{
-	// The client needs to fall through to WeaponIdle so check the ammo here.
-	if (m_pPlayer->ammo_rockets <= 0)
-	{
-		return false;
-	}
-
-	return CBasePlayerWeapon::IsUseable();
 }
 
 class CRpgAmmo : public CBasePlayerAmmo

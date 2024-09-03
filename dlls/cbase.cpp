@@ -143,6 +143,21 @@ int GetNewDLLFunctions(NEW_DLL_FUNCTIONS* pFunctionTable, int* interfaceVersion)
 }
 
 
+bool ShouldNotSpawn(CBaseEntity* pEntity)
+{
+    if (g_pGameRules && !g_pGameRules->IsAllowedToSpawn(pEntity))
+        return true; // return that this entity should be deleted
+    if ((pEntity->pev->flags & FL_KILLME) != 0)
+        return true;
+    if (g_iSkillLevel == SKILL_EASY && pEntity->m_iLFlags & LF_NOTEASY)
+        return true; //LRC
+    if (g_iSkillLevel == SKILL_MEDIUM && pEntity->m_iLFlags & LF_NOTMEDIUM)
+        return true; //LRC
+    if (g_iSkillLevel == SKILL_HARD && pEntity->m_iLFlags & LF_NOTHARD)
+        return true; //LRC
+    return false;
+}
+
 int DispatchSpawn(edict_t* pent)
 {
 	CBaseEntity* pEntity = (CBaseEntity*)GET_PRIVATE(pent);
@@ -161,19 +176,11 @@ int DispatchSpawn(edict_t* pent)
 		// that would touch too much code for me to do that right now.
 		pEntity = (CBaseEntity*)GET_PRIVATE(pent);
 
-		if (pEntity)
+		if (pEntity && ShouldNotSpawn(pEntity))
 		{
-			if (g_pGameRules && !g_pGameRules->IsAllowedToSpawn(pEntity))
-				return -1; // return that this entity should be deleted
-			if ((pEntity->pev->flags & FL_KILLME) != 0)
-				return -1;
-			if (g_iSkillLevel == SKILL_EASY && pEntity->m_iLFlags & LF_NOTEASY)
-				return -1; //LRC
-			if (g_iSkillLevel == SKILL_MEDIUM && pEntity->m_iLFlags & LF_NOTMEDIUM)
-				return -1; //LRC
-			if (g_iSkillLevel == SKILL_HARD && pEntity->m_iLFlags & LF_NOTHARD)
-				return -1; //LRC
-		}
+            pEntity->UpdateOnRemove();
+            return -1;
+        }
 
 
 		// Handle global stuff here
