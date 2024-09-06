@@ -9,27 +9,19 @@ jobs:
   linux:
     name: Linux-x86
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        compiler: [g++, clang++]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Install G++ Multilib, Clang++ & OpenGL library
-        run: |
-          sudo apt update
-          sudo apt install -y g++-multilib clang libgl1-mesa-dev libglu1-mesa-dev
-      
       - name: Build
-        run: |
-          cd linux
-          make COMPILER=${{ matrix.compiler }} CFG=release -j2
+        uses: docker://registry.gitlab.steamos.cloud/steamrt/scout/sdk/i386:latest
+        with:
+          args: sh linux/ci-make.sh g++
 
       - name: Deploy
         uses: actions/upload-artifact@v4
         with:
-          name: Linux-x86-${{ matrix.compiler }}
+          name: Linux-x86
           path: |
             linux/release/client.so
             linux/release/client.so.dbg
