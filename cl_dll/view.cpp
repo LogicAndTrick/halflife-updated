@@ -653,13 +653,12 @@ void V_CalcNormalRefdef(struct ref_params_s* pparams)
 	}
 	view->origin[2] += bob;
 
-	// throw in a little tilt.
-	view->angles[YAW] -= bob * 0.5;
-	view->angles[ROLL] -= bob * 1;
-	view->angles[PITCH] -= bob * 0.3;
-
 	if (0 != cl_bobtilt->value)
 	{
+		// throw in a little tilt.
+		view->angles[YAW] -= bob * 0.5;
+		view->angles[ROLL] -= bob * 1;
+		view->angles[PITCH] -= bob * 0.3;
 		VectorCopy(view->angles, view->curstate.angles);
 	}
 
@@ -1583,10 +1582,10 @@ void V_CalcSpectatorRefdef(struct ref_params_s* pparams)
 		// second renderer cycle, inset window
 
 		// set inset parameters
-		pparams->viewport[0] = XRES(gHUD.m_Spectator.m_OverviewData.insetWindowX); // change viewport to inset window
-		pparams->viewport[1] = YRES(gHUD.m_Spectator.m_OverviewData.insetWindowY);
-		pparams->viewport[2] = XRES(gHUD.m_Spectator.m_OverviewData.insetWindowWidth);
-		pparams->viewport[3] = YRES(gHUD.m_Spectator.m_OverviewData.insetWindowHeight);
+		pparams->viewport[0] = XRES_HD(gHUD.m_Spectator.m_OverviewData.insetWindowX); // change viewport to inset window
+		pparams->viewport[1] = YRES_HD(gHUD.m_Spectator.m_OverviewData.insetWindowY);
+		pparams->viewport[2] = XRES_HD(gHUD.m_Spectator.m_OverviewData.insetWindowWidth);
+		pparams->viewport[3] = YRES_HD(gHUD.m_Spectator.m_OverviewData.insetWindowHeight);
 		pparams->nextView = 0; // on further view
 
 		// override some settings in certain modes

@@ -109,6 +109,7 @@ class CRuleBrushEntity : public CRuleEntity
 {
 public:
 	void Spawn() override;
+	int ObjectCaps() override { return CRuleEntity::ObjectCaps() & ~FCAP_ACROSS_TRANSITION; }
 
 private:
 };
@@ -172,7 +173,7 @@ void CGameScore::Use(CBaseEntity* pActivator, CBaseEntity* pCaller, USE_TYPE use
 		return;
 
 	// Only players can use this
-	if (pActivator->IsPlayer())
+	if (pActivator && pActivator->IsPlayer())
 	{
 		if (AwardToTeam())
 		{
