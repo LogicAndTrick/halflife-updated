@@ -607,6 +607,19 @@ public:
 	void AddHudElem(CHudBase* p);
 
 	float GetSensitivity();
+
+#define MAX_DLIGHTS 32
+	dlight_t* GetDLightByKey(int idx) const
+	{
+		for (int i = 0; i < MAX_DLIGHTS; i++)
+		{
+			if (m_pfirstDLight[i].key == idx)
+				return m_pfirstDLight + i;
+		}
+		return nullptr;
+	}
+private:
+	dlight_t* m_pfirstDLight;
 };
 
 extern CHud gHUD;

@@ -1625,6 +1625,14 @@ void V_CalcSpectatorRefdef(struct ref_params_s* pparams)
 }
 
 
+static void UpdateFlashlightSize()
+{
+	auto *dlight = gHUD.GetDLightByKey(1);
+	if (dlight && dlight->radius > 0)
+	{
+		dlight->radius = 160;
+	}
+}
 
 void DLLEXPORT V_CalcRefdef(struct ref_params_s* pparams)
 {
@@ -1642,6 +1650,7 @@ void DLLEXPORT V_CalcRefdef(struct ref_params_s* pparams)
 	else if (0 == pparams->paused)
 	{
 		V_CalcNormalRefdef(pparams);
+        UpdateFlashlightSize();
 	}
 
 	/*
