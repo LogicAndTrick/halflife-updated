@@ -293,6 +293,11 @@ Fixes for bugs introduced in beta builds are not included in this list.
 * Prevent breakables from spawning multiple items when destroyed by gunfire and explosives at the same time (Thanks Oxofemple.)
 * Added cvar `sv_allowbunnyhopping` to control whether the bunny hopping limiter is enabled (halflife issue [#11](https://github.com/ValveSoftware/halflife/issues/11))
 * Added `sv_load_all_maps` & `sv_stop_loading_all_maps` to help automate node graph generation
+* Added missing client side event for `func_vehicle` sounds
+* Prevented game_zone_player from transitioning across levels to fix Mod_NumForName: not found issue [#241](https://github.com/twhl-community/halflife-updated/pull/241) (Thanks FreeSlave)
+* Fixed null dereference in game_score [#246](https://github.com/twhl-community/halflife-updated/pull/246) (Thanks FreeSlave)
+* Fixed null dereference of m_rawinput and mouse issues on Linux [#251](https://github.com/twhl-community/halflife-updated/pull/251) (Thanks a1batross)
+* Fixed `cl_bobtilt` CVAR not disabling view bob tilt [#254](https://github.com/twhl-community/halflife-updated/pull/254) (Thanks sabianroberts)
 
 ## Code cleanup
 
@@ -403,6 +408,8 @@ Fixes for bugs introduced in beta builds are not included in this list.
     * Blue Shift [#114](https://github.com/twhl-community/halflife-updated/pull/114)
     * Deathmatch Classic and Threewave [#115](https://github.com/twhl-community/halflife-updated/pull/115)
 * Moved IsFacing function from barney.cpp to h_ai.cpp to help prevent linker errors when copy pasting source file
+* Fixed duplicated Zombie melee activity check [#256](https://github.com/twhl-community/halflife-updated/pull/256) (Thanks josephfortune)
+* Fixed `anglemod` function in `pm_math.cpp` which should fix view drifting issues on Linux [#226](https://github.com/twhl-community/halflife-updated/pull/226) (Thanks consolethinks)
 
 ## Project changes
 
@@ -437,6 +444,7 @@ Fixes for bugs introduced in beta builds are not included in this list.
 * Disabled GCC optimization that prevents mod dlls from unloading after engine calls dlclose
 * Fixed third party libraries possibly not being linked to when building Linux server dll (Thanks a1batross)
 * Mods made with this SDK will now shut down if they detect they are being run from a Valve game directory (e.g. by placing the dlls in `Half-Life/valve/cl_dlls` and `Half-Life/valve/dlls`). This is not supported and puts users at risk of being VAC banned. Run mods from their intended location only
+* Link Linux binaries with `-Wl` and `--no-undefined` flags to avoid situations where something was referenced but wasn't added in the build (Thanks a1batross)
 
 ## Git repository changes
 
