@@ -36,3 +36,4 @@ void EV_GenericFire2(struct event_args_s* args);
 void EV_GenericFire3(struct event_args_s* args);
 
 void EV_TrainPitchAdjust(event_args_t* args);
+void EV_VehiclePitchAdjust(event_args_t* args);
