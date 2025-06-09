@@ -300,7 +300,7 @@ public:
 	virtual int BloodColor() { return DONT_BLEED; }
 	virtual void TraceBleed(float flDamage, Vector vecDir, TraceResult* ptr, int bitsDamageType);
 	//LRC- superceded by GetState ( pActivator ).
-	//	virtual bool    IsTriggered( CBaseEntity *pActivator ) {return true;}
+	//virtual bool IsTriggered(CBaseEntity* pActivator) { return true; }
 	virtual CBaseToggle* MyTogglePointer() { return NULL; }
 	virtual CBaseMonster* MyMonsterPointer() { return NULL; }
 	virtual CSquadMonster* MySquadMonsterPointer() { return NULL; }
