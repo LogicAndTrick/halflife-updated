@@ -4757,6 +4757,7 @@ void CTriggerTeleport::TeleportTouch(CBaseEntity* pOther)
 			{
 				//				ALERT(at_console, "v_angle = %f %f %f\n", pOther->pev->v_angle.x, pOther->pev->v_angle.y, pOther->pev->v_angle.z);
 				pOther->pev->angles.x = pOther->pev->v_angle.x;
+				pOther->pev->angles.z = pOther->pev->v_angle.z = 0;
 				//				pOther->pev->v_angle.y += ydiff;
 				pOther->pev->fixangle = true;
 			}
