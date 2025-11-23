@@ -1379,6 +1379,8 @@ void CBaseMonster::StartTask(Task_t* pTask)
 
 			if (m_pCine->m_fMoveTo != 6)
 				pev->origin = m_pGoalEnt->pev->origin;
+			if (m_pCine->m_fMoveTo == 4)
+				UTIL_SetOrigin(this, pev->origin);
 		}
 
 		TaskComplete();
