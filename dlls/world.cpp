@@ -474,6 +474,7 @@ LINK_ENTITY_TO_CLASS(worldspawn, CWorld);
 #define SF_WORLD_TITLE 0x0002	  // Display game title at startup
 #define SF_WORLD_FORCETEAM 0x0004 // Force teams
 //#define SF_WORLD_STARTSUIT	0x0008		// LRC- Start this level with an HEV suit!
+#define SF_WORLD_TIMED_DAMAGE 0x0100 // Force teams
 
 bool g_allowGJump;
 
@@ -684,6 +685,8 @@ void CWorld::Precache()
 	{
 		CVAR_SET_FLOAT("mp_defaultteam", 0);
 	}
+
+	CVAR_SET_FLOAT("timed_damage", (pev->spawnflags & SF_WORLD_TIMED_DAMAGE) != 0);
 }
 
 
@@ -777,7 +780,11 @@ bool CWorld::KeyValue(KeyValueData* pkvd)
 	}
 	else if (FStrEq(pkvd->szKeyName, "timed_damage"))
 	{
-		CVAR_SET_FLOAT("timed_damage", atof(pkvd->szValue));
+		if (atoi(pkvd->szValue) != 0)
+		{
+			CVAR_SET_FLOAT("timed_damage", 1);
+			pev->spawnflags |= SF_WORLD_TIMED_DAMAGE;
+		}
 		return true;
 	}
 	else if (FStrEq(pkvd->szKeyName, "max_medkit"))

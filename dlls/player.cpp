@@ -790,7 +790,7 @@ void CBasePlayer::PackDeadPlayerItems()
 
 		if (iAmmoRules == GR_PLR_DROP_AMMO_ACTIVE && iWeaponRules == GR_PLR_DROP_GUN_ACTIVE)
 		{
-			if (FClassnameIs(rgpPackWeapons[0]->pev, "weapon_satchel") && (iPackAmmo[0] == -1 || (m_rgAmmo[iPackAmmo[0]] == 0)))
+			if (rgpPackWeapons[0] && FClassnameIs(rgpPackWeapons[0]->pev, "weapon_satchel") && (iPackAmmo[0] == -1 || (m_rgAmmo[iPackAmmo[0]] == 0)))
 			{
 				bPackItems = false;
 			}
@@ -2359,6 +2359,9 @@ void CBasePlayer::CheckTimeBasedDamage()
 
 	m_tbdPrev = gpGlobals->time;
 
+	const auto pevInflictor = m_pevInflictor == nullptr ? pev : m_pevInflictor;
+	const auto pevActivator = m_hActivator == nullptr ? pev : m_hActivator->pev;
+
 	for (i = 0; i < CDMG_TIMEBASED; i++)
 	{
 		// make sure bit is set for damage type
@@ -2372,19 +2375,19 @@ void CBasePlayer::CheckTimeBasedDamage()
 				break;
 			case itbd_NerveGas:
 				if (CVAR_GET_FLOAT("timed_damage") != 0) //AJH re enable time based Nervegas/radiation
-					TakeDamage(m_pevInflictor, m_hActivator->pev, NERVEGAS_DAMAGE, DMG_GENERIC);
-				//AJH Use the activator of the trigger_hurt as attacker, and the trigger_hurt as the inflictor
+					TakeDamage(pevInflictor, pevActivator, NERVEGAS_DAMAGE, DMG_GENERIC);
+				    //AJH Use the activator of the trigger_hurt as attacker, and the trigger_hurt as the inflictor
 				bDuration = NERVEGAS_DURATION;
 				break;
 			case itbd_Poison:
-				TakeDamage(m_pevInflictor, m_hActivator->pev, POISON_DAMAGE, DMG_GENERIC);
+				TakeDamage(pevInflictor, pevActivator, POISON_DAMAGE, DMG_GENERIC);
 				//AJH Use the activator of the trigger_hurt as attacker, and the trigger_hurt as the inflictor
 				bDuration = POISON_DURATION;
 				break;
 			case itbd_Radiation:
 				if (CVAR_GET_FLOAT("timed_damage") != 0) //AJH re enable time based Nervegas/radiation
-					TakeDamage(m_pevInflictor, m_hActivator->pev, RADIATION_DAMAGE, DMG_GENERIC);
-				//AJH Use the activator of the trigger_hurt as attacker, and the trigger_hurt as the inflictor
+					TakeDamage(pevInflictor, pevActivator, RADIATION_DAMAGE, DMG_GENERIC);
+				    //AJH Use the activator of the trigger_hurt as attacker, and the trigger_hurt as the inflictor
 				bDuration = RADIATION_DURATION;
 				break;
 			case itbd_DrownRecover:

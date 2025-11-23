@@ -67,7 +67,9 @@ static cvar_t* m_rawinput = nullptr;
 
 static bool IN_UseRawInput()
 {
-	return m_rawinput->value != 0;
+	// a1ba: m_rawinput 1 is SDL input on Windows
+	// Linux only has SDL input, so return true here
+	return m_rawinput ? m_rawinput->value != 0 : true;
 }
 
 static SDL_bool mouseRelative = SDL_TRUE;
@@ -339,11 +341,7 @@ void DLLEXPORT IN_ActivateMouse()
 		mouseactive = true;
 	}
 
-	if (g_iVisibleMouse
-#ifdef WIN32
-		|| !IN_UseRawInput()
-#endif
-	)
+	if (g_iVisibleMouse || !IN_UseRawInput())
 	{
 		IN_SetMouseRelative(false);
 	}
@@ -712,7 +710,6 @@ void IN_MouseMove(float frametime, usercmd_t* cmd)
 
 	gEngfuncs.SetViewAngles((float*)viewangles);
 
-#ifdef WIN32
 	if ((!IN_UseRawInput() && SDL_FALSE != mouseRelative) || g_iVisibleMouse)
 	{
 		IN_SetMouseRelative(false);
@@ -721,7 +718,6 @@ void IN_MouseMove(float frametime, usercmd_t* cmd)
 	{
 		IN_SetMouseRelative(true);
 	}
-#endif
 
 	/*
 //#define TRACE_TEST
