@@ -933,7 +933,7 @@ bool CCalcNumFromEnt::CalcNumber(CBaseEntity* pLocus, float* OUTresult)
 		return false;
 	}
 
-	CBaseEntity* target = UTIL_FindEntityByTargetname(NULL, STRING(pev->target));
+	CBaseEntity* target = UTIL_FindEntityByTargetname(NULL, STRING(pev->target), pLocus);
 	if (target)
 	{
 		if (pev->impulse == 0)
