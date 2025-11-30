@@ -1266,13 +1266,16 @@
 		1 : "View Angle from player [LE]"
 	]
 	message(string) : "Rotate by angle [PYR]"
-	noise(string) : "Set Pitch [LN] (blank = don't)"
-	noise1(string) : "Set Yaw [LN] (blank = don't)"
-	noise2(string) : "Set Roll [LN] (blank = don't)"
+	noise(string) : "Swizzle/replace elements": "P Y R"
+	// These don't exist in code.
+	// noise1(string) : "Set Yaw [LN] (blank = don't)"
+	// noise2(string) : "Set Roll [LN] (blank = don't)"
 ]
 
 //NEW 1.8
-@PointClass color(200 64 64) size(-12 -12 -12, 12 12 12) base(Targetname) = calc_numfromcvar : "Calculate a value from a console variable"
+//@PointClass color(200 64 64) size(-12 -12 -12, 12 12 12) base(Targetname) = calc_numfromcvar : "Calculate a value from a console variable"
+//Nov-2025 Name was wrong, it's fromcvar not numfromcvar.
+@PointClass color(200 64 64) size(-12 -12 -12, 12 12 12) base(Targetname) = calc_fromcvar : "Calculate a value from a console variable"
 [
 	target(string) : "Cvar name"
 	spawnflags(flags) = 
@@ -1295,15 +1298,17 @@
 @PointClass base(Targetname) color(170 221 85) size(-12 -12 -12, 12 12 12) iconsprite("sprites/calc.spr") = calc_subratio : "Calculate number based on entity properties"
 [
 ]
+//* Any entity that can be referred to via [LN] can be used with impulse [0]. Meaning of the value depends on the entity.
+//* Which isn't terribly useful since most of the time any of these can be used directly without numfroment.
+//* Where numfroment shines is that the impulse [1] where it will give you ratio of watcher_count's value vs comparison number, or if the player has a weapon. That's it.
 @PointClass base(Targetname) color(170 221 85) size(-12 -12 -12, 12 12 12) iconsprite("sprites/calc.spr") = calc_numfroment : "Calculate number based on entity properties"
 [
 	target(string) : "Entity to use [LE]" : "*locus"
-	skin(choices) : "Number to get" : 0 =
+	impulse(choices) : "Number to get" : 0 =
 	[
-		2: "Number of entities"
 		0: "health/maxhealth(Monsters/Players/Breakables)"
 		1 : "HasWeapons(Players)"
-		0 : "current count(Watcher_Count)"
+		0 : "current count(Watcher_Count or any [LN])"
 		1 : "current count/Comparison number (Watcher_Count)"
 	]
 ]
@@ -1371,9 +1376,10 @@
 		9 : "Max Y (of A/B)"
 		10 : "Min Z (of A/B)"
 		11 : "Max Z (of A/B)"
-		20 : "Angle from B"
+		//* i.e. dot product of A and B 
+		20 : "Component in B"
 		//* i.e. the cosine of the angle between them.
-		21 : "Component in B"
+		21 : "Angle from B"
 		22 : "Length/B's Length"
 	]
 ]
@@ -1429,6 +1435,7 @@
 	spawnflags(flags) = 
 	[
 		1 : "Normalize" : 0
+//*		These are obtainable through swizzle system
 //		2 : "Flip Vertical" : 0
 //		4 : "Discard X" : 0
 //		8 : "Discard Y" : 0
@@ -1507,7 +1514,8 @@
 	[
 		//* The "length factor" field will set the exact length of the velocity,
 		//* instead of scaling it by a factor.
-		1 : "Normalize" : 0
+		//* Renamed from previous "Normalize" as by default the vector is normalized, and ticking this will restore the original length.
+		1 : "Denormalize" : 0
 	]
 ]
 
@@ -4799,14 +4807,14 @@ sequence(Choices) : "Animation Sequence (editor)" : 10 =
 //*   This is a very powerful entity, but is probably only useful for experienced mappers.
 @PointClass base(Targetname) = multi_watcher : "State Watcher"
 [
-	m_fLogic(choices) : "Logical test" : 0 =
+	m_fLogic(choices) : "Logical test [default state]" : 0 =
 	[
-		0: "All (AND)"
-		2: "Not all (NAND)"
-		1: "At least one (OR)"
-		3: "None (NOR)"
-		4: "Exactly one (XOR)"
-		5: "Any number but one (XNOR)"
+		0: "All (AND) [ON]"
+		2: "Not all (NAND) [OFF]"
+		1: "At least one (OR) [OFF]"
+		3: "None (NOR) [ON]"
+		4: "Exactly one (XOR) [OFF]"
+		5: "Any number but one (XNOR) [ON]"
 	]
 	//*   This entity will be sent USE_ON or USE_OFF, as appropriate, whenever the watcher's state changes.
 	target(target_destination) : "Entity to notify"
@@ -4815,6 +4823,10 @@ sequence(Choices) : "Animation Sequence (editor)" : 10 =
 	[
 		//* If this is enabled, the watcher will always notify its target with USE_TOGGLE, instead of sending ON or OFF.
 		1:  "Send 'Toggle'" : 0
+		//* If this is enabled, the target won't be triggered when the watcher turns on.
+		2:  "Don't Send On" : 0
+		//* If this is enabled, the target won't be triggered when the watcher turns off.
+		4:  "Don't Send Off" : 0
 		8:  "NOT 'On'" : 0
 		16: "'Off'" : 0
 		32: "'Turn On'" : 0
@@ -5522,6 +5534,7 @@ sequence(Choices) : "Animation Sequence (editor)" : 10 =
 
 //* While locked by its master, the trigger_counter _will_ keep counting when fired,
 //* but it won't fire anything itself.
+//* If you refer to trigger_counter via [LN] it will return number of triggers left before activating.
 @SolidClass base(Trigger, MoveWith) = trigger_counter : "Trigger counter" 
 [
 	spawnflags(flags) = 
@@ -5922,6 +5935,10 @@ sequence(Choices) : "Animation Sequence (editor)" : 10 =
 //    ]
 //]
 
+
+//* Note: for func_breakable and func_pushable to be counted, it has to have m_iRespawnTime not equal to 0
+//* Set it to -1 trigger only respawn, or -2 should work without enabling respawn when triggered, but trigger destroying will need to be done via OFF or TOGGLE instead of ON.
+//* Other entities count depending on their state. In general, if it can have an active state, it needs to be active to count.
 @PointClass base(Targetname) = watcher_count : "Watcher, entity count"
 [
 	noise(string) : "Count entities named..."
@@ -5945,6 +5962,8 @@ sequence(Choices) : "Animation Sequence (editor)" : 10 =
 	[
 		//* If this is set, one set of targets (on or off) will be fired,
 		//* as appropriate, when the level starts.
+		//* netname will fire if count is less than comparison number
+		//* message will fire otherwise
 		1:  "Fire at startup" : 0
 	]
 ]
