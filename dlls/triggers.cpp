@@ -5258,7 +5258,7 @@ public:
 	EHANDLE m_hTarget;
 };
 
-LINK_ENTITY_TO_CLASS(motion_thread, CPointEntity);
+LINK_ENTITY_TO_CLASS(motion_thread, CMotionThread);
 
 TYPEDESCRIPTION CMotionThread::m_SaveData[] =
 	{
@@ -5809,6 +5809,7 @@ void CMotionManager::Affect(CBaseEntity* pTarget, CBaseEntity* pActivator)
 		ALERT(at_debug, "Motion_manager motion thread pointer is NULL!!\n");
 		return; //error?
 	}
+	pThread->Spawn();
 	pThread->m_hLocus = pActivator;
 	pThread->m_hTarget = pTarget;
 	pThread->m_iszPosition = m_iszPosition;
