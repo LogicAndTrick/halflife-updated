@@ -1282,7 +1282,7 @@ bool CStateWatcher::EvalLogic(CBaseEntity* pActivator)
 				b = true;
 			break;
 		case STATE_TURN_OFF:
-			if (pev->spawnflags & SF_SWATCHER_TURN_ON)
+			if (pev->spawnflags & SF_SWATCHER_TURN_OFF)
 				b = true;
 			break;
 		case STATE_IN_USE:
