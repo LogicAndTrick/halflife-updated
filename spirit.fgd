@@ -3706,7 +3706,7 @@
 	m_iszPosition(string) : "Position to record  [LP]" : "*locus"
 	m_iszVelocity(string) : "Velocity to record [LV]" : "*locus"
 	m_iszRatio(string) : "Number to record [LN]" : "*locus"
-	m_iszTargetname(string) : "Child's name (blank = no child)"
+	m_iszTargetName(string) : "Child's name (blank = no child)"
 	m_iszFireOnSpawn(string) : "Fire on spawn (locus = child)"
 	m_fDuration(string) : "Removed after time (secs)"
 ]
