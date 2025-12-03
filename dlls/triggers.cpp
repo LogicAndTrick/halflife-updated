@@ -1282,7 +1282,7 @@ bool CStateWatcher::EvalLogic(CBaseEntity* pActivator)
 				b = true;
 			break;
 		case STATE_TURN_OFF:
-			if (pev->spawnflags & SF_SWATCHER_TURN_ON)
+			if (pev->spawnflags & SF_SWATCHER_TURN_OFF)
 				b = true;
 			break;
 		case STATE_IN_USE:
@@ -1793,6 +1793,7 @@ public:
 
 	int m_iszAmtFactor;
 };
+LINK_ENTITY_TO_CLASS(render_fader, CRenderFxFader);
 
 TYPEDESCRIPTION CRenderFxFader::m_SaveData[] =
 	{
@@ -1813,6 +1814,7 @@ IMPLEMENT_SAVERESTORE(CRenderFxFader, CBaseEntity);
 void CRenderFxFader::Spawn()
 {
 	SetThink(&CRenderFxFader::FadeThink);
+	pev->classname = MAKE_STRING("render_fader");
 }
 
 void CRenderFxFader::FadeThink()
@@ -5258,7 +5260,7 @@ public:
 	EHANDLE m_hTarget;
 };
 
-LINK_ENTITY_TO_CLASS(motion_thread, CPointEntity);
+LINK_ENTITY_TO_CLASS(motion_thread, CMotionThread);
 
 TYPEDESCRIPTION CMotionThread::m_SaveData[] =
 	{
@@ -5809,6 +5811,7 @@ void CMotionManager::Affect(CBaseEntity* pTarget, CBaseEntity* pActivator)
 		ALERT(at_debug, "Motion_manager motion thread pointer is NULL!!\n");
 		return; //error?
 	}
+	pThread->Spawn();
 	pThread->m_hLocus = pActivator;
 	pThread->m_hTarget = pTarget;
 	pThread->m_iszPosition = m_iszPosition;
